@@ -15,4 +15,8 @@ Zoo Management System for Zoo Melaka Organization
 3. Commit changes by using `git commit -m "Descriptive text about modifications" `
 4. Afterwards push your code to your forked repo by typing `git push `
 
+
 ### Finally make a Pull request on your repo ----> to source repo 
+
+#### Note : Always "Fetch & Merge" for updates and update your local repo by using `git pull`
+
