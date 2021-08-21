@@ -27,6 +27,25 @@ router.post('/booking/save',(req,res)=>{
 
 });
 
+//get specific posts
+
+router.get("/booking/:id",(req,res)=>{
+
+    let bookingID =req.params.id;
+    Booking.findById(bookingID,(err,booking)=>{
+        if(err){
+            return res.status(400).json({success : false,err})
+        }
+        return res.status(200).json({
+            success:true, 
+            booking
+             
+        });
+    });
+});
+
+
+
 
 //get booking details
 
