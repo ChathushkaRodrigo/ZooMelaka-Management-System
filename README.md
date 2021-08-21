@@ -20,3 +20,6 @@ Zoo Management System for Zoo Melaka Organization
 
 #### Note : Always "Fetch & Merge" for updates and update your local repo by using `git pull`
 
+
+`DB_URL =mongodb+srv://ZooDatabaseAdmin:melaka123@zoo-managment-system-cl.lbmt4.mongodb.net/ZooManagementSystem?retryWrites=true&w=majority `
+
