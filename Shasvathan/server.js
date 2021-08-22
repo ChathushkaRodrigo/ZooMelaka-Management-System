@@ -6,11 +6,14 @@ const cors = require('cors');
 const app = express();
 
 const postRoutes = require('./routes/posts');
+const postDailytast = require('./routes/salaryroute');
+
 
 app.use(bodyParser.json());
 app.use(cors());
 
 app.use(postRoutes)
+app.use(postDailytast)
 
 const PORT = 8000;
 const DB_URL ='mongodb+srv://ZooDatabaseAdmin:melaka123@zoo-managment-system-cl.lbmt4.mongodb.net/ZooManagementSystem?retryWrites=true&w=majority';
