@@ -35,6 +35,10 @@ const postSchema = new mongoose.Schema({
     DOB:{
         type:String,
         required:true
+    },
+    salary:{
+        type:String,
+        required:true
     }
 
 });
