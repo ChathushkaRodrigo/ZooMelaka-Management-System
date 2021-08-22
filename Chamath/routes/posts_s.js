@@ -6,7 +6,7 @@ const express = require('express');
 
 //Import The Created User Model
 
-const Posts = require('../models/posts');
+const Posts = require('../models/posts_s.js');
 
 //Invoke express.Router() To Send Requests To routes And Write http Requests
 
@@ -14,28 +14,28 @@ const router = express.Router();
 
 //Save Posts
 
-router.post('/post/save',(req,res)=>{
+router.post('/posts/saves',(req,res)=>{
 
-//Instantiate Posts Via A Constructor
-
-let newPost = new Posts(req.body);
-
-newPost.save((err)=>{
-    if(err){
-        return res.status(400).json({
-            error:err
-        });
-    }
-        return res.status(200).json({
-            success:"Posts Saved Successfully!"
-        });
-});
-
-});
+    //Instantiate Posts Via A Constructor
+    
+    let newPost = new Posts(req.body);
+    
+    newPost.save((err)=>{
+        if(err){
+            return res.status(400).json({
+                error:err
+            });
+        }
+            return res.status(200).json({
+                success:"Posts Saved Successfully!"
+            });
+    });
+    
+    });
 
 //Get A Specific Post
 
-router.get("/post_animal/:id",(req,res) => {
+router.get("/posts_enclosure/:id",(req,res) => {
     let postId  = req.params.id;
     Posts.findById(postId,(err,post) => {
         if(err){
@@ -52,7 +52,7 @@ router.get("/post_animal/:id",(req,res) => {
 
 //Get Posts
 
-router.get('/post',(req,res)=>{
+router.get('/posts',(req,res)=>{
     Posts.find().exec((err,posts)=>{
         if(err){
             return res.status(400).json({
@@ -68,7 +68,7 @@ router.get('/post',(req,res)=>{
 
 //Update Posts
 
-router.put('/post/update/:id',(req,res)=>{
+router.put('/posts/updates/:id',(req,res)=>{
     Posts.findByIdAndUpdate(
         req.params.id,
         {
@@ -87,7 +87,7 @@ router.put('/post/update/:id',(req,res)=>{
 
 //Delete Posts
 
-router.delete('/post/delete/:id',(req,res)=>{
+router.delete('/posts/deletes/:id',(req,res)=>{
     Posts.findByIdAndRemove(req.params.id).exec((err,deletedPost)=>{
         if(err) return res.status(400).json({
             message:"Delete Unsuccesfull!",err

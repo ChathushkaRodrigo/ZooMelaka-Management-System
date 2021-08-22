@@ -1,35 +1,60 @@
 //Import Express
-const express = require('express');
-//Import Mongoose
-const mongoose = require('mongoose');
-//Invoke bodyParser package to covert the request to a javascript object as the server cannot understand information in json format
-const bodyParser = require('body-parser');
-//Set CORS to provide connect/express middleware
-const cors = require('cors');
-//Invoke Express
-const app = express();
-//Import Routes
-const postRoutes = require('./routes/posts');
-//Code App Middle-Ware
-app.use(bodyParser.json());
-app.use(cors());
-// How the routes communicate with the server, Route Middle-Ware. Read front-end request
-app.use(postRoutes);
-//Declare A Port
-const PORT = 8000;
-//Make MongoDB Database Connection
-const DB_URL = 'mongodb+srv://RGP:RGP123@mernapp.jjkpp.mongodb.net/mernCRUD?retryWrites=true&w=majority';
 
-//Write The Database Connection
-mongoose.connect(DB_URL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
+const express = require('express');
+
+//Import Mongoose
+
+const mongoose = require('mongoose');
+
+//Invoke Installed bodyParser Package
+
+const bodyParser = require('body-parser');
+
+//Invoke Express To Run The Application
+
+const app = express();
+
+//Import Routes
+
+const postRoutes = require('./routes/posts');
+
+const postRoutes_s = require('./routes/posts_s');
+
+//App Middleware
+
+app.use(bodyParser.json());
+
+//Route Middleware
+
+app.use(postRoutes);
+
+app.use(postRoutes_s);
+
+//Initialize & Declare Port
+
+const PORT = 8000;
+
+//Initialize The Database Connection
+
+const DB_URL = 'mongodb+srv://ZooDatabaseAdmin:melaka123@zoo-managment-system-cl.lbmt4.mongodb.net/ZooManagementSystem?retryWrites=true&w=majority';
+
+//Setup The Connection
+
+mongoose.connect(DB_URL,
+    {
+        useNewUrlParser:true,
+        useUnifiedTopology:true
     })
-    .then(() => {
-        console.log("DB Connected!");
-    })
-    .catch((err) => console.log('DB Connection Error', err));
-//Make Application Listen In Order To Run On A Server
-app.listen(PORT, () => {
+.then(()=>{
+    console.log('Database Connected');
+})
+.catch((err)=>console.log('Database Connection Error',err));
+
+//Make The Server That Runs The Application 'Listen' And Declare The Server Configuration
+
+app.listen(PORT,()=>{
     console.log(`App is running on ${PORT}`);
 });
+
+/*Go To package.json To Utilize Nodemon To Code A New Script To Auto - Re-start The Server
+Afterwards, Make The Database Connection Using MongoDB Atlas*/
