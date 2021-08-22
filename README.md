@@ -1,4 +1,6 @@
 # ZooMelaka-Management-System
+![Screenshot 2021-08-21 at 17 18 48](https://user-images.githubusercontent.com/72795289/130320779-26dc378c-2f63-4e4b-982a-4a69420f61c7.png)
+
 Zoo Management System for Zoo Melaka Organization
 
 ## Getting Started :
