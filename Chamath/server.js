@@ -16,9 +16,9 @@ const app = express();
 
 //Import Routes
 
-const postRoutes = require('./routes/posts');
+const postRoutes = require('./routes/animals');
 
-const postRoutes_s = require('./routes/posts_s');
+const postRoutes_s = require('./routes/enclosures');
 
 //App Middleware
 
