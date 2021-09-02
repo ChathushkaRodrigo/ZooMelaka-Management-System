@@ -4,14 +4,14 @@
   position: relative;
   background-color: #3a993e;
   width: 100%;
-  height: 40px;
+  height: 70px;
 }
 
 .header-logo {
   display: block;
   position: absolute;
-  width: 200px;
-  height: 65px;
+  width: 500px;
+  height: 75px;
   margin-left: 10px;
   top: 0;
   padding: 0;
@@ -22,9 +22,9 @@
 }
 
 .navbar {
-  background-color: transparent;
+  background-color: #3a993e;
   position: relative;
-  height: 65px;
+  height: 60px;
   top: 0;
 }
 
@@ -32,10 +32,10 @@
   list-style-type: none;
   margin: 0;
   left: 0;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 800;
   margin: auto;
-  height: 40px;
+  height: 70px;
   top: 0;
 }
 
@@ -66,9 +66,9 @@
   position: relative;
   top: -83px;
   width: 100%;
-  float: right;
+  float: right; 
   color: violet;
-  height: 700px;
+  height: 100%;
   background-image: url(../images/banner.png);
   background-position: right;
   background-size: 83%;
@@ -78,12 +78,12 @@
 .hero-text {
   display: block;
   position: relative;
-  padding: 30px;
+  padding: 40px;
   text-align: left;
   position: absolute;
   color: #474747;
   top: 20%;
-  margin-left: 40px;
+  margin-left: 80px;
 }
 
 .hero-text h1 {

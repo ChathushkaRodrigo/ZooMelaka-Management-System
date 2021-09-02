@@ -12,7 +12,7 @@ export default function home() {
                         <p>With a whole new experience and completely adaptable. <br/>
                         Booking, your significant serenity begins second <br/>
                         you start dreaming.</p>
-                    <button>JOIN US</button>
+                    <button> JOIN US</button>
                 </div>
                     <div className="hero-buttons">
                         <button>LOG IN</button>
@@ -26,6 +26,8 @@ export default function home() {
                         </div>
                     </div>
             </div>
+
+
             <div className="home-content">
                 <div className="home-content-topic">
                     <p><font color="red">Know</font> Us</p>
