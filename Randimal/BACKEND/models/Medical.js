@@ -17,7 +17,7 @@ const medicalSchema = new Schema({
         required : true
     },
     injid : { 
-        type : number,
+        type : Number,
         required : true
     },
     surgeryinfo : {

@@ -35,4 +35,55 @@ router.route("/").get((req,res)=>{
     })
 })
 
+router.route("/update/:id").put(async (req, res) =>{
+
+    let userId = req.params.id;
+    const {vetname,zkname,animalid,injid,surgeryinfo} = req.body;
+
+    const updateMedical = {
+        vetname,
+        zkname,
+        animalid,
+        injid,
+        surgeryinfo
+    }
+
+    const update = await Medical.findByIdAndUpdate(userId, updateMedical)
+    .then(() => {
+        res.status(200).send({status: "Record Updated", user: update})
+
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).send({status: "Error with updating data", error: err.message});
+    })  
+})
+
+router.route("/delete/:id").delete(async (req,res) => {
+let userId = req.params.id;
+
+await Medical.findByIdAndDelete(userId)
+.then(() => {
+    res.status(200).send({status: "Record Updated", user: update})
+
+}).catch((err) => {
+    console.log(err);
+    res.status(500).send({status: "Error with updating data", error: err.message});
+    })
+})
+
+router.route("/get/:id").get(async (req, res) => {
+    let userId = req.params.id;
+    const user = await Medical.findById(userId)
+    .then(() => {
+        res.status(200).send({status: "User fetched", user: user})
+
+    }).catch(() => {
+        console.log(err.message);
+        res.status(500).send({status: "Error with get user", error: err.message});
+
+
+
+    })
+})
+
 module.exports = router;
