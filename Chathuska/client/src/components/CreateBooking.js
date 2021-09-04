@@ -12,7 +12,7 @@ class CreateBooking extends PureComponent {
     render() {
         return (
             <div>
-                
+                Create a new Booking   
             </div>
         )
     }

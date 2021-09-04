@@ -98,6 +98,9 @@ retrieveBookings(){
 
         </table>
 
+        
+        
+        
         <button className ="btn btn-success"><a href="/add" style={{textDecoration:'none' ,color:'white' }}>  Add new Tour Booking </a></button>
 
 
@@ -105,7 +108,7 @@ retrieveBookings(){
 
        
 
-
+     
       </div>
     )
   }

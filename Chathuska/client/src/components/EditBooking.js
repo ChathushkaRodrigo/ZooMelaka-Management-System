@@ -11,10 +11,7 @@ class EditBooking extends PureComponent {
 
     render() {
         return (
-            <div>
-                
-            </div>
-            
+            <div></div>
         )
     }
 }
