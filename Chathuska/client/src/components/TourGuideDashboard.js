@@ -28,22 +28,72 @@ retrieveBookings(){
     this.setState({
       bookings:res.data.existingBookings
     });
-    console.log(this.state.bookings);
+      
   }
   });
 }
+onDelete = (id)=>{
+
+  axios.delete(`http://localhost:8015/booking/delete/${id}`).then((res)=>{
+
+    alert("Deleted Successfully");
+    this.retrieveBookings();
+  })
+
+}
+
+filterData(bookings,searchKey){
+  const result =bookings.filter((booking)=>
+  booking.CustomerEmail.toLowerCase().includes(searchKey) ||
+  booking.CustomerName.toLowerCase().includes(searchKey)  ||
+  booking.TourGuideName.toLowerCase().includes(searchKey) 
+  )
+  this.setState({bookings:result})
+}
 
 
+handleSearchBookingQuery =(e)=>{
 
+  const searchKey = e.currentTarget.value;
+  axios.get("http://localhost:8015/booking").then(res=>{
+
+    if(res.data.success){
+     this.filterData(res.data.existingBookings,searchKey)
+        
+    }
+    });
+
+}
 
 
   render() {
     return (
-      <div className="container">
-        <p>Tour Guide Details Dashboard</p>
 
-        <table class= "table">
-          <thead class="thead-dark">
+      <div className="container">
+       
+
+        <div className="row">
+          <div className="col-lg-9 mt-2 mb-2">
+          <h4>Tour Guide Details Dashboard</h4>
+          </div>
+          <div className="col-lg-7 mt-2 mb-8">
+            <input
+            className="form-control"
+            type="search"
+            placeholder="Search Booking"
+            name="searchBookingQuery"
+            onChange={this.handleSearchBookingQuery}>
+
+            </input>
+          </div>
+        </div>
+
+
+
+
+
+        <table className= "table table-hover" >
+          <thead className="thead-dark">
             <tr>
             <th scope="col">#</th>
             <th scope="col">Customer Name</th>
@@ -59,9 +109,10 @@ retrieveBookings(){
           </thead>
           <tbody>
             {this.state.bookings.map((booking,index)=>(
-              <tr>
+
+              <tr key ={index}>
                 <th scope="row">
-                  <a href={`/booking/${booking._id}`} style={{textDecoration:false}}>
+                  <a href={`booking/${booking._id}`} style={{textDecoration:false}}>
                   {index+1}
                   </a>
                 </th>
@@ -74,11 +125,11 @@ retrieveBookings(){
                 <td>{booking.TourGuideName}</td>
                 <td>
                   
-                  <a className="btn btn-warning" hred="#">
+                  <a className="btn btn-warning" href={`/edit/${booking._id}`}>
                     <i className="fas fa-edit"></i> &nbsp; Edit
                   </a>
                   &nbsp; 
-                  <a className="btn btn-danger" hred="#">
+                  <a className="btn btn-danger" hred="" onClick={() =>this.onDelete(booking._id)}>
                     <i className="far fa-trash-alt"></i> &nbsp; Delete
                   </a>
                   

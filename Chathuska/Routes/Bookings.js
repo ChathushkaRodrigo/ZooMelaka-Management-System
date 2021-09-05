@@ -27,7 +27,7 @@ router.post('/booking/save',(req,res)=>{
 
 });
 
-//get specific posts
+//get specific booking detail
 
 router.get("/booking/:id",(req,res)=>{
 

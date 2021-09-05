@@ -16,7 +16,7 @@ render() {
     <Route path ="/" exact component={TourGuideDashboard}></Route>
     <Route path ="/add"  component={CreateBooking}></Route>
     <Route path ="/edit/:id" component ={EditBooking}></Route>
-    <Route path ="/booking:id" component ={BookingDetails}></Route>
+    <Route path ="/booking/:id"  component ={BookingDetails}></Route>
     
 
 

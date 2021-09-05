@@ -21,10 +21,13 @@ class BookingDetails extends Component {
                 this.setState({
                         booking:res.data.booking
                 });
-              
+
+                console.log(this.state.booking);
             }
-            console.log(this.state.booking);
+           
         });
+     
+                
     }
 
 
@@ -32,13 +35,64 @@ class BookingDetails extends Component {
 
     render() {
 
-        // const { CustomerName,CustomerEmail,MobileNumber,TourOption,Date,Time,TourGuideName} =this.state.booking;
+        const { CustomerName,CustomerEmail,MobileNumber,TourOption,VisitDate,Time,TourGuideName} =this.state.booking;
 
   
         return (
             <div>
-                        Booking Details
-                    
+                    <h1>    Booking Details</h1> 
+                    <br/>
+                    <br/>
+
+                                        <form>
+                    <div class="form-group">
+                        <label for="emailC">Email address</label>
+                        <input type="email" class="form-control" id="emailC" placeholder={CustomerEmail} disabled/>
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                    <label for="cName">Customer Name</label>
+                        <input type="text" class="form-control" id="cName" placeholder={CustomerName} disabled/>
+                        
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                    <label for="MobileNo">Mobile Number</label>
+                        <input type="text" class="form-control" id="MobileNo" placeholder={MobileNumber}  disabled/>
+                        
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                    <label for="TourOp">Tour Option</label>
+                        <input type="text" class="form-control" id="TourOp" placeholder={TourOption} disabled/>
+                        
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                    <label for="Date">Date</label>
+                        <input type="text" class="form-control" id="Date" placeholder={VisitDate} disabled/>
+                        
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                    <label for="Time">Allocated time</label>
+                        <input type="text" class="form-control" id="Time" placeholder={Time} disabled/>
+                        
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                    <label for="TName">Tour Guide Name</label>
+                        <input type="text" class="form-control" id="TName" placeholder={TourGuideName}disabled />
+                        
+                    </div>
+                   
+                    </form>
+
+
+                                        
+
+
+
 
 
             </div>
