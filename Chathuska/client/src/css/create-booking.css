@@ -1,0 +1,21 @@
+body {
+  align-items: center;
+  background-color: rgb(253, 253, 253);
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.hero-image .bg_banner {
+  display: block;
+  position: relative;
+  top: -83px;
+  width: 27%;
+  float: right;
+  color: violet;
+  height: 500px;
+  background-image: url(../images/026.png);
+  background-position: right;
+  background-size: 83%;
+  background-repeat: no-repeat;
+}

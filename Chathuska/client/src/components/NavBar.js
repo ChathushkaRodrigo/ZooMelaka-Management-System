@@ -15,14 +15,10 @@ class NavBar extends PureComponent {
         return (
             
               
-                 <nav>
-        <input type="checkbox" id="check"/>
-        <label for="check" class="checkbtn">
-            <i className="fas fa-bars"></i>
-        </label>
-        <label className="logo">Logo</label>
+         <nav className="navbar navbar-expand-lg ">
+        <label className="logo">Zoo</label>
         <ul>
-            <li><a className="active" href="#">Home</a></li>
+            <li> <a className="active" href="#">Home</a></li>
             <li><a href="/">Tour Guide Dashboard</a></li>
             <li><a href="">Services</a></li>
             <li><a href="">Contact</a></li>

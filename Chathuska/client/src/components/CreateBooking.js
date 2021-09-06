@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import '../css/create-booking.css'
 export default class CreateBooking extends Component {
     constructor(props) {
         super(props);
@@ -65,19 +66,21 @@ export default class CreateBooking extends Component {
         return (
             <div className="col-md-8 mt-4 mx-auto">
 
-             <h1 className="h3 mb-3 font-weight-normal">   Create a new Booking   </h1>
+             <h1 className="h8 mb-8 font-weight-fw-bold align-content-center">   Create a new Booking   </h1>
              <br/>
+           
                     <br/>
 
                     <form className="needs-validation" noValidate>
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label for="emailC" style={{marginBottom:'5px'}}>Email address</label>
-                        <input type="text" 
+                    <input type="text" 
                         className="form-control" 
-                         name="CustomerEmail" 
-                      placeholder="Enter your email " 
-                      defaultValue={this.state.CustomerEmail}
-                     onChange={this.handleInputChange} />
+                        name="CustomerEmail" 
+                        placeholder="Enter your email " 
+                        defaultValue={this.state.CustomerEmail}
+                        onChange={this.handleInputChange} />
+                        
                     </div>
 
                     <br/>
@@ -156,7 +159,8 @@ export default class CreateBooking extends Component {
                     </button>
                    
                     </form>
-
+                  
+     
 
 
             </div>

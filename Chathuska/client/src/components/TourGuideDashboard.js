@@ -1,6 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react'
 import axios from 'axios';
+import '../css/tour-guide-dashboard.css'
+
+
 
 
 
@@ -69,34 +72,31 @@ handleSearchBookingQuery =(e)=>{
   render() {
     return (
 
-      <div className="container">
+      <div className="tgdb" >
        
 
-        <div className="row">
-          <div className="col-lg-9 mt-2 mb-2">
-          <h4>Tour Guide Details Dashboard</h4>
-          </div>
-          <div className="col-lg-7 mt-2 mb-8">
-            <input
-            className="form-control"
-            type="search"
-            placeholder="Search Booking"
-            name="searchBookingQuery"
-            onChange={this.handleSearchBookingQuery}>
+        <div className="hero-image">
+                <div className="bg_banner"></div>
+                <div className="hero-text">
+                    <h1>Tour Guide Dashboard <br/>
+                        <font color="#1473E6">WITH</font> <br/>
+                        DESTINATIONS </h1>
+                        <p>With a whole new experience and completely adaptable. <br/>
+                        Booking, your significant serenity begins second <br/>
+                        you start dreaming.</p>
+                   
+                </div>
+                
+            </div>
 
-            </input>
-          </div>
-        </div>
-
-
-
-
+        <br/>
+      
 
         <table className= "table table-hover" >
           <thead className="thead-dark">
             <tr>
             <th scope="col">#</th>
-            <th scope="col">Customer Name</th>
+            <th scope="col"><b>Customer Name</b></th>
             <th scope="col">Customer Email</th>
             <th scope="col">Mobile No</th>
             <th scope="col">Tour Option</th>
@@ -153,8 +153,6 @@ handleSearchBookingQuery =(e)=>{
         
         
         <button className ="btn btn-success"><a href="/add" style={{textDecoration:'none' ,color:'white' }}>  Add new Tour Booking </a></button>
-
-
 
 
        
