@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import '../css/create-booking.css'
+
 export default class CreateBooking extends Component {
     constructor(props) {
         super(props);
@@ -10,7 +11,7 @@ export default class CreateBooking extends Component {
             CustomerName:"",
             MobileNumber:"",
             TourOption:"",
-            VisitDate:"",
+            Date:"",
             Time:"",
             TourGuideName:""
 
@@ -32,30 +33,30 @@ export default class CreateBooking extends Component {
     onsubmit =(e)=>{
         e.preventDefault();
    
-        const { CustomerEmail,CustomerName,MobileNumber,TourOption,VisitDate,Time,TourGuideName} =this.state; 
+        const { CustomerEmail,CustomerName,MobileNumber,TourOption,Date,Time,TourGuideName} =this.state; 
         const data ={
             CustomerEmail:CustomerEmail,
             CustomerName:CustomerName,
             MobileNumber:MobileNumber,
             TourOption:TourOption,
-            VisitDate:VisitDate,
+            Date:Date,
             Time:Time,
             TourGuideName:TourGuideName
         }
         console.log(data);
 
-        axios.post("http://localhost:8015/booking/save",data).then((res)=>{
+        axios.post("http://localhost:8015/booking/save", data).then((res)=>{
             if(res.data.success){
 
                 this.setState(
                 {
-                    CustomerEmail:" ",
-                    CustomerName:" ",
-                    MobileNumber:" ",
+                    CustomerEmail:"",
+                    CustomerName:"",
+                    MobileNumber:"",
                     TourOption:"",
-                    VisitDate:" ",
-                    Time:" ",
-                    TourGuideName:" "
+                    Date:"",
+                    Time:"",
+                    TourGuideName:""
 
                 });
             }
@@ -64,7 +65,9 @@ export default class CreateBooking extends Component {
 
     render() {
         return (
+        
             <div className="col-md-8 mt-4 mx-auto">
+                
 
              <h1 className="h8 mb-8 font-weight-fw-bold align-content-center">   Create a new Booking   </h1>
              <br/>
@@ -122,9 +125,9 @@ export default class CreateBooking extends Component {
                         <input type="text" 
                         className="form-control" 
                         id="Date" 
-                        name="VisitDate" 
+                        name="Date" 
                         placeholder="Enter date you want to visit"  
-                        defaultValue={this.state.VisitDate}  
+                        defaultValue={this.state.Date}  
                         onChange={this.handleInputChange} />
                         
                     </div>
@@ -159,6 +162,9 @@ export default class CreateBooking extends Component {
                     </button>
                    
                     </form>
+                <br/>
+                    <button className ="btn btn-success"><a href="/" style={{textDecoration:'none' ,color:'white' }}>  Dashboard </a></button>
+
                   
      
 

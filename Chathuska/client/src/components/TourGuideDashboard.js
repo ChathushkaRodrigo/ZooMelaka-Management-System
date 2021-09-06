@@ -4,9 +4,6 @@ import axios from 'axios';
 import '../css/tour-guide-dashboard.css'
 
 
-
-
-
 class TourGuideDashboard extends Component {
   constructor(props) {
     super(props);
@@ -73,36 +70,35 @@ handleSearchBookingQuery =(e)=>{
     return (
 
       <div className="tgdb" >
-       
-
         <div className="hero-image">
-                <div className="bg_banner"></div>
+                <div className="bg_banner"></div> &nbsp;
                 <div className="hero-text">
-                    <h1>Tour Guide Dashboard <br/>
-                        <font color="#1473E6">WITH</font> <br/>
+                    <h1 ><center>Tour Guide Dashboard</center> <br/>
+                        <font color="#1473E6">WITH</font> <br/><br/>
                         DESTINATIONS </h1>
                         <p>With a whole new experience and completely adaptable. <br/>
                         Booking, your significant serenity begins second <br/>
                         you start dreaming.</p>
                    
                 </div>
+
                 
             </div>
 
         <br/>
       
 
-        <table className= "table table-hover" >
-          <thead className="thead-dark">
+        <table className= "table table-bordered" >
+          <thead className="thead-bg-dark">
             <tr>
             <th scope="col">#</th>
             <th scope="col"><b>Customer Name</b></th>
-            <th scope="col">Customer Email</th>
-            <th scope="col">Mobile No</th>
-            <th scope="col">Tour Option</th>
-            <th scope="col">Date</th>
-            <th scope="col">Time</th>
-            <th scope="col">Tour Guide </th>
+            <th scope="col"><b>Customer Email</b></th>
+            <th scope="col"><b>Mobile No</b></th>
+            <th scope="col"><b>Tour Option</b></th>
+            <th scope="col"><b>Date</b></th>
+            <th scope="col"><b>Time</b></th>
+            <th scope="col"><b>Tour Guide</b> </th>
             <th scope="col">Action</th>
             
             </tr>
@@ -126,9 +122,9 @@ handleSearchBookingQuery =(e)=>{
                 <td>
                   
                   <a className="btn btn-warning" href={`/edit/${booking._id}`}>
-                    <i className="fas fa-edit"></i> &nbsp; Edit
+                     Edit  &nbsp;
                   </a>
-                  &nbsp; 
+                  &nbsp;  &nbsp; &nbsp;
                   <a className="btn btn-danger" hred="" onClick={() =>this.onDelete(booking._id)}>
                     <i className="far fa-trash-alt"></i> &nbsp; Delete
                   </a>

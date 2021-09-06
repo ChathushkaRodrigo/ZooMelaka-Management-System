@@ -185,6 +185,8 @@ class EditBooking extends PureComponent {
                    </button>
                   
                    </form>
+                   &nbsp;
+                    <button className ="btn btn-success"><a href="/" style={{textDecoration:'none' ,color:'white' }}>  Dashboard </a></button>
 
 
 

@@ -15,14 +15,14 @@ class NavBar extends PureComponent {
         return (
             
               
-         <nav className="navbar navbar-expand-lg ">
+         <nav >
         <label className="logo">Zoo</label>
         <ul>
-            <li> <a className="active" href="#">Home</a></li>
+            <li> <a href=""> Home</a></li>
             <li><a href="/">Tour Guide Dashboard</a></li>
-            <li><a href="">Services</a></li>
-            <li><a href="">Contact</a></li>
-            <li><a href="">Feedback</a></li>
+            <li><a href="/add">Add a new booking</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Feedback</a></li>
         </ul>
     </nav>
 

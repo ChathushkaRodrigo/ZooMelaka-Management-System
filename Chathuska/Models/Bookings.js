@@ -17,7 +17,7 @@ const bookingSchema =new mongoose.Schema({
         type :String,
         required :true
     },  
-    VisitDate:{
+    Date:{
         type :String,
         required :true
     },
