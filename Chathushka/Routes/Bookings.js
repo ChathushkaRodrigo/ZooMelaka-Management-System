@@ -15,12 +15,13 @@ router.post('/booking/save',(req,res)=>{
         if(err){
             return res.status(400).json({
                 error:err
-            });
+            }); 
 
         }
         return res.status(200).json({
             success:"Booking saved successfully "
         });
+        
 
     });
 
@@ -44,9 +45,6 @@ router.get("/booking/:id",(req,res)=>{
     });
 });
 
-
-
-
 //get booking details
 
 router.get('/booking',(req,res)=>{
@@ -62,8 +60,7 @@ router.get('/booking',(req,res)=>{
             success:true,
             existingBookings:booking
         });
-    });
-    
+    }); 
 
 });
 
