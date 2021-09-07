@@ -73,13 +73,7 @@ handleSearchBookingQuery =(e)=>{
         <div className="hero-image">
                 <div className="bg_banner"></div> &nbsp;
                 <div className="hero-text">
-                    <h1 ><center>Tour Guide Dashboard</center> <br/>
-                        <font color="#1473E6">WITH</font> <br/><br/>
-                        DESTINATIONS </h1>
-                        <p>With a whole new experience and completely adaptable. <br/>
-                        Booking, your significant serenity begins second <br/>
-                        you start dreaming.</p>
-                   
+                    <h1 ><center>Tour Guide Dashboard</center> <br/></h1>                       
                 </div>
 
                 

@@ -47,7 +47,8 @@ export default class CreateBooking extends Component {
 
         axios.post("http://localhost:8015/booking/save", data).then((res)=>{
             if(res.data.success){
-
+                alert(`New Booking created successfully for email  ${CustomerEmail}`)
+               
                 this.setState(
                 {
                     CustomerEmail:"",
@@ -61,6 +62,8 @@ export default class CreateBooking extends Component {
                 });
             }
         });
+
+        
     }
 
     render() {
@@ -74,15 +77,18 @@ export default class CreateBooking extends Component {
            
                     <br/>
 
-                    <form className="needs-validation" noValidate>
+                    <form className="needs-validation"  >
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label for="emailC" style={{marginBottom:'5px'}}>Email address</label>
                     <input type="text" 
                         className="form-control" 
                         name="CustomerEmail" 
+                        id="cEmail"
                         placeholder="Enter your email " 
                         defaultValue={this.state.CustomerEmail}
-                        onChange={this.handleInputChange} />
+                        onChange={this.handleInputChange}  
+                       
+                         required/>
                         
                     </div>
 
@@ -94,7 +100,7 @@ export default class CreateBooking extends Component {
                         id="cName" name="CustomerName" 
                         placeholder="Enter your Name" 
                         defaultValue= {this.state.CustomerName}  
-                        onChange={this.handleInputChange}/>
+                        onChange={this.handleInputChange} required/>
                         
                     </div>
                     <br/>
@@ -105,7 +111,7 @@ export default class CreateBooking extends Component {
                         id="MobileNo"name="MobileNumber" 
                         placeholder="Enter your mobile number"
                         defaultValue={this.state.MobileNumber}  
-                        onChange={this.handleInputChange} />
+                        onChange={this.handleInputChange}  required/>
                         
                     </div>
                     <br/>
@@ -116,7 +122,7 @@ export default class CreateBooking extends Component {
                         id="TourOp" name="TourOption" 
                         placeholder="Enter tour option" 
                         defaultValue={this.state.TourOption}  
-                        onChange={this.handleInputChange} />
+                        onChange={this.handleInputChange} required />
                         
                     </div>
                     <br/>
@@ -128,7 +134,7 @@ export default class CreateBooking extends Component {
                         name="Date" 
                         placeholder="Enter date you want to visit"  
                         defaultValue={this.state.Date}  
-                        onChange={this.handleInputChange} />
+                        onChange={this.handleInputChange}  required/>
                         
                     </div>
                     <br/>
@@ -140,7 +146,7 @@ export default class CreateBooking extends Component {
                         name="Time"
                         placeholder="Time you want to visit" 
                         defaultValue={this.state.Time}  
-                        onChange={this.handleInputChange} />
+                        onChange={this.handleInputChange} required />
                         
                     </div>
                     <br/>
@@ -152,7 +158,7 @@ export default class CreateBooking extends Component {
                         name="TourGuideName" 
                         placeholder="Enter tour guide name" 
                         defaultValue={this.state.TourGuideName}  
-                        onChange={this.handleInputChange}/>
+                        onChange={this.handleInputChange} required/>
                         
                     </div>
                         <br/><br/>
@@ -160,11 +166,14 @@ export default class CreateBooking extends Component {
                         <i className="far fa-check-square"></i>
                         &nbsp; Submit Booking
                     </button>
+
+                    
+                    
                    
                     </form>
                 <br/>
-                    <button className ="btn btn-success"><a href="/" style={{textDecoration:'none' ,color:'white' }}>  Dashboard </a></button>
 
+                <button className ="btn btn-success"><a href="/" style={{textDecoration:'none' ,color:'white' }}>  Dashboard </a></button>
                   
      
 

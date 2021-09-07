@@ -14,8 +14,9 @@ const URL = process.env.MONGODB_URL;
 mongoose.connect(URL,{
     useCreateIndex: true,
     useNewUrlParser: true,
-    useUnifieldTopologyL: true,
-    useFindAndModify: false
+    useUnifieldTopology: true,
+    useFindAndModify: false,
+  
 });
 const connection = mongoose.connection;
 connection.once("open",() =>{
