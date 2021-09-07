@@ -1,58 +1,120 @@
-import React, {useState, useEffect} from 'react';
-//use effect is used to show what to show in a page component-dead-mount for class method
+import React, { Component } from 'react';
 import axios from 'axios';
 
-export default function AllAdoptions(){
 
-    const [adoptions, setAdoptions] = useState([]);
+class AllAdoptions extends Component {
+  constructor(props){
+    super(props);
 
-    useEffect(() => {
-        //where and how data is received
-        function getAdoptions(){
-            axios.get('http://localhost:8070/adoption/') //json.token is used as middleware when user login and authenticate json file. it is used as 2nd parameter in axios
-            .then((res)=>{
-                //console.log(res.data);
-                setAdoptions(res.data);
+    this.state={
+      adoptions:[]
+    };
+  }
 
-            }).catch((err) => {
-                alert(err.message);
-            });
+  componentDidMount(){
+    this.retrieveAdoptions();
+  }
+
+  retrieveAdoptions(){
+    axios.get("/adoption/").then(res =>{
+      if(res.data.success){
+        this.setState({
+          adoption:res.data.existingAdoptions
+        });
+
+        console.log(this.state.adoptions)
+      }
+    })
+  }
+
+  onDelete = (id) => {
+      axios.delete(`/adoption/delete/${id}`).then((res) => {
+          alert("Delete Successfull");
+          this.retrieveAdoptions();
+      })
+  }
+
+  filterData(adoptions, searchkey){
+    const result = adoptions.filter((employees) =>
+    adoptions.name.toLowerCase().includes(searchkey)
+    );
+    this.setState({adoptions:result});
+    }
+
+
+
+
+    handleSearchArea = (e) => {
+    const searchkey = e.currentTarget.value;
+
+    axios.get("/adoption/").then(res =>{
+        if(res.data.success){
+            this.filterData(res.data.existingAdoption, searchkey)
         }
-        getAdoptions();
-    }, [] /*empty array*/);
+        
+        });
+    }
 
-   let number = 1;
 
+  render() {
     return (
-        <div>
-            
-            <table class="table">
-            <thead class="thead-dark">
-            <tr>
-            <th scope="col">#</th>
-            <th scope="col">Animal Name</th>
-            <th scope="col">Adoption Level</th>
-            <th scope="col">Payment Plan</th>
-            </tr>
-                </thead>
-                <tbody>
-            {adoptions.map(adp => (
+ 
+        
+          <div className = "container">
+            <p>All Adoptions</p>
+            <table className="table">
+              <thead>
+              <tr>
+                <th scope= "col">#</th>
+                <th scope= "col">Animal Name</th>
+                <th scope= "col">Adoption Level</th>
+                <th scope= "col">Payment Plan</th>
+                <th scope= "col">Live Cam</th>
+                <th scope= "col">Adoption Date</th>
+                <th scope= "col">Animal Id</th>
+                <th scope= "col">Member Id</th>
+              </tr>
+              </thead>
+              <tbody>
+                {this.state.adoptions.map((adoptions, index) => (
+                  <tr key = {index}>
+                    <th scope="row">{index + 1}</th>
+                    <td>
+                        <a href = {`/details/${adoptions._id}`} style = {{textDecoration:"none"}}>
+                        {adoptions.animal_name}
+                        </a>
+                    </td>
+                    <td>{adoptions.adoption_level}</td>
+                    <td>{adoptions.payment_plan}</td>
+                    <td>{adoptions.live_cam}</td>
+                    <td>{adoptions.adoption_date}</td>
+                    <td>{adoptions.animal_id}</td>
+                    <td>{adoptions.member_id}</td>
+                    <td>
+                      <a className = "btn btn-warning" href = {`/edit/${adoptions._id}`}>
+                        <i className= "fas fa-edit"></i>&nbsp;Edit
+                      </a>
+                      &nbsp;
+                      <a className = "btn btn-danger" href = "#" onClick = {() => this.onDelete(adoptions._id)}>
+                        <i className= "far fa-trash-alt"></i>&nbsp;Delete
+                      </a>
 
-                <tr>
-                    <th scope="row">{number++}</th>
-                    <td>{adp.animal_name}</td>
-                    <td>{adp.adoption_level}</td>
-                    <td>{adp.payment_plan}</td>
-                </tr>
-            
-            ))}
+                    </td>
+                  </tr>
+                  ))}
 
-                </tbody>
+              </tbody>
             </table>
+            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange = {this.handleSearchArea}></input>
 
-        </div>
-    )
-
-    
+            <button className = "btn btn-success"><a href = "/add" style = {{textDecoration:"none", color:"white"}}>Create</a></button>
+            
+          </div>
+        
+        
+      
+    );
+  }
 }
 
+export default AllAdoptions;
