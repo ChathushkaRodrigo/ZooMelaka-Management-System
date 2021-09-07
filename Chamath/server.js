@@ -10,6 +10,10 @@ const mongoose = require('mongoose');
 
 const bodyParser = require('body-parser');
 
+//Import Cors
+
+const cors = require('cors');
+
 //Invoke Express To Run The Application
 
 const app = express();
@@ -23,6 +27,8 @@ const postRoutes_s = require('./routes/enclosures');
 //App Middleware
 
 app.use(bodyParser.json());
+
+app.use(cors());
 
 //Route Middleware
 
