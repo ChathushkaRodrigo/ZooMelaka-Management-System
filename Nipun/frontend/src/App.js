@@ -1,25 +1,26 @@
 import './App.css';
-import AddAdoption from './components/AddAdoption';
-import Header from './components/Header';
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import React, { Component } from 'react';
+import {BrowserRouter, Route} from 'react-router-dom';
 import AllAdoptions from './components/AllAdoptions';
+import AddAdoption from './components/AddAdoption';
 import UpdateAdoption from './components/UpdateAdoption';
+import AdoptionDetails from './components/AdoptionDetails';
+import Header from './components/Header';
 
 
-function App() {
+export default class App extends Component {
+render() {
   return (
-    <Router>
-    <div className="App">
+    <BrowserRouter>
+    <div className="container">
       <Header/>
-
-     
-      <Route path = "/add" exact component = {AddAdoption} />
-      <Route path = "/update" exact component = {UpdateAdoption} />
       <Route path = "/" exact component = {AllAdoptions} />
+      <Route path = "/add"  component = {AddAdoption} />
+      <Route path = "/edit/:id" component = {UpdateAdoption} />
+      <Route path = "/details/:id"  component = {AdoptionDetails} />
      
     </div>
-    </Router>
-  );
+    </BrowserRouter>
+    )
+  }
 }
-
-export default App;

@@ -19,7 +19,7 @@ class AdoptionDetails extends Component {
                     adoption: res.data.adoption
                 });
 
-                console.log(this.state.adoption);
+                console.log(id);
             }
         });
     }
@@ -44,4 +44,4 @@ class AdoptionDetails extends Component {
     }
 }
 
-export default EmployeeDetails;
+export default AdoptionDetails;
