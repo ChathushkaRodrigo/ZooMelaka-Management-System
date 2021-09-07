@@ -2,6 +2,7 @@ const express = require('express');
 const profiles = require('../models/uprofile');
 
 const Profiles = require('../models/uprofile');
+const Profile = require('../models/uprofile');
 
 const router = express.Router();
 
@@ -33,7 +34,24 @@ router.get('/profiles',(req,res)=>{
         }
         return res.status(200).json({
             success:true,
-            existingProfile:profiles
+            existingProfiles:profiles
+        });
+    });
+});
+
+//get a specific post
+
+router.get('/profile/:id',(req,res) =>{
+    
+    //let profileId = req.params.id;
+
+    Profile.findById(req.params.id,(err,profile) =>{
+        if(err){
+            return res.status(400).json({success:false, err});
+        }
+        return res.status(200).json({
+            success:true,
+            profile
         });
     });
 });
@@ -72,4 +90,4 @@ router.delete('/profile/delete/:id', (req,res)=>{
     });
 });
 
-module.exports = router;
+module.exports = router;   

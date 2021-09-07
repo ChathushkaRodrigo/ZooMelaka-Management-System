@@ -20,7 +20,7 @@ router.post('/post/savetask',(req,res)=>{
 
 });
 
-router.get('/poststask',(req,res)=>{
+router.get('/salaryroutestask',(req,res)=>{
 
     Posts.find().exec((err,posts) => {
         if(err){
@@ -35,7 +35,7 @@ router.get('/poststask',(req,res)=>{
     });
 });
 
-router.put('/post/updatetask/:id',(req,res) =>{
+router.put('/salaryroute/updatetask/:id',(req,res) =>{
     Posts.findByIdAndUpdate(
         req.params.id,
         {
@@ -54,7 +54,7 @@ router.put('/post/updatetask/:id',(req,res) =>{
     );
 });
 
-router.delete('/post/deletetask/:id',(req,res) =>{
+router.delete('/salaryroute/deletetask/:id',(req,res) =>{
     Posts.findByIdAndRemove(req.params.id).exec((err,deletedPost) =>{
        
         if(err) return res.staus(400).json({

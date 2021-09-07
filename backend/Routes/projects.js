@@ -5,7 +5,7 @@ const router = express.Router();
 
 //save posts
 
-router.post('/post/save',(req,res)=>{
+router.post('/projec/save',(req,res)=>{
     let newPost = new Posts(req.body);
 
     newPost.save((err) =>{
@@ -39,7 +39,7 @@ router.get('/projects',(req,res) =>{
 
 //update posts
 
-router.put('/post/update/:id',(req,res)=>{
+router.put('/project/update/:id',(req,res)=>{
     Posts.findByIdAndUpdate(
         req.params.id,
         {
@@ -59,7 +59,7 @@ router.put('/post/update/:id',(req,res)=>{
 
 //delete post
 
-router.delete('/post/delete/:id',(req,res)=>{
+router.delete('/project/delete/:id',(req,res)=>{
     Posts.findByIdAndRemove(req.params.id).exec((err,deletedPost) =>{
 
         if(err) return res.status(400).json({

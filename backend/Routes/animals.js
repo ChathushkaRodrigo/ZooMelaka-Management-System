@@ -35,7 +35,7 @@ newPost.save((err)=>{
 
 //Get A Specific Post
 
-router.get("/post_animal/:id",(req,res) => {
+router.get("/animal/:id",(req,res) => {
     let postId  = req.params.id;
     Posts.findById(postId,(err,post) => {
         if(err){

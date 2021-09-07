@@ -6,12 +6,28 @@ const cors =require('cors');
 
 //Import Routes
 const bookingRoutes =require('./Routes/Bookings');
+const animalRoutes = require('./Routes/animals');
+const enclosureRoutes = require('./Routes/enclosures');
+const adoptionRouter = require("./Routes/adoptions.js");
+const profileRoutes = require('./Routes/uprofile');
+const shasPosts = require('./Routes/posts');
+const postDailytast = require('./Routes/salaryroute');
+const postProjects = require('./Routes/projects');
 
 //App MiddleWare
 app.use(bodyparser.json());
 app.use(cors());
 //Route MiddleWare
 app.use(bookingRoutes);
+app.use(animalRoutes);
+app.use(enclosureRoutes);
+app.use(adoptionRouter);
+app.use(profileRoutes);
+app.use(shasPosts);
+app.use(postDailytast);
+app.use(postProjects);
+
+
 
 //Import me later to dotEnv file
 const PORT =8015;
@@ -24,7 +40,7 @@ mongoose.connect(DB_URL,{
     useUnifiedTopology: true,
     useNewUrlParser:true
 }).then(()=>{
-    console.log("Mongoose Connection Successful");
+    console.log("==================Mongoose Connection Successful===========================");
 }).catch((err)=>{
     console.log('DB Connnection Error',err);
 })
