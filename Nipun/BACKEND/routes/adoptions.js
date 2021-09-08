@@ -3,7 +3,7 @@ const router = require("express").Router();
 let Adoption = require("../models/adoption.js");
 
 //in "/student" url when direct to "student/add"
-router.route("/add").post((req ,res) => {
+router.route("/adoption/add").post((req ,res) => {
 
     //body is the body-part in request which sends from frontend to backend 
 
@@ -37,7 +37,7 @@ router.route("/add").post((req ,res) => {
 } )
 
 //to get employee details when view is opened in html
-router.route("/").get((req, res)=> {
+router.route("/adoption/").get((req, res)=> {
     Adoption.find().exec((err,adoptions) => {
         if(err){
             return res.status(400).json({
@@ -57,7 +57,7 @@ router.route("/").get((req, res)=> {
 //update one employee's data
 //:id is meant to get value as id after /update
 
-router.route("/update/:id").post(async (req, res) => {
+router.route("/adoption/update/:id").post(async (req, res) => {
     //put is to get exist data and replace with update data
 
     let adoptionId = req.params.id; //fetch id from url
@@ -92,7 +92,7 @@ router.route("/update/:id").post(async (req, res) => {
 
 //delete an employee
 
-router.route("/delete/:id").delete(async (req, res) => {
+router.route("/adoption/delete/:id").delete(async (req, res) => {
     //send delete method instead post or put
     let adoptionId = req.params.id;
     
@@ -112,7 +112,7 @@ router.route("/delete/:id").delete(async (req, res) => {
 
 //fetch one employee's data
 
-router.route("/get/:id").get(async (req, res) => {
+router.route("/adoption/get/:id").get(async (req, res) => {
 
     let adoptionId = req.params.id;
     
