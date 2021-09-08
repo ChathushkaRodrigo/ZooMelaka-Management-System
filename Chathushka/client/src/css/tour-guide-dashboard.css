@@ -1,0 +1,24 @@
+.hero-image .bg_banner {
+  display: block;
+  position: relative;
+  top: -83px;
+  width: 25%;
+  float: right;
+  color: violet;
+  height: 700px;
+  background-image: url(../images/016.png);
+  background-position: right;
+  background-size: 83%;
+  background-repeat: no-repeat;
+}
+.hero-text {
+  display: block;
+  position: relative;
+  padding: 30px;
+  text-align: left;
+  position: absolute;
+  color: #474747;
+  top: 20%;
+  margin-left: 40px;
+}
+
