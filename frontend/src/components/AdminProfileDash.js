@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class Home extends Component {
+class AdminProfileDash extends Component {
 
   constructor(props){
     super(props);
@@ -40,7 +40,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        {this.state.profiles.map(profiles => (
+        
           <div className="container">
             
             <p>All Profile</p>
@@ -71,11 +71,11 @@ class Home extends Component {
                     <td>{profiles.email}</td>
                     <td>{profiles.password}</td>                    
                     <td>
-                        <a className="btn btn-warning" href={`/edit/${profiles._id}`}>
+                        <a className="btn btn-warning" href={`profile/update/${profiles._id}`}>
                             <i className="fas fa-edit"></i>&nbsp;Edit                        
                         </a>
                       &nbsp;
-                        <a className="btn btn-danger" href="/#" onClick={() =>this.onDelete(profiles._id)}>
+                        <a className="btn btn-danger" href="/adminprofiledash" onClick={() =>this.onDelete(profiles._id)}>
                             <i className="far fa-trash-alt"></i>&nbsp;Delete                        
                         </a>
                     </td>
@@ -84,14 +84,14 @@ class Home extends Component {
               </tbody>
             </table>  
 
-            <button className="btn btn-success"><a href="/add" style={{textDecoration:'none', color:'white'}}>Create New Profile</a></button>
+            <button className="btn btn-success"><a href="/createprofile" style={{textDecoration:'none', color:'white'}}>Create New Profile</a></button>
             <button className="btn btn-success"><a href="/login" style={{textDecoration:'none', color:'white'}}>Login</a></button>                 
 
           </div>
-        ))}          
+        
       </div>
     );
   }
   
 }
-export default Home;
+export default AdminProfileDash;

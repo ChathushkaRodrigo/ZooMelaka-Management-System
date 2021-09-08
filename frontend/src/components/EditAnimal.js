@@ -54,7 +54,7 @@ export default class EditAnimal extends Component{
 
         console.log(data);
 
-        axios.put(`/animal/update/${id}`,data).then((res)=>{
+        axios.put(`http://localhost:8015/animal/update/${id}`,data).then((res)=>{
             if(res.data.success){
                 alert("Animal Portfolio Updated Successfully!")
                 this.setState({
@@ -76,7 +76,7 @@ export default class EditAnimal extends Component{
 
     componentDidMount(){
         const id = this.props.match.params.id;
-        axios.get(`/animal/${id}`).then((res)=>{
+        axios.get(`http://localhost:8015/animal/${id}`).then((res)=>{
             if (res.data.success){
                 this.setState({
                     Feeding_And_Watering_Date:res.data.post.Feeding_And_Watering_Date,

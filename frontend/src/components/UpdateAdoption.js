@@ -51,7 +51,7 @@ class UpdateAdoption extends Component {
         e.preventDefault();
         const id = this.props.match.params.id;
         
-        console.log('Employee data', this.state);
+        console.log('Adoption data', this.state);
 
         const adoption = {
             animal_name : this.state.animal_name,
@@ -62,7 +62,7 @@ class UpdateAdoption extends Component {
             animal_id: this.state.animal_id,
             member_id: this.state.member_id
         }
-        axios.put(`/adoption/update/${id}`, adoption).then(() => {
+        axios.post(`http://localhost:8015/adoption/update/${id}`, adoption).then(() => {
             alert('Adoption Record updated');
         })
         .catch(error => {
@@ -74,17 +74,16 @@ class UpdateAdoption extends Component {
     componentDidMount() {
         const id = this.props.match.params.id;
 
-        axios.get(`/adoption/get/${id}`).then((res) => {
+        axios.get(`http://localhost:8015/adoption/get/${id}`).then((res) => {
             if (res.data.success){
                 this.setState({
                     animal_name: res.data.adoption.animal_name,
-                    animal_name: res.data.adoption.animal_name,
-                    adoption_level: res.data.adoption.animal_name,
-                    payment_plan: res.data.adoption.animal_name,
-                    live_cam: res.data.adoption.animal_name,
-                    adoption_date: res.data.adoption.animal_name,
-                    animal_id: res.data.adoption.animal_name,
-                    member_id: res.data.adoption.animal_name
+                    adoption_level: res.data.adoption.adoption_level,
+                    payment_plan: res.data.adoption.payment_plan,
+                    live_cam: res.data.adoption.live_cam,
+                    adoption_date: res.data.adoption.adoption_date,
+                    animal_id: res.data.adoption.animal_id,
+                    member_id: res.data.adoption.member_id
                 });
 
                 console.log(res.data.adoption);
@@ -102,7 +101,7 @@ class UpdateAdoption extends Component {
                 </div>
                 <div className="form-group">
                     <label for="age">Adoption Level</label>
-                    <input type="number" className="form-control" id="age" value = {this.state.adoption_level} onChange = {this.setAdoptionLevel}/>
+                    <input type="text" className="form-control" id="age" value = {this.state.adoption_level} onChange = {this.setAdoptionLevel}/>
                     
                 </div>
                 <div className="form-group">
@@ -112,22 +111,22 @@ class UpdateAdoption extends Component {
                 </div>
                 <div className="form-group">
                     <label for="age">Live Cam</label>
-                    <input type="number" className="form-control" id="age"  value = {this.state.live_cam} onChange = {this.setLiveCam}/>
+                    <input type="text" className="form-control" id="age"  value = {this.state.live_cam} onChange = {this.setLiveCam}/>
                     
                 </div>
                 <div className="form-group">
                     <label for="age">Adoption Date</label>
-                    <input type="number" className="form-control" id="age"  value = {this.state.adoption_date} onChange = {this.setAdoptionDate}/>
+                    <input type="date" className="form-control" id="age"  value = {this.state.adoption_date} onChange = {this.setAdoptionDate}/>
                     
                 </div>
                 <div className="form-group">
                     <label for="age">Animal Id</label>
-                    <input type="number" className="form-control" id="age"  value = {this.state.animal_id} onChange = {this.setAnimalId}/>
+                    <input type="text" className="form-control" id="age"  value = {this.state.animal_id} onChange = {this.setAnimalId}/>
                     
                 </div>
                 <div className="form-group">
                     <label for="age">Member Id</label>
-                    <input type="number" className="form-control" id="age" value = {this.state.member_id} onChange = {this.setMemberId}/>
+                    <input type="text" className="form-control" id="age" value = {this.state.member_id} onChange = {this.setMemberId}/>
                     
                 </div>
               <button className="btn btn-primary" onClick = {this.saveAdoption}>Update</button>

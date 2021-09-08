@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 // Usage Of React Class Component
 // Shows The Page When The Server Is First Loaded
 // User Should Be Able To View All The Initially Posted Content
@@ -24,7 +25,7 @@ componentDidMount(){
 //Method For GET Content For Animal
 
 retrieveAnimal(){
-axios.get("/animal").then(res=>{
+axios.get("http://localhost:8015/animal").then(res=>{
   if(res.data.success){
     this.setState({
       zooAnimal:res.data.existingPosts
@@ -35,7 +36,7 @@ axios.get("/animal").then(res=>{
 }
 
 onDelete = (id) => {
-  axios.delete(`/animal/delete/${id}`).then((res) =>{
+  axios.delete(`http://localhost:8015/animal/delete/${id}`).then((res) =>{
     alert("The Animal Record Is Deleted Successfully!");
     this.retrieveAnimal();
   })
@@ -50,7 +51,7 @@ filterData(zooAnimal,searchAnimalKey){
 
 handleSearchArea = (e) => {
   const searchAnimalKey = e.currentTarget.value;
-  axios.get("/animal").then(res=>{
+  axios.get("http://localhost:8015/animal").then(res=>{
     if(res.data.success){
      this.filterData(res.data.existingPosts,searchAnimalKey)
     }
@@ -100,7 +101,7 @@ handleSearchArea = (e) => {
                   <tr key={index}>
                     <th scope="row">{index+1}</th>
                     <td>
-                      <a href={`animal/${zooAnimal._id}`} style = {{textDecoration:'none'}}>
+                      <a href={`animal/details/${zooAnimal._id}`} style = {{textDecoration:'none'}}>
                       {zooAnimal.Animal_ID}
                       </a>
                     </td>
@@ -117,7 +118,7 @@ handleSearchArea = (e) => {
                     <td>{zooAnimal.Time_Of_Treatment_And_Medical_Care}</td>
                     <td>{zooAnimal.Current_Enclosure_ID}</td>
                     <td>
-                        <a className="btn btn-warning" href={`/edit/${zooAnimal._id}`}>
+                        <a className="btn btn-warning" href={`animal/update/${zooAnimal._id}`}>
                             <i className="fas fa-edit"></i>&nbsp;Update
                         </a>
                         &nbsp;
@@ -132,7 +133,7 @@ handleSearchArea = (e) => {
               </tbody>
         </table>
 
-        <button className="btn btn-success"><a href="/add" style={{textDecoration:'none',color:'white'}}>Create Animal Portfolio</a></button>
+        <button className="btn btn-success"><a href="animal/add" style={{textDecoration:'none',color:'white'}}>Create Animal Portfolio</a></button>
 
     </div>)
   }

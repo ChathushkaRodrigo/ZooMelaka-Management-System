@@ -10,7 +10,7 @@ export default class AnimalDetails extends Component{
 
     componentDidMount(){
         const id = this.props.match.params.id;
-        axios.get(`/animal/${id}`).then((res)=>{
+        axios.get(`http://localhost:8015/animal/${id}`).then((res)=>{
             if (res.data.success){
                 this.setState({
                     zooAnimal:res.data.post
@@ -34,8 +34,8 @@ export default class AnimalDetails extends Component{
                 Time_Of_Treatment_And_Medical_Care,
                 Current_Enclosure_ID } = this.state.zooAnimal;
         return(
-            <div style={{marginTop:'20px'}} style={{backgroundColor:'#F8F8FF'}}>
-            <h4 style={{fontFamily:'"Arial","Helvetica",sans-serif'}} style={{textDecoration:'underline'}}>Retrieve Animal Portfolio</h4>
+            <div style={{marginTop:'20px',backgroundColor:'#F8F8FF'}}>
+            <h4 style={{fontFamily:'"Arial","Helvetica",sans-serif',textDecoration:'underline'}}>Retrieve Animal Portfolio</h4>
             <hr/>
             <dl className="row">
 

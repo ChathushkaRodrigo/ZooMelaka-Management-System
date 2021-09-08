@@ -65,7 +65,7 @@ export default class CreateAnimal extends Component{
 
         console.log(data);
 
-        axios.post("/animal/save",data).then((res)=>{
+        axios.post("http://localhost:8015/animal/save",data).then((res)=>{
             if(res.data.success){
                 this.setState({
                     Animal_ID:"",

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-   
+
 class AddAdoption extends Component {
 
     constructor(props){
@@ -63,7 +63,7 @@ class AddAdoption extends Component {
             animal_id: this.state.animal_id,
             member_id: this.state.member_id
         }
-        axios.post("/adoption/add", adoption).then(() => {
+        axios.post("http://localhost:8015/adoption/add", adoption).then(() => {
             alert('adoption report added');
         })
         .catch(error => {
@@ -82,7 +82,7 @@ class AddAdoption extends Component {
                 </div>
                 <div className="form-group">
                     <label for="age">Adoption Level</label>
-                    <input type="number" className="form-control" id="age" placeholder="Enter Adoption Level" value = {this.state.adoption_level} onChange = {this.setAdoptionLevel}/>
+                    <input type="text" className="form-control" id="age" placeholder="Enter Adoption Level" value = {this.state.adoption_level} onChange = {this.setAdoptionLevel}/>
                     
                 </div>
                 <div className="form-group">
@@ -92,60 +92,22 @@ class AddAdoption extends Component {
                 </div>
                 <div className="form-group">
                     <label for="age">Live Cam</label>
-                    <input type="number" className="form-control" id="age" placeholder="Enter Live Cam" value = {this.state.live_cam} onChange = {this.setLiveCam}/>
+                    <input type="text" className="form-control" id="age" placeholder="Enter Live Cam" value = {this.state.live_cam} onChange = {this.setLiveCam}/>
                     
                 </div>
                 <div className="form-group">
                     <label for="age">Adoption Date</label>
-                    <input type="number" className="form-control" id="age" placeholder="Enter Adoption Date" value = {this.state.adoption_date} onChange = {this.setAdoptionDate}/>
+                    <input type="date" className="form-control" id="age" placeholder="Enter Adoption Date" value = {this.state.adoption_date} onChange = {this.setAdoptionDate}/>
                     
                 </div>
                 <div className="form-group">
                     <label for="age">Animal Id</label>
-                    <input type="number" className="form-control" id="age" placeholder="Enter Animal Id" value = {this.state.animal_id} onChange = {this.setAnimalId}/>
+                    <input type="text" className="form-control" id="age" placeholder="Enter Animal Id" value = {this.state.animal_id} onChange = {this.setAnimalId}/>
                     
                 </div>
                 <div className="form-group">
                     <label for="age">Member Id</label>
-                    <input type="number" className="form-control" id="age" placeholder="Enter Memeber Id" value = {this.state.member_id} onChange = {this.setMemberId}/>
-                    
-                </div>
-                  <button className="btn btn-primary" onClick = {this.saveAdoption}>Submit</button>
-            
-            </div>
-        );
-    }
-}
-
-export default AddAdoption;               <div>
-                <div className="form-group">
-                    <label for="age">Adoption Level</label>
-                    <input type="number" className="form-control" id="age" placeholder="Enter Adoption Level" value = {this.state.adoption_level} onChange = {this.setAdoptionLevel}/>
-                    
-                </div>
-                <div className="form-group">
-                    <label for="name">Payment Plan</label>
-                    <input type="text" className="form-control" id="gender" placeholder="Enter Payment Plan" value = {this.state.payment_plan} onChange = {this.setPaymentPlan}/>
-                    
-                </div>
-                <div className="form-group">
-                    <label for="age">Live Cam</label>
-                    <input type="number" className="form-control" id="age" placeholder="Enter Live Cam" value = {this.state.live_cam} onChange = {this.setLiveCam}/>
-                    
-                </div>
-                <div className="form-group">
-                    <label for="age">Adoption Date</label>
-                    <input type="number" className="form-control" id="age" placeholder="Enter Adoption Date" value = {this.state.adoption_date} onChange = {this.setAdoptionDate}/>
-                    
-                </div>
-                <div className="form-group">
-                    <label for="age">Animal Id</label>
-                    <input type="number" className="form-control" id="age" placeholder="Enter Animal Id" value = {this.state.animal_id} onChange = {this.setAnimalId}/>
-                    
-                </div>
-                <div className="form-group">
-                    <label for="age">Member Id</label>
-                    <input type="number" className="form-control" id="age" placeholder="Enter Memeber Id" value = {this.state.member_id} onChange = {this.setMemberId}/>
+                    <input type="text" className="form-control" id="age" placeholder="Enter Memeber Id" value = {this.state.member_id} onChange = {this.setMemberId}/>
                     
                 </div>
                   <button className="btn btn-primary" onClick = {this.saveAdoption}>Submit</button>

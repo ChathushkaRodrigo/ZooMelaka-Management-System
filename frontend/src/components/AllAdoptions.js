@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import axios from 'axios';
 
@@ -16,10 +17,10 @@ class AllAdoptions extends Component {
   }
 
   retrieveAdoptions(){
-    axios.get("/adoption/").then(res =>{
+    axios.get("http://localhost:8015/adoption/").then(res =>{
       if(res.data.success){
         this.setState({
-          adoption:res.data.existingAdoptions
+          adoptions:res.data.existingAdoptions
         });
 
         console.log(this.state.adoptions)
@@ -28,14 +29,14 @@ class AllAdoptions extends Component {
   }
 
   onDelete = (id) => {
-      axios.delete(`/adoption/delete/${id}`).then((res) => {
+      axios.delete(`http://localhost:8015/adoption/delete/${id}`).then((res) => {
           alert("Delete Successfull");
           this.retrieveAdoptions();
       })
   }
 
   filterData(adoptions, searchkey){
-    const result = adoptions.filter((employees) =>
+    const result = adoptions.filter((adoption) =>
     adoptions.name.toLowerCase().includes(searchkey)
     );
     this.setState({adoptions:result});
@@ -47,9 +48,9 @@ class AllAdoptions extends Component {
     handleSearchArea = (e) => {
     const searchkey = e.currentTarget.value;
 
-    axios.get("/adoption/").then(res =>{
+    axios.get("http://localhost:8015/adoption/").then(res =>{
         if(res.data.success){
-            this.filterData(res.data.existingAdoption, searchkey)
+            this.filterData(res.data.existingAdoptions, searchkey)
         }
         
         });
@@ -80,7 +81,7 @@ class AllAdoptions extends Component {
                   <tr key = {index}>
                     <th scope="row">{index + 1}</th>
                     <td>
-                        <a href = {`/details/${adoptions._id}`} style = {{textDecoration:"none"}}>
+                        <a href = {`adoption/details/${adoptions._id}`} style = {{textDecoration:"none"}}>
                         {adoptions.animal_name}
                         </a>
                     </td>
@@ -91,7 +92,7 @@ class AllAdoptions extends Component {
                     <td>{adoptions.animal_id}</td>
                     <td>{adoptions.member_id}</td>
                     <td>
-                      <a className = "btn btn-warning" href = {`/edit/${adoptions._id}`}>
+                      <a className = "btn btn-warning" href = {`adoption/edit/${adoptions._id}`}>
                         <i className= "fas fa-edit"></i>&nbsp;Edit
                       </a>
                       &nbsp;
@@ -107,7 +108,7 @@ class AllAdoptions extends Component {
             </table>
             <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange = {this.handleSearchArea}></input>
 
-            <button className = "btn btn-success"><a href = "/add" style = {{textDecoration:"none", color:"white"}}>Create</a></button>
+            <button className = "btn btn-success"><a href = "/adoption/add" style = {{textDecoration:"none", color:"white"}}>Create</a></button>
             
           </div>
         

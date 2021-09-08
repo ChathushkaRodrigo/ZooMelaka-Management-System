@@ -110,7 +110,7 @@ class TourGuideDashboard extends Component {
                 <td>{booking.Time} </td>
                 <td>{booking.TourGuideName}</td>
                 <td>
-                  <a className="btn btn-warning" href={`/edit/${booking._id}`}>
+                  <a className="btn btn-warning" href={`booking/update/${booking._id}`}>
                     Edit &nbsp;
                   </a>
                   &nbsp; &nbsp; &nbsp;
@@ -127,7 +127,7 @@ class TourGuideDashboard extends Component {
         </table>
 
         <button className="btn btn-success">
-          <a href="/add" style={{ textDecoration: "none", color: "white" }}>
+          <a href="booking/add" style={{ textDecoration: "none", color: "white" }}>
             {" "}
             Add new Tour Booking{" "}
           </a>

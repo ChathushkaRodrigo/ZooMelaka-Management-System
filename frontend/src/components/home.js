@@ -15,7 +15,7 @@ export default function home() {
                     <button> JOIN US</button>
                 </div>
                     <div className="hero-buttons">
-                        <button><a href="/booking">LOG IN</a></button>
+                        <button><a href="/login">LOG IN</a></button>
                         <button>SIGN UP</button>
 
                         <div className="home-search">

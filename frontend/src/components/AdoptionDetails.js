@@ -13,13 +13,13 @@ class AdoptionDetails extends Component {
     componentDidMount() {
         const id = this.props.match.params.id;
 
-        axios.get(`/adoption/get/${id}`).then((res) => {
+        axios.get(`http://localhost:8015/adoption/get/${id}`).then((res) => {
             if (res.data.success){
                 this.setState({
                     adoption: res.data.adoption
                 });
 
-                console.log(this.state.adoption);
+                console.log(id);
             }
         });
     }

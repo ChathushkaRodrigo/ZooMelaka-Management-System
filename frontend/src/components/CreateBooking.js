@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import '../css/create-booking.css'
+
 
 export default class CreateBooking extends Component {
     constructor(props) {
@@ -173,7 +173,7 @@ export default class CreateBooking extends Component {
                     </form>
                 <br/>
 
-                <button className ="btn btn-success"><a href="/" style={{textDecoration:'none' ,color:'white' }}>  Dashboard </a></button>
+                <button className ="btn btn-success"><a href="./TourGuideDashboard." style={{textDecoration:'none' ,color:'white' }}>  Dashboard </a></button>
                   
      
 
