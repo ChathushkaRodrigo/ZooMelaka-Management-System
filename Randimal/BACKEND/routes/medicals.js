@@ -1,89 +1,119 @@
-const router = require("express").Router();
-let Medical = require("../models/Medical");
-
-router.route("/add").post((req,res)=>{
 
 
-    const vetname = req.body.vetname;
-    const zkname = req.body.zkname;
-    const animalid = req.body.animalid;
-    const injid = Number(req.body.injid);
-    const surgeryinfo = req.body.surgeryinfo;
+const express= require("express");
+const { response } = require("express");
+let Medical = require("../models/medical");
 
-    const newMedical = new Medical({
-        vetname,
-        zkname,
-        animalid,
-        injid,
-        surgeryinfo
-    })
 
-    newMedical.save().then(()=>{
-        res.json("Medical Added")
-    }).catch((err)=>{
-        console.log(err);
-    })
+const router =express.Router();
 
-})
+//Save medical details 
 
-router.route("/").get((req,res)=>{
+router.post("/medical/add",(req,res)=>{
+
+    let newMedical = new Medical(req.body);
+
+    newMedical.save((err)=>{
+
+        if(err){
+            return res.status(400).json({
+                error:err
+            });
+
+        }
+        return res.status(200).json({
+            success:"Medical saved successfully "
+        });
+
+    });
+
+
+});
+
+
+
+
+//get medical details
+
+router.get('/medical',(req,res)=>{
+
+    Medical.find().exec((err,medical)=>{
+
+        if(err){
+            return res.status(400).json({
+                error:err
+            });
+        }
+        return res.status(200).json({
+            success:true,
+            existingMedical:medical
+        });
+    });
     
-    Medical.find().then((medicals)=>{
-        res.json(medicals)
-    }).catch((err)=>{
-        console.log(err)
-    })
-})
 
-router.route("/update/:id").put(async (req, res) =>{
-
-    let userId = req.params.id;
-    const {vetname,zkname,animalid,injid,surgeryinfo} = req.body;
-
-    const updateMedical = {
-        vetname,
-        zkname,
-        animalid,
-        injid,
-        surgeryinfo
-    }
-
-    const update = await Medical.findByIdAndUpdate(userId, updateMedical)
-    .then(() => {
-        res.status(200).send({status: "Record Updated", user: update})
-
-    }).catch((err) => {
-        console.log(err);
-        res.status(500).send({status: "Error with updating data", error: err.message});
-    })  
-})
-
-router.route("/delete/:id").delete(async (req,res) => {
-let userId = req.params.id;
-
-await Medical.findByIdAndDelete(userId)
-.then(() => {
-    res.status(200).send({status: "Record Updated", user: update})
-
-}).catch((err) => {
-    console.log(err);
-    res.status(500).send({status: "Error with updating data", error: err.message});
-    })
-})
-
-router.route("/get/:id").get(async (req, res) => {
-    let userId = req.params.id;
-    const user = await Medical.findById(userId)
-    .then(() => {
-        res.status(200).send({status: "User fetched", user: user})
-
-    }).catch(() => {
-        console.log(err.message);
-        res.status(500).send({status: "Error with get user", error: err.message});
+});
 
 
 
-    })
-})
 
-module.exports = router;
+//Update Medical Details
+
+router.put('/medical/update/:id',(req,res)=>{
+
+    Medical.findByIdAndUpdate(
+        req.params.id,
+        {
+            $set:req.body
+        },
+        (err,medical)=>{
+        
+            if(err){
+                return res.status(400).json({error:err});
+            }
+            return res.status(200).json({
+                success:"Success Update"
+            });
+        }
+    );
+
+});
+
+
+
+
+
+//Delete Medical Details
+
+router.delete('/medical/delete/:id',(req,res)=>{
+
+    Medical.findByIdAndRemove(req.params.id).exec((err,deletedmedical)=>{
+
+        if(err) return res.status(400).json({
+            
+        message :"Unsuccessful delete",err 
+    });
+        
+        return res.status(200).json({
+             message:"Success delete",deletedmedical
+        });
+    });
+});
+
+
+
+
+router.get("/medical/get/:id",(req,res) =>{
+    let medicalId =req.params.id;
+    Medical.findById(medicalId,(err,medical) =>{
+        if(err){
+            return res.status(400).json({succes:false,err})
+        }
+        return res.status(200).json({
+            success:true,
+            medical
+
+        });
+
+    });
+   })
+   module.exports = router;

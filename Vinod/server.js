@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
 
@@ -9,11 +10,12 @@ const postRoutes = require('./routes/projects');
 
 //app middleware
 app.use(bodyParser.json());
+app.use(cors());
 
 //route middleware
 app.use(postRoutes);
 
-const PORT = 9000;
+const PORT = 7070;
 const DB_URL = 'mongodb+srv://ZooDatabaseAdmin:melaka123@zoo-managment-system-cl.lbmt4.mongodb.net/ZooManagementSystem?retryWrites=true&w=majority';
 
 mongoose.connect(DB_URL,{
