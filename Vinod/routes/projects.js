@@ -83,7 +83,7 @@ router.delete('/post/delete/:id',(req,res)=>{
         });
 
         return res.json({
-            message:"Delete Succesfull",dele
+            message:"Delete Succesfull",deletedPost
         })
     });
 });

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import axios from 'axios';
 import NavBar from './NavBar';
@@ -18,7 +19,7 @@ export default class Search extends Component {
   }
 
   retrievePosts(){
-    axios.get("http://localhost:7070/projects").then(res =>{
+    axios.get('http://localhost:7070/projects').then(res =>{
       if(res.data.success){
         this.setState({
           projects:res.data.existingPosts
@@ -111,7 +112,6 @@ export default class Search extends Component {
                   </a>
                   &nbsp;
                   <a className="btn btn-danger"
-                  href="#"
                   onClick={() =>this.onDelete(projects._id)}>
                     <i className="far fa-trash-alt"></i>&nbsp; Delete
                   </a>
