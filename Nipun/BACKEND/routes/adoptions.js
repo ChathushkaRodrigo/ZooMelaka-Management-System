@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const adoption = require("../models/adoption.js");
+
 let Adoption = require("../models/adoption.js");
 
 //in "/student" url when direct to "student/add"
@@ -57,7 +57,7 @@ router.route("/").get((req, res)=> {
 //update one employee's data
 //:id is meant to get value as id after /update
 
-router.route("/update/:id").put(async (req, res) => {
+router.route("/update/:id").post(async (req, res) => {
     //put is to get exist data and replace with update data
 
     let adoptionId = req.params.id; //fetch id from url
@@ -96,7 +96,7 @@ router.route("/delete/:id").delete(async (req, res) => {
     //send delete method instead post or put
     let adoptionId = req.params.id;
     
-    await adoption.findByIdAndDelete(adoptionId)
+    await Adoption.findByIdAndDelete(adoptionId)
     .then(() => {
         res.status(200).send({status: "adoption record deleted"});
     })

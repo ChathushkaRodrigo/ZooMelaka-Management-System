@@ -19,7 +19,7 @@ class AllAdoptions extends Component {
     axios.get("/adoption/").then(res =>{
       if(res.data.success){
         this.setState({
-          adoption:res.data.existingAdoptions
+          adoptions:res.data.existingAdoptions
         });
 
         console.log(this.state.adoptions)
@@ -35,7 +35,7 @@ class AllAdoptions extends Component {
   }
 
   filterData(adoptions, searchkey){
-    const result = adoptions.filter((employees) =>
+    const result = adoptions.filter((adoption) =>
     adoptions.name.toLowerCase().includes(searchkey)
     );
     this.setState({adoptions:result});
@@ -49,7 +49,7 @@ class AllAdoptions extends Component {
 
     axios.get("/adoption/").then(res =>{
         if(res.data.success){
-            this.filterData(res.data.existingAdoption, searchkey)
+            this.filterData(res.data.existingAdoptions, searchkey)
         }
         
         });
