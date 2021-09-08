@@ -1,9 +1,10 @@
 const router = require("express").Router();
-const adoption = require("../models/adoption.js");
+
 let Adoption = require("../models/adoption.js");
 
 //in "/student" url when direct to "student/add"
 router.route("/adoption/add").post((req ,res) => {
+
     //body is the body-part in request which sends from frontend to backend 
 
     const animal_name = req.body.animal_name;
@@ -36,19 +37,27 @@ router.route("/adoption/add").post((req ,res) => {
 } )
 
 //to get employee details when view is opened in html
-router.route("/alladoptions").get((req, res)=> {
-    Adoption.find().then((adoptions) => {
-        res.json(adoptions);
-    }).catch((err)=>{
-        console.log(err);
-    })
+router.route("/adoption/").get((req, res)=> {
+    Adoption.find().exec((err,adoptions) => {
+        if(err){
+            return res.status(400).json({
+                error:err
+            });
+        }
+
+        return res.status(200).json({
+            success:true,
+            existingAdoptions:adoptions
+        });
+    });
+        
 
 })
 
 //update one employee's data
 //:id is meant to get value as id after /update
 
-router.route("/updateadoptions/:id").put(async (req, res) => {
+router.route("/adoption/update/:id").post(async (req, res) => {
     //put is to get exist data and replace with update data
 
     let adoptionId = req.params.id; //fetch id from url
@@ -83,11 +92,11 @@ router.route("/updateadoptions/:id").put(async (req, res) => {
 
 //delete an employee
 
-router.route("/deleteadoptions/:id").delete(async (req, res) => {
+router.route("/adoption/delete/:id").delete(async (req, res) => {
     //send delete method instead post or put
     let adoptionId = req.params.id;
     
-    await adoption.findByIdAndDelete(adopotionId)
+    await Adoption.findByIdAndDelete(adoptionId)
     .then(() => {
         res.status(200).send({status: "adoption record deleted"});
     })
@@ -103,22 +112,21 @@ router.route("/deleteadoptions/:id").delete(async (req, res) => {
 
 //fetch one employee's data
 
-router.route("/getadoptions/:id").get(async (req, res) => {
+router.route("/adoption/get/:id").get(async (req, res) => {
 
     let adoptionId = req.params.id;
     
     //making user object to assign userdetail to send to front end
-    const user = await Adoption.findById(adoptionId)
-    .then((adoption) => {
-        res.status(200).send({status : "adoption record fetched", adoption}); //user is the object send here to pass user details
+    Adoption.findById(adoptionId, (err, adoption) => {
+        if(err){
+            return res.status(400).json({success: false, err});
+        }
 
-    })
-
-    .catch((err) => {
-        console.log(err.message);
-        res.status(500).send({status : "error with fetching user", error : err.message});
-
-    })
+        return res.status(200).json({
+            success:true,
+            adoption
+        });
+    });
 })
 
 module.exports = router;

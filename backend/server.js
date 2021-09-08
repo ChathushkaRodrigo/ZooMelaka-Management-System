@@ -8,11 +8,13 @@ const cors =require('cors');
 const bookingRoutes =require('./Routes/Bookings');
 const animalRoutes = require('./Routes/animals');
 const enclosureRoutes = require('./Routes/enclosures');
-const adoptionRouter = require("./Routes/adoptions.js");
+const adoptionRouter = require("./Routes/adoptions");
 const profileRoutes = require('./Routes/uprofile');
 const shasPosts = require('./Routes/posts');
 const postDailytast = require('./Routes/salaryroute');
 const postProjects = require('./Routes/projects');
+const researches =require('./Routes/researches');
+const medical =require('./Routes/medicals');
 
 //App MiddleWare
 app.use(bodyparser.json());
@@ -26,8 +28,8 @@ app.use(profileRoutes);
 app.use(shasPosts);
 app.use(postDailytast);
 app.use(postProjects);
-
-
+app.use(researches);
+app.use(medical);
 
 //Import me later to dotEnv file
 const PORT =8015;
@@ -50,7 +52,3 @@ mongoose.connect(DB_URL,{
 app.listen(PORT, ()=>{
     console.log(`App is running on ${PORT}`);
 });
-
-
-
-
