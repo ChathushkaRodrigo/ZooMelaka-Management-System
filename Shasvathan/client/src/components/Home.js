@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 
+
 export default class Home extends Component {
 constructor(props){
   super(props);
@@ -33,13 +34,46 @@ onDelete = (id) =>{
   })
 }
 
+filterData(posts,searchKey){
+  const result = posts.filter((post)=>
+    post.eID.includes(searchKey)
+  )
+  
+  this.setState({posts:result})
+
+}
 
 
+handleSearchArea = (e) =>{
+      const searchKey = e.currentTarget.value
+
+
+      axios.get("/posts").then(res=>{
+        if(res.data.success){
+          this.filterData(res.data.existingPosts,searchKey)
+        }
+      })
+}
 
   render() {
     return (
-      <div className="container">
-        <p>All POSTS</p>
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-9 mt-2 mb-2">
+              <h4>ALL Posts</h4>
+              </div>
+              <div className="col-lg-3 mt-2 mb-2">
+              <input
+              className="form-control"
+              type="search"
+              placeholder="Search"
+              name="searchQuery"
+              onChange={this.handleSearchArea}>
+
+              </input>
+       
+              </div>
+              </div>
         <table className="table">
           <thead>
             <tr>
