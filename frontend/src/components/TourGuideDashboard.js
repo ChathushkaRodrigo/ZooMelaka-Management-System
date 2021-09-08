@@ -116,9 +116,8 @@ class TourGuideDashboard extends Component {
                   &nbsp; &nbsp; &nbsp;
                   <a
                     className="btn btn-danger"
-                    hred=""
-                    onClick={() => this.onDelete(booking._id)}
-                  >
+                    href=""
+                    onClick={() => this.onDelete(booking._id)}>
                     <i className="far fa-trash-alt"></i> &nbsp; Delete
                   </a>
                 </td>

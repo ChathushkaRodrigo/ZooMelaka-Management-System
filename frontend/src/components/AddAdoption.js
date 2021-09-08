@@ -117,7 +117,7 @@ class AddAdoption extends Component {
     }
 }
 
-export default AddAdoption;               </div>
+export default AddAdoption;               <div>
                 <div className="form-group">
                     <label for="age">Adoption Level</label>
                     <input type="number" className="form-control" id="age" placeholder="Enter Adoption Level" value = {this.state.adoption_level} onChange = {this.setAdoptionLevel}/>

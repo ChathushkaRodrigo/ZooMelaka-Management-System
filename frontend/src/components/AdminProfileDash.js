@@ -16,7 +16,7 @@ class Home extends Component {
   }
 
   retrieveProfiles(){
-    axios.get("http://localhost:8000/profiles").then(res =>{
+    axios.get("http://localhost:8015/profiles").then(res =>{
       if(res.data.success){
         this.setState({
           profiles:res.data.existingProfiles
@@ -28,7 +28,7 @@ class Home extends Component {
 
   onDelete =(id)=>{
   
-    axios.delete(`http://localhost:8000/profile/delete/${id}`).then((res) =>{
+    axios.delete(`http://localhost:8015/profile/delete/${id}`).then((res) =>{
     
       alert("Deleted Successfully");
     

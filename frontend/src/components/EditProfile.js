@@ -40,7 +40,7 @@ class EditProfile extends Component {
         }
         console.log(data);
 
-        axios.put(`http://localhost:8000/profile/update/${id}`,data).then((res)=>{
+        axios.put(`http://localhost:8015/profile/update/${id}`,data).then((res)=>{
             if(res.data.success){
                 alert("Profile Updated Successfully");
                 this.setState(

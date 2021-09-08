@@ -14,7 +14,7 @@ class ProfileDetails extends Component {
     componentDidMount(){
         const id = this.props.match.params.id;
 
-        axios.get(`http://localhost:8000/profile/${id}`).then((res) => {
+        axios.get(`http://localhost:8015/profile/${id}`).then((res) => {
             if(res.data.success) {
                 this.setState({
                     profile:res.data.profile

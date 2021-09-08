@@ -44,4 +44,4 @@ class AdoptionDetails extends Component {
     }
 }
 
-export default EmployeeDetails;
+export default AdoptionDetails;

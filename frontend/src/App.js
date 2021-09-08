@@ -6,12 +6,13 @@ import './CSS/App.css'
 import Home from './components/home';
 
 //MEthanin palleha dapn
-import AnimalDashboard from './components/AnimalDashboard';
-import AllAdoptions from './components/AllAdoptions';
+// import AnimalDashboard from './components/AnimalDashboard';
+// import AllAdoptions from './components/AllAdoptions';
 import TourGuideDashboard from './components/TourGuideDashboard';
 import ProjectsHome from './components/ProjectsHome';
 // salaryroutes
 import ProfileDetails from './components/ProfileDetails';
+
 
 
 
@@ -26,12 +27,13 @@ render() {
         <Header/>
         
         <Route path="/" exact component={Home}/>
-        <Route path="/animal" component ={AnimalDashboard}/>
-        <Route path="/alladoptions" component={AllAdoptions}/>
+        {/* <Route path="/animal" component ={AnimalDashboard}/> */}
+        {/* <Route path="/alladoptions" component={AllAdoptions}/> */}
         <Route path="/booking" component={TourGuideDashboard}/>
         <Route path="/projects" component={ProjectsHome}/>
         {/* <Route path="/salaryroutestask" component={}/> */}
         <Route path="/profiles" component={ProfileDetails}/>
+        
         
          
             

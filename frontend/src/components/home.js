@@ -15,7 +15,7 @@ export default function home() {
                     <button> JOIN US</button>
                 </div>
                     <div className="hero-buttons">
-                        <button>LOG IN</button>
+                        <button><a href="/booking">LOG IN</a></button>
                         <button>SIGN UP</button>
 
                         <div className="home-search">
@@ -24,7 +24,7 @@ export default function home() {
                                 <button className="btn btn-outline-success" type="submit"><i className="fas fa-search"></i></button>
                             </form>
                         </div>
-                    </div>
+                    </div> 
             </div>
 
 
