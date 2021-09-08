@@ -1,34 +1,37 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const dotenv = require("dotenv");
-const app = express();
-require("dotenv").config();
+const express =require('express');
+const mongoose = require('mongoose');
+const bodyparser = require('body-parser');
+const app =express();
+const cors =require('cors');
 
-const PORT = process.env.PORT || 8070;
+//Import Routes
+const MedicalRouts =require('./routes/medicals');
 
+//App MiddleWare
+app.use(bodyparser.json());
 app.use(cors());
-app.use(bodyParser.json());
+//Route MiddleWare
+app.use(MedicalRouts);
 
-const URL = process.env.MONGODB_URL;
-mongoose.connect(URL,{
-    useCreateIndex: true,
-    useNewUrlParser: true,
+//Import me later to dotEnv file
+const PORT =8070;
+//MongoDB Connect URL
+const DB_URL ='mongodb+srv://Randi:Randi$123@itpproject.bznis.mongodb.net/medical_db?retryWrites=true&w=majority';
+
+
+//Establish Connection with Mongoose Server --> ZooMelaka Cluster 
+mongoose.connect(DB_URL,{
     useUnifiedTopology: true,
-    useFindAndModify:false
+    useNewUrlParser:true
+}).then(()=>{
+    console.log("Mongoose Connection Successful");
+}).catch((err)=>{
+    console.log('DB Connnection Error',err);
+})
+
+
+//Port establish server
+app.listen(PORT, ()=>{
+    console.log(`App is running on ${PORT}`);
 });
 
-const connection = mongoose.connection;
-connection.once("open", () => {
-console.log("Mongodb Connection success!");
-})
-
-const medicalRouter = require("./routes/Medicals.js");
-
-app.use("/medical",medicalRouter);
-
-
-app.listen(PORT, () =>{
-    console.log(`Server is up and running on port number: ${PORT}`)
-})
