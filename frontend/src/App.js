@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Header from './components/header';
 import Footer from './components/footer';
 import './CSS/App.css'
-import Home from './components/Home';
+import Home from './components/home';
 
 //MEthanin palleha dapn
 // import AnimalDashboard from './components/AnimalDashboard';

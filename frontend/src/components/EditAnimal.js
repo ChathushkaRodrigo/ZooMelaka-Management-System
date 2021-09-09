@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 import React, {Component} from 'react';
 import axios from 'axios';
 export default class EditAnimal extends Component{
