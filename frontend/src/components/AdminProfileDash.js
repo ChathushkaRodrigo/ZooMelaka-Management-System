@@ -85,7 +85,8 @@ class AdminProfileDash extends Component {
             </table>  
 
             <button className="btn btn-success"><a href="/createprofile" style={{textDecoration:'none', color:'white'}}>Create New Profile</a></button>
-            <button className="btn btn-success"><a href="/login" style={{textDecoration:'none', color:'white'}}>Login</a></button>                 
+            <button className="btn btn-success"><a href="/login" style={{textDecoration:'none', color:'white'}}>Login</a></button>       
+            <button className="btn btn-success"><a href="/login" style={{textDecoration:'none', color:'white'}}>Jolliyata</a></button>            
 
           </div>
         
