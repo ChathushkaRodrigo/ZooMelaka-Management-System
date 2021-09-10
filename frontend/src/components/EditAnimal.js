@@ -104,11 +104,11 @@ export default class EditAnimal extends Component{
    
     render(){
         return(
-            <div className="col-md-8 mt-4 mx-auto" style={{backgroundColor:'#F8F8FF'}}>
-            <h1 className="h3 mb-3 font-weight-normal" style={{fontFamily:'"Arial","Helvetica",sans-serif'}} style={{textDecoration:'underline'}}>Lets Update The Animal Portfolio</h1>
+            <div container="container-fluid" className="col-md-8 mt-4 mx-auto" style={{backgroundColor:'#F8F8FF'}}>
+            <h1 className="h3 mb-3 font-weight-normal" style={{textDecoration:'underline',fontFamily:'Blippo, fantasy'}}>Lets Update The Animal Portfolio</h1>
             <form className="needs-validation" noValidate>
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Feeding_And_Watering_Date</label>
+                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Feeding And Watering Date</label>
                 <input type="text"
                 className="form-control"
                 name="Feeding_And_Watering_Date"
@@ -119,7 +119,7 @@ export default class EditAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Feeding_And_Watering_Time</label>
+                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Feeding And Watering Time</label>
                 <input type="text"
                 className="form-control"
                 name="Feeding_And_Watering_Time"
@@ -130,7 +130,7 @@ export default class EditAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Animal_Satisfaction_Level</label>
+                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Animal Satisfaction Level</label>
                 <input type="text"
                 className="form-control"
                 name="Animal_Satisfaction_Level"
@@ -141,7 +141,7 @@ export default class EditAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Animal_Health_Level</label>
+                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Animal Health Level</label>
                 <input type="text"
                 className="form-control"
                 name="Animal_Health_Level"
@@ -152,7 +152,7 @@ export default class EditAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Attended_Zookeeper</label>
+                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Attended Zookeeper</label>
                 <input type="text"
                 className="form-control"
                 name="Attended_Zookeeper"
@@ -163,7 +163,7 @@ export default class EditAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Date_Of_Treatment_And_Medical_Care</label>
+                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Date Of Treatment And Medical Care</label>
                 <input type="text"
                 className="form-control"
                 name="Date_Of_Treatment_And_Medical_Care"
@@ -174,7 +174,7 @@ export default class EditAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Time_Of_Treatment_And_Medical_Care</label>
+                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Time Of Treatment And Medical Care</label>
                 <input type="text"
                 className="form-control"
                 name="Time_Of_Treatment_And_Medical_Care"
@@ -185,7 +185,7 @@ export default class EditAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Current_Enclosure_ID</label>
+                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Current Enclosure ID</label>
                 <input type="text"
                 className="form-control"
                 name="Current_Enclosure_ID"
@@ -196,11 +196,14 @@ export default class EditAnimal extends Component{
             </div>
 
 
-            <button className="btn btn-success" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
-            <i className="far fa-check-square"></i>
-            &nbsp;Update
+            <button className="btn btn-warning btn-lg justify-content-between" type="submit" style={{marginTop:'25px',marginBottom:'25px'}} onClick={this.onSubmit}>
+            <i className="fa fa-wrench"></i>
+            &nbsp;<b>Update The Animal Portfolio!</b>
             </button>
-
+<br/>
+            <a className="btn btn-primary btn-lg justify-content-between " href={`/animaldashboard`} style={{fontFamily:'Papyrus,fantasy',marginTop:'25px',marginBottom:'25px'}}>
+            <i className="fa fa-arrow-circle-left"></i>&nbsp;<b>Navigate To Animal Portfolio!</b>
+            </a>
 
             </form>
               
