@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import '../CSS/CreateAnimal.css';
 export default class CreateAnimal extends Component{
     
     constructor(props){
@@ -92,11 +93,12 @@ export default class CreateAnimal extends Component{
     
     render(){
         return(
-            <div container="container-fluid" className="col-md-8 mt-4 mx-auto" style={{backgroundColor:'#F8F8FF'}}>
-            <h1 className="h3 mb-3 font-weight-bold" style={{textDecoration:'underline',fontFamily:'Blippo, fantasy'}}>Lets Facilitate A New Animal To The Zoo</h1>
+            <div className="CreateAnimal-body" id="page">
+            <div container="container-fluid" className="col-md-8 mt-4 mx-auto">
+            <h1 className="h3 mb-3 font-weight-bold">Lets Facilitate A New Animal To The Zoo</h1>
             <form className="needs-validation" noValidate>
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Animal ID</label>
+                <label style={{marginBottom:'5px'}}>Animal ID</label>
                 <input type="text"
                 className="form-control"
                 name="Animal_ID"
@@ -107,7 +109,7 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Animal Name</label>
+                <label style={{marginBottom:'5px'}}>Animal Name</label>
                 <input type="text"
                 className="form-control"
                 name="Animal_Name"
@@ -118,7 +120,7 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Animal Species</label>
+                <label style={{marginBottom:'5px'}}>Animal Species</label>
                 <input type="text"
                 className="form-control"
                 name="Animal_Species"
@@ -129,7 +131,7 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Animal Date Of Birth</label>
+                <label style={{marginBottom:'5px'}}>Animal Date Of Birth</label>
                 <input type="text"
                 className="form-control"
                 name="Animal_Date_Of_Birth"
@@ -140,7 +142,7 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Animal Gender</label>
+                <label style={{marginBottom:'5px'}}>Animal Gender</label>
                 <input type="text"
                 className="form-control"
                 name="Animal_Gender"
@@ -151,7 +153,7 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Feeding And Watering Date</label>
+                <label style={{marginBottom:'5px'}}>Feeding And Watering Date</label>
                 <input type="text"
                 className="form-control"
                 name="Feeding_And_Watering_Date"
@@ -162,7 +164,7 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Feeding And Watering Time</label>
+                <label style={{marginBottom:'5px'}}>Feeding And Watering Time</label>
                 <input type="text"
                 className="form-control"
                 name="Feeding_And_Watering_Time"
@@ -173,7 +175,7 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Animal Satisfaction Level</label>
+                <label style={{marginBottom:'5px'}}>Animal Satisfaction Level</label>
                 <input type="text"
                 className="form-control"
                 name="Animal_Satisfaction_Level"
@@ -184,7 +186,7 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Animal Health Level</label>
+                <label style={{marginBottom:'5px'}}>Animal Health Level</label>
                 <input type="text"
                 className="form-control"
                 name="Animal_Health_Level"
@@ -195,7 +197,7 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Attended Zookeeper</label>
+                <label style={{marginBottom:'5px'}}>Attended Zookeeper</label>
                 <input type="text"
                 className="form-control"
                 name="Attended_Zookeeper"
@@ -206,7 +208,7 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Date Of Treatment And Medical Care</label>
+                <label style={{marginBottom:'5px'}}>Date Of Treatment And Medical Care</label>
                 <input type="text"
                 className="form-control"
                 name="Date_Of_Treatment_And_Medical_Care"
@@ -217,7 +219,7 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Time Of Treatment And Medical Care</label>
+                <label style={{marginBottom:'5px'}}>Time Of Treatment And Medical Care</label>
                 <input type="text"
                 className="form-control"
                 name="Time_Of_Treatment_And_Medical_Care"
@@ -228,7 +230,7 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Current Enclosure ID</label>
+                <label style={{marginBottom:'5px'}}>Current Enclosure ID</label>
                 <input type="text"
                 className="form-control"
                 name="Current_Enclosure_ID"
@@ -245,14 +247,14 @@ export default class CreateAnimal extends Component{
             </button>
             <br/>
 
-            <a className="btn btn-info btn-lg justify-content-between " href={`/animaldashboard`} style={{fontFamily:'Papyrus,fantasy',marginTop:'25px',marginBottom:'25px'}}>
+            <a className="btn btn-info btn-lg justify-content-between " href={`/animaldashboard`} style={{fontFamily:'Papyrus,fantasy',marginTop:'10px',marginBottom:'10px'}}>
             <i className="fa fa-arrow-circle-left"></i>&nbsp;<b>Navigate To Animal Portfolio!</b>
 </a>
             
 
             </form>
               
-            </div>
+            </div></div>
         )
     }
 }
