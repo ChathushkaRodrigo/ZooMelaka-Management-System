@@ -198,6 +198,7 @@ class EditBooking extends PureComponent {
 
 
            </div>
+           
         )
     }
 }
