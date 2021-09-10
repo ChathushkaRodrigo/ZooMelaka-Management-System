@@ -72,11 +72,11 @@
   top: -270px;
 }
 
-.tgdb {
+#tgdb {
   background-color: lavender;
 }
 
-h1 {
+#tourguideheading {
   font-size: 100px;
 }
 .table {

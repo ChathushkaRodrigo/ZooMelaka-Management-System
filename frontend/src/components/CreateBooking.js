@@ -80,7 +80,7 @@ export default class CreateBooking extends Component {
  
   
 
-             <h1 className="h8 mb-8 font-weight-fw-bold align-content-center">   Create a new Booking   </h1>
+             <h1 className="h8 mb-8 font-weight-fw-bold align-content-center" id="crtH">   Create a new Booking   </h1>
              <br/>
            
                     <br/>

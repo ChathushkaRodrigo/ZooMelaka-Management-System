@@ -56,7 +56,7 @@ class TourGuideDashboard extends Component {
         <div className="hero-dashboard">
           <div className="bg_tour"></div> &nbsp;
           <div className="header">
-            <h1>
+            <h1 id="tourguideheading">
               <center>Tour Guide Dashboard</center> <br />
             </h1>
           </div>
@@ -97,7 +97,7 @@ class TourGuideDashboard extends Component {
               <tr key={index}>
                 <th scope="row">
                   <a
-                    href={`booking/${booking._id}`}
+                    href={`booking/details/${booking._id}`}
                     style={{ textDecoration: false }}
                   >
                     {index + 1}
