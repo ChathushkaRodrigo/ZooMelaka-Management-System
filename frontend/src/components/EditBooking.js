@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import axios from 'axios';
+import '../CSS/edit-booking.css'
 class EditBooking extends PureComponent {
     constructor(props) {
         super(props);
@@ -94,14 +95,14 @@ class EditBooking extends PureComponent {
         return (
             <div className="col-md-8 mt-4 mx-auto">
 
-            <h1 className="h3 mb-3 font-weight-normal">   Edit Booking Details  </h1>
+            <h1 >   Edit Booking Details  </h1>
             <br/>
                    <br/>
-
+                <div className="edit-form">
                    <form className="needs-validation" noValidate>
                    <div className="form-group" style={{marginBottom:'15px'}}>
                        <label for="emailC" style={{marginBottom:'5px'}}>Email address</label>
-                       <input type="text" 
+                       <input type="email" 
                        className="form-control" 
                         name="CustomerEmail" 
                      placeholder="Enter your email " 
@@ -123,7 +124,7 @@ class EditBooking extends PureComponent {
                    <br/>
                    <div className="form-group">
                    <label for="MobileNo" style={{marginBottom:'5px'}}>Mobile Number</label>
-                       <input type="text" 
+                       <input type="tel" 
                        className="form-control" 
                        id="MobileNo"name="MobileNumber" 
                        placeholder="Enter your mobile number"
@@ -145,7 +146,7 @@ class EditBooking extends PureComponent {
                    <br/>
                    <div className="form-group">
                    <label for="Date" style={{marginBottom:'5px'}}>Date</label>
-                       <input type="text" 
+                       <input type="date" 
                        className="form-control" 
                        id="Date" 
                        name="Date" 
@@ -157,7 +158,7 @@ class EditBooking extends PureComponent {
                    <br/>
                    <div className="form-group">
                    <label for="Time" style={{marginBottom:'5px'}}>Allocated time</label>
-                       <input type="text" 
+                       <input type="time" 
                        className="form-control" 
                        id="Time" 
                        name="Time"
@@ -182,11 +183,14 @@ class EditBooking extends PureComponent {
                    <button className="btn btn-success" type="submit" style={{marginBottom:'15px'}} onClick={this.onsubmit}>
                        <i className="far fa-check-square"></i>
                        &nbsp; Update Booking
-                   </button>
+                   </button> <br/>
+                   <button className ="btn btn-success"><a href="/TourGuideDashboard" style={{textDecoration:'none' ,color:'white' }}> Dashboard </a></button>
                   
                    </form>
+                   </div>
+                   <br/>
                    &nbsp;
-                    <button className ="btn btn-success"><a href="/" style={{textDecoration:'none' ,color:'white' }}> Dashboard </a></button>
+                    
 
 
 
