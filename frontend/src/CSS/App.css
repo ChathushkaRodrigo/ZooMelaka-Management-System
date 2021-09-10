@@ -56,38 +56,11 @@
 /* ------------- */
 
 /* ---home hero--- */
-.hero-image {
-  height: 00px;
-  width: 100%;
-}
 
-.hero-image .bg_banner {
-  display: block;
-  position: relative;
-  top: -83px;
-  width: 100%;
-  float: right; 
-  color: violet;
-  height: 100%;
-  background-image: url(../images/banner.png);
-  background-position: right;
-  background-size: 83%;
-  background-repeat: no-repeat;
-}
 
-.hero-tour.bg_banner {
-  display: block;
-  position: relative;
-  top: -83px;
-  width: 100%;
-  float: right; 
-  color: violet;
-  height: 100%;
-  background-image: url(../images/tourguidegif.gif);
-  background-position: right;
-  background-size: 83%;
-  background-repeat: no-repeat;
-}
+
+
+
 
 .hero-text {
   display: block;
@@ -112,13 +85,13 @@
 
 .hero-text button {
   border: none;
-  width: 300px;
+  width: 500px;
   height: 50px;
   outline: 0;
   display: relative;
   padding: 10px 25px;
   color: black;
-  background-color: #ddd;
+  text-decoration: none;
   text-align: center;
   cursor: pointer;
   margin-top: 30px;
@@ -156,12 +129,6 @@
   width: 300px;
   height: 45px;
   border-width: 0;
-}
-
-.home-search {
-  position: relative;
-  display: inline-block;
-  float: right;
 }
 
 .home-search button {
@@ -202,19 +169,7 @@
 }
 
 .package-card {
-  transition: 0.3s;
-  display: inline-block;
-  position: relative;
-  margin: auto;
-  background-color: white;
-  height: 200px;
-  width: 200px;
-  border-width: 1.5px;
-  border-style: solid;
-  border-color: rgb(185, 185, 185);
-  border-radius: 50%;
-  margin: 45px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
 }
 
 .package-card:hover {
@@ -233,16 +188,12 @@
   background-color: rgb(230, 230, 230);
   text-align: center;
   padding: 10px;
-  
-  
-  
 }
 
 .fixed-footer p {
   margin: 0;
   display: block;
   font-size: 13px;
-  
 }
 
 /* ------------ */

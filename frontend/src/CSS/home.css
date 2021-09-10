@@ -1,0 +1,96 @@
+.home-content {
+  padding: 500px;
+}
+
+.hero-image {
+  width: auto;
+  height: auto;
+}
+
+.hero-image .bg_banner {
+  display: block;
+  position: relative;
+  top: -83px;
+  width: 100%;
+  float: right;
+  color: violet;
+  height: 100%;
+  background-image: url(../images/banner.png);
+  background-position: right;
+  background-size: 83%;
+  background-repeat: no-repeat;
+}
+
+.hero-buttons button {
+  display: inline-block;
+  position: relative;
+  margin-right: 20px;
+  width: 140px;
+  height: 45px;
+  border-width: 0;
+  background-color: rgb(5, 66, 5);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-weight: 600;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.hero-text button {
+  width: 300px;
+  height: 60px;
+  outline: 0;
+  display: relative;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+.home-search {
+  position: relative;
+  display: inline-block;
+  float: right;
+}
+
+.packagecards-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.package-card {
+  display: inline-block;
+  position: relative;
+  /* margin: auto; */
+  background-color: white;
+  height: 250px;
+  width: 275px;
+  border-width: 1.5px;
+  border-style: solid;
+  border-color: rgb(185, 185, 185);
+  border-radius: 100%;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+
+.package-card:hover {
+  background-color: #3bb78f;
+  background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+}
+
+.package-card h1:hover {
+   h1{
+     text-color: white;
+  }
+}
+
+#knowus {
+  padding: 20px;
+  font-size: xx-large;
+  height: 100%;
+}
