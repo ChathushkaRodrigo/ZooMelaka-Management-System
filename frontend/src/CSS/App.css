@@ -57,7 +57,7 @@
 
 /* ---home hero--- */
 .hero-image {
-  height: 1000px;
+  height: 00px;
   width: 100%;
 }
 
@@ -70,6 +70,20 @@
   color: violet;
   height: 100%;
   background-image: url(../images/banner.png);
+  background-position: right;
+  background-size: 83%;
+  background-repeat: no-repeat;
+}
+
+.hero-tour.bg_banner {
+  display: block;
+  position: relative;
+  top: -83px;
+  width: 100%;
+  float: right; 
+  color: violet;
+  height: 100%;
+  background-image: url(../images/tourguidegif.gif);
   background-position: right;
   background-size: 83%;
   background-repeat: no-repeat;
