@@ -61,39 +61,39 @@ handleSearchArea = (e) => {
 
   render(){
     return(
-    <div className="w3-container" style={{backgroundColor:'#F8F8FF'}}>
+    <div className="container-fluid" style={{backgroundColor:'#FFFAFA'}}>
     <div className="row">
     <div className="col-lg-9 mt-2 mb-2">
-        <center><h1 style={{fontFamily:'"Arial","Helvetica",sans-serif'}}>Manage Animal Portfolio</h1></center>
+        <center><h1 style={{fontFamily:'Papyrus, fantasy'}}><b>Manage Animal Portfolio</b></h1></center>
         </div>
     <div className="col-lg-3 mt-2 mb-2">
       <input
       className="form-control"
       type="search"
-      placeholder="Search Animal Portfolio"
+      placeholder="Search By Animal Name"
       name="searchQuery"
       onChange={this.handleSearchArea}>
       </input>
         </div>
         </div>
-        <table className="table" style={{backgroundColor:'#FFFAFA'}}>
+        <table className="table" style={{backgroundColor:'#F8F8FF'}}>
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Animal_ID</th>
-            <th scope="col">Animal_Name</th>
-            <th scope="col">Animal_Species</th>
-            <th scope="col">Animal_Date_Of_Birth</th>
-            <th scope="col">Animal_Gender</th>
-            <th scope="col">Feeding_And_Watering_Date</th>
-            <th scope="col">Feeding_And_Watering_Time</th>
-            <th scope="col">Animal_Satisfaction_Level</th>
-            <th scope="col">Animal_Health_Level</th>
-            <th scope="col">Attended_Zookeeper</th>
-            <th scope="col">Date_Of_Treatment_And_Medical_Care</th>
-            <th scope="col">Time_Of_Treatment_And_Medical_Care</th>
-            <th scope="col">Current_Enclosure_ID</th>
-            <th scope="col">Action</th>
+            <th scope="col" style={{fontFamily:'Papyrus, fantasy'}}>Animal ID</th>
+            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Animal Name</th>
+            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Animal Species</th>
+            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Animal Date Of Birth</th>
+            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Animal Gender</th>
+            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Feeding And Watering Date</th>
+            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Feeding And Watering Time</th>
+            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Animal Satisfaction Level</th>
+            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Animal Health Level</th>
+            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Attended Zookeeper</th>
+            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}} >Date Of Treatment And Medical Care</th>
+            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Time Of Treatment And Medical Care</th>
+            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Current Enclosure ID</th>
+            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Action</th>
           </tr>
         </thead>
               <tbody>
@@ -105,25 +105,25 @@ handleSearchArea = (e) => {
                       {zooAnimal.Animal_ID}
                       </a>
                     </td>
-                    <td>{zooAnimal.Animal_Name}</td>
-                    <td>{zooAnimal.Animal_Species}</td>
-                    <td>{zooAnimal.Animal_Date_Of_Birth}</td>
-                    <td>{zooAnimal.Animal_Gender}</td>
-                    <td>{zooAnimal.Feeding_And_Watering_Date}</td>
-                    <td>{zooAnimal.Feeding_And_Watering_Time}</td>
-                    <td>{zooAnimal.Animal_Satisfaction_Level}</td>
-                    <td>{zooAnimal.Animal_Health_Level}</td>
-                    <td>{zooAnimal.Attended_Zookeeper}</td>
-                    <td>{zooAnimal.Date_Of_Treatment_And_Medical_Care}</td>
-                    <td>{zooAnimal.Time_Of_Treatment_And_Medical_Care}</td>
-                    <td>{zooAnimal.Current_Enclosure_ID}</td>
+                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Animal_Name}</b></td>
+                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Animal_Species}</b></td>
+                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Animal_Date_Of_Birth}</b></td>
+                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Animal_Gender}</b></td>
+                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Feeding_And_Watering_Date}</b></td>
+                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Feeding_And_Watering_Time}</b></td>
+                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Animal_Satisfaction_Level}</b></td>
+                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Animal_Health_Level}</b></td>
+                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Attended_Zookeeper}</b></td>
+                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Date_Of_Treatment_And_Medical_Care}</b></td>
+                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Time_Of_Treatment_And_Medical_Care}</b></td>
+                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Current_Enclosure_ID}</b></td>
                     <td>
-                        <a className="btn btn-warning" href={`animal/update/${zooAnimal._id}`}>
-                            <i className="fas fa-edit"></i>&nbsp;Update
+                        <a className="btn btn-primary btn-lg justify-content-center" href={`animal/update/${zooAnimal._id}`} style={{fontFamily:'Papyrus,fantasy'}}>
+                            <i className="fas fa-edit"></i>&nbsp;<b>Update Animal Portfolio</b>
                         </a>
                         &nbsp;
-                        <a className="btn btn-danger" href="#" onClick={() => this.onDelete(zooAnimal._id)}>
-                            <i className="far fa-trash-alt"></i>&nbsp;Delete
+                        <a className="btn btn-danger btn-lg justify-content-center" href="#" onClick={() => this.onDelete(zooAnimal._id)} style={{fontFamily:'Papyrus,fantasy'}}>
+                            <i className="far fa-trash-alt"></i>&nbsp;<b>Delete Animal Portfolio</b>
                         </a>
                     </td>
 
@@ -133,8 +133,9 @@ handleSearchArea = (e) => {
               </tbody>
         </table>
 
-        <button className="btn btn-success"><a href="animal/add" style={{textDecoration:'none',color:'white'}}>Create Animal Portfolio</a></button>
-
+<a className="btn btn-success btn-lg justify-content-center" href={`animal/add`} style={{fontFamily:'Papyrus,fantasy',marginTop:'25px',marginBottom:'25px'}}>
+                            <i className="fa fa-plus-square"></i>&nbsp;<b>Create Animal Portfolio!</b>
+</a>
     </div>)
   }
 }

@@ -114,7 +114,7 @@
   position: relative;
   left: 0;
   top: 75%;
-  height: 70px;
+  height: 200px;
   overflow: hidden;
   width: 100%;
   padding: 10px 30px;
@@ -219,12 +219,16 @@
   background-color: rgb(230, 230, 230);
   text-align: center;
   padding: 10px;
+  
+  
+  
 }
 
 .fixed-footer p {
   margin: 0;
   display: block;
   font-size: 13px;
+  
 }
 
 /* ------------ */
