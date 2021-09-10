@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import '../CSS/AnimalDetails.css';
 export default class AnimalDetails extends Component{
     constructor(props){
         super(props);
@@ -34,7 +35,8 @@ export default class AnimalDetails extends Component{
                 Time_Of_Treatment_And_Medical_Care,
                 Current_Enclosure_ID } = this.state.zooAnimal;
         return(
-            <div className = "container-fluid" style={{marginTop:'20px',backgroundColor:'#F8F8FF'}}>
+            <div className="AnimalDetails-body">
+            <div className = "container-fluid" style={{marginTop:'20px',backgroundColor:'#F0FFFF'}}>
             <h4 style={{fontFamily:'Papyrus,fantasy'}}><b>Retrieve Animal Portfolio</b></h4>
             <hr/>
             <dl className="row">
@@ -84,7 +86,7 @@ export default class AnimalDetails extends Component{
 <a className="btn btn-danger btn-lg justify-content-center" href={`/animaldashboard`} style={{fontFamily:'Papyrus,fantasy',marginTop:'25px',marginBottom:'25px'}}>
                             <i className="fa fa-arrow-circle-o-left"></i>&nbsp;<b>Retreival Completed!</b>
 </a>
-            </div>
+            </div></div>
         )
     }
 }
