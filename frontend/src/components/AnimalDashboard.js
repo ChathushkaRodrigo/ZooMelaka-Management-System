@@ -4,6 +4,7 @@
 // User Should Be Able To View All The Initially Posted Content
 import React, {Component} from 'react';
 import axios from 'axios';
+import '../CSS/AnimalDashboard.css';
 
 
 export default class Home extends Component{
@@ -61,10 +62,11 @@ handleSearchArea = (e) => {
 
   render(){
     return(
-    <div className="container-fluid" style={{backgroundColor:'#FFFAFA'}}>
+    <div className="AnimalDashboard-body">
+    <div className="container-fluid">
     <div className="row">
     <div className="col-lg-9 mt-2 mb-2">
-        <center><h1 style={{fontFamily:'Papyrus, fantasy'}}><b>Manage Animal Portfolio</b></h1></center>
+        <center><h1 id="headerName"><b>Manage Animal Portfolio</b></h1></center>
         </div>
     <div className="col-lg-3 mt-2 mb-2">
       <input
@@ -76,7 +78,7 @@ handleSearchArea = (e) => {
       </input>
         </div>
         </div>
-        <table className="table" style={{backgroundColor:'#F8F8FF'}}>
+        <table className="table" id="hover">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -136,7 +138,7 @@ handleSearchArea = (e) => {
 <a className="btn btn-success btn-lg justify-content-center" href={`animal/add`} style={{fontFamily:'Papyrus,fantasy',marginTop:'25px',marginBottom:'25px'}}>
                             <i className="fa fa-plus-square"></i>&nbsp;<b>Create Animal Portfolio!</b>
 </a>
-    </div>)
+    </div></div>)
   }
 }
 
