@@ -93,7 +93,7 @@ class EditBooking extends PureComponent {
 
     render() {
         return (
-            <div className="col-md-8 mt-4 mx-auto">
+            <div className="col-md-8 mt-4 mx-auto" id="edit-booking-body">
 
             <h1 >   Edit Booking Details  </h1>
             <br/>
@@ -190,7 +190,10 @@ class EditBooking extends PureComponent {
                    </div>
                    <br/>
                    &nbsp;
+                
+                  
                     
+                                                
 
 
 

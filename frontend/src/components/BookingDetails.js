@@ -44,7 +44,7 @@ class BookingDetails extends Component {
                     <br/>
                     <br/>
 
-                                        <form>
+                     <form>
                     <div class="form-group">
                         <label for="emailC">Email address</label>
                         <input type="email" class="form-control" id="emailC" placeholder={CustomerEmail} disabled/>
@@ -87,7 +87,7 @@ class BookingDetails extends Component {
                     </div>
                    
                     </form>
-
+            
 
                                         
 
