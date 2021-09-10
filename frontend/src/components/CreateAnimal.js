@@ -81,7 +81,8 @@ export default class CreateAnimal extends Component{
                     Date_Of_Treatment_And_Medical_Care:"",
                     Time_Of_Treatment_And_Medical_Care:"",
                     Current_Enclosure_ID:""
-                })
+                }) 
+                alert("A New Animal Record Has Been Created Successfully!")
             }
         })
     }
@@ -91,158 +92,163 @@ export default class CreateAnimal extends Component{
     
     render(){
         return(
-            <div className="col-md-8 mt-4 mx-auto">
-            <h1 className="h3 mb-3 font-weight-normal">Lets Facilitate A New Animal To The Zoo</h1>
+            <div container="container-fluid" className="col-md-8 mt-4 mx-auto" style={{backgroundColor:'#F8F8FF'}}>
+            <h1 className="h3 mb-3 font-weight-bold" style={{textDecoration:'underline',fontFamily:'Blippo, fantasy'}}>Lets Facilitate A New Animal To The Zoo</h1>
             <form className="needs-validation" noValidate>
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Animal_ID</label>
+                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Animal ID</label>
                 <input type="text"
                 className="form-control"
                 name="Animal_ID"
-                placeholder="Enter The Animal_ID:"
+                placeholder="Enter The Animal ID:"
                 value={this.state.Animal_ID}
                 onChange={this.handleInputChange}
                 />
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Animal_Name</label>
+                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Animal Name</label>
                 <input type="text"
                 className="form-control"
                 name="Animal_Name"
-                placeholder="Enter The Animal_Name:"
+                placeholder="Enter The Animal Name:"
                 value={this.state.Animal_Name}
                 onChange={this.handleInputChange}
                 />
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Animal_Species</label>
+                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Animal Species</label>
                 <input type="text"
                 className="form-control"
                 name="Animal_Species"
-                placeholder="Enter The Animal_Species:"
+                placeholder="Enter The Animal Species:"
                 value={this.state.Animal_Species}
                 onChange={this.handleInputChange}
                 />
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Animal_Date_Of_Birth</label>
+                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Animal Date Of Birth</label>
                 <input type="text"
                 className="form-control"
                 name="Animal_Date_Of_Birth"
-                placeholder="Enter The Animal_Date_Of_Birth:"
+                placeholder="Enter The Animal Date Of Birth:"
                 value={this.state.Animal_Date_Of_Birth}
                 onChange={this.handleInputChange}
                 />
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Animal_Gender</label>
+                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Animal Gender</label>
                 <input type="text"
                 className="form-control"
                 name="Animal_Gender"
-                placeholder="Enter The Animal_Gender:"
+                placeholder="Enter The Animal Gender:"
                 value={this.state.Animal_Gender}
                 onChange={this.handleInputChange}
                 />
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Feeding_And_Watering_Date</label>
+                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Feeding And Watering Date</label>
                 <input type="text"
                 className="form-control"
                 name="Feeding_And_Watering_Date"
-                placeholder="Enter The Feeding_And_Watering_Date:"
+                placeholder="Enter The Feeding And Watering Date:"
                 value={this.state.Feeding_And_Watering_Date}
                 onChange={this.handleInputChange}
                 />
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Feeding_And_Watering_Time</label>
+                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Feeding And Watering Time</label>
                 <input type="text"
                 className="form-control"
                 name="Feeding_And_Watering_Time"
-                placeholder="Enter The Feeding_And_Watering_Time:"
+                placeholder="Enter The Feeding And Watering Time:"
                 value={this.state.Feeding_And_Watering_Time}
                 onChange={this.handleInputChange}
                 />
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Animal_Satisfaction_Level</label>
+                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Animal Satisfaction Level</label>
                 <input type="text"
                 className="form-control"
                 name="Animal_Satisfaction_Level"
-                placeholder="Enter The Animal_Satisfaction_Level:"
+                placeholder="Enter The Animal Satisfaction Level:"
                 value={this.state.Animal_Satisfaction_Level}
                 onChange={this.handleInputChange}
                 />
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Animal_Health_Level</label>
+                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Animal Health Level</label>
                 <input type="text"
                 className="form-control"
                 name="Animal_Health_Level"
-                placeholder="Enter The Animal_Health_Level:"
+                placeholder="Enter The Animal Health Level:"
                 value={this.state.Animal_Health_Level}
                 onChange={this.handleInputChange}
                 />
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Attended_Zookeeper</label>
+                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Attended Zookeeper</label>
                 <input type="text"
                 className="form-control"
                 name="Attended_Zookeeper"
-                placeholder="Enter The Last Attended_Zookeeper:"
+                placeholder="Enter The Last Attended Zookeeper:"
                 value={this.state.Attended_Zookeeper}
                 onChange={this.handleInputChange}
                 />
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Date_Of_Treatment_And_Medical_Care</label>
+                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Date Of Treatment And Medical Care</label>
                 <input type="text"
                 className="form-control"
                 name="Date_Of_Treatment_And_Medical_Care"
-                placeholder="Enter The Date_Of_Treatment_And_Medical_Care:"
+                placeholder="Enter The Date Of Treatment And Medical Care:"
                 value={this.state.Date_Of_Treatment_And_Medical_Care}
                 onChange={this.handleInputChange}
                 />
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Time_Of_Treatment_And_Medical_Care</label>
+                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Time Of Treatment And Medical Care</label>
                 <input type="text"
                 className="form-control"
                 name="Time_Of_Treatment_And_Medical_Care"
-                placeholder="Enter The Time_Of_Treatment_And_Medical_Care:"
+                placeholder="Enter The Time Of Treatment And Medical Care:"
                 value={this.state.Time_Of_Treatment_And_Medical_Care}
                 onChange={this.handleInputChange}
                 />
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Current_Enclosure_ID</label>
+                <label style={{marginBottom:'5px',fontFamily:'Marker Felt,fantasy'}}>Current Enclosure ID</label>
                 <input type="text"
                 className="form-control"
                 name="Current_Enclosure_ID"
-                placeholder="Enter The Current_Enclosure_ID:"
+                placeholder="Enter The Current Enclosure ID:"
                 value={this.state.Current_Enclosure_ID}
                 onChange={this.handleInputChange}
                 />
             </div>
 
 
-            <button className="btn btn-success" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
-            <i className="far fa-check-square"></i>
-            &nbsp;Save
+            <button className="btn btn-warning btn-lg justify-content-between" type="submit" style={{marginTop:'25px',marginBottom:'25px'}} onClick={this.onSubmit}>
+            <i className="fa fa-bug"></i>
+            &nbsp;<b>Create!</b>
             </button>
+            <br/>
 
+            <a className="btn btn-info btn-lg justify-content-between " href={`/animaldashboard`} style={{fontFamily:'Papyrus,fantasy',marginTop:'25px',marginBottom:'25px'}}>
+            <i className="fa fa-arrow-circle-left"></i>&nbsp;<b>Navigate To Animal Portfolio!</b>
+</a>
+            
 
             </form>
               
