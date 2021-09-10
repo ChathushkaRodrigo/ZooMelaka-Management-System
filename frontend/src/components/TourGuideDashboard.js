@@ -128,13 +128,14 @@ class TourGuideDashboard extends Component {
           </tbody>
         </table>
        
-
+              <div>
         <button className="btn btn-success">
           <a href="booking/add" style={{ textDecoration: "none", color: "white" }}>
             {" "}
             Add new Tour Booking{" "}
           </a>
         </button>
+        </div>
         </div>
       </div>
     );
