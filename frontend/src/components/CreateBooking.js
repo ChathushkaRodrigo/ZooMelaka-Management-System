@@ -185,7 +185,7 @@ export default class CreateBooking extends Component {
                     </form>
 
                 <br/>
-
+                    
                 </div>
                   
      
