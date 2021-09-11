@@ -3,9 +3,9 @@
   margin: 0;
 
   background: linear-gradient(-45deg, #bbb7b6, #1d3277, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
+  background-size: 500% 400%;
   animation: gradient 15s ease infinite;
-  height: 100vh;
+  height: 200vh;
 }
 header {
   position: fixed;
@@ -86,4 +86,8 @@ label {
 }
 #crtH {
   color: white;
+}
+
+#content{
+  margin-bottom: auto;
 }

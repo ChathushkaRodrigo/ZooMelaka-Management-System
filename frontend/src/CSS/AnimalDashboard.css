@@ -1,0 +1,20 @@
+.AnimalDashboard-body{
+    background-color:blanchedalmond;
+    font-size: medium;
+}
+#headerName{
+    font-family:"Papyrus",fantasy;
+    color: black;
+}
+.table{
+    border: 5px solid #000000;
+    border-collapse: collapse;
+    border-right: solid 2px #0000; 
+    border-left: solid 2px #0000;
+    background-color:azure;
+}
+
+#hover tr:hover {
+    background-color:cornsilk;
+  }
+

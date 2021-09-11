@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from'axios'
+import "../CSS/CreateResearch.css"
 class CreateResearch extends Component {
         constructor(props){
             super(props);
@@ -33,7 +34,7 @@ class CreateResearch extends Component {
 
 
             const data={name_of_scientist:name_of_scientist, date_research_started: date_research_started,date_research_ended:date_research_ended,
-                catergory:catergory,research_name:research_name,research_information:research_information
+                catergory:catergory,research_name:research_name,research_information:"aves"
                }
         
         console.log(data);
@@ -56,9 +57,11 @@ class CreateResearch extends Component {
     }
     render() {
         return (
+            <div className="topic">
             <div classsName="col-md-8-mt-4-mx-auto">
                 <h1 className="h3-mb-3 font-weight-normal">Create new Research</h1>
-                <form className="needs-validation" noValidate>
+                <div className="  image4"> </div>
+                <form className=" formbody needs-validation" noValidate>
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px'}}>Name_of_scientist</label>
                         <input type="text"
@@ -131,9 +134,8 @@ class CreateResearch extends Component {
             
             </form>
         </div>
+        </div>
         )
 }}
 
 export default CreateResearch;
-
-
