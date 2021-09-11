@@ -20,7 +20,7 @@ export default function home() {
                  <h1>Zoo Melaka</h1>
                     <p></p>
                     <p> Fresh look at our new services join us  <br/>to serve zoo community and <br/> spend some time with us lets make <br/> good memories </p>
-                        <Link to="/login">
+                        <Link to="/profile/login">
                              <button > JOIN US </button>
                         </Link>
                 </div>

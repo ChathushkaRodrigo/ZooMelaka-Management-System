@@ -11,7 +11,8 @@ import Home from './components/home';
 
 import AdminProfileDashboard from './components/AdminProfileDash';
 
-import CreateProfile from './components/CreateProfile';
+// import CreateProfile from './components/CreateProfile';
+import signup from './components/signup';
 import Login from './components/Login';
 import EditProfile from './components/EditProfile';
 import ProfileDetails from './components/ProfileDetails';
@@ -59,7 +60,8 @@ render() {
       
       
         <Route path="/adminprofiledash" component={AdminProfileDashboard}/>
-        <Route path ="/createprofile" component={CreateProfile}/>
+        {/* <Route path ="/createprofile" component={CreateProfile}/> */}
+        <Route path ="/signup" component={signup}/>
         <Route path ="/login" component={Login}/>
         <Route path ="/AdminProfileDash" component={Login}/>
         <Route path ="/profile/update/:id" component={EditProfile}/>
