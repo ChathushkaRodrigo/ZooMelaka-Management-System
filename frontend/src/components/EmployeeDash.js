@@ -2,6 +2,8 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 
+import '../CSS/EmployeeDashboard.css'
+
 
 export default class Home extends Component {
 constructor(props){
@@ -58,10 +60,12 @@ handleSearchArea = (e) =>{
 
   render() {
     return (
-        <div className="container">
+        <div>
           <div className="row">
+              
             <div className="col-lg-9 mt-2 mb-2">
-              <h4>ALL Posts</h4>
+              <h4 style={{color:"white"}}>Employee Managment Dashboard</h4>
+              
               </div>
               <div className="col-lg-3 mt-2 mb-2">
               <input
@@ -75,11 +79,11 @@ handleSearchArea = (e) =>{
        
               </div>
               </div>
-        <table className="table">
-          <thead>
+        <table className="table" style={{width:"100%"}}>
+          <thead style={{backgroundColor:"#333",color:"white",textTransform:'uppercase'}}>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">eID</th>
+              <th scope="col" style={{backgroundColor:"#333",color:"white"}}>#</th>
+              <th scope="col" >eID</th>
               <th scope="col">userName</th>
               <th scope="col">firstName</th>
               <th scope="col">lastName</th>
@@ -88,12 +92,13 @@ handleSearchArea = (e) =>{
               <th scope="col">employeeType</th>
               <th scope="col">DOB</th>
               <th scope="col">salary</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             {this.state.posts.map((posts,index) =>(
                           <tr>
-                            <th scope="row">{index+1}</th>
+                            <th scope="row" style={{backgroundColor: "#36c",color: "#fff"}}>{index+1}</th>
                             <td>
                                 <a href={`/employee/details/${posts._id}`} style={{textDecoration:'none'}}>
                                 {posts.eID}

@@ -1,0 +1,25 @@
+
+
+body {
+  background:"white";
+}
+
+table{
+    width: 100%;
+}
+
+
+th, td {
+    border: 1px solid black;
+  }
+
+.cell-highlight {
+
+    font-weight: bold;
+}
+
+.blue{
+
+    background-color: "#333";
+    color:"white"
+}
