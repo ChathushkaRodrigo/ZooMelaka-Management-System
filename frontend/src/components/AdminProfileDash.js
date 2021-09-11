@@ -62,7 +62,7 @@ class AdminProfileDash extends Component {
                   <tr key={index}>
                     <th scope="row">{index+1}</th>
                     <td>
-                        <a href={`/profile/${profiles._id}`} style={{textDecoration:'none'}}>
+                        <a href={`/profile/details/${profiles._id}`} style={{textDecoration:'none'}}>
                             {profiles.fName}
                         </a>
                     </td>
