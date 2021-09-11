@@ -151,12 +151,7 @@
   margin: 50px;
 }
 
-.home-content .home-content-topic {
-  font-size: 23px;
-  font-weight: 600;
-  color: rgb(97, 97, 97);
-  text-align: center;
-}
+
 
 .packagecards-container {
   display: block;
@@ -168,9 +163,6 @@
   text-align: center;
 }
 
-.package-card {
-
-}
 
 .package-card:hover {
   background-color: rgb(240, 240, 240);
