@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import "../CSS/login.css";
 import {Link} from 'react-router-dom';
 
 class Login extends Component {
@@ -13,44 +12,50 @@ class Login extends Component {
         }
     }
 
-    handleInputChange = (e)=>{
-        const {name,value} = e.target;
-        this.setState({
-            ...this.state,
-            [name]:value
-        })
-    }
+    // handleInputChange = (e)=>{
+    //     const {name,value} = e.target;
+    //     this.setState({
+    //         ...this.state,
+    //         [name]:value
+    //     })
+    // }
 
-    handleSubmit =(e)=>{
+    // handleSubmit =(e)=>{
 
-           e.preventDefault()
-    }   
+    //        e.preventDefault()
+    // }   
 
     render() {
         return (
-            <>
-            <div class="login-box">
-  <h2>Login</h2>
-  <form>
-    <div class="user-box">
-      <input type="text" name="" required=""/>
-      <label>Username</label>
-    </div>
-    <div class="user-box">
-      <input type="password" name="" required=""/>
-      <label>Password</label>
-    </div>
-    <Link to = "./AdminPanelHome">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      Submit
-      </Link>
-  </form>
-</div>                   
-                
-            </>
+            <div className="col-md-8 mt-4 mx-auto">
+            {/* <h1 className="h3 mb-3 font-weight-normal">Login</h1>
+              <form className="needs-validation" noValidate>                  
+                    <div className="form-group" style={{marginBottom:'15px'}}>
+                        <label style={{marginBottom:'5px'}}>Email</label>
+                        <input type="text"
+                            className="form-control"
+                            name="email"
+                            placeholder="Enter Email"
+                            value={this.state.email}
+                            onChange={this.handleInputChange} />                    
+                    </div>
+                    <div className="form-group" style={{marginBottom:'15px'}}>
+                        <label style={{marginBottom:'5px'}}>Password</label>
+                        <input type="text"
+                            className="form-control"
+                            name="password"
+                            placeholder="Enter Password"
+                            value={this.state.password}
+                            onChange={this.handleInputChange} />                    
+                    </div> */}
+    
+                    <Link to = "./AdminPanelHome"><button className="btn btn-success" type="submit"  href="#">   
+                        
+                        &nbsp; Login
+                    </button></Link>
+    
+                {/* </form> */}
+            </div>
         )
     }
 }

@@ -9,15 +9,21 @@ import Home from './components/home';
 // import AnimalDashboard from './components/AnimalDashboard';
 // import AllAdoptions from './components/AllAdoptions';
 
-import AdminProfileDashboard from './components/AdminProfileDash';
+
 
 // import CreateProfile from './components/CreateProfile';
+
+// import profile from './components/profile';
 import signup from './components/signup';
+import AdminProfileDashboard from './components/AdminProfileDash';
 import Login from './components/Login';
 import EditProfile from './components/EditProfile';
 import ProfileDetails from './components/ProfileDetails';
+import Profile from './components/profile';
 import AdminPanelHome from './components/AdminPanelHome';
 import EmployeeDashboard from './components/EmployeeDash';
+
+
 import EditEmployee from './components/EditPost';
 import EmployeeDetails from './components/PostDetails';
 import ResearchDashboard from './components/ResearchDashboard';
@@ -59,13 +65,14 @@ render() {
         <Route path="/" exact component={Home}/>
       
       
-        <Route path="/adminprofiledash" component={AdminProfileDashboard}/>
+        
         {/* <Route path ="/createprofile" component={CreateProfile}/> */}
         <Route path ="/signup" component={signup}/>
-        <Route path ="/login" component={Login}/>
-        <Route path ="/AdminProfileDash" component={Login}/>
+        <Route path ="/login" exact component={Login}/>
+        <Route path ="/AdminProfileDash" component={AdminProfileDashboard}/>
         <Route path ="/profile/update/:id" component={EditProfile}/>
         <Route path="/profile/details/:id" component={ProfileDetails}/>
+        <Route path="/profile/:id" component={Profile}/>
         
 
 

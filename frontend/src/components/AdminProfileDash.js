@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import "../CSS/memberdashboard.css";
 
-class AdminProfileDash extends Component {
+class memberdashboard extends Component {
 
   constructor(props){
     super(props);
@@ -40,10 +41,18 @@ class AdminProfileDash extends Component {
   render() {
     return (
       <div>
-        {/* {this.state.profiles.map(profiles => ( */}
-          <div className="container">
-            
-            <p>All Profile</p>
+          <div className="tgdb">
+          
+          <div className="hero-dashboard">
+      <div className="bg_tour"></div> &nbsp;
+          <div className="header">
+            <h1 id="tourguideheading">
+              <center>MemberDashboard</center> <br />
+            </h1>
+          </div>
+        </div>
+
+    <br />
 
             <table class="table">
               <thead>
@@ -71,7 +80,7 @@ class AdminProfileDash extends Component {
                     <td>{profiles.email}</td>
                     <td>{profiles.password}</td>                    
                     <td>
-                        <a className="btn btn-warning" href={`/edit/${profiles._id}`}>
+                        <a className="btn btn-warning" href={`/profile/update/${profiles._id}`}>
                             <i className="fas fa-edit"></i>&nbsp;Edit                        
                         </a>
                       &nbsp;
@@ -88,9 +97,9 @@ class AdminProfileDash extends Component {
             <button className="btn btn-success"><a href="/login" style={{textDecoration:'none', color:'white'}}>Login</a></button>                 
 
           </div>
-        </div>
+          </div>        
     );
   }
   
 }
-export default AdminProfileDash;
+export default memberdashboard;
