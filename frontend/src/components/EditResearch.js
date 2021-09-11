@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import "../CSS/EditResearch.css"
 
 class EditResearch extends Component {
 
@@ -84,10 +85,13 @@ class EditResearch extends Component {
     }
     render() {
         return (
+            <div className="topic1">
             <div className="col-md-8 mt-4 mx-auto">
             <h1 className="h3 mb-3 font-weight-normal">Edit Research</h1>
-              <form className="needs-validation" noValidate>
+            <div className="  image5"> </div>
+              <form className=" formbody1 needs-validation" noValidate>
                   <div className="form-group" style={{marginBottom:'15px'}}>
+                  <br/>
                         <label style={{marginBottom:'5px'}}>Name of scientist/scientists</label>
                         <input type="text"
                             className="form-control"
@@ -151,6 +155,7 @@ class EditResearch extends Component {
                     </button>
     
                 </form>
+            </div>
             </div>
         );
     }

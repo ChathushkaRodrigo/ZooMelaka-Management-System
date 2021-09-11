@@ -15,7 +15,7 @@ class MedicalDetails extends Component {
 
         const id = this.props.match.params.id;
 
-        axios.get(`http://localhost:8070/medical/get/${id}`).then((res)=>{
+        axios.get(`http://localhost:8015/medical/get/${id}`).then((res)=>{
             
         if(res.data.success){
                 this.setState({
@@ -39,7 +39,7 @@ class MedicalDetails extends Component {
             zname,
             animalID,
             injID,
-            sinfo} =this.state.medical;
+            sinfo } =this.state.medical;
 
   
         return (

@@ -15,7 +15,7 @@ export default class Reports extends Component{
 
         const id = this.props.match.params.id;
 
-        axios.get(`http://localhost:7070/post/${id}`).then((res) =>{
+        axios.get(`http://localhost:8015/project/${id}`).then((res) =>{
             if(res.data.success){
                 this.setState({
                     post:res.data.post

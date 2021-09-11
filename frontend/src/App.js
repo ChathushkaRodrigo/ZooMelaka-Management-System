@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Header from './components/header';
 import Footer from './components/footer';
-import './CSS/App.css'
+import './CSS/App.css';
 import Home from './components/home';
 
 //MEthanin palleha dapn
@@ -14,25 +14,30 @@ import AdminProfileDashboard from './components/AdminProfileDash';
 import CreateProfile from './components/CreateProfile';
 import Login from './components/Login';
 import EditProfile from './components/EditProfile';
+import ProfileDetails from './components/ProfileDetails';
 import AdminPanelHome from './components/AdminPanelHome';
 import EmployeeDashboard from './components/EmployeeDash';
 import EditEmployee from './components/EditPost';
+import EmployeeDetails from './components/PostDetails';
 import ResearchDashboard from './components/ResearchDashboard';
 import AddEmployee from './components/CreatePost';
 import EditResearch from './components/EditResearch';
-// import ResearchDetails from './components/ResearchDetails';
+import ResearchDetails from './components/ResearchDetails';
 import CreateResearch from './components/CreateResearch';
 import ProjectsHome from './components/ProjectsHome';
 import AddProject from './components/ProjectCreate';
 import ProjectDetails from './components/ProjectSearch';
 import EditDetails from './components/ProjectEdit';
+import ProjectReport from './components/ProjectReports';
 //medicals imported
 import MedicalDashboard from './components/MedicalDashboard';
 import CreateMedical from './components/CreateMedical';
 import EditMedical from './components/EditMedical';
+import MedicalDetails from './components/MedicalDetails';
 import TourGuideDashboard from './components/TourGuideDashboard';
 import CreateBooking from './components/CreateBooking';
 import UpdateBooking from './components/EditBooking';
+import BookingDetails from './components/BookingDetails';
 import AllAdoptions from './components/AllAdoptions';
 import AdoptionDetails from './components/AdoptionDetails';
 import EditAdoptionDetails from './components/UpdateAdoption';
@@ -58,6 +63,7 @@ render() {
         <Route path ="/login" component={Login}/>
         <Route path ="/AdminProfileDash" component={Login}/>
         <Route path ="/profile/update/:id" component={EditProfile}/>
+        <Route path="/profile/details/:id" component={ProfileDetails}/>
         
 
 
@@ -68,27 +74,31 @@ render() {
         <Route path="/EmployeeDash" component={EmployeeDashboard}/>
         <Route path="/edit/employee/:id" component={EditEmployee}/>
         <Route path="/employee/add" component={AddEmployee}/>
+        <Route path="/employee/details/:id" component={EmployeeDetails}/>
 
         
         <Route path = "/ResearchDashboard" component ={ResearchDashboard}/>
         <Route path = "/research/edit/:id" component ={EditResearch}/>
         <Route path = "/research/add" component = {CreateResearch}/>
-        {/* <Route path = "/research/:id" component = {ResearchDetails}/> */}
+        <Route path = "/research/details/:id" component = {ResearchDetails}/>
 
         <Route path = "/ProjectsHome" component = {ProjectsHome}/>
         <Route path = "/project/add" component = {AddProject}/>
         <Route path ="/project/find" component={ProjectDetails}/>
         <Route path ="/project/edit/:id" component={EditDetails}/>
+        <Route path ="/project/report/:id" component={ProjectReport}/>
         
         
         <Route path = "/medicalDashboard" component = {MedicalDashboard}/>
         <Route path = "/medical/create" component = {CreateMedical}/>
         <Route path = "/medical/update/:id" component = {EditMedical}/>
+        <Route path="/medical/details/:id" component ={MedicalDetails}/>
 
 
         <Route path = "/TourGuideDashboard" component = {TourGuideDashboard}/> 
         <Route path = "/booking/add" component = {CreateBooking}/>
         <Route path = "/booking/update/:id" component = {UpdateBooking}/>
+        <Route path=  "/booking/details/:id" component={BookingDetails}/>
         
 
 
@@ -104,10 +114,7 @@ render() {
         <Route path="/animal/details/:id" component={AnimalDetails}/>
 
 
-
-
-
-      
+        
 
         
         
