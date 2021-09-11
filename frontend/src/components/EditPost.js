@@ -101,10 +101,10 @@ export default class EditPost extends Component {
     render() {
         return (
             <div className="col-md-8 mt-4 mx-auto">
-                <h1 className="h3 mb-3 font-weight-normal">Edit new post</h1>
+                <h1 className="h3 mb-3 font-weight-normal">Edit Records</h1>
                 <form className="needs-validation" noValidate>
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                    <label style={{marginBottom:'5px'}} > Topic</label>
+                    <label style={{marginBottom:'5px'}} > Username</label>
                     <input type="text"
                     className="form-control"
                     name="eID"
@@ -114,7 +114,7 @@ export default class EditPost extends Component {
                     </div>
                 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} >Post Category</label>
+                <label style={{marginBottom:'5px'}} >FirstName</label>
                 <input type="text"
                 className="form-control"
                 name="userName"
@@ -124,7 +124,7 @@ export default class EditPost extends Component {
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} >Post Category</label>
+                <label style={{marginBottom:'5px'}} >eID</label>
                 <input type="text"
                 className="form-control"
                 name="firstName"
@@ -133,7 +133,7 @@ export default class EditPost extends Component {
                 onChange={this.handleInputChange}/></div>
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} >Post Category</label>
+                <label style={{marginBottom:'5px'}} >LastName</label>
                 <input type="text"
                 className="form-control"
                 name="lastName"
@@ -143,7 +143,7 @@ export default class EditPost extends Component {
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} >Post Category</label>
+                <label style={{marginBottom:'5px'}} >Email</label>
                 <input type="text"
                 className="form-control"
                 name="email"
@@ -152,7 +152,7 @@ export default class EditPost extends Component {
                 onChange={this.handleInputChange}/></div>
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} >Post Category</label>
+                <label style={{marginBottom:'5px'}} >Address</label>
                 <input type="text"
                 className="form-control"
                 name="address"
@@ -162,7 +162,7 @@ export default class EditPost extends Component {
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} >Post Category</label>
+                <label style={{marginBottom:'5px'}} >EmployeeType</label>
                 <input type="text"
                 className="form-control"
                 name="employeeType"
@@ -172,7 +172,7 @@ export default class EditPost extends Component {
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} >Post Category</label>
+                <label style={{marginBottom:'5px'}} >DOB</label>
                 <input type="text"
                 className="form-control"
                 name="DOB"
@@ -182,7 +182,7 @@ export default class EditPost extends Component {
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} >Post Category</label>
+                <label style={{marginBottom:'5px'}} >Salary</label>
                 <input type="text"
                 className="form-control"
                 name="salary"
@@ -200,7 +200,7 @@ export default class EditPost extends Component {
 
 
                 </form>
-                
+                <br/><br/><br/><br/><br/>
             </div>
         )
     }
