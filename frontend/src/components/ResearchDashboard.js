@@ -61,7 +61,7 @@ onDelete =(id)=>{
             <tr key={index}>
               <th scope= "row">{index+1}</th>
               <td>
-                 <a href= {`/research/${researches._id}`}style={{textDecration:'none'}}>
+                 <a href= {`/research/details/${researches._id}`}style={{textDecration:'none'}}>
               <td>{researches.name_of_scientist}</td>
               </a>
               </td>

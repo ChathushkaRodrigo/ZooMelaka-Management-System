@@ -1,9 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import '../CSS/home.css'
+import HomeSlider from './HomeSlider/HomeSlider'
 export default function home() {
     return (
         <div>
+            <HomeSlider/>
             <div className="hero-image">
                 <div className="bg_banner" ></div>
                 <div className="hero-text">
@@ -20,14 +22,13 @@ export default function home() {
                         <div className="home-search">
                             <form className="d-flex">
                                 <input className="home-search-form" type="search" placeholder="Search.." aria-label="Search"/>
-                                <button className="btn btn-outline-success" type="submit"><i className="fas fa-search"></i></button>
+                                <button className="btn btn-outline-success" type="submit" id="searchbtn"><i className="fas fa-search"></i></button>
                             </form>
                         </div>
                     </div> 
             </div>
 
-
-            <div className="home-content">
+             <div className="home-content">
                 
                 <div className="home-content-topic">
                     <p id="knowus"><font color="green">Get to know</font> us</p>
@@ -50,6 +51,11 @@ export default function home() {
                     </a>
                 </div>
             </div>
+
+
+
+
+
         </div>
     )
 }
