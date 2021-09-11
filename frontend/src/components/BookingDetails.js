@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import '../CSS/booking-details.css'
 
 
 class BookingDetails extends Component {
@@ -35,16 +36,17 @@ class BookingDetails extends Component {
 
     render() {
 
-        const { CustomerName,CustomerEmail,MobileNumber,TourOption,VisitDate,Time,TourGuideName} =this.state.booking;
+        const { CustomerName,CustomerEmail,MobileNumber,TourOption,Date,Time,TourGuideName} =this.state.booking;
 
   
         return (
             <div>
+            <div className="col-md-8 mt-4 mx-auto" id="edit-booking-body">
                     <h1>    Booking Details</h1> 
                     <br/>
                     <br/>
-
-                                        <form>
+                    <div className="details-form">
+                     <form>
                     <div class="form-group">
                         <label for="emailC">Email address</label>
                         <input type="email" class="form-control" id="emailC" placeholder={CustomerEmail} disabled/>
@@ -70,7 +72,7 @@ class BookingDetails extends Component {
                     <br/>
                     <div class="form-group">
                     <label for="Date">Date</label>
-                        <input type="text" class="form-control" id="Date" placeholder={VisitDate} disabled/>
+                        <input type="text" class="form-control" id="Date" placeholder={Date} disabled/>
                         
                     </div>
                     <br/>
@@ -87,7 +89,7 @@ class BookingDetails extends Component {
                     </div>
                    
                     </form>
-
+                    </div>
 
                                         
 
@@ -95,6 +97,7 @@ class BookingDetails extends Component {
 
 
 
+            </div> <br/><br/>
             </div>
             
         )
