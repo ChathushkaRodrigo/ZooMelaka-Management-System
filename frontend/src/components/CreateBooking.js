@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react'
 import axios from 'axios';
-
+import '../CSS/create-booking.css'
 
 export default class CreateBooking extends Component {
     constructor(props) {
@@ -68,19 +69,20 @@ export default class CreateBooking extends Component {
 
     render() {
         return (
-        
-            <div className="col-md-8 mt-4 mx-auto">
-                
-
-             <h1 className="h8 mb-8 font-weight-fw-bold align-content-center">   Create a new Booking   </h1>
+            <div className="create-booking-body">
+            <div class="d-flex flex-column justify-content-center w-100 h-100">
+            <div className="col-md-8 mt-4 mx-auto" id="content">
+                <div id="header">
+             <h1 className="h8 mb-8 font-weight-fw-bold align-content-center" id="crtH">   Create a new Booking   </h1>
+             </div>
              <br/>
            
                     <br/>
-
-                    <form className="needs-validation"  >
+                    
+                    <form className="create-form"  >
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label for="emailC" style={{marginBottom:'5px'}}>Email address</label>
-                    <input type="text" 
+                    <input type="email" 
                         className="form-control" 
                         name="CustomerEmail" 
                         id="cEmail"
@@ -106,7 +108,7 @@ export default class CreateBooking extends Component {
                     <br/>
                     <div className="form-group">
                     <label for="MobileNo" style={{marginBottom:'5px'}}>Mobile Number</label>
-                        <input type="text" 
+                        <input type="number" 
                         className="form-control" 
                         id="MobileNo"name="MobileNumber" 
                         placeholder="Enter your mobile number"
@@ -128,7 +130,7 @@ export default class CreateBooking extends Component {
                     <br/>
                     <div className="form-group">
                     <label for="Date" style={{marginBottom:'5px'}}>Date</label>
-                        <input type="text" 
+                        <input type="date" 
                         className="form-control" 
                         id="Date" 
                         name="Date" 
@@ -140,7 +142,7 @@ export default class CreateBooking extends Component {
                     <br/>
                     <div className="form-group">
                     <label for="Time" style={{marginBottom:'5px'}}>Allocated time</label>
-                        <input type="text" 
+                        <input type="time" 
                         className="form-control" 
                         id="Time" 
                         name="Time"
@@ -162,23 +164,37 @@ export default class CreateBooking extends Component {
                         
                     </div>
                         <br/><br/>
+                        <input type="checkbox" name="terms" id="terms" onchange="activateButton(this)"/>  I Agree Terms and Coditions
+                        <br/><br/>
                     <button className="btn btn-success" type="submit" style={{marginBottom:'15px'}} onClick={this.onsubmit}>
                         <i className="far fa-check-square"></i>
                         &nbsp; Submit Booking
                     </button>
-
-                    
-                    
+                    &nbsp;
+                    <br/>
                    
-                    </form>
-                <br/>
 
-                <button className ="btn btn-success"><a href="./TourGuideDashboard." style={{textDecoration:'none' ,color:'white' }}>  Dashboard </a></button>
+                        <br/>
+                    
+                    <div>
+                    <button className ="btn btn-success"><a href="/TourGuideDashboard" style={{textDecoration:'none' ,color:'white' }}>  Dashboard </a></button>
+                    </div> <br/><br/>
+                    <div>
+                    <button className ="btn btn-success"><a href="#" style={{textDecoration:'none' ,color:'white' }}>  Demo </a></button>
+                    </div> <br/><br/>
+                    </form>
+
+                <br/>
+                    
+                </div>
                   
      
 
 
-            </div>
+           
+            	
+</div>
+</div>
         )
     }
 }
