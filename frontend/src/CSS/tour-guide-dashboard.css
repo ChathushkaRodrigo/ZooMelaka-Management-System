@@ -1,24 +1,125 @@
-.hero-image .bg_banner {
+.hero-dashboard .bg_tour {
   display: block;
   position: relative;
-  top: -83px;
-  width: 25%;
+  top: -63px;
+  width: 30%;
   float: right;
   color: violet;
   height: 700px;
-  background-image: url(../images/016.png);
-  background-position: right;
-  background-size: 83%;
+  background-image: url(../images/tourguidegif.gif);
+  background-position: center;
+  background-size: 85%;
   background-repeat: no-repeat;
+  border-radius: 50px;
+  background-position-y: 110px;
+  -webkit-mask: radial-gradient(
+        var(--r1, 100%) var(--r2, 50%) at top,
+        white 79.5%,
+        transparent 80%
+      )
+      top left,
+    radial-gradient(
+        var(--r1, 100%) var(--r2, 50%) at bottom,
+        transparent 79.5%,
+        white 80%
+      )
+      top center,
+    radial-gradient(
+        var(--r1, 100%) var(--r2, 50%) at top,
+        white 79.5%,
+        transparent 80%
+      )
+      top right;
+  mask: radial-gradient(
+        var(--r1, 100%) var(--r2, 50%) at top,
+        white 79.5%,
+        transparent 80%
+      )
+      top left,
+    radial-gradient(
+        var(--r1, 100%) var(--r2, 50%) at bottom,
+        transparent 79.5%,
+        white 80%
+      )
+      top center,
+    radial-gradient(
+        var(--r1, 100%) var(--r2, 50%) at top,
+        white 79.5%,
+        transparent 80%
+      )
+      top right;
+  /* adjust the 150% to control the covered area, the bigger the value the bigger the area will be*/
+  -webkit-mask-size: 33.4% 150%;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: 33.4% 150%;
+  mask-repeat: no-repeat;
 }
-.hero-text {
+.hero-tour {
   display: block;
   position: relative;
   padding: 30px;
   text-align: left;
   position: absolute;
-  color: #474747;
+  color: #000000;
   top: 20%;
-  margin-left: 40px;
+  margin-left: 50px;
+  font-size: 100%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.Tourdashboard {
+  position: relative;
+  top: -270px;
 }
 
+#tgdb {
+  background-color: lavender;
+}
+
+#tourguideheading {
+  font-size: 100px;
+}
+.table {
+  border: 0.5px solid #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  border-collapse: separate;
+  border: solid black 1px;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+}
+
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border: 0.3px solid #000000;
+}
+
+#Customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #3bb78f;
+  background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+  color: white;
+  font-size: larger;
+}
+#Customers tr:hover {
+  background-color: lavenderblush;
+}
+.header {
+  padding: 80px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+
+  background-position-y: 5px;
+}
+body {
+  font-family: Arial;
+  margin: 0;
+}
