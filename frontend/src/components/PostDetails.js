@@ -40,6 +40,30 @@ export default class PostDetails extends Component {
                     <dt className="col-sm-3">LastName</dt>
                     <dd className="col-sm-9">{lastName}</dd>
                 </dl>
+                <dl className="row">
+                    <dt className="col-sm-3">EID</dt>
+                    <dd className="col-sm-9">{eID}</dd>
+                </dl>
+                <dl className="row">
+                    <dt className="col-sm-3">Email</dt>
+                    <dd className="col-sm-9">{email}</dd>
+                </dl>
+                <dl className="row">
+                    <dt className="col-sm-3">Address</dt>
+                    <dd className="col-sm-9">{address}</dd>
+                </dl>
+                <dl className="row">
+                    <dt className="col-sm-3">Employee Type</dt>
+                    <dd className="col-sm-9">{employeeType}</dd>
+                </dl>
+                <dl className="row">
+                    <dt className="col-sm-3">D.O.B</dt>
+                    <dd className="col-sm-9">{DOB}</dd>
+                </dl>
+                <dl className="row">
+                    <dt className="col-sm-3">Salary</dt>
+                    <dd className="col-sm-9">{salary}</dd>
+                </dl>
             </div>
         )
     }

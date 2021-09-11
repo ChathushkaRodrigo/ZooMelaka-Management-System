@@ -57,6 +57,7 @@
 }
 
 .packagecards-container {
+  
   display: flex;
   flex-direction: row;
 }
@@ -76,16 +77,14 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-
-
 .package-card:hover {
   background-color: #3bb78f;
   background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
 }
 
 .package-card h1:hover {
-   h1{
-     text-color: white;
+  h1 {
+    text-color: white;
   }
 }
 
@@ -93,4 +92,9 @@
   padding: 20px;
   font-size: xx-large;
   height: 100%;
+}
+
+#searchbtn {
+  border-radius: 30%;
+  width: 60px;
 }
