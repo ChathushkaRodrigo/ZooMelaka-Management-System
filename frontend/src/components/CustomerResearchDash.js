@@ -1,9 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import axios from 'axios';
-import "../CSS/ResearchDashboard.css"
+import "../CSS/CustomerResearchDash.css"
 
-class ResearchDashboard extends Component {
+
+class CustomerResearchDash extends Component {
   constructor(props){
   super(props);
 
@@ -29,16 +30,7 @@ retrieveResearch(){
   
 }
 
-onDelete =(id)=>{
-  
-  axios.delete(`http://localhost:8015/research/delete/${id}`).then((res) =>{
-  
-    alert("Deleted Successfully");
-  
-    this.retrieveResearch();
-  })
-  
-}
+
 
   render() {
     return (
@@ -71,7 +63,7 @@ onDelete =(id)=>{
               <th scope="col">
                 <b>Research_information</b>
               </th>
-              <th scope="col">Action</th>
+          
             </tr>
           </thead>
           <tbody>
@@ -91,24 +83,13 @@ onDelete =(id)=>{
                 <td>{researches.catergory}</td>
                 <td>{researches.research_name} </td>
                 <td>{researches.research_information}</td>
-                <td>
-                  <a className="btn btn-warning" href ={`research/edit/${researches._id}`}>
-                    Edit &nbsp;
-                  </a>
-                  &nbsp; &nbsp; &nbsp;
-                  <a
-                    className="btn btn-danger"
-                    href=""
-                    onClick={() => this.onDelete(researches._id)}>
-                    <i className="far fa-trash-alt"></i> &nbsp; Delete
-                  </a>
-                </td>
+             
               </tr>
             ))}
           </tbody>
         </table>
 
-        <button className="btn btn-success"><a href= "/research/add"style ={{textDecoration:'none',color:"white"}}>Create New Research</a></button>
+     
         
        
       </div>
@@ -117,4 +98,4 @@ onDelete =(id)=>{
   }
 }
 
-export default ResearchDashboard;
+export default CustomerResearchDash;
