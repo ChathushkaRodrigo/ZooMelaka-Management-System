@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Header from './components/header';
 import Footer from './components/footer';
-import './CSS/App.css'
+import './CSS/App.css';
 import Home from './components/home';
 
 //MEthanin palleha dapn
@@ -46,9 +46,6 @@ import AnimalDashboard from './components/AnimalDashboard';
 import CreateAnimalPortfolio from './components/CreateAnimal';
 import UpdateAnimalPortfolio from './components/EditAnimal';
 import AnimalDetails from './components/AnimalDetails';
-
-//import home slider
-import HomeSlider from './components/HomeSlider/HomeSlider'
 
 class TourApp extends Component {
   
@@ -117,10 +114,7 @@ render() {
         <Route path="/animal/details/:id" component={AnimalDetails}/>
 
 
-        {/* Home Slider */}
-        <Route path="/Homeslider" component={HomeSlider}/>
-
-      
+        
 
         
         
