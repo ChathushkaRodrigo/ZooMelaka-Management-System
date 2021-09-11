@@ -95,7 +95,7 @@ handleSearchArea = (e) =>{
                           <tr>
                             <th scope="row">{index+1}</th>
                             <td>
-                                <a href={`/post/${posts._id}`} style={{textDecoration:'none'}}>
+                                <a href={`/employee/details/${posts._id}`} style={{textDecoration:'none'}}>
                                 {posts.eID}
                                 </a>
                                 

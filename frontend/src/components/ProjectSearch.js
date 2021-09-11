@@ -100,7 +100,7 @@ export default class Search extends Component {
                 <td>{projects.projectID}
                 </td>
                 <td>
-                  <a href={`/post/${projects._id}`} style={{textDecoration:'none'}}>{projects.name}</a>
+                  <a href={`/project/report/${projects._id}`} style={{textDecoration:'none'}}>{projects.name}</a>
                 </td>
                 <td>{projects.title}</td>
                 <td>{projects.description}</td>
