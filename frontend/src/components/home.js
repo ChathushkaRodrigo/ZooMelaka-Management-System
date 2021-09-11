@@ -28,26 +28,14 @@ export default function home() {
                 
             </div>    
             <div className="home"style={{ backgroundImage: `url(${serviceImage})` }}>
-            <div className="home-content">
-                
-                
-                    <div className="packagecards-container">
-                        <a href="">
-                            <div className="package-card">
-                                <h1>HISTORY</h1>
-                            </div>
-                        </a>
-                        <a>
-                            <div className="package-card">
-                                <h1>WHY WE?</h1>
-                            </div>
-                        </a>    
-                        <a>
-                            <div className="package-card">
-                                <h1>OUR SERVICES</h1>
-                            </div>
-                        </a>
-                    </div>
+            <div className="headerContainer2">
+                <div className="card1">
+                    <center>
+                        <h1>The Community</h1>
+                        <p>vemvklvmmdcmkldamcmdscmdcmldmklcmaddcmlkmklcm<br/>jkcjkncjksmcwlkoc<br/></p>
+                    </center>
+
+                </div>  
             </div>
             </div>
             
