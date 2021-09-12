@@ -70,7 +70,7 @@ export default class CreateBooking extends Component {
             <div class="d-flex flex-column justify-content-center w-100 h-100">
             <div className="col-md-8 mt-4 mx-auto" id="content">
                 <div id="header">
-             <h1 className="h8 mb-8 font-weight-fw-bold align-content-center" id="crtH">  Create a Booking   </h1>
+             <h1 className="h8 mb-8 font-weight-fw-bold align-content-center" id="crtH">  Request a Booking   </h1>
              </div>
              <br/>
            
@@ -162,7 +162,8 @@ export default class CreateBooking extends Component {
                         
                     </div>
                         <br/><br/>
-                       
+                        <input type="checkbox" name="terms" id="terms" onchange="activateButton(this)"/>  I Agree Terms and Coditions
+                        <br/><br/>
                     <button className="btn btn-success" type="submit" style={{marginBottom:'15px'}} onClick={this.onsubmit}>
                         <i className="far fa-check-square"></i>
                         &nbsp; Submit Booking
@@ -174,11 +175,9 @@ export default class CreateBooking extends Component {
                         <br/>
                     
                     <div>
-                    <button className ="btn btn-success"><a href="/TourGuideDashboard" style={{textDecoration:'none' ,color:'white' }}>  Dashboard </a></button>
+                    <button className ="btn btn-success"><a href="/" style={{textDecoration:'none' ,color:'white' }}>  Home </a></button>
                     </div> <br/><br/>
-                    <div>
-                    <button className ="btn btn-success"><a href="#" style={{textDecoration:'none' ,color:'white' }}>  Demo </a></button>
-                    </div> <br/><br/>
+                    <br/><br/>
                     </form>
 
                 <br/>

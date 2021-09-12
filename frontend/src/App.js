@@ -38,6 +38,7 @@ import TourGuideDashboard from './components/TourGuideDashboard';
 import CreateBooking from './components/CreateBooking';
 import UpdateBooking from './components/EditBooking';
 import BookingDetails from './components/BookingDetails';
+import RequestBooking from './components/RequestBooking';
 import AllAdoptions from './components/AllAdoptions';
 import AdoptionDetails from './components/AdoptionDetails';
 import EditAdoptionDetails from './components/UpdateAdoption';
@@ -99,6 +100,7 @@ render() {
         <Route path = "/booking/add" component = {CreateBooking}/>
         <Route path = "/booking/update/:id" component = {UpdateBooking}/>
         <Route path=  "/booking/details/:id" component={BookingDetails}/>
+        <Route path="/booking/request" component={RequestBooking}/>
         
 
 
