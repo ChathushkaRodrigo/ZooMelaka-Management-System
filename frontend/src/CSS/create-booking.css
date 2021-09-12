@@ -85,7 +85,11 @@ label {
   filter: blur(10px);
 }
 #crtH {
-  color: white;
+  color: rgb(0, 0, 0);
+  font-size: 50px;
+  margin: auto;
+  font-family: fantasy;
+  padding-top: 50px;
 }
 
 #content{

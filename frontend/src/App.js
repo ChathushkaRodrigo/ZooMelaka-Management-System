@@ -1,59 +1,71 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Header from './components/header';
+import NavBar from './components/NavBar';
 import Footer from './components/footer';
 import './CSS/App.css';
 import Home from './components/home';
 
-//MEthanin palleha dapn
-// import AnimalDashboard from './components/AnimalDashboard';
-// import AllAdoptions from './components/AllAdoptions';
 
+//User Profile Management 
 import AdminProfileDashboard from './components/AdminProfileDash';
-
 import CreateProfile from './components/CreateProfile';
 import Login from './components/Login';
 import EditProfile from './components/EditProfile';
 import ProfileDetails from './components/ProfileDetails';
+
+//Employee Management
 import AdminPanelHome from './components/AdminPanelHome';
 import EmployeeDashboard from './components/EmployeeDash';
 import EditEmployee from './components/EditPost';
 import EmployeeDetails from './components/PostDetails';
+
+//Research Management
 import ResearchDashboard from './components/ResearchDashboard';
 import AddEmployee from './components/CreatePost';
 import EditResearch from './components/EditResearch';
 import ResearchDetails from './components/ResearchDetails';
 import CreateResearch from './components/CreateResearch';
+
+//Project Management
 import ProjectsHome from './components/ProjectsHome';
 import AddProject from './components/ProjectCreate';
 import ProjectDetails from './components/ProjectSearch';
 import EditDetails from './components/ProjectEdit';
 import ProjectReport from './components/ProjectReports';
-//medicals imported
+//Medical Management
 import MedicalDashboard from './components/MedicalDashboard';
 import CreateMedical from './components/CreateMedical';
 import EditMedical from './components/EditMedical';
 import MedicalDetails from './components/MedicalDetails';
+
+//Customer Service Management
 import TourGuideDashboard from './components/TourGuideDashboard';
 import CreateBooking from './components/CreateBooking';
 import UpdateBooking from './components/EditBooking';
 import BookingDetails from './components/BookingDetails';
+import RequestBooking from './components/RequestBooking';
+
+//Adoption Management
 import AllAdoptions from './components/AllAdoptions';
 import AdoptionDetails from './components/AdoptionDetails';
 import EditAdoptionDetails from './components/UpdateAdoption';
 import CreateAdoption from './components/AddAdoption';
+
+//Animal Management
 import AnimalDashboard from './components/AnimalDashboard';
 import CreateAnimalPortfolio from './components/CreateAnimal';
 import UpdateAnimalPortfolio from './components/EditAnimal';
 import AnimalDetails from './components/AnimalDetails';
-
+import CustomerResearchDash from './components/CustomerResearchDash';
+import ResearchCollaboration from './components/ResearchCollaboration';
+import CreateCollaboration from './components/CreateCollaboration';
 class TourApp extends Component {
   
 render() {
     return (
       <div>
       <Router>
-        <Header/>
+        <NavBar/>
         
         <Route path="/" exact component={Home}/>
       
@@ -80,7 +92,11 @@ render() {
         <Route path = "/ResearchDashboard" component ={ResearchDashboard}/>
         <Route path = "/research/edit/:id" component ={EditResearch}/>
         <Route path = "/research/add" component = {CreateResearch}/>
-        <Route path = "/research/details/:id" component = {ResearchDetails}/>
+        <Route path = "/research/details/:id" component = {ResearchDetails}/> 
+        <Route path = "/research/customerDash/" component = {CustomerResearchDash}/> 
+        <Route path = "/research/collaboration/" component = {ResearchCollaboration}/> 
+        <Route path = "/research/createCollaboration/" component = {CreateCollaboration}/> 
+
 
         <Route path = "/ProjectsHome" component = {ProjectsHome}/>
         <Route path = "/project/add" component = {AddProject}/>
@@ -99,6 +115,7 @@ render() {
         <Route path = "/booking/add" component = {CreateBooking}/>
         <Route path = "/booking/update/:id" component = {UpdateBooking}/>
         <Route path=  "/booking/details/:id" component={BookingDetails}/>
+        <Route path="/booking/request" component={RequestBooking}/>
         
 
 
