@@ -180,6 +180,8 @@
   background-color: rgb(230, 230, 230);
   text-align: center;
   padding: 10px;
+  background: linear-gradient(60deg, black 50%, rgb(19, 43, 1));
+  opacity: 0.8;
 }
 
 .fixed-footer p {

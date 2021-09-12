@@ -2,6 +2,8 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 
+import '../CSS/EmployeeDashboard.css'
+
 
 export default class Home extends Component {
 constructor(props){
@@ -58,16 +60,19 @@ handleSearchArea = (e) =>{
 
   render() {
     return (
-        <div className="container">
+        <div className="header1">
           <div className="row">
-            <div className="col-lg-9 mt-2 mb-2">
-              <h4>ALL Posts</h4>
+              
+            <div className="col-lg-9 mt-2 mb-2"><b>
+              <h4 style={{color:"white",fontSize:"50px"}}>Employee Managment<br/> Dashboard</h4>
+              </b>
+              <div className="employeeImg"> </div>
               </div>
-              <div className="col-lg-3 mt-2 mb-2">
-              <input
+              <div className="col-lg-3 mt-2 mb-2" style={{margin:"15px",marginLeft:"350px"}}>
+              <input style={{width:"500px"}}
               className="form-control"
               type="search"
-              placeholder="Search"
+              placeholder="                                         Search for records"
               name="searchQuery"
               onChange={this.handleSearchArea}>
 
@@ -75,11 +80,12 @@ handleSearchArea = (e) =>{
        
               </div>
               </div>
-        <table className="table">
-          <thead>
+           
+        <table className="table" style={{width:"100%"}}>
+          <thead style={{backgroundColor:"#333",color:"white",textTransform:'uppercase'}}>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">eID</th>
+              <th scope="col" style={{backgroundColor:"#333",color:"white"}}>#</th>
+              <th scope="col" >eID</th>
               <th scope="col">userName</th>
               <th scope="col">firstName</th>
               <th scope="col">lastName</th>
@@ -88,12 +94,13 @@ handleSearchArea = (e) =>{
               <th scope="col">employeeType</th>
               <th scope="col">DOB</th>
               <th scope="col">salary</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             {this.state.posts.map((posts,index) =>(
                           <tr>
-                            <th scope="row">{index+1}</th>
+                            <th scope="row" style={{backgroundColor: "#36c",color: "#fff"}}>{index+1}</th>
                             <td>
                                 <a href={`/employee/details/${posts._id}`} style={{textDecoration:'none'}}>
                                 {posts.eID}
@@ -109,7 +116,7 @@ handleSearchArea = (e) =>{
                             <td>{posts.DOB}</td>
                             <td>{posts.salary}</td>
                             <td>
-                            <a className="btn btn-warning" href={`/edit/employee/${posts._id}`}>
+                            <a className="btn btn-warning" style={{margin:'10px'}} href={`/edit/employee/${posts._id}`}>
                               <i className="fas fa-edit"></i>&nbsp;Edit
                             </a>
                             &nbsp;
@@ -127,12 +134,13 @@ handleSearchArea = (e) =>{
       
       
       </table>
-
-    <button className="btn btn-success"><a href="/employee/add" style={{textDecoration:'none',color:'white'}}>Create New Post</a>
+    <button className="btn btn-success" style={{margin:"15px"}}><a href="/employee/add" style={{textDecoration:'none',color:'white'}}>Create New Post</a>
 
         </button>
+        <br/><br/><br/><br/>
+      </div> 
 
-      </div>
+    
     )
   }
 }
