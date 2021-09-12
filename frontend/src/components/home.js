@@ -18,8 +18,8 @@ export default function home() {
             <div className="home" style={{ backgroundImage: `url(${BannerImage})` }}>
                 <div className="headerContainer">
                  <h1>Zoo Melaka</h1>
-                    <p></p>
-                    <p> Fresh look at our new services join us  <br/>to serve zoo community and <br/> spend some time with us lets make <br/> good memories </p>
+                    <br/><br/>
+                    <p> Fresh look at our new services join us  <br/>to serve zoo community and <br/> spend some time with us lets make <br/> good memories </p> <br/>
                         <Link to="/login">
                              <button > JOIN US </button>
                         </Link>
@@ -28,26 +28,14 @@ export default function home() {
                 
             </div>    
             <div className="home"style={{ backgroundImage: `url(${serviceImage})` }}>
-            <div className="home-content">
-                
-                
-                    <div className="packagecards-container">
-                        <a href="">
-                            <div className="package-card">
-                                <h1>HISTORY</h1>
-                            </div>
-                        </a>
-                        <a>
-                            <div className="package-card">
-                                <h1>WHY WE?</h1>
-                            </div>
-                        </a>    
-                        <a>
-                            <div className="package-card">
-                                <h1>OUR SERVICES</h1>
-                            </div>
-                        </a>
-                    </div>
+            <div className="headerContainer2">
+                <div className="card1">
+                    <center>
+                        <h1>The Community</h1>
+                        <p>vemvklvmmdcmkldamcmdscmdcmldmklcmaddcmlkmklcm<br/>jkcjkncjksmcwlkoc<br/></p>
+                    </center>
+
+                </div>  
             </div>
             </div>
             
