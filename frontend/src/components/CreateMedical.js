@@ -36,7 +36,7 @@ export default class CreateMedical extends Component {
             zname:zname,
             animalID:animalID,
             injID:injID,
-            sinfo:"nuduja"
+            sinfo:sinfo
         }
         console.log(data);
 

@@ -1,0 +1,35 @@
+.researchbody {
+    align-items: center;
+    background-color: rgb(253, 253, 253);
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .image4 {
+    position: relative;
+    background-size: cover !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    margin-top: 10px;
+    height: 350px;
+    min-height: 250px;
+    width: 700px;
+    
+    
+
+
+   
+    background-image: url(https://zoosvic-endpoint-blob-prod.azureedge.net/cache/c/a/a/6/3/4/caa63497292e4dc05974515064b1235eb9f86026.jpg);
+   
+  
+  }
+  .formbody{
+      width:500px;
+      
+      
+  }
+  .topic{
+   margin :75px;
+   padding-left:200px;
+  }
