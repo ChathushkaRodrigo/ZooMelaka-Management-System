@@ -20,6 +20,9 @@
   background-size: 83%;
   background-repeat: no-repeat;
 }
+.home-body {
+  background-color: #121619;
+}
 
 .hero-buttons button {
   display: inline-block;
@@ -35,6 +38,21 @@
   color: white;
   text-align: center;
   border-radius: 5px;
+}
+.headerContainer2 {
+  align-items: center;
+  font-size: 30px;
+  font-weight: lighter;
+  background: -webkit-Radial-gradient(#eee 65%, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.home-content .home-content-topic {
+  font-size: 50px;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding-top: 0%;
 }
 
 .hero-text button {
@@ -59,13 +77,20 @@
 .packagecards-container {
   display: flex;
   flex-direction: row;
+  top: -250px;
+  bottom: 500px;
+  margin-left: 500px;
+}
+.service-background {
+  padding-top: 0px;
 }
 
 .package-card {
   display: inline-block;
   position: relative;
-  /* margin: auto; */
-  background-color: white;
+  margin: auto;
+  background-color: #afb1af;
+  background-image: radial-gradient(315deg, #e0fdf6 65%, #4c554c 10%);
   height: 250px;
   width: 275px;
   border-width: 1.5px;
@@ -81,10 +106,12 @@
   background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
 }
 
-.package-card h1:hover {
-  h1 {
-    text-color: white;
-  }
+.package-card h1 {
+  font-size: x-large;
+  font-weight: bold;
+  color: #0f0f0f;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
 }
 
 #knowus {
@@ -101,6 +128,7 @@
   width: 100%;
   height: 90vh;
   display: flex;
+  background-attachment: fixed;
   justify-content: center;
   align-items: left;
   flex-direction: column;
@@ -118,7 +146,7 @@
 .headerContainer h1 {
   justify-content: center;
   align-items: center;
-  font-size: 90px; 
+  font-size: 90px;
   height: 90px;
   font-weight: 50;
   background: -webkit-radial-gradient(#eee 65%, #333);
@@ -189,4 +217,17 @@
     background-color: rgb(225, 225, 225);
     color: #121619;
   }
+}
+
+.card1 h1 {
+  padding-top: -100px;
+}
+
+.card1 h1:hover {
+  font-size: 90px;
+}
+
+.card1 p:hover {
+  font-size: 60px;
+  padding-top: 30px;
 }
