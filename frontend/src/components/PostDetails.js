@@ -29,42 +29,46 @@ export default class PostDetails extends Component {
         const {eID,userName,firstName,lastName,email,address,employeeType,DOB,salary} = this.state.post;
 
         return (
-            <div style={{marginTop:'20px'}}>
-                <h4>{userName}</h4>
+            <div style={{marginTop:'20px',backgroundColor:"#00002b"}}>
+                 
+                <h1 style={{color:'white'}}>Hello, {userName}</h1>
                 <hr/>
+                <table style={{color:'white'}}> 
+                <tr>
+                    <td style={{border:"0px"}} className="col-sm-3">FirstName</td>
+                    <td style={{border:"0px"}} className="col-sm-9">{firstName}</td>
+                </tr>
+                <tr>
+                    <td style={{border:"0px"}} className="col-sm-3">LastName</td>
+                    <td style={{border:"0px"}} className="col-sm-9">{lastName}</td>
+                </tr>
+                <tr>
+                    <td style={{border:"0px"}} className="col-sm-3">EID</td>
+                    <td style={{border:"0px"}} className="col-sm-9">{eID}</td>
+                </tr>
+                <tr>
+                    <td style={{border:"0px"}} className="col-sm-3">Email</td>
+                    <td style={{border:"0px"}} className="col-sm-9">{email}</td>
+                </tr>
+                <tr>
+                    <td style={{border:"0px"}} className="col-sm-3">Address</td>
+                    <td style={{border:"0px"}} className="col-sm-9">{address}</td>
+                </tr>
+                <tr>
+                    <td style={{border:"0px"}} className="col-sm-3">Employee Type</td>
+                    <td style={{border:"0px"}} className="col-sm-9">{employeeType}</td>
+                </tr>
+                <tr>
+                    <td style={{border:"0px"}} className="col-sm-3">D.O.B</td>
+                    <td style={{border:"0px"}} className="col-sm-9">{DOB}</td>
+                </tr>
+                <tr>
+                    <td style={{border:"0px"}} className="col-sm-3">Salary</td>
+                    <td style={{border:"0px"}} className="col-sm-9">{salary}</td>
+                </tr>
+                </table>
 
-                <dl className="row">
-                    <dt className="col-sm-3">FirstName</dt>
-                    <dd className="col-sm-9">{firstName}</dd>
-                </dl>
-                <dl className="row">
-                    <dt className="col-sm-3">LastName</dt>
-                    <dd className="col-sm-9">{lastName}</dd>
-                </dl>
-                <dl className="row">
-                    <dt className="col-sm-3">EID</dt>
-                    <dd className="col-sm-9">{eID}</dd>
-                </dl>
-                <dl className="row">
-                    <dt className="col-sm-3">Email</dt>
-                    <dd className="col-sm-9">{email}</dd>
-                </dl>
-                <dl className="row">
-                    <dt className="col-sm-3">Address</dt>
-                    <dd className="col-sm-9">{address}</dd>
-                </dl>
-                <dl className="row">
-                    <dt className="col-sm-3">Employee Type</dt>
-                    <dd className="col-sm-9">{employeeType}</dd>
-                </dl>
-                <dl className="row">
-                    <dt className="col-sm-3">D.O.B</dt>
-                    <dd className="col-sm-9">{DOB}</dd>
-                </dl>
-                <dl className="row">
-                    <dt className="col-sm-3">Salary</dt>
-                    <dd className="col-sm-9">{salary}</dd>
-                </dl>
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/>
             </div>
         )
     }
