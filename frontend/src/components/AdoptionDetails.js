@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import axios from "axios";
-
+import "../CSS/AdoptionDetails.css"
 class AdoptionDetails extends Component {
     constructor(props){
         super(props);
 
         this.state = {
-            adoption: []
+            adoption: [],
+
         }
     }
 
@@ -19,26 +20,58 @@ class AdoptionDetails extends Component {
                     adoption: res.data.adoption
                 });
 
-                console.log(id);
+                console.log(this.state.adoption);
             }
         });
     }
 
+
     render() {
-        const { animal_name, adoption_level, payment_plan, live_cam, adoption_date, animal_id, member_id} = this.state.adoption;
-
+        //const { animal_name, adoption_level, payment_plan, live_cam, adoption_date, animal_id, member_id} = this.state.adoption;
+        
+        
+        
+        
         return (
-            <div>
-                <br/>
-                <h5>Adoption Details</h5>
 
-                <p>Animal Name = {animal_name}</p>
-                <p>Adoption Level = {adoption_level}</p>
-                <p>Payment Plan = {payment_plan}</p>
-                <p>Live Cam = {live_cam}</p>
-                <p>Adoption Date= {adoption_date}</p>
-                <p>Animal Id = {animal_id}</p>
-                <p>Member Id = {member_id}</p>
+        <div className = "bodybackgrnd">
+                <div className = "all-hero">
+                    <div class="bg_image bgimage"></div>
+                    <div className = "content">
+                        Adoptions Details
+                    </div>
+                </div>
+                <div className = "the_content">
+                <br/>
+            
+            <div className = "adpt-det">
+                <br/>
+
+                <p>Animal Name = {this.state.adoption.animal_name}</p>
+                <p>Adoption Level = {this.state.adoption.adoption_level}</p>
+                <p>Payment Plan = {this.state.adoption.payment_plan}</p>
+                <p>Live Cam = {this.state.adoption.live_cam}</p>
+                <p>Adoption Date= {this.state.adoption.adoption_date}</p>
+                <p>Animal Id = {this.state.adoption.animal_id}</p>
+                <p>Member Id = {this.state.adoption.member_id}</p>
+
+                <br/>
+
+                
+                           
+                            <div className = "adp-det-image">
+                                <div >
+                                <img className = "circlesType" alt ="Adoption"  src = 'https://s28164.pcdn.co/files/Asian-Small-clawed-Otter-0072-2545-300x300.jpg'></img>
+                                
+                                </div>
+                                <div >
+                                        
+                                </div>
+                            </div>
+                
+
+            </div>
+            </div>
             </div>
         );
     }
