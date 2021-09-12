@@ -1,0 +1,83 @@
+.searchbar {
+    position: relative;
+    width: 300px;
+    padding-left: 100px;
+  }
+
+
+.deletebtn{
+    text-decoration : none;
+    color : gray;
+  }
+  
+.header{
+      font-family: monospace;
+      text-align : center;
+  }
+
+
+.bottomspace{
+      padding-bottom: 30%;
+      
+  }
+
+  .bg_image{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+   
+    
+
+    
+}
+
+.bgimage{
+    background-image: url('https://scz.org/wp-content/uploads/2018/06/children_farms_2.jpg');
+    backface-visibility:initial;
+    opacity: 0.5;
+   
+}
+
+.hero{
+    position: fixed;
+    z-index: 0;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    height: 40vh;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    background: #333333;
+}
+ .content{
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+    margin-top: 50px;
+    padding-left: 80px;
+    padding-right: 120px;
+    padding-right: 80px;
+    color: beige;
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.the_content{
+  
+    position: relative;
+    margin-top: 200px;
+    padding-bottom: 120px;
+    padding-bottom: 80px;
+    background: #ffffff;
+
+    //background: #fff1d9;
+    //background-image: url(https://scz.org/wp-content/themes/zoo/assets/images/layout/pattern/cream.png?1624900993);
+    
+}

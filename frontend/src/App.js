@@ -41,6 +41,8 @@ import AnimalDashboard from './components/AnimalDashboard';
 import CreateAnimalPortfolio from './components/CreateAnimal';
 import UpdateAnimalPortfolio from './components/EditAnimal';
 import AnimalDetails from './components/AnimalDetails';
+import AnimalsforAdoption from './components/AnimalsforAdoption';
+import MemberAdoptedAnimals from './components/MemberAdoptedAnimals';
 
 class TourApp extends Component {
   
@@ -97,6 +99,8 @@ render() {
         <Route path = "/adoption/details/:id" component = {AdoptionDetails}/>
         <Route path = "/adoption/edit/:id" component = {EditAdoptionDetails}/>
         <Route path = "/adoption/add" component = {CreateAdoption}/>
+        <Route path = "/AnimalsforAdoption" component = {AnimalsforAdoption}/>
+        <Route path = "/profile/adoptedanimals" component = {MemberAdoptedAnimals}/>
 
         <Route path = "/animaldashboard" component = {AnimalDashboard}/>
         <Route path="/animal/add" component ={CreateAnimalPortfolio}/>

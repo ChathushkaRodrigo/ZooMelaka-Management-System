@@ -1,0 +1,71 @@
+.mem-adpt-bgimage{
+  
+    background-image: url('https://cdn-7.nikon-cdn.com/Images/Learn-Explore/Photography-Techniques/2009/The-A-List-At-the-Zoo/Media/_Julie-Larsen-Maher-9598-Sea-Otter-Jacob-SC-AQ-07-09-12.jpg');
+    backface-visibility:initial;
+    opacity: 0.5;
+    
+   
+}
+
+.mem-adpt-contentarea{
+
+        decoration: none;
+        text-decoration :none;
+        padding-top: 10px;
+        color:black;
+        background:#ffffff;
+}
+
+li.mem-gridder-list {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 92%;
+    max-width: 200px;
+    margin: 30px 1%;
+    margin-top: 100px;
+    margin-right: 6%;
+    margin-bottom: 20px;
+    margin-left: 7%;
+    text-align: center;
+  
+    -webkit-transition: -webkit-box-shadow .2s ease-in-out;
+    transition: -webkit-box-shadow .2s ease-in-out;
+    transition-property: box-shadow, -webkit-box-shadow;
+    transition-duration: 0.2s, 0.2s;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s;
+    transition: box-shadow .2s ease-in-out;
+    transition-property: box-shadow, -webkit-box-shadow;
+    transition-duration: 0.2s, 0.2s;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s;
+    transition: box-shadow .2s ease-in-out,-webkit-box-shadow .2s ease-in-out;
+    transition-property: box-shadow, -webkit-box-shadow;
+    transition-duration: 0.2s, 0.2s;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s;
+}
+
+.mem-gridder-show, li.mem-gridder-list {
+    position: relative;
+    background: #fff;
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+li.mem-gridder-list img {
+    width: 100%;
+    height: auto;
+    
+}
