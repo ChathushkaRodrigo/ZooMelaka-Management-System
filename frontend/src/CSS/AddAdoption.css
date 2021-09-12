@@ -35,7 +35,7 @@
     position: relative;
     background:#124429;
     color:white;
-    
+    font-size: 15px;
     
 }
 .add-contentdiv{
@@ -45,12 +45,22 @@
     padding-bottom: 100px;
     
 }
+.add-label{
+    font-size: 15px;
+    margin-left: 12px;
+}
+.add-label-chk{
+    font-size: 15px;
+    
+}
+.add-button{
+    margin-left: -8px;
+}
+.remextraspace{margin-left: 20px;}
 .adoption_level{
   position: relative;
   margin-top:-600px;
-  margin-left: 700px;
-  
-  
+  margin-left: 600px;
 
 }
 .adptlvl_img{
@@ -87,7 +97,7 @@
 
 .add-bgimage{
   
-    background-image: url('https://s28164.pcdn.co/files/pantanal-jaguar-tesoro-1280x720.jpg');
+    background-image: url('https://nationalzoo.com.au/wp-content/uploads/2016/12/donations-banner.jpg');
     backface-visibility:initial;
     opacity: 0.5;
     
@@ -97,7 +107,7 @@
 .add-hero{
     position: fixed;
     z-index: 0;
-    top: 60px;
+    top: 100px;
     left: 0;
     width: 100vw;
     height: 110vh;
@@ -106,20 +116,24 @@
     overflow: hidden;
     background: #333333;
 }
- .content{
+ .add-content{
     display: inline-block;
     vertical-align: middle;
     white-space: normal;
-    margin-top: 60px;
+    margin-top: 130px;
     padding-left: 80px;
     padding-right: 120px;
     padding-right: 80px;
     color: beige;
-    font-size: 30px;
+    
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+.add-topic{
+    font-size: 20px;
+    color:white;
+}
 .add-sub-content{
-    font-size: 18px;
+    font-size: 15px;
     text-align: left;
     margin-top: 60px;
     margin-left: -500px;

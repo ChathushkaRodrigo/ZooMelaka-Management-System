@@ -35,16 +35,16 @@ class AdoptionDetails extends Component {
         return (
 
         <div className = "bodybackgrnd">
-                <div className = "hero">
+                <div className = "all-hero">
                     <div class="bg_image bgimage"></div>
                     <div className = "content">
-                        <p>Adoptions Details</p>
+                        Adoptions Details
                     </div>
                 </div>
                 <div className = "the_content">
                 <br/>
             
-            <div className = " adpt-det">
+            <div className = "adpt-det">
                 <br/>
 
                 <p>Animal Name = {this.state.adoption.animal_name}</p>
@@ -61,7 +61,7 @@ class AdoptionDetails extends Component {
                            
                             <div className = "adp-det-image">
                                 <div >
-                                <img className = "circlesType" src = 'https://s28164.pcdn.co/files/Asian-Small-clawed-Otter-0072-2545-300x300.jpg'></img>
+                                <img className = "circlesType" alt ="Adoption"  src = 'https://s28164.pcdn.co/files/Asian-Small-clawed-Otter-0072-2545-300x300.jpg'></img>
                                 
                                 </div>
                                 <div >

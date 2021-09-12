@@ -15,7 +15,9 @@
         color:black;
         background:#ffffff;
 }
-
+.mem-adopt-topic{
+    font-size: 20px;
+}
 li.mem-gridder-list {
     display: inline-block;
     vertical-align: bottom;

@@ -1,3 +1,13 @@
+.an-foradp-bgimage{
+  
+    background-image: url('https://s28164.pcdn.co/files/pantanal-jaguar-tesoro-1280x720.jpg');
+    backface-visibility:initial;
+    opacity: 0.5;
+    
+   
+}
+
+
 .gridder {
     margin: 0 auto;
     padding: 0;
@@ -13,9 +23,9 @@ li.gridder-list {
     max-width: 200px;
     margin: 30px 1%;
     margin-top: 100px;
-    margin-right: 6%;
+    margin-right: 7%;
     margin-bottom: 20px;
-    margin-left: 2%;
+    margin-left: 6%;
     text-align: center;
     cursor: pointer;
     -webkit-transition: -webkit-box-shadow .2s ease-in-out;
@@ -86,7 +96,7 @@ li.gridder-list {
         decoration: none;
         text-decoration :none;
         padding-top: 10px;
-        color:black;
+        color:beige;
         background:#124429;
     }
 
@@ -94,6 +104,6 @@ li.gridder-list {
         
         position: relative;
         width: 300px;
-        margin-left: 800px;
+        margin-left: 700px;
         margin-top: -70px;
     }

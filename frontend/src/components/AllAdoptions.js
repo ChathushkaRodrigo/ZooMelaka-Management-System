@@ -64,10 +64,10 @@ class AllAdoptions extends Component {
  
         
           <div className = "bodybackgrnd">
-            <div className = "hero">
+            <div className = "all-hero">
               <div class="bg_image bgimage"></div>
               <div className = "content">
-                <p>Adoptions Details</p>
+                Adoptions Details
               </div>
             </div>
             <div className = "the_content">

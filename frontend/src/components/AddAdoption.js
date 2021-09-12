@@ -37,9 +37,9 @@ class AddAdoption extends Component {
 
         this.state.adptlvl = 
             <div>
-                <img className = "adptlvl_img" src ='https://s28164.pcdn.co/files/befe1abc-d1e4-4379-a2dc-3554ac1919bd-600x400.jpg'/>
+                <img className = "adptlvl_img" alt ="Adoption" src ='https://s28164.pcdn.co/files/befe1abc-d1e4-4379-a2dc-3554ac1919bd-600x400.jpg'/>
                 <div className = "adptlvl_des">
-                <h4>Advocate Level Adoption</h4>
+                <h4 className = "add-topic">Advocate Level Adoption</h4>
                 <p><ul>
                     <li>adoption certification</li>
                     <li>free once a week visit pass</li>
@@ -110,9 +110,9 @@ class AddAdoption extends Component {
         this.setState({yearly : '$300/yearly'});
         this.setState({adptlvl : 
         <div>
-            <img className = "adptlvl_img" src ='https://s28164.pcdn.co/files/befe1abc-d1e4-4379-a2dc-3554ac1919bd-600x400.jpg'/>
+            <img className = "adptlvl_img" alt ="Adoption"  src ='https://s28164.pcdn.co/files/befe1abc-d1e4-4379-a2dc-3554ac1919bd-600x400.jpg'/>
             <div className = "adptlvl_des">
-            <h4>Advocate Level Adoption</h4>
+            <h4 className = "add-topic">Advocate Level Adoption</h4>
             <p><ul>
                 <li>adoption certification</li>
                 <li>free once a week visit pass</li>
@@ -129,9 +129,9 @@ class AddAdoption extends Component {
         this.setState({yearly : '$350/yearly'});
         this.setState({adptlvl : 
         <div>
-            <img className = "adptlvl_img" src ='https://sydneyzoo.com/wp-content/uploads/2021/05/a6da545b-8b76-4390-9938-716cf9070080.jpeg'/>
+            <img className = "adptlvl_img" alt ="Adoption"  src ='https://sydneyzoo.com/wp-content/uploads/2021/05/a6da545b-8b76-4390-9938-716cf9070080.jpeg'/>
             <div className = "adptlvl_des">
-            <h4>Guardian Level Adoption</h4>
+            <h4 className = "add-topic">Guardian Level Adoption</h4>
             <p><ul>
                 <li>adoption certification</li>
                 <li>free once a week visit pass</li>
@@ -148,9 +148,9 @@ class AddAdoption extends Component {
         this.setState({yearly : '$500/yearly'});
         this.setState({adptlvl : 
         <div >
-            <img className = "adptlvl_img" src = "https://media.gettyimages.com/photos/happy-girl-hugging-sheep-in-petting-zoo-picture-id1064200044?k=20&m=1064200044&s=612x612&w=0&h=8XMRKl_Ch2FQr3kEgALFPqL3DWX7iSymN9xKuzGKmos="/>
+            <img className = "adptlvl_img" alt ="Adoption"  src = "https://media.gettyimages.com/photos/happy-girl-hugging-sheep-in-petting-zoo-picture-id1064200044?k=20&m=1064200044&s=612x612&w=0&h=8XMRKl_Ch2FQr3kEgALFPqL3DWX7iSymN9xKuzGKmos="/>
             <div className = "adptlvl_des">
-            <h4>Protector Level Adoption</h4>
+            <h4 className = "add-topic">Protector Level Adoption</h4>
             <p><ul>
                 <li>adoption certification</li>
                 <li>free once a week visit pass</li>
@@ -167,9 +167,9 @@ class AddAdoption extends Component {
         this.setState({yearly : '$700/yearly'});
         this.setState({adptlvl : 
         <div>
-            <img className = "adptlvl_img" src = 'https://www.zoodoo.com.au/assets/img/092.JPG'/>
+            <img className = "adptlvl_img"  alt ="Adoption" src = 'https://www.zoodoo.com.au/assets/img/092.JPG'/>
             <div className = "adptlvl_des">
-            <h4>Partner Level Adoption</h4>
+            <h4 className = "add-topic">Partner Level Adoption</h4>
             <p><ul>
                 <li>adoption certification</li>
                 <li>free once a week visit pass</li>
@@ -185,8 +185,8 @@ class AddAdoption extends Component {
             <div className = 'bckgrnd'>
                 <div className = "add-hero">
                     <div class="add-bg_image add-bgimage"></div>
-                    <div className = "content">
-                        <p>Adopt an Animal</p><br/>
+                    <div id = "addcontent" className = "add-content">
+                        <p className = "add-topic">Adopt an Animal</p><br/>
                         <p className = 'add-sub-content'>Become a proud conservationist of a Zoo Melaka animal today! By adopting an <br/> animal, you not only help the care and feeding of that animal, but also <br/>support education and conservation programs at the Zoo Melaka.</p>
                   </div>
                 </div>
@@ -194,7 +194,7 @@ class AddAdoption extends Component {
                     <br/>
                 <div className = "add-formdiv container">
                 <div className="form-group">
-                    <label for="name">Animal Name</label>
+                    Animal Name
                     <input type="text" className="form-control" id="name" placeholder="Enter Animal name" value = {this.state.animal_name} onChange = {this.setAnimalName}/>
                     
                 </div>
@@ -202,30 +202,31 @@ class AddAdoption extends Component {
                     Adoption Level
                     <div onChange = {this.setAdoptionLevel}>
                     <input type="radio" id="advocate" name="adoption_level" value = "Advocate" onClick = {this.advocate}/>
-                    <label for="advocate">Advocate</label><br/>
-                    <input type="radio" id="guardian" name="adoption_level" value = "Guardian" onClick = {this.guardian} />
-                    <label for="guardian">Guardian</label><br/>
-                    <input type="radio" id="protector" name="adoption_level" value = "Protector" onClick = {this.protector} />
-                    <label for="protector">Protector</label><br/>
-                    <input type="radio" id="partner" name="adoption_level" value = "Partner" onClick = {this.partner}/>
-                    <label for="partner">Partner</label><br/>
+                    <label className = "add-label remextraspace" for="advocate">Advocate</label><br/>
+                    <input  type="radio" id="guardian" name="adoption_level" value = "Guardian" onClick = {this.guardian} />
+                    <label className = "add-label" for="guardian">Guardian</label><br/>
+                    <input  className = "add-button" type="radio" id="protector" name="adoption_level" value = "Protector" onClick = {this.protector} />
+                    <label className = "add-label" for="protector">Protector</label><br/>
+                    <input className = "add-button" type="radio" id="partner" name="adoption_level" value = "Partner" onClick = {this.partner}/>
+                    <label className = "add-label" for="partner">Partner</label><br/>
                     </div>
                 </div>
                 <div className="form-group">
                     Choose a payment plan
                     <div onChange = {this.setPaymentPlan}>
                     <input type="radio" id="monthly" name="payment_plan" value = {this.state.monthly} />
-                    <label for="monthly">{this.state.monthly}</label><br/>
+                    <label className = "add-label remextraspace" for="monthly">{this.state.monthly}</label><br/>
                     <input type="radio" id="6months" name="payment_plan" value = {this.state.months_6} />
-                    <label for="6months">{this.state.months_6}</label><br/>
-                    <input type="radio" id="yearly" name="payment_plan" value = {this.state.yearly} />
-                    <label for="yearly">{this.state.yearly}</label><br/>
+                    <label className = "add-label" for="6months">{this.state.months_6}</label><br/>
+                    <input  className = "add-button" type="radio" id="yearly" name="payment_plan" value = {this.state.yearly} />
+                    <label className = "add-label" for="yearly">{this.state.yearly}</label><br/>
                     </div>
                 </div>
                 <div className="form-group">
-                    <label for="live_cam">Reqeust Live Cam</label> &nbsp;
-                    <input type="checkbox" id="live_cam" placeholder="Enter Live Cam" value = "true" onChange = {this.setLiveCam}/>
-                    <p>&nbsp;&nbsp;&nbsp;-$20/monthly</p>
+                    <label className = "add-label-chk" for="live_cam">Reqeust Live Cam</label> &nbsp;
+                    <input className = "add-label" type="checkbox" id="live_cam" placeholder="Enter Live Cam" value = "true" onChange = {this.setLiveCam}/>
+                    <br/>&nbsp;&nbsp;&nbsp;-$20/monthly
+                    <br/>
                 </div>
                
                 {/* <div className="form-group">
