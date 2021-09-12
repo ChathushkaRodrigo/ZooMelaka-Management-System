@@ -60,18 +60,19 @@ handleSearchArea = (e) =>{
 
   render() {
     return (
-        <div>
+        <div className="header1">
           <div className="row">
               
-            <div className="col-lg-9 mt-2 mb-2">
-              <h4 style={{color:"white"}}>Employee Managment Dashboard</h4>
-              
+            <div className="col-lg-9 mt-2 mb-2"><b>
+              <h4 style={{color:"white",fontSize:"50px"}}>Employee Managment<br/> Dashboard</h4>
+              </b>
+              <div className="employeeImg"> </div>
               </div>
-              <div className="col-lg-3 mt-2 mb-2">
-              <input
+              <div className="col-lg-3 mt-2 mb-2" style={{margin:"15px",marginLeft:"350px"}}>
+              <input style={{width:"500px"}}
               className="form-control"
               type="search"
-              placeholder="Search"
+              placeholder="                                         Search for records"
               name="searchQuery"
               onChange={this.handleSearchArea}>
 
@@ -79,6 +80,7 @@ handleSearchArea = (e) =>{
        
               </div>
               </div>
+           
         <table className="table" style={{width:"100%"}}>
           <thead style={{backgroundColor:"#333",color:"white",textTransform:'uppercase'}}>
             <tr>
@@ -114,7 +116,7 @@ handleSearchArea = (e) =>{
                             <td>{posts.DOB}</td>
                             <td>{posts.salary}</td>
                             <td>
-                            <a className="btn btn-warning" href={`/edit/employee/${posts._id}`}>
+                            <a className="btn btn-warning" style={{margin:'10px'}} href={`/edit/employee/${posts._id}`}>
                               <i className="fas fa-edit"></i>&nbsp;Edit
                             </a>
                             &nbsp;
@@ -132,12 +134,13 @@ handleSearchArea = (e) =>{
       
       
       </table>
-
-    <button className="btn btn-success"><a href="/employee/add" style={{textDecoration:'none',color:'white'}}>Create New Post</a>
+    <button className="btn btn-success" style={{margin:"15px"}}><a href="/employee/add" style={{textDecoration:'none',color:'white'}}>Create New Post</a>
 
         </button>
+        <br/><br/><br/><br/>
+      </div> 
 
-      </div>
+    
     )
   }
 }
