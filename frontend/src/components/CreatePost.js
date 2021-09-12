@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+
+
 export default class CreatePost extends Component {
 
 constructor(props){
@@ -74,92 +76,92 @@ constructor(props){
     render() {
         return (
             <div className="col-md-8 mt-4 mx-auto">
-                <h1 className="h3 mb-3 font-weight-normal">Create new post</h1>
+                <h1 className="h3 mb-3 font-weight-normal" style={{fontFamily:'Papyrus, fantasy'}}>Create new post</h1>
                 <form className="needs-validation" noValidate>
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                    <label style={{marginBottom:'5px'}} > Topic</label>
+                    <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >Username</label>
                     <input type="text"
                     className="form-control"
                     name="eID"
-                    placeholder="Enter Topic"
+                    placeholder=""
                     value={this.state.eID}
                     onChange={this.handleInputChange}/>
                     </div>
                 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} >Post Category</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >FirstName</label>
                 <input type="text"
                 className="form-control"
                 name="userName"
-                placeholder="Enter Post Category"
+                placeholder=""
                 value={this.state.userName}
                 onChange={this.handleInputChange}/></div>
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} >Post Category</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >eID</label>
                 <input type="text"
                 className="form-control"
                 name="firstName"
-                placeholder="Enter Post Category"
+                placeholder=""
                 value={this.state.firstName}
                 onChange={this.handleInputChange}/></div>
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} >Post Category</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >LastName</label>
                 <input type="text"
                 className="form-control"
                 name="lastName"
-                placeholder="Enter Post Category"
+                placeholder=""
                 value={this.state.lastName}
                 onChange={this.handleInputChange}/></div>
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} >Post Category</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >E-mail</label>
                 <input type="text"
                 className="form-control"
                 name="email"
-                placeholder="Enter Post Category"
+                placeholder=""
                 value={this.state.email}
                 onChange={this.handleInputChange}/></div>
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} >Post Category</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >Address</label>
                 <input type="text"
                 className="form-control"
                 name="address"
-                placeholder="Enter Post Category"
+                placeholder=""
                 value={this.state.address}
                 onChange={this.handleInputChange}/></div>
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} >Post Category</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >Employee Type</label>
                 <input type="text"
                 className="form-control"
                 name="employeeType"
-                placeholder="Enter Post Category"
+                placeholder=""
                 value={this.state.employeeType}
                 onChange={this.handleInputChange}/></div>
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} >Post Category</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >DOB</label>
                 <input type="text"
                 className="form-control"
                 name="DOB"
-                placeholder="Enter Post Category"
+                placeholder=""
                 value={this.state.DOB}
                 onChange={this.handleInputChange}/></div>
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} >Post Category</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >Salary</label>
                 <input type="text"
                 className="form-control"
                 name="salary"
-                placeholder="Enter Post Category"
+                placeholder=""
                 value={this.state.salary}
                 onChange={this.handleInputChange}/></div>
                
@@ -169,7 +171,7 @@ constructor(props){
                         &nbsp; Save
                     </button>
 
-
+                    <br/><br/><br/><br/><br/>
 
 
                 </form>

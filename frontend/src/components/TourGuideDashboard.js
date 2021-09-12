@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
 import axios from "axios";
+import '../CSS/tour-guide-dashboard.css'
 
 class TourGuideDashboard extends Component {
   constructor(props) {
@@ -24,8 +25,8 @@ class TourGuideDashboard extends Component {
     });
   }
   onDelete = (id) => {
+    alert("Deleted Successfully");
     axios.delete(`http://localhost:8015/booking/delete/${id}`).then((res) => {
-      alert("Deleted Successfully");
       this.retrieveBookings();
     });
   };
@@ -52,17 +53,17 @@ class TourGuideDashboard extends Component {
   render() {
     return (
       <div className="tgdb">
-        <div className="hero-image">
-          <div className="bg_banner"></div> &nbsp;
-          <div className="hero-text">
-            <h1>
+        <div className="hero-dashboard">
+          <div className="bg_tour"></div> &nbsp;
+          <div className="header">
+            <h1 id="tourguideheading">
               <center>Tour Guide Dashboard</center> <br />
             </h1>
           </div>
         </div>
 
         <br />
-
+        <div className="Tourdashboard" id="Customers">
         <table className="table table-bordered">
           <thead className="thead-bg-dark">
             <tr>
@@ -96,7 +97,7 @@ class TourGuideDashboard extends Component {
               <tr key={index}>
                 <th scope="row">
                   <a
-                    href={`booking/${booking._id}`}
+                    href={`booking/details/${booking._id}`}
                     style={{ textDecoration: false }}
                   >
                     {index + 1}
@@ -111,6 +112,7 @@ class TourGuideDashboard extends Component {
                 <td>{booking.TourGuideName}</td>
                 <td>
                   <a className="btn btn-warning" href={`booking/update/${booking._id}`}>
+                  <i className="fa fa-address-card"></i> &nbsp;
                     Edit &nbsp;
                   </a>
                   &nbsp; &nbsp; &nbsp;
@@ -125,13 +127,16 @@ class TourGuideDashboard extends Component {
             ))}
           </tbody>
         </table>
-
+       
+              <div>
         <button className="btn btn-success">
           <a href="booking/add" style={{ textDecoration: "none", color: "white" }}>
             {" "}
             Add new Tour Booking{" "}
           </a>
         </button>
+        </div>
+        </div>
       </div>
     );
   }

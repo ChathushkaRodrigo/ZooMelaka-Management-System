@@ -56,24 +56,11 @@
 /* ------------- */
 
 /* ---home hero--- */
-.hero-image {
-  height: 1000px;
-  width: 100%;
-}
 
-.hero-image .bg_banner {
-  display: block;
-  position: relative;
-  top: -83px;
-  width: 100%;
-  float: right; 
-  color: violet;
-  height: 100%;
-  background-image: url(../images/banner.png);
-  background-position: right;
-  background-size: 83%;
-  background-repeat: no-repeat;
-}
+
+
+
+
 
 .hero-text {
   display: block;
@@ -98,13 +85,13 @@
 
 .hero-text button {
   border: none;
-  width: 300px;
+  width: 500px;
   height: 50px;
   outline: 0;
   display: relative;
   padding: 10px 25px;
   color: black;
-  background-color: #ddd;
+  text-decoration: none;
   text-align: center;
   cursor: pointer;
   margin-top: 30px;
@@ -114,7 +101,7 @@
   position: relative;
   left: 0;
   top: 75%;
-  height: 70px;
+  height: 200px;
   overflow: hidden;
   width: 100%;
   padding: 10px 30px;
@@ -144,12 +131,6 @@
   border-width: 0;
 }
 
-.home-search {
-  position: relative;
-  display: inline-block;
-  float: right;
-}
-
 .home-search button {
   display: block;
   position: absolute;
@@ -170,12 +151,7 @@
   margin: 50px;
 }
 
-.home-content .home-content-topic {
-  font-size: 23px;
-  font-weight: 600;
-  color: rgb(97, 97, 97);
-  text-align: center;
-}
+
 
 .packagecards-container {
   display: block;
@@ -187,21 +163,6 @@
   text-align: center;
 }
 
-.package-card {
-  transition: 0.3s;
-  display: inline-block;
-  position: relative;
-  margin: auto;
-  background-color: white;
-  height: 200px;
-  width: 200px;
-  border-width: 1.5px;
-  border-style: solid;
-  border-color: rgb(185, 185, 185);
-  border-radius: 50%;
-  margin: 45px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
 
 .package-card:hover {
   background-color: rgb(240, 240, 240);
@@ -219,6 +180,8 @@
   background-color: rgb(230, 230, 230);
   text-align: center;
   padding: 10px;
+  background: linear-gradient(60deg, black 50%, rgb(19, 43, 1));
+  opacity: 0.8;
 }
 
 .fixed-footer p {
@@ -228,3 +191,12 @@
 }
 
 /* ------------ */
+
+
+/* Home Slider */
+body {
+  font-family: Open sans, sans-serif;
+  height: auto;
+  background: #f1f1f1;
+  overflow: scroll;
+}
