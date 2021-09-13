@@ -26,6 +26,7 @@ class NavBar extends PureComponent {
              <li><a href="/adoption/add">Adopt Now</a></li>
              <li><a href="/contactUs">Contact Us</a></li>
              <li><a href="/aboutus">About Us</a></li>
+             <li><a href="/research/customerDash/">Researches</a></li>
  
  
           </div>

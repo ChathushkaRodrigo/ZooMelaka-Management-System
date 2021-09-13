@@ -15,6 +15,7 @@ const postDailytast = require('./Routes/salaryroute');
 const postProjects = require('./Routes/projects');
 const researches =require('./Routes/researches');
 const medical =require('./Routes/medicals');
+const collaboration =require('./Routes/collaborations');
 
 //App MiddleWare
 app.use(bodyparser.json());
@@ -30,7 +31,7 @@ app.use(postDailytast);
 app.use(postProjects);
 app.use(researches);
 app.use(medical);
-
+app.use(collaboration);
 //Import me later to dotEnv file
 const PORT =8015;
 //MongoDB Connect URL

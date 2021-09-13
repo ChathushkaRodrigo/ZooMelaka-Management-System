@@ -29,6 +29,26 @@ retrieveResearch(){
 
   
 }
+filterData(researches, searchkey){
+  const result = researches.filter((researches) =>
+  researches.catergory.toLowerCase().includes(searchkey)
+  );
+  this.setState({Research:result});
+  }
+
+
+
+
+  handleSearchArea = (e) => {
+  const searchkey = e.currentTarget.value;
+
+  axios.get("http://localhost:8015/research").then(res =>{
+      if(res.data.success){
+          this.filterData(res.data.existingResearch, searchkey)
+      }
+      
+      });
+  }
 
 
 
@@ -40,7 +60,8 @@ retrieveResearch(){
          <h1 className ="heading"> All researches </h1>
          <div className="  image6"> </div>
          <br/>
-       
+         <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange = {this.handleSearchArea}></input>
+
         <table className="table table-bordered">
           <thead className="thead-bg-dark">
             <tr>

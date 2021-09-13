@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-
+import "../CSS/ResearchDetails.css"
 
 class ResearchDetails extends Component {
     constructor(props) {
@@ -31,8 +31,6 @@ class ResearchDetails extends Component {
     }
 
 
-
-
     render() {
 
         const { name_of_scientist,
@@ -45,43 +43,44 @@ class ResearchDetails extends Component {
   
         return (
             <div>
+                  <div className="col-md-8 mt-4 mx-auto" id="edit-booking-body">
                     <h1>    Research Details</h1> 
                     <br/>
                     <br/>
-
-                                        <form>
+                    <div className="details-form">
+                    <form>
                     <div class="form-group">
-                        <label for="emailC">name_of_scientis</label>
-                        <input type="text" class="form-control" id="emailC" placeholder={name_of_scientist} disabled/>
+                        <label for="scientistName">Name of scientist</label>
+                        <input type="text" class="form-control" id="scientistName" placeholder={name_of_scientist} disabled/>
                     </div>
                     <br/>
                     <div class="form-group">
-                    <label for="cName"> date_research_started</label>
-                        <input type="text" class="form-control" id="cName" placeholder={ date_research_started} disabled/>
+                    <label for="startDate"> Date research started</label>
+                        <input type="text" class="form-control" id="startDate" placeholder={ date_research_started} disabled/>
                         
                     </div>
                     <br/>
                     <div class="form-group">
-                    <label for="MobileNo"> date_research_ended</label>
-                        <input type="text" class="form-control" id="MobileNo" placeholder={ date_research_ended}  disabled/>
+                    <label for="endDate"> Date research ended</label>
+                        <input type="text" class="form-control" id="endDate" placeholder={ date_research_ended}  disabled/>
                         
                     </div>
                     <br/>
                     <div class="form-group">
-                    <label for="TourOp"> catergory</label>
-                        <input type="text" class="form-control" id="TourOp" placeholder={ catergory} disabled/>
+                    <label for="catogoryName"> Catergory</label>
+                        <input type="text" class="form-control" id="catogoryName" placeholder={ catergory} disabled/>
                         
                     </div>
                     <br/>
                     <div class="form-group">
-                    <label for="Date">research_name</label>
-                        <input type="text" class="form-control" id="Date" placeholder={research_name} disabled/>
+                    <label for="researchName">Research name</label>
+                        <input type="text" class="form-control" id="researchName" placeholder={research_name} disabled/>
                         
                     </div>
                     <br/>
                     <div class="form-group">
-                    <label for="Time">esearch_information</label>
-                        <input type="text" class="form-control" id="Time" placeholder={research_information} disabled/>
+                    <label for="researchInfo">Research information</label>
+                        <input type="text" class="form-control" id="researchInfo" placeholder={research_information} disabled/>
                         
                     </div>
                     <br/>
@@ -93,9 +92,9 @@ class ResearchDetails extends Component {
                                         
 
 
+                    </div>
 
-
-
+                    </div>
             </div>
             
         )
