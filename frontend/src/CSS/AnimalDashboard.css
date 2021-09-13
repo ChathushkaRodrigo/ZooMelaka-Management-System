@@ -1,20 +1,85 @@
 .AnimalDashboard-body{
-    background-color:blanchedalmond;
-    font-size: medium;
+    background-color: azure;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bolder;
+    font-size: large;
+    color:black;
+    margin-top: -8px;
+    background-image: url(../images/backgroundport.jpg);
+    background-size: cover;
 }
-#headerName{
-    font-family:"Papyrus",fantasy;
+#animalHeading{
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color:darkgreen;
+    font-weight: bolder;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 100px;
+    margin-left: 200px;
+    text-shadow:3px 3px 0 #000;
+}
+#searchingBox{
+    margin-top: 100px;
+    margin-left: 250px;
+}
+#animalSearch{
+    width: 330px;
+    padding: 15px;
+    background:azure;
     color: black;
-}
-.table{
-    border: 5px solid #000000;
-    border-collapse: collapse;
-    border-right: solid 2px #0000; 
-    border-left: solid 2px #0000;
-    background-color:azure;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    -moz-border-radius: 10px;
+    font-weight: bolder;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 0 2px 2px darkgreen inset, 0 2px 0 darkgreen;
+    -webkit-box-shadow: 0 2px 2px darkgreen inset, 0 2px 0 darkgreen;
+    box-shadow: 0 2px 2px darkgreen inset, 0 2px 0 darkgreen;
+    }
+.dashButton{
+    margin-left: 600px;
+    margin-bottom: 90px;
+    
 }
 
-#hover tr:hover {
-    background-color:cornsilk;
+#AnimalTableChamath th{
+    padding-left: 25px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    text-align:start;
+    background-color:aliceblue;
+    color: darkblue;
+    font-size:large;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 100%;
+    margin-bottom: 5px;
+    border: 5px solid black;
+    
+    
+}
+  #AnimalTableChamath tr:hover {
+    background-color:gold;
   }
+
+.anCol{
+    background-color:azure;
+    font-size: small;
+    border: 5px solid black;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bolder;
+}
+
+.anRowing{
+    border: 5px solid black;
+}
+
+#AnimalTableChamath{
+    opacity: 80%;
+}
+
+
+
+
+
+
 
