@@ -41,8 +41,8 @@ th, td {
   position: relative;
   background-size: cover !important;
   background-position: center top !important;
-  background-repeat: no-repeat !important;
-  margin-top: 10px;
+  max-width: 135%;
+  
   height: 900px;
   min-height: 250px;
   width: 1250px;
