@@ -8,9 +8,13 @@ import '../CSS/AllAdoptions.css';
 class AllAdoptions extends Component {
   constructor(props){
     super(props);
+    //this.getAnimalId = this.getAnimalId.bind(this);
 
     this.state={
-      adoptions:[]
+      adoptions:[],
+      zooAnimal:[],
+      adoptedanimals:[],
+      AnimalId:''
     };
   }
 
@@ -28,6 +32,15 @@ class AllAdoptions extends Component {
         console.log(this.state.adoptions)
       }
     })
+    axios.get("http://localhost:8015/animal").then(res=>{
+    if(res.data.success){
+      this.setState({
+        zooAnimal:res.data.existingPosts
+    });
+    console.log(this.state.zooAnimal)
+    
+  }
+});
   }
 
   onDelete = (id) => {
@@ -58,6 +71,15 @@ class AllAdoptions extends Component {
         });
     }
 
+    // getAnimalId(id){
+     
+    //   this.state.zooAnimal.map((animals) => {
+    //     if(animals.Animal_ID === id){
+    //        //this.state.AnimalId = this.state.zooAnimal._id;
+    //        let animid =  this.state.zooAnimal._id;
+    //        console.log(animid);
+    //       }})
+    //     }
 
   render() {
     return (
@@ -67,7 +89,7 @@ class AllAdoptions extends Component {
             <div className = "all-hero">
               <div class="bg_image bgimage"></div>
               <div className = "content">
-                Adoptions Details
+              <p className = "adpt-det-topic">Adoptions Details</p>
               </div>
             </div>
             <div className = "the_content">
@@ -96,16 +118,27 @@ class AllAdoptions extends Component {
                   <tr key = {index}>
                     <th scope="row">{index + 1}</th>
                     <td>
+                  
                         <Link to = {`/adoption/details/${adoptions._id}`} style = {{textDecoration:"none"}}>
                         {adoptions.animal_name}
                         </Link>
+                        
                     </td>
                     <td>{adoptions.adoption_level}</td>
                     <td>{adoptions.payment_plan}</td>
                     <td>{adoptions.live_cam.toString()}</td>
                     <td>{adoptions.adoption_date}</td>
-                    <td>{adoptions.animal_id}</td>
-                    <td>{adoptions.member_id}</td>
+                    <td>
+                    {/* {this.getAnimalId(adoptions.animal_id)} */}
+                    <Link to = {`/animal/details/${adoptions.animal_id}`} style = {{textDecoration:"none"}}>
+                      {adoptions.animal_id}
+                      </Link>
+                    </td>
+                    <td>
+                    <Link to = {`/profile/${adoptions.member_id}`} style = {{textDecoration:"none"}}>
+                      {adoptions.member_id}
+                      </Link>
+                      </td>
                     <td>
                       {/* <a className = "btn btn-warning" href = {`adoption/edit/${adoptions._id}`}>
                         <i className= "fas fa-edit"></i>&nbsp;Edit

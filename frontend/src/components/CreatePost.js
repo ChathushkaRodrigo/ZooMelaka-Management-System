@@ -79,7 +79,7 @@ constructor(props){
                 <h1 className="h3 mb-3 font-weight-normal" style={{fontFamily:'Papyrus, fantasy'}}>Create new post</h1>
                 <form className="needs-validation" noValidate>
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                    <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >Username</label>
+                    <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >Username</label>
                     <input type="text"
                     className="form-control"
                     name="eID"
@@ -89,7 +89,7 @@ constructor(props){
                     </div>
                 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >FirstName</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >FirstName</label>
                 <input type="text"
                 className="form-control"
                 name="userName"
@@ -99,7 +99,7 @@ constructor(props){
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >eID</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >eID</label>
                 <input type="text"
                 className="form-control"
                 name="firstName"
@@ -108,7 +108,7 @@ constructor(props){
                 onChange={this.handleInputChange}/></div>
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >LastName</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >LastName</label>
                 <input type="text"
                 className="form-control"
                 name="lastName"
@@ -118,7 +118,7 @@ constructor(props){
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >E-mail</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >E-mail</label>
                 <input type="text"
                 className="form-control"
                 name="email"
@@ -127,7 +127,7 @@ constructor(props){
                 onChange={this.handleInputChange}/></div>
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >Address</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >Address</label>
                 <input type="text"
                 className="form-control"
                 name="address"
@@ -137,7 +137,7 @@ constructor(props){
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >Employee Type</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >Employee Type</label>
                 <input type="text"
                 className="form-control"
                 name="employeeType"
@@ -147,7 +147,7 @@ constructor(props){
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >DOB</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >DOB</label>
                 <input type="text"
                 className="form-control"
                 name="DOB"
@@ -157,7 +157,7 @@ constructor(props){
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >Salary</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >Salary</label>
                 <input type="text"
                 className="form-control"
                 name="salary"
