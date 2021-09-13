@@ -16,6 +16,7 @@ this.state={
   zooAnimal:[]
 };
 
+
   }
 
 //Call The Method Using In-Built React Method ComponentDidMount()
@@ -35,6 +36,8 @@ axios.get("http://localhost:8015/animal").then(res=>{
   }
 });
 }
+
+
 
 onDelete = (id) => {
   axios.delete(`http://localhost:8015/animal/delete/${id}`).then((res) =>{
@@ -60,17 +63,29 @@ handleSearchArea = (e) => {
 }
 
 
+
+
+
+
+
   render(){
     return(
     <div className="AnimalDashboard-body">
     <div className="container-fluid">
-    <div className="row">
     <div className="col-lg-9 mt-2 mb-2">
-        <center><h1 id="headerName"><b>Manage Animal Portfolio</b></h1></center>
-        </div>
-    <div className="col-lg-3 mt-2 mb-2">
+        <center><h1 id="animalHeading">Animal Portfolio</h1></center>
+    </div>
+
+
+    
+
+
+
+    <div className="col-lg-3 mt-2 mb-2" id="searchingBox">
+    
       <input
       className="form-control"
+      id = "animalSearch"
       type="search"
       placeholder="Search By Animal Name"
       name="searchQuery"
@@ -78,54 +93,58 @@ handleSearchArea = (e) => {
       </input>
         </div>
         </div>
-        <table className="table" id="hover">
+        <div>
+        <table id="AnimalTableChamath">
+
+        
         <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col" style={{fontFamily:'Papyrus, fantasy'}}>Animal ID</th>
-            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Animal Name</th>
-            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Animal Species</th>
-            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Animal Date Of Birth</th>
-            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Animal Gender</th>
-            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Feeding And Watering Date</th>
-            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Feeding And Watering Time</th>
-            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Animal Satisfaction Level</th>
-            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Animal Health Level</th>
-            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Attended Zookeeper</th>
-            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}} >Date Of Treatment And Medical Care</th>
-            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Time Of Treatment And Medical Care</th>
-            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Current Enclosure ID</th>
-            <th scope="col" style={{fontFamily:'Papyrus,fantasy'}}>Action</th>
+          <tr className="animalRow">  
+            
+            <th scope="col">Animal ID</th>
+            <th scope="col">Animal Name</th>
+            <th scope="col">Animal Species</th>
+            <th scope="col">Animal Date Of Birth</th>
+            <th scope="col">Animal Gender</th>
+            <th scope="col">Feeding And Watering Date</th>
+            <th scope="col">Feeding And Watering Time</th>
+            <th scope="col">Animal Satisfaction Level</th>
+            <th scope="col">Animal Health Level</th>
+            <th scope="col">Attended Zookeeper</th>
+            <th scope="col">Date Of Treatment And Medical Care</th>
+            <th scope="col">Time Of Treatment And Medical Care</th>
+            <th scope="col">Current Enclosure ID</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
-              <tbody>
+              
+              <tbody className="anCol">
                 {this.state.zooAnimal.map((zooAnimal,index) =>(
                   <tr key={index}>
-                    <th scope="row">{index+1}</th>
-                    <td>
+                    
+                    <td className="anRowing">
                       <a href={`animal/details/${zooAnimal._id}`} style = {{textDecoration:'none'}}>
                       {zooAnimal.Animal_ID}
                       </a>
                     </td>
-                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Animal_Name}</b></td>
-                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Animal_Species}</b></td>
-                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Animal_Date_Of_Birth}</b></td>
-                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Animal_Gender}</b></td>
-                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Feeding_And_Watering_Date}</b></td>
-                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Feeding_And_Watering_Time}</b></td>
-                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Animal_Satisfaction_Level}</b></td>
-                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Animal_Health_Level}</b></td>
-                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Attended_Zookeeper}</b></td>
-                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Date_Of_Treatment_And_Medical_Care}</b></td>
-                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Time_Of_Treatment_And_Medical_Care}</b></td>
-                    <td style={{fontFamily:'Goudy Old Style,serif'}}><b>{zooAnimal.Current_Enclosure_ID}</b></td>
-                    <td>
-                        <a className="btn btn-primary btn-lg justify-content-center" href={`animal/update/${zooAnimal._id}`} style={{fontFamily:'Papyrus,fantasy'}}>
-                            <i className="fas fa-edit"></i>&nbsp;<b>Update Animal Portfolio</b>
+                    <td className="anRowing">{zooAnimal.Animal_Name}</td>
+                    <td className="anRowing">{zooAnimal.Animal_Species}</td>
+                    <td className="anRowing">{zooAnimal.Animal_Date_Of_Birth}</td>
+                    <td className="anRowing">{zooAnimal.Animal_Gender}</td>
+                    <td className="anRowing">{zooAnimal.Feeding_And_Watering_Date}</td>
+                    <td className="anRowing">{zooAnimal.Feeding_And_Watering_Time}</td>
+                    <td className="anRowing">{zooAnimal.Animal_Satisfaction_Level}</td>
+                    <td className="anRowing">{zooAnimal.Animal_Health_Level}</td>
+                    <td className="anRowing">{zooAnimal.Attended_Zookeeper}</td>
+                    <td className="anRowing">{zooAnimal.Date_Of_Treatment_And_Medical_Care}</td>
+                    <td className="anRowing">{zooAnimal.Time_Of_Treatment_And_Medical_Care}</td>
+                    <td className="anRowing">{zooAnimal.Current_Enclosure_ID}</td>
+                    <td className="anRowing">
+                        <a className="btn btn-light btn-small justify-content-center btn-outline-primary" href={`animal/update/${zooAnimal._id}`}>
+                            <i className="fas fa-feather-alt"></i>&nbsp;<b>Update</b>
                         </a>
-                        &nbsp;
-                        <a className="btn btn-danger btn-lg justify-content-center" href="#" onClick={() => this.onDelete(zooAnimal._id)} style={{fontFamily:'Papyrus,fantasy'}}>
-                            <i className="far fa-trash-alt"></i>&nbsp;<b>Delete Animal Portfolio</b>
+                        
+                        <a className="btn btn-light btn-small justify-content-center btn-outline-danger" href="#" onClick={() => this.onDelete(zooAnimal._id)}>
+                            <i className="fas fa-spider"></i>&nbsp;<b>Delete</b>
                         </a>
                     </td>
 
@@ -133,12 +152,13 @@ handleSearchArea = (e) => {
                   </tr>
                 ))}
               </tbody>
-        </table>
+        </table></div>
 
-<a className="btn btn-success btn-lg justify-content-center" href={`animal/add`} style={{fontFamily:'Papyrus,fantasy',marginTop:'25px',marginBottom:'25px'}}>
-                            <i className="fa fa-plus-square"></i>&nbsp;<b>Create Animal Portfolio!</b>
+<a className="dashButton btn btn-light btn-small justify-content-center btn-outline-success" href={`animal/add`} style={{marginTop:'10px'}}>
+                            <i className="fas fa-dragon"></i>&nbsp;<b>Create Animal Portfolio!</b>
 </a>
-    </div></div>)
+
+    </div>)
   }
 }
 

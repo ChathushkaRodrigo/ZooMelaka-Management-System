@@ -25,8 +25,8 @@ class TourGuideDashboard extends Component {
     });
   }
   onDelete = (id) => {
+    alert("Deleted Successfully");
     axios.delete(`http://localhost:8015/booking/delete/${id}`).then((res) => {
-       alert("Deleted Successfully");
       this.retrieveBookings();
     });
   };

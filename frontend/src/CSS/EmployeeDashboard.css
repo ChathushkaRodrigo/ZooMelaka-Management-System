@@ -1,0 +1,57 @@
+
+body{
+  background-color: rgb(0, 0, 43);
+}
+
+table{
+    width: 100%;
+    
+}
+
+
+th, td {
+    border: 1px solid black;
+  }
+
+.cell-highlight {
+
+    font-weight: bold;
+}
+
+.blue{
+
+    background-color: "#333";
+    color:"white"
+}
+
+.header1{
+  background-color: rgb(0, 0, 43);
+}
+
+.row{
+  background-color: rgb(0, 0, 43);
+}
+
+
+.addForm{
+  background-color: blue;
+}
+
+.employeeImg {
+  position: relative;
+  background-size: cover !important;
+  background-position: center top !important;
+  max-width: 135%;
+  
+  height: 900px;
+  min-height: 250px;
+  width: 1250px;
+  
+  
+
+
+ 
+  background-image: url(../images/hoomanAnimal.jpg);
+ 
+
+}

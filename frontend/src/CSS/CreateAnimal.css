@@ -1,11 +1,53 @@
 .CreateAnimal-body{
-    font-size: medium;
-    text-decoration:'underline';
+    font-size: large;
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-style:unset;
-    color:honeydew;
+    font-weight: bolder;
+    color: black;
+    background-position: center;
+    background-color: azure;
+    background-image: url(../images/chamathPic1.jpg);
+    background-size: cover;
+    padding-top: 20px;
+    padding-bottom: 20px;
+   
 }
 
-.container{
-    margin-trim: 25px;
+.h1-CreateAnimal{
+    font-size:xx-large;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bolder;
+    color:darkgreen;
+    
+    
+}
+
+.CreateAniHead{
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bolder;
+    color:darkgreen;
+    font-size: xx-large;
+    width: 60%;
+    margin-left: 200px;
+   
+    
+}
+
+.container-fluid{
+    width: 60%;
+    
+}
+    
+#chamForm{
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bolder;
+    color:darkblue;
+    font-size: large;
+    
+}   
+
+#chamathCreaForm{
+    border-style: solid;
+    background-color: azure;
+    opacity: 80%;
+    padding-top: 20px;
 }

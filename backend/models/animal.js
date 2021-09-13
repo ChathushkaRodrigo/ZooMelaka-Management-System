@@ -59,6 +59,10 @@ const postSchema = new mongoose.Schema({
     Current_Enclosure_ID:{
         type:String,
         required:true
+    },
+    Adoptability:{
+        type:String,
+        required:true
     }
 });
 
