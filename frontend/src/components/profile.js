@@ -78,7 +78,7 @@ class profile extends Component {
                <div class="col-md-8">
                       <div class="card mb-3">
                         <div class="card-body">
-                          <div class="row">
+                          <div class="row-1">
                             <div class="col-sm-3">
                               <h6 class="mb-0">First Name</h6>
                             </div>
@@ -87,7 +87,7 @@ class profile extends Component {
                             </div>
                           </div>
                           <hr/>
-                          <div class="row">
+                          <div class="row-1">
                             <div class="col-sm-3">
                               <h6 class="mb-0">Last Name</h6>
                             </div>
@@ -96,7 +96,7 @@ class profile extends Component {
                             </div>
                           </div>
                           <hr/>
-                          <div class="row">
+                          <div class="row-1">
                             <div class="col-sm-3">
                               <h6 class="mb-0">Username</h6>
                             </div>
@@ -105,7 +105,7 @@ class profile extends Component {
                             </div>
                             <hr/>
                           </div>
-                          <div class="row">
+                          <div class="row-1">
                             <div class="col-sm-3">
                               <h6 class="mb-0">Email</h6>
                             </div>
@@ -113,9 +113,8 @@ class profile extends Component {
                             {email}
                             </div>
                           </div>
-                          <hr/>                  
-                          <div class="row">                    
-                          </div>
+                          <hr/>                 
+                          
                         </div>
                       </div>  
             </div>
