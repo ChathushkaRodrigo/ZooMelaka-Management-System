@@ -25,6 +25,9 @@ import AddEmployee from './components/CreatePost';
 import EditResearch from './components/EditResearch';
 import ResearchDetails from './components/ResearchDetails';
 import CreateResearch from './components/CreateResearch';
+import CustomerResearchDash from './components/CustomerResearchDash';
+import ResearchCollaboration from './components/ResearchCollaboration';
+import CreateCollaboration from './components/CreateCollaboration';
 
 //Project Management
 import ProjectsHome from './components/ProjectsHome';
@@ -56,9 +59,8 @@ import AnimalDashboard from './components/AnimalDashboard';
 import CreateAnimalPortfolio from './components/CreateAnimal';
 import UpdateAnimalPortfolio from './components/EditAnimal';
 import AnimalDetails from './components/AnimalDetails';
-import CustomerResearchDash from './components/CustomerResearchDash';
-import ResearchCollaboration from './components/ResearchCollaboration';
-import CreateCollaboration from './components/CreateCollaboration';
+
+
 class TourApp extends Component {
   
 render() {
