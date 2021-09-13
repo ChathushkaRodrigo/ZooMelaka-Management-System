@@ -112,7 +112,9 @@ filterData(researches, searchkey){
 
      
         
-       
+        <button className="btn btn-success"><a href= "/research/add"style ={{textDecoration:'none',color:"white"}}>Create New Research</a></button> 
+        &nbsp;
+        <button className="btn btn-success"><a href= "/research/createCollaboration/"style ={{textDecoration:'none',color:"white"}}>Create New Collaboration</a></button>
       </div>
       
     );
