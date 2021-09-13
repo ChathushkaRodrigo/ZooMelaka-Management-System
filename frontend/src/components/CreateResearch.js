@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import axios from'axios'
 import "../CSS/CreateResearch.css"
@@ -63,8 +64,9 @@ class CreateResearch extends Component {
                 <div className="  image4"> </div>
                 <form className=" formbody needs-validation" noValidate>
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Name_of_scientist</label>
-                        <input type="text"
+                        <label style={{marginBottom:'5px'}}>name_of_scientist</label>
+                        <input type="text" required
+                        
                         className="form-control"
                         name="name_of_scientist"
                         placeholder="Enter the scientist /scientists name"

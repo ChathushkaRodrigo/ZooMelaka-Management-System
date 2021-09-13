@@ -1,0 +1,109 @@
+.an-foradp-bgimage{
+  
+    background-image: url('https://s28164.pcdn.co/files/pantanal-jaguar-tesoro-1280x720.jpg');
+    backface-visibility:initial;
+    opacity: 0.5;
+    
+   
+}
+
+
+.gridder {
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    font-size: .01px;
+    max-width: 1180px;
+}
+
+li.gridder-list {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 92%;
+    max-width: 200px;
+    margin: 30px 1%;
+    margin-top: 100px;
+    margin-right: 7%;
+    margin-bottom: 20px;
+    margin-left: 6%;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: -webkit-box-shadow .2s ease-in-out;
+    transition: -webkit-box-shadow .2s ease-in-out;
+    transition-property: box-shadow, -webkit-box-shadow;
+    transition-duration: 0.2s, 0.2s;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s;
+    transition: box-shadow .2s ease-in-out;
+    transition-property: box-shadow, -webkit-box-shadow;
+    transition-duration: 0.2s, 0.2s;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s;
+    transition: box-shadow .2s ease-in-out,-webkit-box-shadow .2s ease-in-out;
+    transition-property: box-shadow, -webkit-box-shadow;
+    transition-duration: 0.2s, 0.2s;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s;
+}
+
+.gridder-show, li.gridder-list {
+    position: relative;
+    background: #fff;
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgb(255, 255, 255);
+    background:#124429;
+
+}
+    .circlesType {
+        border-radius: 50%;
+        width: 160px;
+        -webkit-transition: -webkit-box-shadow .2s ease-in-out;
+        transition: -webkit-box-shadow .2s ease-in-out;
+        transition: box-shadow .2s ease-in-out;
+        transition: box-shadow .2s ease-in-out,-webkit-box-shadow .2s ease-in-out;
+    }
+    li.gridder-list img {
+        width: 100%;
+        height: auto;
+        
+    }
+    .lazyloaded {
+        opacity: 1!important;
+        
+    }
+
+    .anadd-formdiv{
+        margin-top: -80px;
+        padding-top: 50px;
+        padding-bottom: 100px;
+        padding-left: 55px;
+        
+        position: relative;
+        background:#124429;
+        color:white;
+    
+    }
+
+    .ann-contentarea{
+        decoration: none;
+        text-decoration :none;
+        padding-top: 10px;
+        color:beige;
+        background:#124429;
+    }
+
+    .aa-searchbar{
+        
+        position: relative;
+        width: 300px;
+        margin-left: 700px;
+        margin-top: -70px;
+    }

@@ -19,7 +19,7 @@ const adoptionSchema = new Schema({
     },
 
     live_cam :{
-        type: Boolean,
+        type: String,
         required : true
     },
 
