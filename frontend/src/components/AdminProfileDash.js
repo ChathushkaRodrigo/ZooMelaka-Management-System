@@ -41,7 +41,7 @@ class memberdashboard extends Component {
   render() {
     return (
       <div>
-          <div className="tgdb">
+          <div className="tgdb" id="header">
           
           <div className="hero-dashboard">
       <div className="bg_tour"></div> &nbsp;
@@ -54,7 +54,7 @@ class memberdashboard extends Component {
 
     <br />
 
-            <table class="table">
+            <table className="Tourdashboard" id="Customers">
               <thead>
                 <tr>
                   <th scope="col">#</th>
@@ -84,7 +84,7 @@ class memberdashboard extends Component {
                             <i className="fas fa-edit"></i>&nbsp;Edit                        
                         </a>
                       &nbsp;
-                        <a className="btn btn-danger" href="/#" onClick={() =>this.onDelete(profiles._id)}>
+                        <a className="btn btn-danger" onClick={() =>this.onDelete(profiles._id)}>
                             <i className="far fa-trash-alt"></i>&nbsp;Delete                        
                         </a>
                     </td>
@@ -93,8 +93,8 @@ class memberdashboard extends Component {
               </tbody>
             </table>  
 
-            <button className="btn btn-success"><a href="/add" style={{textDecoration:'none', color:'white'}}>Create New Profile</a></button>
-            <button className="btn btn-success"><a href="/login" style={{textDecoration:'none', color:'white'}}>Login</a></button>                 
+            {/* <button className="btn btn-success"><a href="/signup" style={{textDecoration:'none', color:'white'}}>Create New Profile</a></button>
+            <button className="btn btn-success"><a href="/login" style={{textDecoration:'none', color:'white'}}>Login</a></button>                  */}
 
           </div>
           </div>        

@@ -115,3 +115,6 @@ label {
   /* &:focus,
   &:hover {color: darken(#999, 13%);} */
 }
+.paragraphcolor{
+  color: rgb(58, 58, 58);
+}

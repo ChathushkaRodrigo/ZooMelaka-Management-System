@@ -53,8 +53,21 @@ class EditProfile extends Component {
                         password:""
                     }
                 )
-            }
+            }          
+            
         })   
+        
+    }
+
+    onDelete =(id)=>{
+  
+        axios.delete(`http://localhost:8015/profile/delete/${id}`).then((res) =>{
+        
+          alert("Deleted Successfully");
+        
+        //   this.retrieveProfiles();
+        })
+        this.props.history.push('/'); 
     }
 
     componentDidMount(){
@@ -70,9 +83,9 @@ class EditProfile extends Component {
                     email:res.data.profile.email,
                     password:res.data.profile.password
                 });
-                console.log(this.state.profile);
+                console.log(this.state.profile);                
             }
-        });
+        });        
     }
     render() {
         return (
@@ -87,9 +100,9 @@ class EditProfile extends Component {
                          {/* <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150"> */}
                          <div class="mt-3">
                            <h4>{this.state.fName} &nbsp; {this.state.lName}</h4>
-                           <p class="text-secondary mb-1">{this.state.uName}</p>                           
-                             <a href={`/profile/update/${this.state.userid}`}> <button class="btn btn-primary">
-                           &nbsp;Edit   
+                           <p class="text-secondary mb-1">@{this.state.uName}</p>                           
+                             <a href={`/profile/${this.state.userid}`}> <button class="btn btn-primary">
+                           &nbsp; Cancel 
                              </button></a>                      
                          </div>
                        </div>
@@ -174,15 +187,16 @@ class EditProfile extends Component {
                             className="form-control"
                             name="uName"
                             placeholder="Enter User Name"
-                            value={this.state.uName}
+                            value={this.state.email}
                             onChange={this.handleInputChange} /> 
                          </div>
                        </div>
-                       <hr/> 
-                       <button className="btn btn-success" type="submit" onClick={this.onSubmit}>   
-                        <i className="far fa-check-square"> </i>
-                        &nbsp; Update
-                    </button>                 
+                       <hr/>                                
+                    <a className="btn btn-success" href={`/profile/update/${this.state.userid}`}>
+                            <i className="fas fa-square"></i>&nbsp;Edit123                        
+                        </a>
+                    <button className="btn btn-danger" type="submit" onClick={() =>this.onDelete(this.state.userid)}><i className="far fa-check-square"> &nbsp;Delete </i>                      
+                    </button>          
                        <div class="row">                    
                        </div>
                      </div>

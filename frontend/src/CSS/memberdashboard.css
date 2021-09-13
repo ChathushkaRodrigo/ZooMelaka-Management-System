@@ -6,7 +6,7 @@
     float: right;
     color: violet;
     height: 700px;
-    /* background-image: url(../images/011.png); */
+    /* background-image: url(../images/014.png); */
     background-position: center;
     background-size: 85%;
     background-repeat: no-repeat;
@@ -48,7 +48,7 @@
           transparent 80%
         )
         top right;
-    /* adjust the 150% to control the covered area, the bigger the value the bigger the area will be*/
+    
     -webkit-mask-size: 33.4% 150%;
     -webkit-mask-repeat: no-repeat;
     mask-size: 33.4% 150%;
@@ -73,7 +73,7 @@
   }
   
   #tgdb {
-    background-color: lavender;
+    background-color: rgb(54, 9, 34);
   }
   
   #tourguideheading {
@@ -102,8 +102,8 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #3bb78f;
-    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+    background-color: #0c1157;
+    background-image: linear-gradient(315deg, #20245f 0%, #1f1447 74%);
     color: white;
     font-size: larger;
   }
@@ -113,8 +113,8 @@
   .header {
     padding: 80px;
     text-align: center;
-    background: #1abc9c;
-    color: white;
+    background: #0c382f;
+    color: rgb(160, 56, 56);
     font-size: 30px;
   
     background-position-y: 5px;

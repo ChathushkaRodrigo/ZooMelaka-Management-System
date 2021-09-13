@@ -51,7 +51,8 @@ class CreateProfile extends Component {
                     }
                 )
             }
-        })   
+        })  
+        this.props.history.push('/login'); 
     }
 
 
@@ -134,7 +135,9 @@ class CreateProfile extends Component {
                     </button>  
                     <br/>
                     <br/>
-                    <div>I am already a member</div><a class="signup__link" href="/login">Sign Up</a>
+                    <div>
+                    <p className="paragraphcolor">Already a member<a class="signup__link" href="/login">&nbsp;Login</a></p>
+                    </div>
                     </form>  
                 </div>
             </div>
