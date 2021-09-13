@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import "../CSS/Createmedical.css"
 
 export default class CreateMedical extends Component {
     constructor(props) {
@@ -36,11 +37,11 @@ export default class CreateMedical extends Component {
             zname:zname,
             animalID:animalID,
             injID:injID,
-            sinfo:sinfo
+            sinfo:"nuduja"
         }
         console.log(data);
 
-        axios.post("http://localhost:8015/medical/create", data).then((res)=>{
+        axios.post("http://localhost:8070/medical/add", data).then((res)=>{
             if(res.data.success){
                 alert(`New medical Record created `)
                
@@ -61,9 +62,12 @@ export default class CreateMedical extends Component {
 
     render() {
         return (
+            <div className="topic formmed">
             <div classsName="col-md-8-mt-4-mx-auto">
+            <div className="  imagemed"> </div>
                 <h1 className="h3-mb-3 font-weight-normal">Create Medical Record</h1>
-                <form className="needs-validation" noValidate>
+        
+                <form className="formbody needs-validation " noValidate>
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px'}}>Vetenarian Name</label>
                         <input type="text"
@@ -131,6 +135,7 @@ export default class CreateMedical extends Component {
                   
      
 
+                </div>
 
             </div>
         )

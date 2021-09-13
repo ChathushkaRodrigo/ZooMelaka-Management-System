@@ -1,0 +1,49 @@
+ /* .medicalbody {
+    align-items: center;
+    background-color: rgb(253, 253, 253);
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin: auto;
+  }  */
+  
+  /* .image4 {
+    position: relative;
+    background-size: cover !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    margin-top: 10px;
+    height: 350px;
+    min-height: 250px;
+    width: 700px; */
+    
+    
+
+
+    .imagemed {
+    background-image: url("https://static.vecteezy.com/system/resources/previews/000/418/251/non_2x/vector-a-vet-taking-care-of-coala.jpg");
+    position: relative;
+    background-size: cover !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    margin-top: 10px;
+    height: 400px;
+    min-height: 250px;
+    width: 850px;
+    
+  }
+
+.formmed {
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+  .formbody{
+    width:500px;
+          
+  }
+
+  .topic{
+   margin :75px;
+   padding-left:200px;
+  }
