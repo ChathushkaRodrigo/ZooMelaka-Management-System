@@ -14,6 +14,7 @@ import EditProfile from './components/EditProfile';
 import ProfileDetails from './components/ProfileDetails';
 import Profile from './components/profile'
 import Signup from './components/signup';
+import AdminUProfileEdit from './components/AdminUProfileEdit';
 
 //Employee Management
 import AdminPanelHome from './components/AdminPanelHome';
@@ -84,6 +85,8 @@ render() {
         {/* <Route path="/profile/details/:id" component={ProfileDetails}/> */}
         <Route path ="/profile/:id" component={Profile}/>
         <Route path ="/signup" component={Signup}/>
+        <Route path ="/AdminUProfileEdit/:id" component={AdminUProfileEdit}/>
+        
         
 
 
