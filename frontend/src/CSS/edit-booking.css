@@ -33,6 +33,16 @@ input[type='submit']:hover {
   background-color: #45a049;
 }
 
+#edit-header{
+  font-size: 50px;
+  
+
+}
+
+#label-form{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:black;
+}
 .edit-form {
   border-radius: 10px;
   background-color: #f2f2f2;
