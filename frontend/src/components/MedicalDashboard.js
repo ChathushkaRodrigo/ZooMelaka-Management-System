@@ -42,7 +42,11 @@ onDelete =(id)=>{
     return (
       <div classsName ="container">
         <p>All MedicalRecords</p>
+<<<<<<< HEAD
         <table className="table table-light table-bordered table-hover container">
+=======
+        <table className="table" >
+>>>>>>> f726b400878fdb824c6636e97d09c4e2673c676f
           <thead>
             <tr>
               <th scope = "col">#</th>

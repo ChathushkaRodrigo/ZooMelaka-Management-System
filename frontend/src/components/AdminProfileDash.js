@@ -54,7 +54,7 @@ class memberdashboard extends Component {
 
     <br />
 
-            <table className="Tourdashboard" id="Customers">
+            <table className="Tourdashboard" id="admindash">
               <thead>
                 <tr>
                   <th scope="col">#</th>
