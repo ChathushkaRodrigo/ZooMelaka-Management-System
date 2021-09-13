@@ -5,6 +5,7 @@ import "../CSS/CreateResearch.css"
 class CreateResearch extends Component {
         constructor(props){
             super(props);
+            this.validateform = this.validateform.bind(this);
             this.state={
                 name_of_scientist:"",
                 date_research_started:"",
@@ -56,13 +57,23 @@ class CreateResearch extends Component {
             }
         })
     }
+
+    validateform(e){
+        if(this.state.name_of_scientist === '' || this.state.date_research_started === '' || this.state.date_research_ended === '' || this.state.catergory === ''){
+            alert("All the inputs must be filled!");
+        }
+        else{
+            this.onSubmit(e);
+        }
+    }
+
     render() {
         return (
             <div className="topic">
             <div classsName="col-md-8-mt-4-mx-auto">
                 <h1 className="h3-mb-3 font-weight-normal">Create new Research</h1>
                 <div className="  image4"> </div>
-                <form className=" formbody needs-validation" noValidate>
+                <form className=" formbody needs-validation">
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px'}}>name_of_scientist</label>
                         <input type="text" required
@@ -126,7 +137,7 @@ class CreateResearch extends Component {
                             </div>
 
 
-                            <button className="btn btn-success"type ="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
+                            <button className="btn btn-success"type ="submit" style={{marginTop:'15px'}} onClick={this.validateform} >
                             <i className="far fa-check-square"></i>
                             &nbsp;Save
                             </button>

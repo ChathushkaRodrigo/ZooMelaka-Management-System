@@ -49,7 +49,7 @@ onDelete =(id)=>{
          <div className="  image6"> </div>
          <br/>
        
-        <table className="table table-bordered">
+        <table className="table table-bordered table-hover">
           <thead className="thead-bg-dark">
             <tr>
               <th scope="col">#</th>
