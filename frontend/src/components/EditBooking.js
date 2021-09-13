@@ -95,13 +95,13 @@ class EditBooking extends PureComponent {
         return (
             <div className="col-md-8 mt-4 mx-auto" id="edit-booking-body">
 
-            <h1 >   Edit Booking Details  </h1>
+            <h1 id="edit-header">   Edit Booking Details  </h1>
             <br/>
                    <br/>
                 <div className="edit-form">
                    <form className="needs-validation" noValidate>
                    <div className="form-group" style={{marginBottom:'15px'}}>
-                       <label for="emailC" style={{marginBottom:'5px'}}>Email address</label>
+                       <label for="emailC" style={{marginBottom:'5px'}} id="label-form">Email address</label>
                        <input type="email" 
                        className="form-control" 
                         name="CustomerEmail" 
@@ -112,7 +112,7 @@ class EditBooking extends PureComponent {
 
                    <br/>
                    <div className="form-group">
-                   <label for="cName" style={{marginBottom:'5px'}}>Customer Name</label>
+                   <label for="cName" style={{marginBottom:'5px'}} id="label-form">Customer Name</label>
                        <input type="text" 
                        className="form-control" 
                        id="cName" name="CustomerName" 
@@ -123,7 +123,7 @@ class EditBooking extends PureComponent {
                    </div>
                    <br/>
                    <div className="form-group">
-                   <label for="MobileNo" style={{marginBottom:'5px'}}>Mobile Number</label>
+                   <label for="MobileNo" style={{marginBottom:'5px'}} id="label-form">Mobile Number</label>
                        <input type="tel" 
                        className="form-control" 
                        id="MobileNo"name="MobileNumber" 
@@ -134,7 +134,7 @@ class EditBooking extends PureComponent {
                    </div>
                    <br/>
                    <div className="form-group">
-                   <label for="TourOp" style={{marginBottom:'5px'}}>Tour Option</label>
+                   <label for="TourOp" style={{marginBottom:'5px'}} id="label-form">Tour Option</label>
                        <input type="text" 
                        className="form-control" 
                        id="TourOp" name="TourOption" 
@@ -145,7 +145,7 @@ class EditBooking extends PureComponent {
                    </div>
                    <br/>
                    <div className="form-group">
-                   <label for="Date" style={{marginBottom:'5px'}}>Date</label>
+                   <label for="Date" style={{marginBottom:'5px'}} id="label-form">Date</label>
                        <input type="date" 
                        className="form-control" 
                        id="Date" 
@@ -157,7 +157,7 @@ class EditBooking extends PureComponent {
                    </div>
                    <br/>
                    <div className="form-group">
-                   <label for="Time" style={{marginBottom:'5px'}}>Allocated time</label>
+                   <label for="Time" style={{marginBottom:'5px'}} id="label-form">Allocated time</label>
                        <input type="time" 
                        className="form-control" 
                        id="Time" 
@@ -169,7 +169,7 @@ class EditBooking extends PureComponent {
                    </div>
                    <br/>
                    <div className="form-group">
-                   <label for="TName" style={{marginBottom:'5px'}}>Tour Guide Name</label>
+                   <label for="TName" style={{marginBottom:'5px'}}id="label-form">Tour Guide Name</label>
                        <input type="text" 
                        className="form-control" 
                        id="TName" 
