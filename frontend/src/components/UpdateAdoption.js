@@ -257,7 +257,7 @@ class UpdateAdoption extends Component {
 
                 </div>
 
-                
+                <div className = 'footerspace'><br/></div>
             </div>
                 
              
