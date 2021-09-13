@@ -1,52 +1,70 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Header from './components/header';
+import NavBar from './components/NavBar';
 import Footer from './components/footer';
 import './CSS/App.css';
 import Home from './components/home';
 
-//MEthanin palleha dapn
-// import AnimalDashboard from './components/AnimalDashboard';
-// import AllAdoptions from './components/AllAdoptions';
 
+//User Profile Management 
 import AdminProfileDashboard from './components/AdminProfileDash';
-
 import CreateProfile from './components/CreateProfile';
 import Login from './components/Login';
 import EditProfile from './components/EditProfile';
 import ProfileDetails from './components/ProfileDetails';
+import Profile from './components/profile'
+import Signup from './components/signup';
+import AdminUProfileEdit from './components/AdminUProfileEdit';
+
+//Employee Management
 import AdminPanelHome from './components/AdminPanelHome';
 import EmployeeDashboard from './components/EmployeeDash';
 import EditEmployee from './components/EditPost';
 import EmployeeDetails from './components/PostDetails';
+
+//Research Management
 import ResearchDashboard from './components/ResearchDashboard';
 import AddEmployee from './components/CreatePost';
 import EditResearch from './components/EditResearch';
 import ResearchDetails from './components/ResearchDetails';
 import CreateResearch from './components/CreateResearch';
+import CustomerResearchDash from './components/CustomerResearchDash';
+import ResearchCollaboration from './components/ResearchCollaboration';
+import CreateCollaboration from './components/CreateCollaboration';
+
+//Project Management
 import ProjectsHome from './components/ProjectsHome';
 import AddProject from './components/ProjectCreate';
 import ProjectDetails from './components/ProjectSearch';
 import EditDetails from './components/ProjectEdit';
 import ProjectReport from './components/ProjectReports';
-//medicals imported
+//Medical Management
 import MedicalDashboard from './components/MedicalDashboard';
 import CreateMedical from './components/CreateMedical';
 import EditMedical from './components/EditMedical';
 import MedicalDetails from './components/MedicalDetails';
+
+//Customer Service Management
 import TourGuideDashboard from './components/TourGuideDashboard';
 import CreateBooking from './components/CreateBooking';
 import UpdateBooking from './components/EditBooking';
 import BookingDetails from './components/BookingDetails';
 import RequestBooking from './components/RequestBooking';
+
+//Adoption Management
 import AllAdoptions from './components/AllAdoptions';
 import AdoptionDetails from './components/AdoptionDetails';
 import EditAdoptionDetails from './components/UpdateAdoption';
 import CreateAdoption from './components/AddAdoption';
+
+//Animal Management
 import AnimalDashboard from './components/AnimalDashboard';
 import CreateAnimalPortfolio from './components/CreateAnimal';
 import UpdateAnimalPortfolio from './components/EditAnimal';
 import AnimalDetails from './components/AnimalDetails';
+import AnimalsforAdoption from './components/AnimalsforAdoption';
+import MemberAdoptedAnimals from './components/MemberAdoptedAnimals';
+
 
 class TourApp extends Component {
   
@@ -54,17 +72,21 @@ render() {
     return (
       <div>
       <Router>
-        <Header/>
+        <NavBar/>
         
         <Route path="/" exact component={Home}/>
       
       
-        <Route path="/adminprofiledash" component={AdminProfileDashboard}/>
-        <Route path ="/createprofile" component={CreateProfile}/>
+        {/* <Route path="/adminprofiledash" component={AdminProfileDashboard}/> */}
+        {/* <Route path ="/createprofile" component={CreateProfile}/> */}
         <Route path ="/login" component={Login}/>
-        <Route path ="/AdminProfileDash" component={Login}/>
+        <Route path ="/AdminProfileDash" component={AdminProfileDashboard}/>
         <Route path ="/profile/update/:id" component={EditProfile}/>
-        <Route path="/profile/details/:id" component={ProfileDetails}/>
+        {/* <Route path="/profile/details/:id" component={ProfileDetails}/> */}
+        <Route path ="/profile/:id" component={Profile}/>
+        <Route path ="/signup" component={Signup}/>
+        <Route path ="/AdminUProfileEdit/:id" component={AdminUProfileEdit}/>
+        
         
 
 
@@ -81,7 +103,11 @@ render() {
         <Route path = "/ResearchDashboard" component ={ResearchDashboard}/>
         <Route path = "/research/edit/:id" component ={EditResearch}/>
         <Route path = "/research/add" component = {CreateResearch}/>
-        <Route path = "/research/details/:id" component = {ResearchDetails}/>
+        <Route path = "/research/details/:id" component = {ResearchDetails}/> 
+        <Route path = "/research/customerDash/" component = {CustomerResearchDash}/> 
+        <Route path = "/research/collaboration/" component = {ResearchCollaboration}/> 
+        <Route path = "/research/createCollaboration/" component = {CreateCollaboration}/> 
+
 
         <Route path = "/ProjectsHome" component = {ProjectsHome}/>
         <Route path = "/project/add" component = {AddProject}/>
@@ -109,6 +135,8 @@ render() {
         <Route path = "/adoption/details/:id" component = {AdoptionDetails}/>
         <Route path = "/adoption/edit/:id" component = {EditAdoptionDetails}/>
         <Route path = "/adoption/add" component = {CreateAdoption}/>
+        <Route path = "/AnimalsforAdoption" component = {AnimalsforAdoption}/>
+        <Route path = "/profile/adoptedanimals" component = {MemberAdoptedAnimals}/>
 
         <Route path = "/animaldashboard" component = {AnimalDashboard}/>
         <Route path="/animal/add" component ={CreateAnimalPortfolio}/>

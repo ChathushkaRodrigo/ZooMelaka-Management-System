@@ -28,7 +28,7 @@ class Login extends Component {
     render() {
         return (
             <div className="col-md-8 mt-4 mx-auto">
-            {/* <h1 className="h3 mb-3 font-weight-normal">Login</h1>
+            <h1 className="h3 mb-3 font-weight-normal">Login</h1>
               <form className="needs-validation" noValidate>                  
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px'}}>Email</label>
@@ -47,14 +47,18 @@ class Login extends Component {
                             placeholder="Enter Password"
                             value={this.state.password}
                             onChange={this.handleInputChange} />                    
-                    </div> */}
+                    </div>
     
                     <Link to = "./AdminPanelHome"><button className="btn btn-success" type="submit"  href="#">   
                         
                         &nbsp; Login
                     </button></Link>
+
+                    <Link to="/signup">
+                             <button > JOIN US </button>
+                        </Link>
     
-                {/* </form> */}
+                </form>
             </div>
         )
     }

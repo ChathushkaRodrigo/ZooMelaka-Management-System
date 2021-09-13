@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
+import '../CSS/AllAdoptions.css';
 
 
 class AllAdoptions extends Component {
@@ -36,8 +38,8 @@ class AllAdoptions extends Component {
   }
 
   filterData(adoptions, searchkey){
-    const result = adoptions.filter((adoption) =>
-    adoptions.name.toLowerCase().includes(searchkey)
+    const result = adoptions.filter((adoptions) => 
+    adoptions.animal_name.toLowerCase().includes(searchkey)
     );
     this.setState({adoptions:result});
     }
@@ -61,9 +63,21 @@ class AllAdoptions extends Component {
     return (
  
         
-          <div className = "container">
-            <p>All Adoptions</p>
-            <table className="table">
+          <div className = "bodybackgrnd">
+            <div className = "all-hero">
+              <div class="bg_image bgimage"></div>
+              <div className = "content">
+                Adoptions Details
+              </div>
+            </div>
+            <div className = "the_content">
+            <br/>
+            
+            <div className ="searchbar">
+              <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange = {this.handleSearchArea}></input>
+            </div>
+            <br/>
+            <table className="table table-light table-bordered table-hover container ">
               <thead>
               <tr>
                 <th scope= "col">#</th>
@@ -74,6 +88,7 @@ class AllAdoptions extends Component {
                 <th scope= "col">Adoption Date</th>
                 <th scope= "col">Animal Id</th>
                 <th scope= "col">Member Id</th>
+                <th scope= "col">Action</th>
               </tr>
               </thead>
               <tbody>
@@ -81,23 +96,23 @@ class AllAdoptions extends Component {
                   <tr key = {index}>
                     <th scope="row">{index + 1}</th>
                     <td>
-                        <a href = {`adoption/details/${adoptions._id}`} style = {{textDecoration:"none"}}>
+                        <Link to = {`/adoption/details/${adoptions._id}`} style = {{textDecoration:"none"}}>
                         {adoptions.animal_name}
-                        </a>
+                        </Link>
                     </td>
                     <td>{adoptions.adoption_level}</td>
                     <td>{adoptions.payment_plan}</td>
-                    <td>{adoptions.live_cam}</td>
+                    <td>{adoptions.live_cam.toString()}</td>
                     <td>{adoptions.adoption_date}</td>
                     <td>{adoptions.animal_id}</td>
                     <td>{adoptions.member_id}</td>
                     <td>
-                      <a className = "btn btn-warning" href = {`adoption/edit/${adoptions._id}`}>
+                      {/* <a className = "btn btn-warning" href = {`adoption/edit/${adoptions._id}`}>
                         <i className= "fas fa-edit"></i>&nbsp;Edit
                       </a>
-                      &nbsp;
-                      <a className = "btn btn-danger" href = "#" onClick = {() => this.onDelete(adoptions._id)}>
-                        <i className= "far fa-trash-alt"></i>&nbsp;Delete
+                      &nbsp; */}
+                      <a className = "deletebtn" href = "#" onClick = {() => this.onDelete(adoptions._id)}>
+                        <i className= " far fa-trash-alt"></i>&nbsp;Remove
                       </a>
 
                     </td>
@@ -105,11 +120,12 @@ class AllAdoptions extends Component {
                   ))}
 
               </tbody>
+              
             </table>
-            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange = {this.handleSearchArea}></input>
-
-            <button className = "btn btn-success"><a href = "/adoption/add" style = {{textDecoration:"none", color:"white"}}>Create</a></button>
             
+            <button className = "btn btn-success"><Link to = "/adoption/add" style = {{textDecoration:"none", color:"white"}}>Create</Link></button>
+            <div className = "bottomspace"></div>
+            </div>
           </div>
         
         
