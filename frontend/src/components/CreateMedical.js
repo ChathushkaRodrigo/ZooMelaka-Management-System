@@ -7,11 +7,11 @@ export default class CreateMedical extends Component {
         super(props);
 
         this.state = {
-            vname:"",
-            zname:"",
-            animalID:"",
-            injID:"",
-            sinfo:"",
+                vname:"",
+                zname:"",
+                animalID:"",
+                injID:"",
+                sinfo:"",
 
 
 
@@ -41,7 +41,7 @@ export default class CreateMedical extends Component {
         }
         console.log(data);
 
-        axios.post("http://localhost:8070/medical/add", data).then((res)=>{
+        axios.post("http://localhost:8015/medical/add", data).then((res)=>{
             if(res.data.success){
                 alert(`New medical Record created `)
                
@@ -62,12 +62,14 @@ export default class CreateMedical extends Component {
 
     render() {
         return (
-            <div className="topic formmed">
+           
             <div classsName="col-md-8-mt-4-mx-auto">
-            <div className="  imagemed"> </div>
-                <h1 className="h3-mb-3 font-weight-normal">Create Medical Record</h1>
+            <br/>
+                <h1 className="titlepage">Create Medical Record</h1>
+                
+                <div className= "imagemed"> </div>
         
-                <form className="formbody needs-validation " noValidate>
+                <form className=" needs-validation " noValidate>
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px'}}>Vetenarian Name</label>
                         <input type="text"
@@ -77,6 +79,7 @@ export default class CreateMedical extends Component {
                         value={this.state.vname}
                         onChange={this.handleInputChange}/>
                         </div>
+
                         <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px'}}>Zoo Keeper Name</label>
                         <input type="text"
@@ -131,13 +134,14 @@ export default class CreateMedical extends Component {
                     </form>
                 <br/>
 
-                <button className ="btn btn-success"><a href="/" style={{textDecoration:'none' ,color:'white' }}>  Dashboard </a></button>
+    
+                <button className ="btn btn-success"><a href="/medicalDashboard" style={{textDecoration:'none' ,color:'white' }}>  Dashboard </a></button>
                   
      
 
                 </div>
 
-            </div>
+           
         )
     }
 }

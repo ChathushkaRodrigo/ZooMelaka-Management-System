@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import "../CSS/Medicaldashboard.css"
 
-class Home extends Component {
+class MedicalDashboard extends Component {
   constructor(props){
   super(props);
 
@@ -41,12 +42,11 @@ onDelete =(id)=>{
   render() {
     return (
       <div classsName ="container">
-        <p>All MedicalRecords</p>
-<<<<<<< HEAD
-        <table className="table table-light table-bordered table-hover container">
-=======
-        <table className="table" >
->>>>>>> f726b400878fdb824c6636e97d09c4e2673c676f
+        <br/>
+        <h1 className ="titlepage">All Medical Records</h1>
+        <div className= "imagemed2"> </div>
+
+        <table className="table  table-bordered ">
           <thead>
             <tr>
               <th scope = "col">#</th>
@@ -99,4 +99,4 @@ onDelete =(id)=>{
   }
 }
 
-export default Home;
+export default MedicalDashboard;

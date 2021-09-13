@@ -1,4 +1,4 @@
- .medicalbody {
+.medicalbody {
     align-items: center;
     background-color: rgb(253, 253, 253);
     display: flex;
@@ -19,11 +19,11 @@
     
 
 
-    .imagemed {
+    .imagemed2 {
     background-image: url("../images/ZooMelaka.png");
     position: relative;
     background-size: cover !important;
-    /* background-position: center top !important; */
+    background-position: center top !important;
     background-repeat: no-repeat !important;
     margin-top: 10px;
     height: 300px;
