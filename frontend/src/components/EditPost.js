@@ -106,7 +106,7 @@ export default class EditPost extends Component {
                 <h1 className="h3 mb-3 font-weight-normal" style={{fontFamily:"Arial"}}>Edit Records</h1>
                 <form className="needs-validation" noValidate>
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                    <label style={{marginBottom:'5px',fontFamily:"Arial"}} > Username</label>
+                    <label style={{marginBottom:'5px',fontFamily:"Arial",color:'black'}} > Username</label>
                     <input type="text"
                     className="form-control"
                     name="eID"
@@ -116,7 +116,7 @@ export default class EditPost extends Component {
                     </div>
                 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:"Arial"}} >FirstName</label>
+                <label style={{marginBottom:'5px',fontFamily:"Arial",color:'black'}} >FirstName</label>
                 <input type="text"
                 className="form-control"
                 name="userName"
@@ -126,7 +126,7 @@ export default class EditPost extends Component {
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:"Arial"}} >eID</label>
+                <label style={{marginBottom:'5px',fontFamily:"Arial",color:'black'}} >eID</label>
                 <input type="text"
                 className="form-control"
                 name="firstName"
@@ -135,7 +135,7 @@ export default class EditPost extends Component {
                 onChange={this.handleInputChange}/></div>
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:"Arial"}} >LastName</label>
+                <label style={{marginBottom:'5px',fontFamily:"Arial",color:'black'}} >LastName</label>
                 <input type="text"
                 className="form-control"
                 name="lastName"
@@ -145,7 +145,7 @@ export default class EditPost extends Component {
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:"Arial"}} >Email</label>
+                <label style={{marginBottom:'5px',fontFamily:"Arial",color:'black'}} >Email</label>
                 <input type="text"
                 className="form-control"
                 name="email"
@@ -154,7 +154,7 @@ export default class EditPost extends Component {
                 onChange={this.handleInputChange}/></div>
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:"Arial"}} >Address</label>
+                <label style={{marginBottom:'5px',fontFamily:"Arial",color:'black'}} >Address</label>
                 <input type="text"
                 className="form-control"
                 name="address"
@@ -164,7 +164,7 @@ export default class EditPost extends Component {
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:"Arial"}} >EmployeeType</label>
+                <label style={{marginBottom:'5px',fontFamily:"Arial",color:'black'}} >EmployeeType</label>
                 <input type="text"
                 className="form-control"
                 name="employeeType"
@@ -174,7 +174,7 @@ export default class EditPost extends Component {
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:"Arial"}} >DOB</label>
+                <label style={{marginBottom:'5px',fontFamily:"Arial",color:'black'}} >DOB</label>
                 <input type="text"
                 className="form-control"
                 name="DOB"
@@ -184,7 +184,7 @@ export default class EditPost extends Component {
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:"Arial"}} >Salary</label>
+                <label style={{marginBottom:'5px',fontFamily:"Arial",color:'black'}} >Salary</label>
                 <input type="text"
                 className="form-control"
                 name="salary"
