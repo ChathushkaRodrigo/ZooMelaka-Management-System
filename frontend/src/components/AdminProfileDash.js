@@ -23,7 +23,6 @@ class memberdashboard extends Component {
           profiles:res.data.existingProfiles
         });       
       };
-
     });
   }
 
@@ -34,19 +33,18 @@ class memberdashboard extends Component {
       alert("Deleted Successfully");
     
       this.retrieveProfiles();
-    })
-    
+    })    
   }
 
   render() {
     return (
       <div>
-          <div className="tgdb" id="header">
+          <div className="pgdb" id="headerprofile">
           
-          <div className="hero-dashboard">
-      <div className="bg_tour"></div> &nbsp;
-          <div className="header">
-            <h1 id="tourguideheading">
+          <div className="prof-dashboard">
+      <div className="bg_prof"></div> &nbsp;
+          <div className="headerprofile">
+            <h1 id="profguideheading">
               <center>MemberDashboard</center> <br />
             </h1>
           </div>
@@ -54,7 +52,7 @@ class memberdashboard extends Component {
 
     <br />
 
-            <table className="Tourdashboard" id="Customers">
+            <table className="profdashboard" id="Customers">
               <thead>
                 <tr>
                   <th scope="col">#</th>
@@ -80,7 +78,7 @@ class memberdashboard extends Component {
                     <td>{profiles.email}</td>
                     <td>{profiles.password}</td>                    
                     <td>
-                        <a className="btn btn-warning" href={`/profile/update/${profiles._id}`}>
+                        <a className="btn btn-warning" href={`/AdminUProfileEdit/${profiles._id}`}>
                             <i className="fas fa-edit"></i>&nbsp;Edit                        
                         </a>
                       &nbsp;
@@ -91,7 +89,19 @@ class memberdashboard extends Component {
                   </tr>
                 ))}
               </tbody>
-            </table>  
+            </table> 
+            <br/>
+            <br/>
+            <br/> 
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            
 
             {/* <button className="btn btn-success"><a href="/signup" style={{textDecoration:'none', color:'white'}}>Create New Profile</a></button>
             <button className="btn btn-success"><a href="/login" style={{textDecoration:'none', color:'white'}}>Login</a></button>                  */}

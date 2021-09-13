@@ -6,7 +6,7 @@ a,
 [type="submit"] {transition: all .25s ease-in;}
 .signup__container {
   position: absolute;
-  top: 50%;
+  top: 53%;
   right: 0;
   left: 0;
   margin-right: auto;
@@ -30,6 +30,7 @@ a,
   background-color: rgba(14, 170, 48, 0.76);
 }
 .container__child {
+  position: center;
   width: 50%;
   height: 100%;
   color: #fff;

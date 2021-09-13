@@ -1,18 +1,18 @@
-.hero-dashboard .bg_tour {
+.prof-dashboard .bg_prof {
     display: block;
     position: relative;
     top: -63px;
-    width: 30%;
+    width: 20px;
     float: right;
     color: violet;
-    height: 700px;
+    height: 500px;
     /* background-image: url(../images/014.png); */
     background-position: center;
     background-size: 85%;
     background-repeat: no-repeat;
     border-radius: 50px;
     background-position-y: 110px;
-    -webkit-mask: radial-gradient(
+    /* -webkit-mask: radial-gradient(
           var(--r1, 100%) var(--r2, 50%) at top,
           white 79.5%,
           transparent 80%
@@ -29,7 +29,7 @@
           white 79.5%,
           transparent 80%
         )
-        top right;
+        top right; */
     mask: radial-gradient(
           var(--r1, 100%) var(--r2, 50%) at top,
           white 79.5%,
@@ -49,35 +49,35 @@
         )
         top right;
     
-    -webkit-mask-size: 33.4% 150%;
+    /* -webkit-mask-size: 33.4% 150%;
     -webkit-mask-repeat: no-repeat;
     mask-size: 33.4% 150%;
-    mask-repeat: no-repeat;
+    mask-repeat: no-repeat; */
   }
-  .hero-tour {
+  .hero-prof {
     display: block;
     position: relative;
     padding: 30px;
     text-align: left;
     position: absolute;
     color: #000000;
-    top: 20%;
+    top: 20px;
     margin-left: 50px;
     font-size: 100%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
       'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
-  .Tourdashboard {
+  .profdashboard {
     position: relative;
     top: -270px;
   }
   
-  #tgdb {
+  #pgdb {
     background-color: rgb(54, 9, 34);
   }
   
-  #tourguideheading {
-    font-size: 100px;
+  #profguideheading {
+    font-size: 80px;
   }
   .table {
     border: 0.5px solid #000000;
@@ -95,29 +95,29 @@
   .table-bordered > thead > tr > td,
   .table-bordered > tbody > tr > td,
   .table-bordered > tfoot > tr > td {
-    border: 0.3px solid #000000;
+    border: 0.3px solid #056111;
   }
   
   #Customers th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #0c1157;
-    background-image: linear-gradient(315deg, #20245f 0%, #1f1447 74%);
+    background-color: #1c8867;
+    background-image: linear-gradient(315deg, #30a578 0%, #368a48 74%);
     color: white;
     font-size: larger;
   }
   #Customers tr:hover {
     background-color: rgb(240, 255, 249);
   }
-  .header {
-    padding: 80px;
+  .headerprofile {
+    padding: 20px;
     text-align: center;
-    background: #0c382f;
+    background: #348d7b;
     color: rgb(160, 56, 56);
-    font-size: 30px;
-  
+    font-size: 30px;  
     background-position-y: 5px;
+    /* background-image: url(../images/014.png); */
   }
   body {
     font-family: Arial;
