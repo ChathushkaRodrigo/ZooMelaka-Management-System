@@ -126,13 +126,15 @@ class CreateProfile extends Component {
                             value={this.state.password}
                             onChange={this.handleInputChange} />
                     </div>                    
-                    
+                    <br/>
                     <button className="btn btn-success" type="submit" onClick={this.onSubmit}>   
                                 <i className="far fa-check-square"> </i>
                                 &nbsp; Create
+                                
                     </button>  
-                    
-                    <a class="signup__link" href="/login">I am already a member</a>
+                    <br/>
+                    <br/>
+                    <div>I am already a member</div><a class="signup__link" href="/login">Sign Up</a>
                     </form>  
                 </div>
             </div>

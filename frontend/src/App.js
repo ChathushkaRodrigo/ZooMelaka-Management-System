@@ -21,9 +21,8 @@ import EditProfile from './components/EditProfile';
 import ProfileDetails from './components/ProfileDetails';
 import Profile from './components/profile';
 import AdminPanelHome from './components/AdminPanelHome';
+
 import EmployeeDashboard from './components/EmployeeDash';
-
-
 import EditEmployee from './components/EditPost';
 import EmployeeDetails from './components/PostDetails';
 import ResearchDashboard from './components/ResearchDashboard';
@@ -72,7 +71,7 @@ render() {
         <Route path ="/AdminProfileDash" component={AdminProfileDashboard}/>
         <Route path ="/profile/update/:id" component={EditProfile}/>
         <Route path="/profile/details/:id" component={ProfileDetails}/>
-        <Route path="/profile/:id" component={Profile}/>
+        <Route path="/profile/:id" exact component={Profile}/>
         
 
 
