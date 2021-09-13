@@ -53,6 +53,10 @@ class Login extends Component {
                         
                         &nbsp; Login
                     </button></Link>
+
+                    <Link to="/signup">
+                             <button > JOIN US </button>
+                        </Link>
     
                 {/* </form> */}
             </div>
