@@ -42,7 +42,7 @@ onDelete =(id)=>{
     return (
       <div classsName ="container">
         <p>All MedicalRecords</p>
-        <table className="table">
+        <table className="table" >
           <thead>
             <tr>
               <th scope = "col">#</th>
@@ -59,7 +59,7 @@ onDelete =(id)=>{
             <tr key={index}>
               <th scope= "row">{index+1}</th>
               <td>
-                 <a href= {`/medical/${medicals._id}`}style={{textDecration:'none'}}>
+                 <a href= {`/medical/details/${medicals._id}`}style={{textDecration:'none'}}>
               <td>{medicals.vname}</td>
               </a>
               </td>
