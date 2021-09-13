@@ -12,6 +12,8 @@ import CreateProfile from './components/CreateProfile';
 import Login from './components/Login';
 import EditProfile from './components/EditProfile';
 import ProfileDetails from './components/ProfileDetails';
+import Profile from './components/profile'
+import Signup from './components/signup';
 
 //Employee Management
 import AdminPanelHome from './components/AdminPanelHome';
@@ -25,6 +27,9 @@ import AddEmployee from './components/CreatePost';
 import EditResearch from './components/EditResearch';
 import ResearchDetails from './components/ResearchDetails';
 import CreateResearch from './components/CreateResearch';
+import CustomerResearchDash from './components/CustomerResearchDash';
+import ResearchCollaboration from './components/ResearchCollaboration';
+import CreateCollaboration from './components/CreateCollaboration';
 
 //Project Management
 import ProjectsHome from './components/ProjectsHome';
@@ -59,6 +64,7 @@ import AnimalDetails from './components/AnimalDetails';
 import AnimalsforAdoption from './components/AnimalsforAdoption';
 import MemberAdoptedAnimals from './components/MemberAdoptedAnimals';
 
+
 class TourApp extends Component {
   
 render() {
@@ -70,12 +76,14 @@ render() {
         <Route path="/" exact component={Home}/>
       
       
-        <Route path="/adminprofiledash" component={AdminProfileDashboard}/>
-        <Route path ="/createprofile" component={CreateProfile}/>
+        {/* <Route path="/adminprofiledash" component={AdminProfileDashboard}/> */}
+        {/* <Route path ="/createprofile" component={CreateProfile}/> */}
         <Route path ="/login" component={Login}/>
-        <Route path ="/AdminProfileDash" component={Login}/>
+        <Route path ="/AdminProfileDash" component={AdminProfileDashboard}/>
         <Route path ="/profile/update/:id" component={EditProfile}/>
-        <Route path="/profile/details/:id" component={ProfileDetails}/>
+        {/* <Route path="/profile/details/:id" component={ProfileDetails}/> */}
+        <Route path ="/profile/:id" component={Profile}/>
+        <Route path ="/signup" component={Signup}/>
         
 
 
@@ -92,7 +100,11 @@ render() {
         <Route path = "/ResearchDashboard" component ={ResearchDashboard}/>
         <Route path = "/research/edit/:id" component ={EditResearch}/>
         <Route path = "/research/add" component = {CreateResearch}/>
-        <Route path = "/research/details/:id" component = {ResearchDetails}/>
+        <Route path = "/research/details/:id" component = {ResearchDetails}/> 
+        <Route path = "/research/customerDash/" component = {CustomerResearchDash}/> 
+        <Route path = "/research/collaboration/" component = {ResearchCollaboration}/> 
+        <Route path = "/research/createCollaboration/" component = {CreateCollaboration}/> 
+
 
         <Route path = "/ProjectsHome" component = {ProjectsHome}/>
         <Route path = "/project/add" component = {AddProject}/>
