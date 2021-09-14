@@ -33,59 +33,65 @@ export default class AnimalDetails extends Component{
                 Attended_Zookeeper,
                 Date_Of_Treatment_And_Medical_Care,
                 Time_Of_Treatment_And_Medical_Care,
-                Current_Enclosure_ID } = this.state.zooAnimal;
+                Current_Enclosure_ID,
+                Adoptability
+                 } = this.state.zooAnimal;
         return(
             <div className="AnimalDetails-body">
-            <div className = "container-fluid" style={{marginTop:'20px',backgroundColor:'#F0FFFF'}}>
-            <h4 style={{fontFamily:'Papyrus,fantasy'}}><b>Retrieve Animal Portfolio</b></h4>
+            <div className = "container-fluid">
+            <center><h1 id="AniDetHead">Retrieve Animal Portfolio</h1></center>
             <hr/>
-            <dl className="row">
+            <div className="ChamathRetreiveForm" id="chamathCreaForm">
+            <form className="myFormsChamath">
+                    <div class="form-group">
+                        <label for="emailC" id="chamForm">Animal Identification Number</label>
+                        <input type="text" class="form-control" id="chamathRet" placeholder={Animal_ID} readOnly/>
+                    </div>
 
-                <dt className="col-sm-3" style={{fontFamily:'Papyrus,fantasy'}}>Animal ID</dt>
-                <dd className="col-sm-9" style={{fontFamily:'Papyrus,fantasy'}}><b>{Animal_ID}</b></dd>
+                  
+                    
+                    <div class="form-group">
+                    <label for="cName" id="chamForm">Animal Name</label>
+                        <input type="text" class="form-control" id="chamathRet" placeholder={Animal_Name} readOnly/>
+                        
+                    </div>
+                    
 
-                <dt className="col-sm-3" style={{fontFamily:'Papyrus,fantasy'}}>Animal Name</dt>
-                <dd className="col-sm-9" style={{fontFamily:'Papyrus,fantasy'}}><b>{Animal_Name}</b></dd>
+                    <div class="form-group">
+                    <label for="cName" id="chamForm">Animal Species</label>
+                        <input type="text" class="form-control" id="chamathRet" placeholder={Animal_Species} readOnly/>
+                        
+                    </div>
+                   
 
-                <dt className="col-sm-3" style={{fontFamily:'Papyrus,fantasy'}}>Animal Species</dt>
-                <dd className="col-sm-9" style={{fontFamily:'Papyrus,fantasy'}}><b>{Animal_Species}</b></dd>
+                    <div class="form-group">
+                    <label for="cName" id="chamForm">Date Of Birth</label>
+                        <input type="text" class="form-control" id="chamathRet" placeholder={Animal_Date_Of_Birth} readOnly/>
+                        
+                    </div>
+                    
 
-                <dt className="col-sm-3" style={{fontFamily:'Papyrus,fantasy'}}>Animal Date Of Birth</dt>
-                <dd className="col-sm-9" style={{fontFamily:'Papyrus,fantasy'}}><b>{Animal_Date_Of_Birth}</b></dd>
+                    <div class="form-group">
+                    <label for="cName" id="chamForm">Animal Gender</label>
+                        <input type="text" class="form-control" id="chamathRet" placeholder={Animal_Gender} readOnly/>
+                        
+                    </div>
+                   
 
-                <dt className="col-sm-3" style={{fontFamily:'Papyrus,fantasy'}}>Animal Gender</dt>
-                <dd className="col-sm-9" style={{fontFamily:'Papyrus,fantasy'}}><b>{Animal_Gender}</b></dd>
+                    <div class="form-group">
+                    <label for="cName" id="chamForm">Animal Adoptability</label>
+                        <input type="text" class="form-control" id="chamathRet" placeholder={Adoptability} readOnly/>
+                        
+                    </div>
+                    </form></div>
 
-                <dt className="col-sm-3" style={{fontFamily:'Papyrus,fantasy'}}>Feeding And Watering Date</dt>
-                <dd className="col-sm-9" style={{fontFamily:'Papyrus,fantasy'}}><b>{Feeding_And_Watering_Date}</b></dd>
 
-                <dt className="col-sm-3" style={{fontFamily:'Papyrus,fantasy'}}>Feeding And Watering Time</dt>
-                <dd className="col-sm-9" style={{fontFamily:'Papyrus,fantasy'}}><b>{Feeding_And_Watering_Time}</b></dd>
 
-                <dt className="col-sm-3" style={{fontFamily:'Papyrus,fantasy'}}>Animal Satisfaction Level</dt>
-                <dd className="col-sm-9" style={{fontFamily:'Papyrus,fantasy'}}><b>{Animal_Satisfaction_Level}</b></dd>
-
-                <dt className="col-sm-3" style={{fontFamily:'Papyrus,fantasy'}}>Animal Health Level</dt>
-                <dd className="col-sm-9" style={{fontFamily:'Papyrus,fantasy'}}><b>{Animal_Health_Level}</b></dd>
-
-                <dt className="col-sm-3" style={{fontFamily:'Papyrus,fantasy'}}>Attended Zookeeper</dt>
-                <dd className="col-sm-9" style={{fontFamily:'Papyrus,fantasy'}}><b>{Attended_Zookeeper}</b></dd>
-
-                <dt className="col-sm-3" style={{fontFamily:'Papyrus,fantasy'}}>Date Of Treatment And Medical Care</dt>
-                <dd className="col-sm-9" style={{fontFamily:'Papyrus,fantasy'}}><b>{Date_Of_Treatment_And_Medical_Care}</b></dd>
-
-                <dt className="col-sm-3" style={{fontFamily:'Papyrus,fantasy'}}>Time Of Treatment And Medical Care</dt>
-                <dd className="col-sm-9" style={{fontFamily:'Papyrus,fantasy'}}><b>{Time_Of_Treatment_And_Medical_Care}</b></dd>
-
-                <dt className="col-sm-3" style={{fontFamily:'Papyrus,fantasy'}}>Current Enclosure ID</dt>
-                <dd className="col-sm-9" style={{fontFamily:'Papyrus,fantasy'}}><b>{Current_Enclosure_ID}</b></dd>
-
-            </dl>
-               
-
-<a className="btn btn-danger btn-lg justify-content-center" href={`/animaldashboard`} style={{fontFamily:'Papyrus,fantasy',marginTop:'25px',marginBottom:'25px'}}>
-                            <i className="fa fa-arrow-circle-o-left"></i>&nbsp;<b>Retreival Completed!</b>
-</a>
+           
+<center>
+<a className="btn btn-light btn-small justify-content-center btn-outline-success" href={`/animaldashboard`} style={{marginTop:'25px',marginBottom:'100px'}} id="ChamathUp">
+                            <i className="fa fa-paw"></i>&nbsp;<b>Retreival Completed!</b>
+</a></center>
             </div></div>
         )
     }
