@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import "../CSS/Createmedical.css"
+import { FormErrors } from './FormErrors';
 
 export default class CreateMedical extends Component {
     constructor(props) {
@@ -15,18 +16,21 @@ export default class CreateMedical extends Component {
                 sinfo:"",
 
 
-
+                formErrors: {animalID: '', injID:''},
+                animalIDValid: false,
+                injIDValid: false,
+                formvalid: false
 
             
         }
     }
-    handleInputChange = (e) =>{
-        const {name,value} =e.target;
-
+    handleInputChange = (e)=>{
+        const {name,value} = e.target;
         this.setState({
             ...this.state,
             [name]:value
-        })
+        },() => { this.validateField(name, value) }
+    );
     }
 
     onsubmit =(e)=>{
@@ -61,6 +65,38 @@ export default class CreateMedical extends Component {
         
     }
 
+ 
+    validateField(fieldName, value) {
+        let fieldValidationErrors = this.state.formErrors;
+        let animalIDValid = this.state.animalIDValid;
+        let injIDValid = this.state.injIDValid;
+    
+        switch(fieldName) {
+          case 'animalID':
+            animalIDValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+            fieldValidationErrors.animalID = animalIDValid ? '' : ' is invalid';
+            break;
+          case 'injID':
+            injIDValid = value.length >= 6;
+            fieldValidationErrors.injID = injIDValid ? '': ' is too short';
+            break;
+          default:
+            break;
+        }
+        this.setState({formErrors: fieldValidationErrors,
+                        animalIDValid: animalIDValid,
+                        injIDValid: injIDValid
+                      }, this.validateForm);
+      }
+    
+      validateForm() {
+        this.setState({formValid: this.state.animalIDValid && this.state.injIDValid});
+      }
+    
+      errorClass(error) {
+        return(error.length === 0 ? '' : 'has-error');
+      }
+
     render() {
         return (
            
@@ -71,6 +107,7 @@ export default class CreateMedical extends Component {
                 <div className= "imagemed"> </div>
         
                 <form className=" needs-validation " noValidate>
+                <FormErrors formErrors={this.state.formErrors} className="FormError"/>
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px'}}>Vetenarian Name</label>
                         <input type="text"
@@ -137,7 +174,14 @@ export default class CreateMedical extends Component {
 
     
                 <button className ="btn btn-success"><a href="/medicalDashboard" style={{textDecoration:'none' ,color:'white' }}>  Dashboard </a></button>
-                  
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
      
 
                 </div>
