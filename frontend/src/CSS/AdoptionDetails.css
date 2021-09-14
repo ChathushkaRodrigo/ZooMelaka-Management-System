@@ -1,0 +1,18 @@
+.adpt-det{
+    text-align: left;
+    padding-top: 20px;
+    padding-left: 30px;
+    margin-bottom: 40px;
+    margin-left:30%;
+    margin-right: 30%;
+    margin-bottom: 10px;
+    align:center;
+    border: 1px solid;
+
+}
+
+.adp-det-image{
+    position: absolute;
+    margin-left:22%;
+    margin-top: -15%;
+}

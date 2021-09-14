@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import '../CSS/create-booking.css'
+import { FormErrors } from './FormErrors';
 
 export default class CreateBooking extends Component {
     constructor(props) {
@@ -14,21 +15,50 @@ export default class CreateBooking extends Component {
             TourOption:"",
             Date:"",
             Time:"",
-            TourGuideName:""
-
-
-
-
+            TourGuideName:"",
+            formErrors: {email: '', password:''},
+            emailValid: false,
+           
+            formvalid: false
+         
             
         }
     }
-    handleInputChange = (e) =>{
-        const {name,value} =e.target;
+    validateField(fieldName, value) {
+        let fieldValidationErrors = this.state.formErrors;
+        let emailValid = this.state.emailValid;
+        
+    
+        switch(fieldName) {
+          case 'CustomerEmail':
+            emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+            fieldValidationErrors.email = emailValid ? '' : ' is invalid';
+            break;
+       
+          default:
+            break;
+        }
+        this.setState({formErrors: fieldValidationErrors,
+                        emailValid: emailValid,
+                        
+                      }, this.validateForm);
+      }
+    
+      validateForm() {
+        this.setState({formValid: this.state.emailValid});
+      }
+    
+      errorClass(error) {
+        return(error.length === 0 ? '' : 'has-error');
+      }
 
+   handleInputChange = (e)=>{
+        const {name,value} = e.target;
         this.setState({
             ...this.state,
             [name]:value
-        })
+        },() => { this.validateField(name, value) }
+    );
     }
 
     onsubmit =(e)=>{
@@ -73,13 +103,14 @@ export default class CreateBooking extends Component {
             <div class="d-flex flex-column justify-content-center w-100 h-100">
             <div className="col-md-8 mt-4 mx-auto" id="content">
                 <div id="header">
-             <h1 className="h8 mb-8 font-weight-fw-bold align-content-center" id="crtH">   Create a new Booking   </h1>
+             <h1 className="h8 mb-8 font-weight-fw-bold align-content-center" id="crtH">  Create a Booking   </h1>
              </div>
              <br/>
            
                     <br/>
                     
                     <form className="create-form"  >
+                   
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label for="emailC" style={{marginBottom:'5px'}}>Email address</label>
                     <input type="email" 
@@ -93,6 +124,8 @@ export default class CreateBooking extends Component {
                          required/>
                         
                     </div>
+                    <FormErrors formErrors={this.state.formErrors} className="FormError" id="form-error"/>
+                   
 
                     <br/>
                     <div className="form-group">
@@ -164,8 +197,7 @@ export default class CreateBooking extends Component {
                         
                     </div>
                         <br/><br/>
-                        <input type="checkbox" name="terms" id="terms" onchange="activateButton(this)"/>  I Agree Terms and Coditions
-                        <br/><br/>
+                       
                     <button className="btn btn-success" type="submit" style={{marginBottom:'15px'}} onClick={this.onsubmit}>
                         <i className="far fa-check-square"></i>
                         &nbsp; Submit Booking

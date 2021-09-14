@@ -7,7 +7,7 @@ const router =express.Router();
 
 //Save medical details 
 
-router.post("/medical/create",(req,res)=>{
+router.post("/medical/add",(req,res)=>{
 
     let newMedical = new Medical(req.body);
 
