@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import "../CSS/Medicaldashboard.css"
 
 class EditMedical extends Component {
 
@@ -80,7 +81,9 @@ class EditMedical extends Component {
     render() {
         return (
             <div classsName="col-md-8-mt-4-mx-auto">
-                <h1 className="h3-mb-3 font-weight-normal">Edit Medical Record</h1>
+                <br/>
+                <h1 className="titlepage">Edit Medical Record</h1>
+                <div className= "imagemed"> </div>
                 <form className="needs-validation" noValidate>
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px'}}>Vetenarian Name</label>
