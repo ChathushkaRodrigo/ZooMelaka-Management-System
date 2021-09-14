@@ -51,5 +51,13 @@
 .shadow-none {
     box-shadow: none!important;
 }
-
+.headerprofile {
+    padding: 20px;
+    text-align: center;
+    /* background: #348d7b; */
+    color: rgb(160, 56, 56);
+    font-size: 30px;  
+    background-position-y: 5px;
+    background-image: url(../images/loginimg.jpg);
+  }
 

@@ -33,7 +33,8 @@ a,
   position: center;
   width: 50%;
   height: 100%;
-  color: #fff;
+  color: rgb(255, 0, 0);
+  background: url(http://ultraimg.com/images/pizza.jpeg);
 }
 .signup__thumbnail {
   position: relative;
