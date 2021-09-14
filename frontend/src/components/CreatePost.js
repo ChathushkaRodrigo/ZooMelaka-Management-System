@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react'
 import axios from 'axios';
@@ -45,7 +46,7 @@ constructor(props){
             emailError = "Invalid email";
         }
 
-        if(emailError == "Invalid email"){
+        if(emailError === "Invalid email"){
             this.setState({emailError});
             return false
         }
@@ -54,7 +55,7 @@ constructor(props){
             userNameError = "Username has to be atleast 5 characters long";
         }
 
-        if(userNameError == "Username has to be atleast 5 characters long"){
+        if(userNameError === "Username has to be atleast 5 characters long"){
             this.setState({userNameError});
             return false
         }
