@@ -1,15 +1,9 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import axios from 'axios';
 
 
-
-export default class CreatePost extends Component {
-
-constructor(props){
-    super(props);
-    this.state={
-       
-        userName:"",
+const initial = {
+    userName:"",
         firstName:"",
         eID:"",
         lastName:"",
@@ -17,8 +11,18 @@ constructor(props){
         address:"",
         employeeType:"",
         DOB:"",
-        salary:""
-    }
+        salary:"",
+        userNameError:"",
+        emailError:""
+
+
+}
+
+export default class CreatePost extends Component {
+
+constructor(props){
+    super(props);
+    this.state=initial
 }
 
     handleInputChange =(e) =>{
@@ -29,16 +33,58 @@ constructor(props){
             [name]:value
         })
     }
+    
+    
+    validate = () => { 
 
+        let userNameError="";
+        let emailError="";
+        let len = 0;
+        if(!this.state.email.includes('@')){
+            emailError = "Invalid email";
+        }
+
+        if(emailError == "Invalid email"){
+            this.setState({emailError});
+            return false
+        }
+        
+        if(this.state.userName.length < 5){
+            userNameError = "Username has to be atleast 5 characters long";
+        }
+
+        if(userNameError == "Username has to be atleast 5 characters long"){
+            this.setState({userNameError});
+            return false
+        }
+
+        return true
+    }
+    
+
+
+    
     onSubmit = (e) =>{
         e.preventDefault();
-        
+        const isValid = this.validate();
+        if(isValid){
+            console.log(this.state);
+
+            //clear form
+            this.setState(initial)
+            
+            
+
+        }else{
+            alert("Requirements not fulfiled, Try again");
+            return false
+        }
         const {userName,firstName,eID,lastName,email,address,employeeType,DOB,salary} = this.state;
-  
-
-
+        
+        
+        
         const data={
-          
+            
             userName:userName,
             firstName:firstName,
             eID:eID,
@@ -49,16 +95,16 @@ constructor(props){
             DOB:DOB,
             salary:salary
         }
-
+        
         console.log(data)
-
+        
         axios.post("http://localhost:8015/post/save",data).then((res)=>{
             if(res.data.success){
                 this.setState(
-                {
-                  username:"",
-                  firstName:"",
-                  eID:"",
+                    {
+                        username:"",
+                        firstName:"",
+                        eID:"",
                   lastName:"",
                   email:"",
                   address:"",
@@ -79,7 +125,7 @@ constructor(props){
                 <h1 className="h3 mb-3 font-weight-normal" style={{fontFamily:'Papyrus, fantasy'}}>Create new post</h1>
                 <form className="needs-validation" noValidate>
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                    <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >Username</label>
+                    <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >eID</label>
                     <input type="text"
                     className="form-control"
                     name="eID"
@@ -87,9 +133,13 @@ constructor(props){
                     value={this.state.eID}
                     onChange={this.handleInputChange}/>
                     </div>
+
+                    
                 
+                    
+
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >FirstName</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >Username</label>
                 <input type="text"
                 className="form-control"
                 name="userName"
@@ -97,9 +147,14 @@ constructor(props){
                 value={this.state.userName}
                 onChange={this.handleInputChange}/></div>
 
+                <div style={{color:"red"}}>
+                    {this.state.userNameError}
+                    </div>
+
+                    
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >eID</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >First Name</label>
                 <input type="text"
                 className="form-control"
                 name="firstName"
@@ -108,7 +163,7 @@ constructor(props){
                 onChange={this.handleInputChange}/></div>
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >LastName</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >Last Name</label>
                 <input type="text"
                 className="form-control"
                 name="lastName"
@@ -118,7 +173,7 @@ constructor(props){
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >E-mail</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >E-mail</label>
                 <input type="text"
                 className="form-control"
                 name="email"
@@ -126,8 +181,14 @@ constructor(props){
                 value={this.state.email}
                 onChange={this.handleInputChange}/></div>
 
+
+                <div style={{color:"red"}}>
+                    {this.state.emailError}
+                    </div>
+
+
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >Address</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >Address</label>
                 <input type="text"
                 className="form-control"
                 name="address"
@@ -137,7 +198,7 @@ constructor(props){
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >Employee Type</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >Employee Type</label>
                 <input type="text"
                 className="form-control"
                 name="employeeType"
@@ -147,17 +208,18 @@ constructor(props){
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >DOB</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >DOB</label>
                 <input type="text"
                 className="form-control"
                 name="DOB"
+                type="date"
                 placeholder=""
                 value={this.state.DOB}
                 onChange={this.handleInputChange}/></div>
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy'}} >Salary</label>
+                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >Salary</label>
                 <input type="text"
                 className="form-control"
                 name="salary"
