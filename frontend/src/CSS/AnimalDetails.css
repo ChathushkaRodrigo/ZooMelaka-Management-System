@@ -1,11 +1,7 @@
 .AnimalDetails-body{
-    font-size:medium;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-position: center;
-    color:black;
     background-image: url(../images/jaguar.jpg);
     background-size: cover;
-    font-weight: bolder;
     background-color: azure;
 }
 
@@ -18,26 +14,47 @@
 }
 
 .myFormsChamath{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: large;
-    color:darkorange;
+    color: darkblue;
     font-weight: bolder;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 75%;
+    margin:0 auto;
+    padding-bottom: 30px;
     
 }
 
 .ChamathRetreiveForm{
-    width: 100%;
-    
-}
-
-.container-fluid{
-    width: 60%;
-    opacity: 75%;
+    width: 75%;
+    margin:0 auto;
+       
 }
 
 #chamathRet{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bolder;
     color: black;
+    font-size: large;
+}
+#chamathCreaForm{
+    border-style: 5px solid;
+    border-color: darkgreen;
+    background-color: azure;
+    opacity: 80%;
+   
 }
 
+#ChamathUp{
+         
+    margin-top:15px;
+    margin-bottom:25px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+#chamForm{
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bolder;
+    color:darkblue;
+    font-size: large;
+    
+}  

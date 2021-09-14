@@ -41,45 +41,45 @@ export default class AnimalDetails extends Component{
             <div className = "container-fluid">
             <center><h1 id="AniDetHead">Retrieve Animal Portfolio</h1></center>
             <hr/>
-            <div className="ChamathRetreiveForm">
+            <div className="ChamathRetreiveForm" id="chamathCreaForm">
             <form className="myFormsChamath">
                     <div class="form-group">
-                        <label for="emailC">Animal Identification Number</label>
+                        <label for="emailC" id="chamForm">Animal Identification Number</label>
                         <input type="text" class="form-control" id="chamathRet" placeholder={Animal_ID} readOnly/>
                     </div>
 
                   
                     
                     <div class="form-group">
-                    <label for="cName">Animal Name</label>
+                    <label for="cName" id="chamForm">Animal Name</label>
                         <input type="text" class="form-control" id="chamathRet" placeholder={Animal_Name} readOnly/>
                         
                     </div>
                     
 
                     <div class="form-group">
-                    <label for="cName">Animal Species</label>
+                    <label for="cName" id="chamForm">Animal Species</label>
                         <input type="text" class="form-control" id="chamathRet" placeholder={Animal_Species} readOnly/>
                         
                     </div>
                    
 
                     <div class="form-group">
-                    <label for="cName">Date Of Birth</label>
+                    <label for="cName" id="chamForm">Date Of Birth</label>
                         <input type="text" class="form-control" id="chamathRet" placeholder={Animal_Date_Of_Birth} readOnly/>
                         
                     </div>
                     
 
                     <div class="form-group">
-                    <label for="cName">Animal Gender</label>
+                    <label for="cName" id="chamForm">Animal Gender</label>
                         <input type="text" class="form-control" id="chamathRet" placeholder={Animal_Gender} readOnly/>
                         
                     </div>
                    
 
                     <div class="form-group">
-                    <label for="cName">Animal Adoptability</label>
+                    <label for="cName" id="chamForm">Animal Adoptability</label>
                         <input type="text" class="form-control" id="chamathRet" placeholder={Adoptability} readOnly/>
                         
                     </div>
@@ -89,7 +89,7 @@ export default class AnimalDetails extends Component{
 
            
 <center>
-<a className="btn btn-light btn-small justify-content-center btn-outline-success" href={`/animaldashboard`} style={{marginTop:'25px',marginBottom:'100px'}}>
+<a className="btn btn-light btn-small justify-content-center btn-outline-success" href={`/animaldashboard`} style={{marginTop:'25px',marginBottom:'100px'}} id="ChamathUp">
                             <i className="fa fa-paw"></i>&nbsp;<b>Retreival Completed!</b>
 </a></center>
             </div></div>

@@ -16,7 +16,8 @@ export default class EditAnimal extends Component{
             Date_Of_Treatment_And_Medical_Care:"",
             Time_Of_Treatment_And_Medical_Care:"",
             Current_Enclosure_ID:"",
-            Adoptability:"false"
+            Adoptability:"false",
+
             
         }
     }
@@ -124,7 +125,7 @@ export default class EditAnimal extends Component{
                 <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Feeding And Watering Date</label>
                 <input type="text"
-                id="ChamathsIDs"
+                id="chamathRet"
                 className="form-control"
                 name="Feeding_And_Watering_Date"
                 placeholder="Enter The Feeding_And_Watering_Date:"
@@ -136,6 +137,7 @@ export default class EditAnimal extends Component{
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Feeding And Watering Time</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Feeding_And_Watering_Time"
                 placeholder="Enter The Feeding_And_Watering_Time:"
@@ -147,6 +149,7 @@ export default class EditAnimal extends Component{
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Animal Satisfaction Level</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Animal_Satisfaction_Level"
                 placeholder="Enter The Animal_Satisfaction_Level:"
@@ -158,6 +161,7 @@ export default class EditAnimal extends Component{
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Animal Health Level</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Animal_Health_Level"
                 placeholder="Enter The Animal_Health_Level:"
@@ -169,6 +173,7 @@ export default class EditAnimal extends Component{
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Attended Zookeeper</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Attended_Zookeeper"
                 placeholder="Enter The Last Attended_Zookeeper:"
@@ -180,6 +185,7 @@ export default class EditAnimal extends Component{
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Date Of Treatment And Medical Care</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Date_Of_Treatment_And_Medical_Care"
                 placeholder="Enter The Date_Of_Treatment_And_Medical_Care:"
@@ -191,6 +197,7 @@ export default class EditAnimal extends Component{
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Time Of Treatment And Medical Care</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Time_Of_Treatment_And_Medical_Care"
                 placeholder="Enter The Time_Of_Treatment_And_Medical_Care:"
@@ -202,6 +209,7 @@ export default class EditAnimal extends Component{
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Current Enclosure ID</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Current_Enclosure_ID"
                 placeholder="Enter The Current_Enclosure_ID:"
@@ -212,7 +220,7 @@ export default class EditAnimal extends Component{
 
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} for='Adoptability' id="chamForm">Adoptability</label>&nbsp;&nbsp;
-                <input type="checkbox"
+                <input type="checkbox" 
                 id="Adoptability"
                 name="Adoptability"
                 placeholder="Enter The Adoptability Status:"

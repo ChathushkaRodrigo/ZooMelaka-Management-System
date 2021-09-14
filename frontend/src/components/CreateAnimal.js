@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import '../CSS/CreateAnimal.css';
+import { FormErrors } from './FormErrors';
 export default class CreateAnimal extends Component{
     
     constructor(props){
@@ -19,18 +20,21 @@ export default class CreateAnimal extends Component{
             Date_Of_Treatment_And_Medical_Care:"",
             Time_Of_Treatment_And_Medical_Care:"",
             Current_Enclosure_ID:"",
-            Adoptability:"false"
+            Adoptability:"false",
             
-
+            formErrors: {Animal_ID: ''},
+            Animal_IDValid: false,
+            formvalid: false
         }
     }
 
-    handleInputChange = (e) =>{
+    handleInputChange = (e)=>{
         const {name,value} = e.target;
         this.setState({
             ...this.state,
             [name]:value
-        })
+        },() => { this.validateField(name, value) }
+    );
     }
 
     onSubmit = (e) =>{
@@ -96,7 +100,31 @@ export default class CreateAnimal extends Component{
     }
     
     
+    validateField(fieldName, value) {
+        let fieldValidationErrors = this.state.formErrors;
+        let Animal_IDValid = this.state.Animal_IDValid;
     
+        switch(fieldName) {
+          
+          case 'Animal_ID':
+            Animal_IDValid = value.length <= 4;
+            fieldValidationErrors.Animal_ID = Animal_IDValid ? '': ' is too long';
+            break;
+          default:
+            break;
+        }
+        this.setState({formErrors: fieldValidationErrors,
+                        Animal_IDValid: Animal_IDValid
+                      }, this.validateForm);
+      }
+    
+      validateForm() {
+        this.setState({formValid: this.state.Animal_IDValid});
+      }
+    
+      errorClass(error) {
+        return(error.length === 0 ? '' : 'has-error');
+      }
     
     render(){
         return(
@@ -108,17 +136,18 @@ export default class CreateAnimal extends Component{
                 <label style={{marginBottom:'5px'}} id="chamForm">Animal ID</label>
                 <input type="text"
                 className="form-control"
-                id="myAID"
+                id="chamathRet"
                 name="Animal_ID"
                 placeholder="Enter The Animal ID:"
                 value={this.state.Animal_ID}
                 onChange={this.handleInputChange}
                 />
-            </div>
+            </div><div id="ChamathValidation"><FormErrors formErrors={this.state.formErrors} className="FormError"/></div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Animal Name</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Animal_Name"
                 placeholder="Enter The Animal Name:"
@@ -130,6 +159,7 @@ export default class CreateAnimal extends Component{
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Animal Species</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Animal_Species"
                 placeholder="Enter The Animal Species:"
@@ -141,6 +171,7 @@ export default class CreateAnimal extends Component{
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Animal Date Of Birth</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Animal_Date_Of_Birth"
                 placeholder="Enter The Animal Date Of Birth:"
@@ -152,6 +183,7 @@ export default class CreateAnimal extends Component{
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Animal Gender</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Animal_Gender"
                 placeholder="Enter The Animal Gender:"
@@ -163,6 +195,7 @@ export default class CreateAnimal extends Component{
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Feeding And Watering Date</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Feeding_And_Watering_Date"
                 placeholder="Enter The Feeding And Watering Date:"
@@ -174,6 +207,7 @@ export default class CreateAnimal extends Component{
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Feeding And Watering Time</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Feeding_And_Watering_Time"
                 placeholder="Enter The Feeding And Watering Time:"
@@ -185,6 +219,7 @@ export default class CreateAnimal extends Component{
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Animal Satisfaction Level</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Animal_Satisfaction_Level"
                 placeholder="Enter The Animal Satisfaction Level:"
@@ -196,6 +231,7 @@ export default class CreateAnimal extends Component{
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Animal Health Level</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Animal_Health_Level"
                 placeholder="Enter The Animal Health Level:"
@@ -207,6 +243,7 @@ export default class CreateAnimal extends Component{
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Attended Zookeeper</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Attended_Zookeeper"
                 placeholder="Enter The Last Attended Zookeeper:"
@@ -218,6 +255,7 @@ export default class CreateAnimal extends Component{
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Date Of Treatment And Medical Care</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Date_Of_Treatment_And_Medical_Care"
                 placeholder="Enter The Date Of Treatment And Medical Care:"
@@ -229,6 +267,7 @@ export default class CreateAnimal extends Component{
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Time Of Treatment And Medical Care</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Time_Of_Treatment_And_Medical_Care"
                 placeholder="Enter The Time Of Treatment And Medical Care:"
@@ -240,6 +279,7 @@ export default class CreateAnimal extends Component{
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Current Enclosure ID</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Current_Enclosure_ID"
                 placeholder="Enter The Current Enclosure ID:"
