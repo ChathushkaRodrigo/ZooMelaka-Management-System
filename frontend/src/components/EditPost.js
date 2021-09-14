@@ -1,23 +1,29 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+
+const initial = {
+    userName:"",
+        firstName:"",
+        eID:"",
+        lastName:"",
+        email:"",
+        address:"",
+        employeeType:"",
+        DOB:"",
+        salary:"",
+        userNameError:"",
+        emailError:""
+
+
+}
+
 export default class EditPost extends Component {
     
 
     constructor(props){
         super(props);
-        this.state={
-           
-            userName:"",
-            firstName:"",
-            eID:"",
-            lastName:"",
-            email:"",
-            address:"",
-            employeeType:"",
-            DOB:"",
-            salary:""
-        }
+        this.state=initial
     }
     
         handleInputChange =(e) =>{
@@ -28,9 +34,51 @@ export default class EditPost extends Component {
                 [name]:value
             })
         }
+
+
+
+        validate = () => { 
+
+            let userNameError="";
+            let emailError="";
+            let len = 0;
+            if(!this.state.email.includes('@')){
+                emailError = "Invalid email";
+            }
+    
+            if(emailError == "Invalid email"){
+                this.setState({emailError});
+                return false
+            }
+            
+            if(this.state.userName.length < 5){
+                userNameError = "Username has to be atleast 5 characters long";
+            }
+    
+            if(userNameError == "Username has to be atleast 5 characters long"){
+                this.setState({userNameError});
+                return false
+            }
+    
+            return true
+        }
     
         onSubmit = (e) =>{
             e.preventDefault();
+
+            const isValid = this.validate();
+            if(isValid){
+                console.log(this.state);
+    
+                //clear form
+                this.setState(initial)
+                
+                
+    
+            }else{
+                alert("Requirements not fulfiled, Try again");
+                return false
+            }
             const id =  this.props.match.params.id;
             
             const {userName,firstName,eID,lastName,email,address,employeeType,DOB,salary} = this.state;
@@ -106,7 +154,7 @@ export default class EditPost extends Component {
                 <h1 className="h3 mb-3 font-weight-normal" style={{fontFamily:"Arial"}}>Edit Records</h1>
                 <form className="needs-validation" noValidate>
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                    <label style={{marginBottom:'5px',fontFamily:"Arial",color:'black'}} > Username</label>
+                    <label style={{marginBottom:'5px',fontFamily:"Arial",color:'black'}} > eID</label>
                     <input type="text"
                     className="form-control"
                     name="eID"
@@ -114,9 +162,10 @@ export default class EditPost extends Component {
                     value={this.state.eID}
                     onChange={this.handleInputChange}/>
                     </div>
+
                 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:"Arial",color:'black'}} >FirstName</label>
+                <label style={{marginBottom:'5px',fontFamily:"Arial",color:'black'}} >Username</label>
                 <input type="text"
                 className="form-control"
                 name="userName"
@@ -124,9 +173,12 @@ export default class EditPost extends Component {
                 value={this.state.userName}
                 onChange={this.handleInputChange}/></div>
 
+                    <div style={{color:"red"}}>
+                    {this.state.userNameError}
+                    </div>
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:"Arial",color:'black'}} >eID</label>
+                <label style={{marginBottom:'5px',fontFamily:"Arial",color:'black'}} >Firstname</label>
                 <input type="text"
                 className="form-control"
                 name="firstName"
@@ -153,6 +205,10 @@ export default class EditPost extends Component {
                 value={this.state.email}
                 onChange={this.handleInputChange}/></div>
 
+                <div style={{color:"red"}}>
+                    {this.state.emailError}
+                    </div>
+
                 <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px',fontFamily:"Arial",color:'black'}} >Address</label>
                 <input type="text"
@@ -178,6 +234,7 @@ export default class EditPost extends Component {
                 <input type="text"
                 className="form-control"
                 name="DOB"
+                type="date"
                 placeholder="Enter Post Category"
                 value={this.state.DOB}
                 onChange={this.handleInputChange}/></div>
