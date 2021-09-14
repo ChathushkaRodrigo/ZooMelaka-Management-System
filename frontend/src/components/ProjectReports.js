@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import NavBar from './NavBar';
+import '../CSS/Projects.css';
 
 export default class Reports extends Component{
     constructor(props){
@@ -31,30 +31,61 @@ export default class Reports extends Component{
         const {projectID,name,title,description,supervisor,workingTeam} = this.state.post;
 
         return(
-            <div>
-                <NavBar/>
-                <h4 style={{textAlign:'center',marginTop:'30px'}}>
-                    <u><b>Project&nbsp;</b></u>
-                    <u><b>{name}</b></u>
-                    <u><b>&nbsp;Report</b></u>
+            <div className="reportback">
+                <div className="Caption">
+                <h1 className="pageCaption">Project Report</h1>
+                </div>
+                <div className="report">
+                
+                
+                <h4 className="reportheader">
+                    Project&nbsp;
+                    {name}
+                    &nbsp;Report
                 </h4>
             
                 <p></p>
-             <div style={{paddingTop:'50px',paddingLeft:'100px',paddingRight:'100px'}}>
-                <d1 className="row" style={{textAlign:'left'}}>
-                    <dt className="col-sm-3">Project ID:</dt>
-                    <dd className="col-sm-9">{projectID}</dd>
-                    <dt className="col-sm-3">Project Name:</dt>
-                    <dd className="col-sm-9">{name}</dd>
-                    <dt className="col-sm-3">Title:</dt>
-                    <dd className="col-sm-9">{title}</dd>
-                    <dt className="col-sm-3">Projects Description:</dt>
-                    <dd className="col-sm-9">{description}</dd>
-                    <dt className="col-sm-3">Supervisor:</dt>
-                    <dd className="col-sm-9">{supervisor}</dd>
-                    <dt className="col-sm-3">Working Team:</dt>
-                    <dd className="col-sm-9">{workingTeam}</dd>
-                </d1>
+             <div className="content1">
+                 <table className="treport" style={{borderStyle:'none'}}>
+                     <tr>
+                        <th className="col-sm-3">Project ID:</th>
+                        <td className="col-sm-9">{projectID}</td>
+                    </tr>
+
+                    <tr>
+                        <th className="col-sm-3">Project Name:</th>
+                        <td className="col-sm-9">{name}</td>
+                    </tr>
+                        
+
+                    <tr>
+                        <th className="col-sm-3">Title:</th>
+                        <td className="col-sm-9">{title}</td>
+                    </tr>
+                        
+
+                    <tr>
+                        <th className="col-sm-3">Project Description:</th>
+                        <td className="col-sm-9">{description}</td>
+                    </tr>
+                        
+
+                    <tr>
+                        <th className="col-sm-3">Supervisor:</th>
+                        <td className="col-sm-9">{supervisor}</td>
+                    </tr>
+                        
+
+                    <tr>
+                        <th className="col-sm-3">Working Team:</th>
+                        <td className="col-sm-9">{workingTeam}</td>
+                    </tr>
+                        
+                </table>
+             </div>
+             
+             <button className="btn btn-dark" style={{marginLeft:'30px'}} Hover={{TransitionEvent:'scale(1.08s)'}} id="print" onClick={() => window.print()}>Print report</button>
+             
              </div>
 
             </div>                   

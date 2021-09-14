@@ -1,0 +1,308 @@
+body {
+    font-family: Open sans, sans-serif;
+    
+    background: #f1f1f1;
+    overflow: scroll;
+  }
+
+
+  /* Captions */
+
+  .Caption{
+    height:80px;
+    width: 100%;
+    text-align:center;
+    background-color:#011a01;
+    margin: 0 auto;
+  }
+
+  .pageCaption{
+    margin-top:10px;
+    font-weight: bold;
+    color:#FFFFFF;
+    padding:19px 0px;
+    padding-bottom: 10px;
+    font-size: 32px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  a{
+      text-decoration: none;
+  }
+
+
+/* Projects Dashboard */
+
+  .Hback{
+      padding-top: 1px;
+      background-image: url(../images/ProjecttHome2.jpg);
+      background-attachment: fixed;
+      background-position: -150px -0; 
+  }
+
+  #PHomeBtn{
+    max-width: 700px;  
+    margin-top: 60px;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    padding-bottom: 80px;
+  }
+
+  .HomeB1{
+    background-color: #011a01;
+    border: 2px solid #FFFFFF;
+    margin-top: 30px;
+    margin-left: 0px;
+    color: #FFFFFF;
+    height: 50px;
+    font-size: 20px;
+    width:100%;
+    border-style: none;
+    transition:scale;
+
+  }
+
+  .HomeB1:Hover{
+      color: #011a01;
+      background-color: #FFFFFF;
+      font-size: 23px;
+      font-weight: bold;
+      transform: scale(1.03);
+      border-color: #011a01;
+      border-style: groove;
+      border-width: 1px;
+  }
+
+  
+  /* Create */
+
+  .createback{
+      background-image: url(../images/projectCreate.jpg);
+      background-size: cover;
+      border-style: hidden;
+      height: 1100px;
+      overflow: hidden;
+  }
+
+  .createF{
+      border: #011a01 outset 5px;
+      width: 60%;
+      margin: 0 auto;
+      margin-top: 50px;
+      margin-bottom: 100px;
+      border-style: double;
+      padding-top: 50px;
+      padding-bottom: 10px;
+      background: rgba(255,255,255,0.3);
+  }
+
+  .cform{
+      color: black;
+      overflow: hidden;
+  }
+
+  .form-group{
+      width: 80%;
+      margin: 0 auto;
+      display: block;
+     
+  }
+
+  .formLabels{  
+    font-size: large;
+  }
+
+  .form-control{
+     margin-top: -3px;
+      
+  }
+
+
+  #btnreset{
+      margin-bottom: 50px;
+      background-color: red;
+      border-color: black;
+  }
+
+  #btnsubmit{
+    margin-top: -19px;
+    margin-left: 60px;
+    background-color: rgb(0, 138, 18);
+    border-color: black;
+ }
+  
+ #btnreset:Hover{
+     transform: scale(1.1);
+ }
+
+ #btnsubmit:Hover{
+    transform: scale(1.1);
+}
+
+#Error{
+    color: red;
+    width: 200px;
+    margin-left: 70%;
+
+}
+
+
+
+/* Search Project */
+
+.searchback{
+    background-image: url(../images/ProjectSearch.jpg);
+    background-size: cover;
+    background-position: 0 -100px;
+    border-style: hidden;
+    height: 900px;
+    /* overflow: scroll;  */
+    
+}
+
+.containerpr{
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 50px;
+    background:rgba(255, 255, 255, 0.8);
+    margin-bottom: 60px;
+    min-height: 400px;
+    max-height: 600px;
+    overflow-y: scroll;
+    overflow-x: unset;
+}
+ 
+#psearchbar{
+    width: 100%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#psearch{
+    width: 300px;
+    margin-left: auto;
+    margin-right: 0;
+    margin-bottom: 1px;
+    padding-bottom: 1px;
+}
+
+
+
+#allProjectsT{
+    background: rgba(255, 255, 255, 0.8);
+}
+
+#trh{
+    background-color: #737573;
+    color: #FFFFFF;
+    text-align: center;
+    height: 60px;
+    font-size: 20px;
+    font-weight: 1px;
+}
+
+#trd{
+    color: black;
+    text-align: center;
+}
+
+#tr:Hover{
+    background-color: rgb(180, 180, 180);
+    color: #FFFFFF;
+}
+
+.searchlink{
+    color: rgb(40, 40, 41);
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+#sdelete{
+    background-color: rgb(243, 0, 0);
+    transition-duration: 0.2s;
+}
+  
+#sdelete:Hover{
+    transform: scale(1.055);    
+}
+
+#sedit{
+    background-color: rgb(252, 248, 36);
+    transition-duration: 0.2s;
+    border-style: none;
+    margin-left: 7px;
+}
+
+#sedit:Hover{
+    transform: scale(1.055);    
+}
+
+
+/* Project Ediit */
+
+.editback{
+    background-image: url(../images/PojectEdit.jpg);
+    background-size: cover;
+    border-style: hidden;
+    height: 990px;
+}
+
+#eupdate{
+    margin-top: 40px;
+    margin-left: 90px;
+    background-color:rgb(0, 138, 18);
+    margin-bottom: 50px;
+}
+
+#eupdate:hover{
+    transform: scale(1.1);
+}
+
+
+
+/* Project Reports*/
+
+.reportback{
+    background-image: url('../images/zoologo.jpg');
+    min-height: 800px;
+    max-height: unset;
+}
+
+.report{
+    background-color: #f1f1f1;
+    margin: 50px auto 100px;
+    padding-top: 5px;
+    padding-left: 30px;
+    padding-bottom: 40px;
+    width: 60%;
+    min-height: 70%;
+    opacity: 95%;
+    overflow: visible;
+    height: auto;
+    border-style: solid;
+    border-width: 3px;
+
+  
+}
+
+.reportheader{
+    
+    width: 90%;
+    text-align: center;
+    margin: 50px auto;
+    margin-right: 50px;
+    text-decoration-line: underline;
+    font-size: 28px;
+}
+
+.content1{
+    padding-left: 30px;
+    padding-right: 60px;
+    height: auto;
+    margin: 50px auto;
+    margin-left: auto;
+
+}
+

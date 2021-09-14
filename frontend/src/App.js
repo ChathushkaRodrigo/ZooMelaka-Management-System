@@ -32,6 +32,9 @@ import AddProject from './components/ProjectCreate';
 import ProjectDetails from './components/ProjectSearch';
 import EditDetails from './components/ProjectEdit';
 import ProjectReport from './components/ProjectReports';
+//importing projects slider
+import ProjectSlider from './components/ProjectSlider/ProjectSlider';
+
 //Medical Management
 import MedicalDashboard from './components/MedicalDashboard';
 import CreateMedical from './components/CreateMedical';
@@ -56,6 +59,8 @@ import AnimalDashboard from './components/AnimalDashboard';
 import CreateAnimalPortfolio from './components/CreateAnimal';
 import UpdateAnimalPortfolio from './components/EditAnimal';
 import AnimalDetails from './components/AnimalDetails';
+
+import { FormErrors } from './components/FormErrors';
 
 class TourApp extends Component {
   
@@ -97,6 +102,7 @@ render() {
         <Route path ="/project/find" component={ProjectDetails}/>
         <Route path ="/project/edit/:id" component={EditDetails}/>
         <Route path ="/project/report/:id" component={ProjectReport}/>
+        <Route path ="/ProjectSlider" component={ProjectSlider}/>
         
         
         <Route path = "/medicalDashboard" component = {MedicalDashboard}/>
@@ -120,15 +126,15 @@ render() {
         <Route path = "/adoption/add" component = {CreateAdoption}/>
 
         <Route path = "/animaldashboard" component = {AnimalDashboard}/>
-        <Route path="/animal/add" component ={CreateAnimalPortfolio}/>
-        <Route path="/animal/update/:id" component={UpdateAnimalPortfolio}/>
-        <Route path="/animal/details/:id" component={AnimalDetails}/>
+        <Route path = "/animal/add" component ={CreateAnimalPortfolio}/>
+        <Route path = "/animal/update/:id" component={UpdateAnimalPortfolio}/>
+        <Route path = "/animal/details/:id" component={AnimalDetails}/>
 
 
         
 
         
-        
+        <Route path = "/FormErrors" component={FormErrors}/>
         
          
             
