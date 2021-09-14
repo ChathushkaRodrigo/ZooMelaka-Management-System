@@ -37,17 +37,7 @@ export default function home() {
 
                 </div>  
             </div>
-            </div>
-            
-        
-        </div>
-          
- 
-
-
-
-
-
-        
+            </div>                   
+        </div>        
     )
 }
