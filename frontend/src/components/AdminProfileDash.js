@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import axios from 'axios';
 import "../CSS/memberdashboard.css";
@@ -56,7 +57,7 @@ class memberdashboard extends Component {
 
     <br />
             {/* Begin table */}
-            <table className="profdashboard" id="Customers">
+            <table className="profdashboard" id="profCustomers">
               {/* Table Header */}
               <thead>
                 <tr>

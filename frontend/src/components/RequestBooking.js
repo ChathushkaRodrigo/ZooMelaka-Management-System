@@ -109,9 +109,9 @@ export default class CreateBooking extends Component {
                     <br/>
                     
                     <form className="create-form"  >
-                    <FormErrors formErrors={this.state.formErrors} className="FormError"/>
+                        
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label for="emailC" style={{marginBottom:'5px'}}>Email address</label>
+                        <label for="emailC" style={{marginBottom:'5px'}} id="request-lable">Email address</label>
                     <input type="email" 
                         className="form-control" 
                         name="CustomerEmail" 
@@ -122,12 +122,13 @@ export default class CreateBooking extends Component {
                        
                          required/>
                         
-                    </div>
+                    </div><div id="Error">
+                    <FormErrors formErrors={this.state.formErrors} className="FormError"/></div>
                    
 
                     <br/>
                     <div className="form-group">
-                    <label for="cName" style={{marginBottom:'5px'}}>Customer Name</label>
+                    <label for="cName" style={{marginBottom:'5px'}} id="request-lable">Customer Name</label>
                         <input type="text" 
                         className="form-control" 
                         id="cName" name="CustomerName" 
@@ -138,7 +139,7 @@ export default class CreateBooking extends Component {
                     </div>
                     <br/>
                     <div className="form-group">
-                    <label for="MobileNo" style={{marginBottom:'5px'}}>Mobile Number</label>
+                    <label for="MobileNo" style={{marginBottom:'5px'}} id="request-lable">Mobile Number</label>
                         <input type="number" 
                         className="form-control" 
                         id="MobileNo"name="MobileNumber" 
@@ -149,7 +150,7 @@ export default class CreateBooking extends Component {
                     </div>
                     <br/>
                     <div className="form-group">
-                    <label for="TourOp" style={{marginBottom:'5px'}}>Tour Option</label>
+                    <label for="TourOp" style={{marginBottom:'5px'}} id="request-lable">Tour Option</label>
                         <input type="text" 
                         className="form-control" 
                         id="TourOp" name="TourOption" 
@@ -160,7 +161,7 @@ export default class CreateBooking extends Component {
                     </div>
                     <br/>
                     <div className="form-group">
-                    <label for="Date" style={{marginBottom:'5px'}}>Date</label>
+                    <label for="Date" style={{marginBottom:'5px'}} id="request-lable">Date</label>
                         <input type="date" 
                         className="form-control" 
                         id="Date" 
@@ -172,7 +173,7 @@ export default class CreateBooking extends Component {
                     </div>
                     <br/>
                     <div className="form-group">
-                    <label for="Time" style={{marginBottom:'5px'}}>Allocated time</label>
+                    <label for="Time" style={{marginBottom:'5px'}} id="request-lable">Allocated time</label>
                         <input type="time" 
                         className="form-control" 
                         id="Time" 
@@ -184,7 +185,7 @@ export default class CreateBooking extends Component {
                     </div>
                     <br/>
                     <div className="form-group">
-                    <label for="TName" style={{marginBottom:'5px'}}>Tour Guide Name</label>
+                    <label for="TName" style={{marginBottom:'5px'}} id="request-lable">Tour Guide Name</label>
                         <input type="text" 
                         className="form-control" 
                         id="TName" 
