@@ -57,7 +57,7 @@ class memberdashboard extends Component {
 
     <br />
             {/* Begin table */}
-            <table className="profdashboard" id="Customers">
+            <table className="profdashboard" id="profCustomers">
               {/* Table Header */}
               <thead>
                 <tr>
