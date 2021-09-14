@@ -46,6 +46,15 @@ label {
   font-size: x-large;
   font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
 }
+#Error{
+  color:red;
+  width:200px;
+  font-size:50px;
+  
+}
+#request-lable{
+  color:black;
+}
 
 @keyframes gradient {
   0% {
