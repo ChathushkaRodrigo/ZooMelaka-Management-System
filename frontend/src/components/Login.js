@@ -1,5 +1,6 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+
 import "../CSS/Loginps.css";
 import { FormErrors } from './FormErrors';
 import "../CSS/FormError.css";

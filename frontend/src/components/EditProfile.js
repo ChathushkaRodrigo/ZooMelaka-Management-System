@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-no-duplicate-props */
+/* eslint-disable react/no-direct-mutation-state */
 import React, { Component } from 'react';
 import axios from 'axios';
 import "../CSS/EditProfile.css";
