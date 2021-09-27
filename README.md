@@ -1,7 +1,7 @@
 
-![cheetah (1)](https://user-images.githubusercontent.com/72795289/134953214-708b84fb-67c2-48d2-963a-3d744e562b40.png)
 
-# ZooMelaka-Management-System
+
+# ZooMelaka-Management-System &nbsp ![cheetah (1)](https://user-images.githubusercontent.com/72795289/134953214-708b84fb-67c2-48d2-963a-3d744e562b40.png)
 ![Screenshot 2021-09-27 at 22 23 00](https://user-images.githubusercontent.com/72795289/134952670-cda2b32a-c95d-4550-8a51-061edaae767c.png)
 
 
