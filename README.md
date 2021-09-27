@@ -1,7 +1,7 @@
 
 # Zoo Melaka
-![favicon](https://user-images.githubusercontent.com/72795289/134952623-9e12b813-924d-4ad6-8f88-a2ec81ee6013.png)
 
+![cheetah](https://user-images.githubusercontent.com/72795289/134953128-4ccf379f-7c62-490e-8d56-3d1e6bff3750.png)
 
 
 
