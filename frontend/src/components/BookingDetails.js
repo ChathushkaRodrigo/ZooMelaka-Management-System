@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import '../CSS/booking-details.css'
-
+import jsPDF from 'jspdf'
 
 class BookingDetails extends Component {
     constructor(props) {
@@ -11,6 +11,30 @@ class BookingDetails extends Component {
             booking:{}
         };
     }
+
+    //Report Generate Function onClick
+    jspdGenerator=()=>{
+
+        //doc obj
+        var doc =new jsPDF('p','pt');
+
+        //add texts
+        doc.text(20,20,'Customer Report')
+        
+        //Font
+        doc.setFont('courier');
+        doc.text(20,40,'This is text more and more');
+
+        doc.text(20,60,this.state.booking.CustomerEmail);
+        doc.text(20,80,this.state.booking.CustomerName);
+        //Save pdf 
+        doc.save("Generated.pdf");
+
+
+    }
+
+
+
 
     componentDidMount(){
 
@@ -90,6 +114,8 @@ class BookingDetails extends Component {
                    
                     </form>
                     </div>
+                    <button onClick={this.jspdGenerator}>Generate Report</button>
+
 
                                         
 
