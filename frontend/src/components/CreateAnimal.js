@@ -216,29 +216,7 @@ export default class CreateAnimal extends Component{
                 />
             </div>
 
-            <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Animal Satisfaction Level</label>
-                <input type="text"
-                id="chamathRet"
-                className="form-control"
-                name="Animal_Satisfaction_Level"
-                placeholder="Enter The Animal Satisfaction Level:"
-                value={this.state.Animal_Satisfaction_Level}
-                onChange={this.handleInputChange}
-                />
-            </div>
-
-            <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Animal Health Level</label>
-                <input type="text"
-                id="chamathRet"
-                className="form-control"
-                name="Animal_Health_Level"
-                placeholder="Enter The Animal Health Level:"
-                value={this.state.Animal_Health_Level}
-                onChange={this.handleInputChange}
-                />
-            </div>
+            
 
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Attended Zookeeper</label>

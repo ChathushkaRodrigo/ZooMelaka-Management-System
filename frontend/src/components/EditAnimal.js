@@ -146,29 +146,7 @@ export default class EditAnimal extends Component{
                 />
             </div>
 
-            <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Animal Satisfaction Level</label>
-                <input type="text"
-                id="chamathRet"
-                className="form-control"
-                name="Animal_Satisfaction_Level"
-                placeholder="Enter The Animal_Satisfaction_Level:"
-                value={this.state.Animal_Satisfaction_Level}
-                onChange={this.handleInputChange}
-                />
-            </div>
-
-            <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Animal Health Level</label>
-                <input type="text"
-                id="chamathRet"
-                className="form-control"
-                name="Animal_Health_Level"
-                placeholder="Enter The Animal_Health_Level:"
-                value={this.state.Animal_Health_Level}
-                onChange={this.handleInputChange}
-                />
-            </div>
+           
 
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Attended Zookeeper</label>
@@ -233,7 +211,7 @@ export default class EditAnimal extends Component{
             <i className="fas fa-otter"></i>
             &nbsp;<b>Update The Animal Portfolio!</b>
             </button><br/>
-            <a className="btn btn-light btn-small justify-content-between btn-outline-danger" href={`/animaldashboard`}  id="ChamathUp">
+            <a className="btn btn-light btn-small justify-content-between btn-outline-danger" href={`/animaldashboard`}  id="ChamathUpss">
             <i className="fas fa-kiwi-bird"></i>&nbsp;<b>Navigate To Animal Portfolio!</b>
             </a>
 
