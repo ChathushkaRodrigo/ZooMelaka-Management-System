@@ -79,7 +79,7 @@ export default class Search extends Component {
 
       </div>
      
-      <div className="container">
+      <div className="containerpr">
         <p/><p/>
         <table>
           <thead>

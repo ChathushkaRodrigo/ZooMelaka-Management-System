@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-
+import "../CSS/Createmedical.css"
 
 class MedicalDetails extends Component {
     constructor(props) {
@@ -15,7 +15,7 @@ class MedicalDetails extends Component {
 
         const id = this.props.match.params.id;
 
-        axios.get(`http://localhost:8070/medical/get/${id}`).then((res)=>{
+        axios.get(`http://localhost:8015/medical/get/${id}`).then((res)=>{
             
         if(res.data.success){
                 this.setState({
@@ -39,12 +39,14 @@ class MedicalDetails extends Component {
             zname,
             animalID,
             injID,
-            sinfo} =this.state.medical;
+            sinfo } =this.state.medical;
 
   
         return (
             <div>
-                    <h1>    Medical Details</h1> 
+                <br/>
+                    <h1 className="titlepage"> Medical Details</h1> 
+                    <div className= "imagemed"> </div>
                     <br/>
                     <br/>
 

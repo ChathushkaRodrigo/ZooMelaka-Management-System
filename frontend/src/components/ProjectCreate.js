@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../CSS/Projects.css';
+import { FormErrors } from './FormErrors';
 
 export default class Create extends Component{
 
@@ -12,17 +13,23 @@ export default class Create extends Component{
             title:"",
             description:"",
             supervisor:"",
-            workingTeam:""
+            workingTeam:"",
+
+
+            //validation part
+            formErrors: {projectID: ''},
+            projectIDValid: false,
+            formvalid: false
         }
     }
 
-    handleInputChange = (e) =>{
+    handleInputChange = (e)=>{
         const {name,value} = e.target;
-
         this.setState({
             ...this.state,
             [name]:value
-        })
+        },() => { this.validateField(name, value) }
+    );
     }
 
     onSubmit = (e) =>{
@@ -60,6 +67,34 @@ export default class Create extends Component{
 
     }
 
+        //validation fileds
+    validateField(fieldName, value) {
+        let fieldValidationErrors = this.state.formErrors;
+        let projectIDValid = this.state.projectIDValid;
+    
+        switch(fieldName) {
+          case 'projectID':
+            projectIDValid = value.length <= 5;
+            fieldValidationErrors.projectID = projectIDValid ? '' : ' is too long';
+            break;
+          default:
+            break;
+        }
+        this.setState({formErrors: fieldValidationErrors,
+                        projectIDValid: projectIDValid,
+                      }, this.validateForm);
+      }
+    
+      validateForm() {
+        this.setState({formValid: this.state.projectIDValid});
+      }
+    
+      errorClass(error) {
+        return(error.length === 0 ? '' : 'has-error');
+      }
+
+
+
     render() {
         return(
             <div className="createback">
@@ -68,33 +103,35 @@ export default class Create extends Component{
                 <h1 className="pageCaption">Create New Project</h1>
                 </div>
                 <div className="createF">
+
+               
                 <form className="cform">
-                    <h3 style={{marginBottom:'15px', textAlign:'center'}}><b><u>Create New Project Form</u></b></h3>
+                    <h3 style={{marginBottom:'15px', textAlign:'center', fontSize:'32px'}}><b><u>Create New Project Form</u></b></h3>
                     <div className="form-group">
                         <label className="formLabels">Project ID</label>
-                        <input type="text" style={{marginTop:'0px'}} required className="form-control" name="projectID" placeholder="Enter Project ID" value={this.state.projectID} onChange={this.handleInputChange}/>
-                    </div>
+                        <input type="text" style={{marginTop:'0px'}} className="form-control" name="projectID" placeholder="Enter Project ID" value={this.state.projectID} onChange={this.handleInputChange}/>
+                    </div><div id="Error"><FormErrors formErrors={this.state.formErrors} className="FormError"/></div>
                     <div className="form-group">
-                        <label className="formLabels">Project Name</label>
-                        <input type="text" style={{marginTop:'0px'}} required className="form-control" name="name" placeholder="Enter Project Name" value={this.state.name} onChange={this.handleInputChange}/>
+                        <label className="formLabels">Project Name</label> 
+                        <input type="text" style={{marginTop:'0px'}} className="form-control" name="name" placeholder="Enter Project Name" value={this.state.name} onChange={this.handleInputChange}/>
                     </div>
                     <div className="form-group">
                         <label className="formLabels">Project Title</label>
-                        <input type="text" style={{marginTop:'0px'}} className="form-control" name="title" placeholder="Enter Project Title" value={this.state.title} onChange={this.handleInputChange} required/>
+                        <input type="text" style={{marginTop:'0px'}} className="form-control" name="title" placeholder="Enter Project Title" value={this.state.title} onChange={this.handleInputChange}/>
                     </div>
                     <div className="form-group">
                         <label className="formLabels">Project Description</label>
-                        <textarea required className="form-control" name="description" rows="5" placeholder="Enter Project Description" value={this.state.description} onChange={this.handleInputChange}/>
+                        <textarea  className="form-control" name="description" rows="5" placeholder="Enter Project Description" value={this.state.description} onChange={this.handleInputChange}/>
                     </div>
                     <div className="form-group" style={{paddingTop:'15px'}}> 
                         <label className="formLabels">Supervisor</label>
-                        <input type="text" style={{marginTop:'0px'}} className="form-control" required name="supervisor" placeholder="Enter Supervisor" value={this.state.supervisor} onChange={this.handleInputChange}/>
+                        <input type="text" style={{marginTop:'0px'}} className="form-control"  name="supervisor" placeholder="Enter Supervisor" value={this.state.supervisor} onChange={this.handleInputChange}/>
                     </div>
                     <div className="form-group">
                         <label className="formLabels">Working Team</label>
-                        <input type="text" style={{marginTop:'0px'}} className="form-control" required name="workingTeam" placeholder="Enter Working Team" value={this.state.workingTeam} onChange={this.handleInputChange}/>
+                        <input type="text" style={{marginTop:'0px'}} className="form-control"  name="workingTeam" placeholder="Enter Working Team" value={this.state.workingTeam} onChange={this.handleInputChange}/>
                     </div>
-                    <div className="Cbtn">
+                    
                         <button className="btn btn-danger" id="btnreset" type="reset" style={{marginTop:'30px', marginLeft:'10%'}}>
                         <i class="fa fa-refresh" aria-hidden="true"></i>
                             &nbsp; Reset
@@ -105,11 +142,11 @@ export default class Create extends Component{
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <button className="btn btn-success" id="btnsubmit" type="submit" style={{marginTop:'30px'}} onClick={this.onSubmit}>
+                        <button className="btn btn-success" id="btnsubmit" type="submit" onClick={this.onSubmit}>
                             <i className="far fa-check-square"></i>
                             &nbsp; Submit
                         </button>
-                    </div>
+                   
                 </form>
                </div>
             </div>

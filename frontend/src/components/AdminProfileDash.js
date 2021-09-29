@@ -1,7 +1,9 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import axios from 'axios';
+import "../CSS/memberdashboard.css";
 
-class AdminProfileDash extends Component {
+class memberdashboard extends Component {
 
   constructor(props){
     super(props);
@@ -14,7 +16,7 @@ class AdminProfileDash extends Component {
   componentDidMount(){
     this.retrieveProfiles();
   }
-
+  //Retrieve Posts from the backend
   retrieveProfiles(){
     axios.get("http://localhost:8015/profiles").then(res =>{
       if(res.data.success){
@@ -22,10 +24,10 @@ class AdminProfileDash extends Component {
           profiles:res.data.existingProfiles
         });       
       };
-
     });
   }
 
+  //Delete a profile
   onDelete =(id)=>{
   
     axios.delete(`http://localhost:8015/profile/delete/${id}`).then((res) =>{
@@ -33,31 +35,45 @@ class AdminProfileDash extends Component {
       alert("Deleted Successfully");
     
       this.retrieveProfiles();
-    })
-    
+    })    
   }
 
   render() {
     return (
       <div>
-        
-          <div className="container">
+          
+          <div className="pgdb" id="headerprofile">
+          
+          <div className="prof-dashboard">
             
-            <p>All Profile</p>
+      <div className="bg_prof"></div> &nbsp;
+          {/* For Header */}
+          <div className="headerprofile">   
+            <h1 id="profguideheading">
+              <center>MemberDashboard</center> <br />
+            </h1>
+          </div>
+        </div>
 
-            <table class="table">
+    <br />
+            {/* Begin table */}
+            <table className="profdashboard" id="profCustomers">
+              {/* Table Header */}
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">FName</th>
-                  <th scope="col">LName</th>
-                  <th scope="col">UName</th>
+                  <th scope="col">FIrst Name</th>
+                  <th scope="col">Last Name</th>
+                  <th scope="col">Username</th>
                   <th scope="col">Email</th>
                   <th scope="col">Password</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
+              {/* Table Body */}
               <tbody>
+                {/* Table Row */}
+                {/* Rendering an Array of Data from map */}
                 {this.state.profiles.map((profiles,index) => (
                   <tr key={index}>
                     <th scope="row">{index+1}</th>
@@ -70,29 +86,25 @@ class AdminProfileDash extends Component {
                     <td>{profiles.uName}</td>
                     <td>{profiles.email}</td>
                     <td>{profiles.password}</td>                    
-                    <td>
-                        <a className="btn btn-warning" href={`profile/update/${profiles._id}`}>
+                    <td>  
+                        {/* Profile Edit Button */}
+                        <a className="btn btn-warning" href={`/AdminUProfileEdit/${profiles._id}`}>
                             <i className="fas fa-edit"></i>&nbsp;Edit                        
                         </a>
                       &nbsp;
-                        <a className="btn btn-danger" href="/adminprofiledash" onClick={() =>this.onDelete(profiles._id)}>
+                      {/* Profile Delete Button */}
+                        <a href="/AdminProfileDash" className="btn btn-danger" onClick={() =>this.onDelete(profiles._id)}>
                             <i className="far fa-trash-alt"></i>&nbsp;Delete                        
                         </a>
                     </td>
                   </tr>
                 ))}
               </tbody>
-            </table>  
-
-            <button className="btn btn-success"><a href="/createprofile" style={{textDecoration:'none', color:'white'}}>Create New Profile</a></button>
-            <button className="btn btn-success"><a href="/login" style={{textDecoration:'none', color:'white'}}>Login</a></button>       
-            <button className="btn btn-success"><a href="/login" style={{textDecoration:'none', color:'white'}}>Jolliyata</a></button>            
-
+            </table>    
           </div>
-        
-      </div>
+          </div>        
     );
   }
   
 }
-export default AdminProfileDash;
+export default memberdashboard;

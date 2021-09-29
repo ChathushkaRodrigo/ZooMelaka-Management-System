@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ProjectSlider from './ProjectSlider/ProjectSlider'
 import '../CSS/Projects.css';
 
-
 export default class ProjectsHome extends Component{
     render() {
         return(
@@ -14,16 +13,15 @@ export default class ProjectsHome extends Component{
 
                 <ProjectSlider/>
                
-                <div className="d-grid gap-2 col-6 mx-auto" id="PHomeBtn">
+                <div id="PHomeBtn">
                     <a href="project/add" ><button className="HomeB1">
                         <i class="fa fa-plus" aria-hidden="true"></i>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create New Post
-                        
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create New Project 
                     </button></a>
                     <p></p>
                     <a href="project/find"><button className="HomeB1">
                         <i class="fa fa-search" aria-hidden="true"></i>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search Project
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search Project
                         </button>  
                     </a>
                 </div>
