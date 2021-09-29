@@ -89,9 +89,9 @@ export default class Edit extends Component{
                 <div className="Caption">
                 <h1 className="pageCaption">Edit Project - {this.state.name}</h1>
                 </div>
-             <div className="createF" style={{background:'rgba(255,255,255,0.8)'}}>
+             <div className="createF" style={{background:'rgba(255,255,255,0.7)'}}>
                 <form className="cform">
-                    <h3 style={{marginBottom:'15px', textAlign:'center',fontSize:'32px'}}><b><u>Edit Project Form</u></b></h3>
+                    <h3 style={{marginBottom:'15px', textAlign:'center'}}><b><u>Edit Project Form</u></b></h3>
                     <div className="form-group">
                         <label className="formLabels">Project Name</label>
                         <input type="text" style={{marginTop:'0px'}} className="form-control" name="name" placeholder="Enter Project Name" value={this.state.name} onChange={this.handleInputChange}/>

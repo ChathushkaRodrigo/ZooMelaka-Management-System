@@ -66,12 +66,12 @@ export default class Search extends Component {
      <div className="searchback">
         
       <div className="container1">
-        <div>
+        <div className="row">
           <div>
                 <div className="Caption">
                 <h1 className="pageCaption">All Projects</h1>
             </div>
-          <div className="col-lg-3 mt-2 mb-2" id="psearchbar">
+          <div id="psearchbar">
             <input className="form-control" id="psearch" type="search" placeholder="Search.." name="searchQuery" onChange={this.handleSearchArea}></input>
           </div>
           </div>
@@ -81,25 +81,28 @@ export default class Search extends Component {
      
       <div className="containerpr">
         <p/><p/>
-        <table className="allProjectsT" cellSpacing="20" cellPadding="7" style={{width:'100%'}}>
+        <table>
           <thead>
-              <tr id="trh">
-                <th scope="col" width="4%">#</th>
-                <th scope="col" width="6%">ID</th>
-                <th scope="col" width="10%">Name</th>
-                <th scope="col" width="14%">Title</th>
-                <th scope="col" width="40%">Descrip.</th>
-                <th scope="col" width="12%">Supervisor</th>
-                <th scope="col" width="10%">Working Team</th>
-                <th scope="col"width="12%">Edit/Delete</th>
+              <tr style={{fontSize:'18px',borderBottom:'2px solid black ',borderLeft:'none',borderRight:'none'}}>
+                <th scope="col" style={{width:'2%'}}>#</th>
+                <th scope="col" style={{width:'14%'}}>ID</th>
+                <th scope="col" style={{width:'14%'}}>Name</th>
+                <th scope="col" style={{width:'14%'}}>Title</th>
+                <th scope="col" style={{width:'14%'}}>Descrip.</th>
+                <th scope="col" style={{width:'14%'}}>Supervisor</th>
+                <th scope="col" style={{width:'14%'}}>Working Team</th>
+                <th scope="col" style={{width:'14%'}}>Edit/Delete</th>
               </tr>
            </thead>
            <tbody>
             {this.state.projects.map((projects,index) =>(
-              <tr id="trd" key={index} style={{borderLeft:'none',borderRight:'none',borderBottom:'0.5px solid black'}}>
+              <tr id="tr" key={index} style={{borderLeft:'none',borderRight:'none',borderBottom:'0.5px solid black'}}>
                 <th scope="row">{index+1}</th>
-                <td>{projects.projectID}</td>
-                <td><a href={`/project/report/${projects._id}`} className="searchlink">{projects.name}</a></td>
+                <td>{projects.projectID}
+                </td>
+                <td>
+                  <a href={`/project/report/${projects._id}`} className="searchlink">{projects.name}</a>
+                </td>
                 <td>{projects.title}</td>
                 <td>{projects.description}</td>
                 <td>{projects.supervisor}</td>

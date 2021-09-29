@@ -15,6 +15,13 @@ select {
   border-radius: 4px;
   box-sizing: border-box;
 }
+#details-lable{
+  color: black;
+
+}
+#header-details{
+  font-size: 50px;
+}
 input[type='submit'] {
   width: 100%;
   background-color: #4caf50;

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import '../CSS/Projects.css';
 
 export default class Reports extends Component{
     constructor(props){
@@ -37,7 +36,7 @@ export default class Reports extends Component{
                 </div>
                 <div className="report">
                 
-                
+                <center>
                 <h4 className="reportheader">
                     Project&nbsp;
                     {name}
@@ -45,47 +44,23 @@ export default class Reports extends Component{
                 </h4>
             
                 <p></p>
-             <div className="content1">
-                 <table className="treport" style={{borderStyle:'none'}}>
-                     <tr>
-                        <th className="col-sm-3">Project ID:</th>
-                        <td className="col-sm-9">{projectID}</td>
-                    </tr>
-
-                    <tr>
-                        <th className="col-sm-3">Project Name:</th>
-                        <td className="col-sm-9">{name}</td>
-                    </tr>
-                        
-
-                    <tr>
-                        <th className="col-sm-3">Title:</th>
-                        <td className="col-sm-9">{title}</td>
-                    </tr>
-                        
-
-                    <tr>
-                        <th className="col-sm-3">Project Description:</th>
-                        <td className="col-sm-9">{description}</td>
-                    </tr>
-                        
-
-                    <tr>
-                        <th className="col-sm-3">Supervisor:</th>
-                        <td className="col-sm-9">{supervisor}</td>
-                    </tr>
-                        
-
-                    <tr>
-                        <th className="col-sm-3">Working Team:</th>
-                        <td className="col-sm-9">{workingTeam}</td>
-                    </tr>
-                        
-                </table>
-             </div>
-             
-             <button className="btn btn-dark" style={{marginLeft:'30px'}} Hover={{TransitionEvent:'scale(1.08s)'}} id="print" onClick={() => window.print()}>Print report</button>
-             
+             <div className="content">
+                <d1 className="row" style={{textAlign:'left'}}>
+                    <dt className="col-sm-3">Project ID:</dt>
+                    <dd className="col-sm-9">{projectID}</dd>
+                    <dt className="col-sm-3">Project Name:</dt>
+                    <dd className="col-sm-9">{name}</dd>
+                    <dt className="col-sm-3">Title:</dt>
+                    <dd className="col-sm-9">{title}</dd>
+                    <dt className="col-sm-3">Projects Description:</dt>
+                    <dd className="col-sm-9">{description}</dd>
+                    <dt className="col-sm-3">Supervisor:</dt>
+                    <dd className="col-sm-9">{supervisor}</dd>
+                    <dt className="col-sm-3">Working Team:</dt>
+                    <dd className="col-sm-9">{workingTeam}</dd>
+                </d1>
+                <button className="print" onClick="window.print()">Print report</button>
+             </div></center>
              </div>
 
             </div>                   
