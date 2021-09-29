@@ -2,6 +2,10 @@
 import React, { Component } from "react";
 import axios from "axios";
 import '../CSS/tour-guide-dashboard.css'
+import jsPDF from 'jspdf'
+import 'jspdf-autotable'
+
+
 
 class TourGuideDashboard extends Component {
   constructor(props) {
@@ -11,6 +15,33 @@ class TourGuideDashboard extends Component {
       bookings: [],
     };
   }
+
+//Report Generate Function onClick
+jspdGenerator=()=>{
+
+        
+  //doc obj
+  var doc =new jsPDF('p','pt');
+  var specialElementHandlers = {
+    '#getPDF': function(element, renderer){
+      return true;
+    },
+    '.controls': function(element, renderer){
+      return true;
+    }
+  };
+
+
+  
+
+
+  //Save pdf 
+  doc.save("Generated.pdf");
+
+
+}
+
+
   componentDidMount() {
     this.retrieveBookings();
   }
@@ -52,7 +83,7 @@ class TourGuideDashboard extends Component {
 
   render() {
     return (
-      <div className="tgdb">
+      <div className="tgdb" id="tgdb">
         <div className="hero-dashboard">
           <div className="bg_tour"></div> &nbsp;
           <div className="header">
@@ -136,6 +167,7 @@ class TourGuideDashboard extends Component {
           </a>
         </button>
         </div>
+     
         </div>
       </div>
     );
