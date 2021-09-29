@@ -156,7 +156,7 @@ class AllAdoptions extends Component {
               
             </table>
             
-            <button className = "btn btn-success"><Link to = "/adoption/add" style = {{textDecoration:"none", color:"white"}}>Create</Link></button>
+            
             <div className = "bottomspace"></div>
             </div>
           </div>

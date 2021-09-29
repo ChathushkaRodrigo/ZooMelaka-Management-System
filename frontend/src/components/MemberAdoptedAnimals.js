@@ -40,7 +40,13 @@ export default class MemberAdoptedAnimals extends Component {
         })
       }
 
-
+    onDelete = (id) => {
+      axios.delete(`http://localhost:8015/adoption/delete/${id}`).then((res) => {
+            alert("Delete Successfull");
+            this.retrieveAdoptions();
+      })
+    }
+  
       
 
     render() {
@@ -74,17 +80,17 @@ export default class MemberAdoptedAnimals extends Component {
                 <h5 className = "mem-adpt-contentarea ">{membersanimals.animal_name}</h5><br/>
                
                  
-                 <Link to = '/adoption/edit/613d1da2bef8bd5c40d2ad03' className ="mem-adpt-contentarea">
+                 <Link to = {`/adoption/edit/${membersanimals._id}`} className ="mem-adpt-contentarea">
                  <a className = "btn" href = "#">
                      <i className= ""></i>&nbsp;Edit
                       </a>
                 </Link>
                       &nbsp;
-                <Link to = '/adoption/edit/613d1da2bef8bd5c40d2ad03' className ="mem-adpt-contentarea">
-                      <a className = "btn" href = "#">
-                        <i className= ""></i>&nbsp;Remove
+                
+                      <a className = "btn" href = "#" onClick = {() => this.onDelete(membersanimals._id)}>
+                        <i className= ""></i>&nbsp;CancelAdoption
                         </a>
-                </Link>
+                
                 </div>
                 <div >
                         
