@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import '../CSS/create-booking.css'
+import { FormErrors } from './FormErrors';
 
 export default class CreateBooking extends Component {
     constructor(props) {
@@ -15,18 +16,49 @@ export default class CreateBooking extends Component {
             Date:"",
             Time:"",
             TourGuideName:"",
+            formErrors: {email: '', password:''},
+            emailValid: false,
+            formvalid: false
          
             
         }
     }
-    handleInputChange = (e) =>{
-        const {name,value} =e.target;
-
+    validateField(fieldName, value) {
+        let fieldValidationErrors = this.state.formErrors;
+        let emailValid = this.state.emailValid;
+       
+    
+        switch(fieldName) {
+          case 'CustomerEmail':
+            emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+            fieldValidationErrors.email = emailValid ? '' : ' is invalid';
+            break;
+         
+          default:
+            break;
+        }
+        this.setState({formErrors: fieldValidationErrors,
+                        emailValid: emailValid,
+                     
+                      }, this.validateForm);
+      }
+    
+      validateForm() {
+        this.setState({formValid: this.state.emailValid && this.state.passwordValid});
+      }
+    
+      errorClass(error) {
+        return(error.length === 0 ? '' : 'has-error');
+      }
+    handleInputChange = (e)=>{
+        const {name,value} = e.target;
         this.setState({
             ...this.state,
             [name]:value
-        })
+        },() => { this.validateField(name, value) }
+    );
     }
+
 
     onsubmit =(e)=>{
         e.preventDefault();
@@ -77,8 +109,9 @@ export default class CreateBooking extends Component {
                     <br/>
                     
                     <form className="create-form"  >
+                        
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label for="emailC" style={{marginBottom:'5px'}}>Email address</label>
+                        <label for="emailC" style={{marginBottom:'5px'}} id="request-lable">Email address</label>
                     <input type="email" 
                         className="form-control" 
                         name="CustomerEmail" 
@@ -89,12 +122,13 @@ export default class CreateBooking extends Component {
                        
                          required/>
                         
-                    </div>
+                    </div><div id="Error">
+                    <FormErrors formErrors={this.state.formErrors} className="FormError"/></div>
                    
 
                     <br/>
                     <div className="form-group">
-                    <label for="cName" style={{marginBottom:'5px'}}>Customer Name</label>
+                    <label for="cName" style={{marginBottom:'5px'}} id="request-lable">Customer Name</label>
                         <input type="text" 
                         className="form-control" 
                         id="cName" name="CustomerName" 
@@ -105,7 +139,7 @@ export default class CreateBooking extends Component {
                     </div>
                     <br/>
                     <div className="form-group">
-                    <label for="MobileNo" style={{marginBottom:'5px'}}>Mobile Number</label>
+                    <label for="MobileNo" style={{marginBottom:'5px'}} id="request-lable">Mobile Number</label>
                         <input type="number" 
                         className="form-control" 
                         id="MobileNo"name="MobileNumber" 
@@ -116,7 +150,7 @@ export default class CreateBooking extends Component {
                     </div>
                     <br/>
                     <div className="form-group">
-                    <label for="TourOp" style={{marginBottom:'5px'}}>Tour Option</label>
+                    <label for="TourOp" style={{marginBottom:'5px'}} id="request-lable">Tour Option</label>
                         <input type="text" 
                         className="form-control" 
                         id="TourOp" name="TourOption" 
@@ -127,7 +161,7 @@ export default class CreateBooking extends Component {
                     </div>
                     <br/>
                     <div className="form-group">
-                    <label for="Date" style={{marginBottom:'5px'}}>Date</label>
+                    <label for="Date" style={{marginBottom:'5px'}} id="request-lable">Date</label>
                         <input type="date" 
                         className="form-control" 
                         id="Date" 
@@ -139,7 +173,7 @@ export default class CreateBooking extends Component {
                     </div>
                     <br/>
                     <div className="form-group">
-                    <label for="Time" style={{marginBottom:'5px'}}>Allocated time</label>
+                    <label for="Time" style={{marginBottom:'5px'}} id="request-lable">Allocated time</label>
                         <input type="time" 
                         className="form-control" 
                         id="Time" 
@@ -151,7 +185,7 @@ export default class CreateBooking extends Component {
                     </div>
                     <br/>
                     <div className="form-group">
-                    <label for="TName" style={{marginBottom:'5px'}}>Tour Guide Name</label>
+                    <label for="TName" style={{marginBottom:'5px'}} id="request-lable">Tour Guide Name</label>
                         <input type="text" 
                         className="form-control" 
                         id="TName" 
