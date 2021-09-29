@@ -17,24 +17,7 @@ class TourGuideDashboard extends Component {
     };
   }
 
-//Report Generate Function onClick
-jspdGenerator=()=>{
 
-        
-  //doc obj
-  var doc =new jsPDF('p','pt');
-
-doc.text(JSON.stringify(this.state.bookings),2,70)    
-
-
-  
-
-
-  //Save pdf 
-  doc.save("Generated.pdf");
-
-
-}
 
 
   componentDidMount() {
@@ -76,6 +59,30 @@ doc.text(JSON.stringify(this.state.bookings),2,70)
       }
     });
   };
+
+//Report Generate Function onClick
+jspdGenerator=()=>{
+
+        
+  //doc obj
+  var doc =new jsPDF('p','pt');
+
+ 
+
+  
+  for (let index = 0; index < 5; index++) {
+    
+    doc.text("Hello ",0)
+    
+  }
+
+
+  //Save pdf 
+  doc.save("Generated.pdf");
+
+
+}
+
 
   render() {
     return (
@@ -184,8 +191,10 @@ doc.text(JSON.stringify(this.state.bookings),2,70)
         <br/><br/>
         <button className="btn btn-success" >
         <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
-        Admin Home
+           Admin Home
           </a>
+          
+
          </button>
 
         
