@@ -77,7 +77,7 @@ export default class AnimalsforAdoption extends Component {
                 <h4 className = "add-topic">Select an Animal for adoption</h4>
                 <br/>
                     <div className ="aa-searchbar">
-                        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" ></input>
+                        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange = {this.handleSearchArea}></input>
                     </div>
                     
                     <ul className = "gridder">

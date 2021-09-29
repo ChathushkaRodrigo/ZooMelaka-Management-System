@@ -176,7 +176,7 @@ class AddAdoption extends Component {
             <h4 className = "add-topic">Partner Level Adoption</h4>
             <p><ul>
                 <li>adoption certification</li>
-                <li>free once a week visit pass</li>
+                <li>unlimited visit passes</li>
                 <li>encounter</li>
                 </ul></p>
                 </div>
@@ -186,7 +186,16 @@ class AddAdoption extends Component {
 
     validateform(e){
         if(this.state.animal_name === '' || this.state.adoption_level === '' || this.state.payment_plan === '' || this.state.live_cam === ''){
-            alert("All the inputs must be filled!");
+            //alert("All the inputs must be filled!");
+            if(this.state.animal_name === ''){
+                alert("Animal Name must be added!");
+            }
+            if(this.state.adoption_level === ''){
+                alert("Adoption Level must be selected!");
+            }
+            if(this.state.payment_plan === ''){
+                alert("Payment Plan must be selected!");
+            }
         }
         else{
             this.saveAdoption(e);
