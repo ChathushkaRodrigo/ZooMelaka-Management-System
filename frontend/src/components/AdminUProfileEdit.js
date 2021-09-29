@@ -1,12 +1,14 @@
+/* eslint-disable react/no-direct-mutation-state */
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class CreateProfile extends Component {
+class AdminUProfileEdit extends Component {
 
     constructor(props){
         super(props);
 
         this.state ={
+            userid:"",
             fName:"",
             lName:"",
             uName:"",
@@ -25,6 +27,8 @@ class CreateProfile extends Component {
 
     onSubmit =(e)=>{
 
+        const id = this.props.match.params.id;
+
         e.preventDefault();
 
         const {fName,lName,uName,email,password} = this.state;
@@ -38,8 +42,9 @@ class CreateProfile extends Component {
         }
         console.log(data);
 
-        axios.post("http://localhost:8015/profile/create",data).then((res)=>{
+        axios.put(`http://localhost:8015/profile/update/${id}`,data).then((res)=>{
             if(res.data.success){
+                alert("Profile Updated Successfully");
                 this.setState(
                     {
                         fName:"",
@@ -49,17 +54,44 @@ class CreateProfile extends Component {
                         password:""
                     }
                 )
-            }
+            }          
+            
         })   
+        
     }
 
+    onDelete =(id)=>{
+  
+        axios.delete(`http://localhost:8015/profile/delete/${id}`).then((res) =>{
+        
+          alert("Deleted Successfully");
+        
+        //   this.retrieveProfiles();
+        })
+        this.props.history.push('/'); 
+    }
 
-    
+    componentDidMount(){
+        const id = this.props.match.params.id;
+        this.state.userid = id;
 
+        axios.get(`http://localhost:8015/profile/${id}`).then((res) => {
+            if(res.data.success) {
+                this.setState({                    
+                    fName:res.data.profile.fName,
+                    lName:res.data.profile.lName,
+                    uName:res.data.profile.uName,
+                    email:res.data.profile.email,
+                    password:res.data.profile.password
+                });
+                console.log(this.state.profile);                
+            }
+        });        
+    }
     render() {
         return (
-            <div className="col-md-8 mt-4 mx-auto">
-            <h1 className="h3 mb-3 font-weight-normal">Create new Profile</h1>
+          <div className="col-md-8 mt-4 mx-auto">
+            <h1 className="h3 mb-3 font-weight-normal">Edit Profile</h1>
               <form className="needs-validation" noValidate>
                   <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px'}}>First Name</label>
@@ -109,12 +141,12 @@ class CreateProfile extends Component {
     
                     <button className="btn btn-success" type="submit" onClick={this.onSubmit}>   
                         <i className="far fa-check-square"> </i>
-                        &nbsp; Create
+                        &nbsp; Update
                     </button>
     
                 </form>
             </div>
-        )
+        );
     }
 }
-export default CreateProfile;
+export default AdminUProfileEdit;
