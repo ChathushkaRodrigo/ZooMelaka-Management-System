@@ -246,3 +246,10 @@
 }
 
 /* ------------ */
+
+body {
+  font-family: Open sans, sans-serif;
+  height: auto;
+  background: #f1f1f1;
+  overflow: scroll;
+}

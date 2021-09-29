@@ -22,10 +22,14 @@ import AddEmployee from './components/CreatePost';
 import EditResearch from './components/EditResearch';
 // import ResearchDetails from './components/ResearchDetails';
 import CreateResearch from './components/CreateResearch';
+
+//Projects
 import ProjectsHome from './components/ProjectsHome';
 import AddProject from './components/ProjectCreate';
 import ProjectDetails from './components/ProjectSearch';
 import EditDetails from './components/ProjectEdit';
+import ProjectReports from './components/ProjectReports';
+
 //medicals imported
 import MedicalDashboard from './components/MedicalDashboard';
 import CreateMedical from './components/CreateMedical';
@@ -42,6 +46,9 @@ import AnimalDashboard from './components/AnimalDashboard';
 import CreateAnimalPortfolio from './components/CreateAnimal';
 import UpdateAnimalPortfolio from './components/EditAnimal';
 import AnimalDetails from './components/AnimalDetails';
+
+//importing projects slider
+import ProjectSlider from './components/ProjectSlider/ProjectSlider';
 
 class TourApp extends Component {
   
@@ -76,12 +83,17 @@ render() {
         <Route path = "/research/add" component = {CreateResearch}/>
         {/* <Route path = "/research/:id" component = {ResearchDetails}/> */}
 
+
+
         <Route path = "/ProjectsHome" component = {ProjectsHome}/>
         <Route path = "/project/add" component = {AddProject}/>
         <Route path ="/project/find" component={ProjectDetails}/>
         <Route path ="/project/edit/:id" component={EditDetails}/>
+        <Route path = "/project/report/:id" component={ProjectReports}/>
+        <Route path ="/ProjectSlider" component={ProjectSlider}/>
         
-        
+
+
         <Route path = "/medicalDashboard" component = {MedicalDashboard}/>
         <Route path = "/medical/create" component = {CreateMedical}/>
         <Route path = "/medical/update/:id" component = {EditMedical}/>
