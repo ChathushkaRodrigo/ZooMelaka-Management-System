@@ -42,48 +42,48 @@ class BookingDetails extends Component {
         return (
             <div>
             <div className="col-md-8 mt-4 mx-auto" id="edit-booking-body">
-                    <h1>    Booking Details</h1> 
+                    <h1 id="header-details">    Booking Details</h1> 
                     <br/>
                     <br/>
                     <div className="details-form">
                      <form>
                     <div class="form-group">
-                        <label for="emailC">Email address</label>
+                        <label for="emailC" id="details-lable">Email address</label>
                         <input type="email" class="form-control" id="emailC" placeholder={CustomerEmail} disabled/>
                     </div>
                     <br/>
                     <div class="form-group">
-                    <label for="cName">Customer Name</label>
+                    <label for="cName" id="details-lable">Customer Name</label>
                         <input type="text" class="form-control" id="cName" placeholder={CustomerName} disabled/>
                         
                     </div>
                     <br/>
                     <div class="form-group">
-                    <label for="MobileNo">Mobile Number</label>
+                    <label for="MobileNo" id="details-lable">Mobile Number</label>
                         <input type="text" class="form-control" id="MobileNo" placeholder={MobileNumber}  disabled/>
                         
                     </div>
                     <br/>
                     <div class="form-group">
-                    <label for="TourOp">Tour Option</label>
+                    <label for="TourOp" id="details-lable">Tour Option</label>
                         <input type="text" class="form-control" id="TourOp" placeholder={TourOption} disabled/>
                         
                     </div>
                     <br/>
                     <div class="form-group">
-                    <label for="Date">Date</label>
+                    <label for="Date" id="details-lable">Date</label>
                         <input type="text" class="form-control" id="Date" placeholder={Date} disabled/>
                         
                     </div>
                     <br/>
                     <div class="form-group">
-                    <label for="Time">Allocated time</label>
+                    <label for="Time" id="details-lable">Allocated time</label>
                         <input type="text" class="form-control" id="Time" placeholder={Time} disabled/>
                         
                     </div>
                     <br/>
                     <div class="form-group">
-                    <label for="TName">Tour Guide Name</label>
+                    <label for="TName" id="details-lable">Tour Guide Name</label>
                         <input type="text" class="form-control" id="TName" placeholder={TourGuideName}disabled />
                         
                     </div>

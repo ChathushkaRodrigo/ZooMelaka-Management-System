@@ -1,0 +1,140 @@
+.imagediv{
+   position: relative;
+   background-image: url(https://scz.org/wp-content/themes/zoo/assets/images/layout/pattern/cream.png?1624900993);
+    background-repeat: repeat-x;
+    padding-bottom:50px;
+
+}
+.bckgrnd{
+    background : #fffef4;
+    
+   
+}
+.image{
+    margin-top: 50px;
+    margin-left: 100px;
+    border-radius: 10%;
+    width: 450px;
+    height: 400px;
+    
+}
+
+.add-topicdiv{
+    position: relative;
+    margin-top: -320px;
+    margin-left: 800px;
+    opacity: 1;
+}
+
+.add-formdiv{
+    margin-top: -80px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    padding-left: 55px;
+    padding-right: 800px;
+    position: relative;
+    background:#124429;
+    color:white;
+    font-size: 15px;
+    
+}
+.add-contentdiv{
+    position: relative;
+    background:white;
+    margin-top: 400px;
+    padding-bottom: 100px;
+    
+}
+.add-label{
+    font-size: 15px;
+    margin-left: 12px;
+}
+.add-label-chk{
+    font-size: 15px;
+    
+}
+.add-button{
+    margin-left: -8px;
+}
+.remextraspace{margin-left: 20px;}
+.adoption_level{
+  position: relative;
+  margin-top:-600px;
+  margin-left: 600px;
+
+}
+.adptlvl_img{
+    height: 220px;
+    width: 300px;
+    border: 2px solid;
+    border-radius:50px;
+    
+}
+.adptlvl_des{
+    position: absolute;
+    margin-top:-200px;
+    margin-left: 350px;
+    width: 300px;
+    color:white;
+}
+
+
+.add-bg_image{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+   
+    
+
+    
+}
+
+.add-bgimage{
+  
+    background-image: url('https://nationalzoo.com.au/wp-content/uploads/2016/12/donations-banner.jpg');
+    backface-visibility:initial;
+    opacity: 0.5;
+    
+   
+}
+
+.add-hero{
+    position: fixed;
+    z-index: 0;
+    top: 100px;
+    left: 0;
+    width: 100vw;
+    height: 110vh;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    background: #333333;
+}
+ .add-content{
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+    margin-top: 130px;
+    padding-left: 80px;
+    padding-right: 120px;
+    padding-right: 80px;
+    color: beige;
+    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.add-topic{
+    font-size: 20px;
+    color:white;
+}
+.add-sub-content{
+    font-size: 15px;
+    text-align: left;
+    margin-top: 60px;
+    margin-left: -500px;
+}
