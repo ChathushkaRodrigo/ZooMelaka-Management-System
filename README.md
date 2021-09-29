@@ -1,5 +1,9 @@
-# ZooMelaka-Management-System
-![Screenshot 2021-08-21 at 17 18 48](https://user-images.githubusercontent.com/72795289/130320779-26dc378c-2f63-4e4b-982a-4a69420f61c7.png)
+
+
+
+# ZooMelaka-Management-System  ![cheetah (1)](https://user-images.githubusercontent.com/72795289/134953214-708b84fb-67c2-48d2-963a-3d744e562b40.png)
+![Screenshot 2021-09-27 at 22 23 00](https://user-images.githubusercontent.com/72795289/134952670-cda2b32a-c95d-4550-8a51-061edaae767c.png)
+
 
 Zoo Management System for Zoo Melaka Organization
 
@@ -23,5 +27,5 @@ Zoo Management System for Zoo Melaka Organization
 #### Note : Always "Fetch & Merge" for updates and update your local repo by using `git pull`
 
 
-`DB_URL =mongodb+srv://ZooDatabaseAdmin:melaka123@zoo-managment-system-cl.lbmt4.mongodb.net/ZooManagementSystem?retryWrites=true&w=majority `
+
 
