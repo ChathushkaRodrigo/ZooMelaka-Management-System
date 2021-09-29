@@ -8,10 +8,10 @@ import Home from './components/home';
 
 //User Profile Management 
 import AdminProfileDashboard from './components/AdminProfileDash';
-import CreateProfile from './components/CreateProfile';
+// import CreateProfile from './components/CreateProfile';
 import Login from './components/Login';
 import EditProfile from './components/EditProfile';
-import ProfileDetails from './components/ProfileDetails';
+// import ProfileDetails from './components/ProfileDetails';
 import Profile from './components/profile'
 import Signup from './components/signup';
 
