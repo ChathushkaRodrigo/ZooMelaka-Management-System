@@ -69,6 +69,10 @@ onDelete =(id)=>{
                 <b>Research_name</b>
               </th>
               <th scope="col">
+                <b>Animal Id</b>
+              </th>
+
+              <th scope="col">
                 <b>Research_information</b>
               </th>
               <th scope="col">Action</th>
@@ -90,7 +94,12 @@ onDelete =(id)=>{
                 <td>{researches.date_research_ended}</td>
                 <td>{researches.catergory}</td>
                 <td>{researches.research_name} </td>
-                <td>{researches.research_information}</td>
+                <td>{researches.animal_id} </td>
+                <td> <a className="btn btn-warning" href ={`/research/researchinfo/${researches._id}`}>
+                     Research Data &nbsp;
+                  </a>
+                  
+                </td>
                 <td>
                   <a className="btn btn-warning" href ={`research/edit/${researches._id}`}>
                     Edit &nbsp;
@@ -109,7 +118,8 @@ onDelete =(id)=>{
         </table>
 
         <button className="btn btn-success"><a href= "/research/add"style ={{textDecoration:'none',color:"white"}}>Create New Research</a></button>
-        
+        &nbsp; &nbsp;
+        <button className="btn btn-success"><a href= "/research/collaboration/"style ={{textDecoration:'none',color:"white"}}>Collaboration</a></button>
        
       </div>
       

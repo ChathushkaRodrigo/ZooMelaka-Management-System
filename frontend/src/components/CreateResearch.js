@@ -12,6 +12,7 @@ class CreateResearch extends Component {
                 date_research_ended:"",
                 catergory:"",
                 research_name:"",
+                animal_id:"",
                 research_information:""
 
             }
@@ -31,12 +32,13 @@ class CreateResearch extends Component {
             date_research_ended,
             catergory,
             research_name,
+            animal_id,
             research_information
         }=this.state;
 
 
             const data={name_of_scientist:name_of_scientist, date_research_started: date_research_started,date_research_ended:date_research_ended,
-                catergory:catergory,research_name:research_name,research_information:"aves"
+                catergory:catergory,research_name:research_name,  animal_id:  animal_id,research_information:research_information
                }
         
         console.log(data);
@@ -50,6 +52,7 @@ class CreateResearch extends Component {
                         date_research_ended:"",
                         catergory:"",
                         research_name:"",
+                        animal_id:"",
                         research_information :""
                     }
 
@@ -75,7 +78,7 @@ class CreateResearch extends Component {
                 <div className="  image4"> </div>
                 <form className=" formbody needs-validation">
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>name_of_scientist</label>
+                        <label style={{marginBottom:'5px',color:"black"}}>name_of_scientist</label>
                         <input type="text" required
                         
                         className="form-control"
@@ -85,7 +88,7 @@ class CreateResearch extends Component {
                         onChange={this.handleInputChange}/>
                         </div>
                         <div className="form-group" style={{marginBottom:'15px'}}>
-                            <label style ={{marginBottom:'5px'}}>date_research_started</label>
+                            <label style ={{marginBottom:'5px',color:"black"}}>date_research_started</label>
                             <input type="date"
                             className="form-control"
                             name="date_research_started"
@@ -95,7 +98,7 @@ class CreateResearch extends Component {
                             </div>
 
                             <div className="form-group" style={{marginBottom:'15px'}}>
-                            <label style ={{marginBottom:'5px'}}>date_research_ended</label>
+                            <label style ={{marginBottom:'5px',color:"black"}}>date_research_ended</label>
                             <input type="date"
                             className="form-control"
                             name="date_research_ended"
@@ -105,7 +108,7 @@ class CreateResearch extends Component {
                             </div>
                             
                             <div className="form-group" style={{marginBottom:'15px'}}>
-                            <label style ={{marginBottom:'5px'}}>catergory</label>
+                            <label style ={{marginBottom:'5px',color:"black"}}>catergory</label>
                             <input type="text"
                             className="form-control"
                             name="catergory"
@@ -116,7 +119,7 @@ class CreateResearch extends Component {
 
                             
                             <div className="form-group" style={{marginBottom:'15px'}}>
-                            <label style ={{marginBottom:'5px'}}>research_name</label>
+                            <label style ={{marginBottom:'5px',color:"black"}}>research_name</label>
                             <input type="text"
                             className="form-control"
                             name="research_name"
@@ -125,12 +128,24 @@ class CreateResearch extends Component {
                             onChange={this.handleInputChange}/>
                             </div>
 
-                             
+
+                            
                             <div className="form-group" style={{marginBottom:'15px'}}>
-                            <label style ={{marginBottom:'5px'}}>research_information </label>
+                            <label style ={{marginBottom:'5px',color:"black"}}>animal_id</label>
                             <input type="text"
                             className="form-control"
-                            name="research_information "
+                            name="animal_id"
+                            placeholder="Enter the animal id"
+                            value={this.state.animal_id}
+                            onChange={this.handleInputChange}/>
+                            </div>
+
+                             
+                            <div className="form-group" style={{marginBottom:'15px'}}>
+                            <label style ={{marginBottom:'5px',color:"black"}}>research_information </label>
+                            <input type="text"
+                            className="form-control"
+                            name="research_information"
                             placeholder="Enter the researchinformation "
                             defualtValue={this.state.research_information }
                             onChange={this.handleInputChange}/>
