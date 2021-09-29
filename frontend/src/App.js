@@ -8,12 +8,12 @@ import Home from './components/home';
 
 //User Profile Management 
 import AdminProfileDashboard from './components/AdminProfileDash';
-import CreateProfile from './components/CreateProfile';
 import Login from './components/Login';
 import EditProfile from './components/EditProfile';
-import ProfileDetails from './components/ProfileDetails';
 import Profile from './components/profile'
 import Signup from './components/signup';
+import AdminUProfileEdit from './components/AdminUProfileEdit';
+
 
 //Employee Management
 import AdminPanelHome from './components/AdminPanelHome';
@@ -76,14 +76,15 @@ render() {
         <Route path="/" exact component={Home}/>
       
       
-        {/* <Route path="/adminprofiledash" component={AdminProfileDashboard}/> */}
-        {/* <Route path ="/createprofile" component={CreateProfile}/> */}
+        {/* Routes for Profile management */}
         <Route path ="/login" component={Login}/>
         <Route path ="/AdminProfileDash" component={AdminProfileDashboard}/>
         <Route path ="/profile/update/:id" component={EditProfile}/>
-        {/* <Route path="/profile/details/:id" component={ProfileDetails}/> */}
         <Route path ="/profile/:id" component={Profile}/>
         <Route path ="/signup" component={Signup}/>
+        <Route path ="/AdminUProfileEdit/:id" component={AdminUProfileEdit}/>
+        
+        
         
 
 

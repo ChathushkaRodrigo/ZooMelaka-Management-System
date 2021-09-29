@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-
+import "../CSS/Createmedical.css"
 
 class MedicalDetails extends Component {
     constructor(props) {
@@ -44,7 +44,9 @@ class MedicalDetails extends Component {
   
         return (
             <div>
-                    <h1>    Medical Details</h1> 
+                <br/>
+                    <h1 className="titlepage"> Medical Details</h1> 
+                    <div className= "imagemed"> </div>
                     <br/>
                     <br/>
 

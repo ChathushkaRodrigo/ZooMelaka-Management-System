@@ -1,125 +1,104 @@
-.hero-dashboard .bg_tour {
-  display: block;
-  position: relative;
-  top: -63px;
-  width: 30%;
-  float: right;
-  color: violet;
-  height: 700px;
-  /* background-image: url(../images/014.png); */
-  background-position: center;
-  background-size: 85%;
-  background-repeat: no-repeat;
-  border-radius: 50px;
-  background-position-y: 110px;
-  -webkit-mask: radial-gradient(
-        var(--r1, 100%) var(--r2, 50%) at top,
-        white 79.5%,
-        transparent 80%
-      )
-      top left,
-    radial-gradient(
-        var(--r1, 100%) var(--r2, 50%) at bottom,
-        transparent 79.5%,
-        white 80%
-      )
-      top center,
-    radial-gradient(
-        var(--r1, 100%) var(--r2, 50%) at top,
-        white 79.5%,
-        transparent 80%
-      )
-      top right;
-  mask: radial-gradient(
-        var(--r1, 100%) var(--r2, 50%) at top,
-        white 79.5%,
-        transparent 80%
-      )
-      top left,
-    radial-gradient(
-        var(--r1, 100%) var(--r2, 50%) at bottom,
-        transparent 79.5%,
-        white 80%
-      )
-      top center,
-    radial-gradient(
-        var(--r1, 100%) var(--r2, 50%) at top,
-        white 79.5%,
-        transparent 80%
-      )
-      top right;
-
-  -webkit-mask-size: 33.4% 150%;
-  -webkit-mask-repeat: no-repeat;
-  mask-size: 33.4% 150%;
-  mask-repeat: no-repeat;
-}
-.hero-tour {
-  display: block;
-  position: relative;
-  padding: 30px;
-  text-align: left;
-  position: absolute;
-  color: #000000;
-  top: 20%;
-  margin-left: 50px;
-  font-size: 100%;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-.Tourdashboard {
-  position: relative;
-  top: -270px;
-}
-
-#tgdb {
-  background-color: rgb(54, 9, 34);
-}
-
-#tourguideheading {
-  font-size: 100px;
-}
-.table {
-  border: 0.5px solid #000000;
-  font-family: Arial, Helvetica, sans-serif;
-  width: 100%;
-  border-collapse: separate;
-  border: solid black 1px;
-  border-radius: 6px;
-  -moz-border-radius: 6px;
-}
-
-.table-bordered > thead > tr > th,
-.table-bordered > tbody > tr > th,
-.table-bordered > tfoot > tr > th,
-.table-bordered > thead > tr > td,
-.table-bordered > tbody > tr > td,
-.table-bordered > tfoot > tr > td {
-  border: 0.3px solid #000000;
-}
-
-#admindash th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #0c1157;
-  background-image: linear-gradient(315deg, #20245f 0%, #1f1447 74%);
-  color: white;
-  font-size: larger;
-}
-#admindash tr:hover {
-  background-color: rgb(240, 255, 249);
-}
-.header {
-  padding: 80px;
-  text-align: center;
-  background: #0c382f;
-  color: rgb(160, 56, 56);
-  font-size: 30px;
-
-  background-position-y: 5px;
-}
-body {
-  font-family: Arial;
-  margin: 0;
-}
+.prof-dashboard .bg_prof {
+    display: block;
+    position: relative;
+    top: -63px;
+    width: 20px;
+    float: right;
+    color: violet;
+    height: 500px;    
+    background-position: center;
+    background-size: 85%;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    background-position-y: 110px;
+           
+    mask: radial-gradient(
+          var(--r1, 100%) var(--r2, 50%) at top,
+          white 79.5%,
+          transparent 80%
+        )
+        top left,
+      radial-gradient(
+          var(--r1, 100%) var(--r2, 50%) at bottom,
+          transparent 79.5%,
+          white 80%
+        )
+        top center,
+      radial-gradient(
+          var(--r1, 100%) var(--r2, 50%) at top,
+          white 79.5%,
+          transparent 80%
+        )
+        top right;       
+  }
+  .hero-prof {
+    display: block;
+    position: relative;
+    padding: 30px;
+    text-align: left;
+    position: absolute;
+    color: #7e6161;
+    top: 20px;
+    margin-left: 50px;
+    font-size: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+      'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  .profdashboard {
+    position: relative;
+    top: -270px;
+  }
+  
+  #pgdb {
+    background-color: rgb(54, 9, 34);
+  }
+  
+  #profguideheading {
+    font-size: 80px;
+  }
+  .table {
+    border: 0.5px solid #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    border-collapse: separate;
+    border: solid black 1px;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+  }
+  
+  .table-bordered > thead > tr > th,
+  .table-bordered > tbody > tr > th,
+  .table-bordered > tfoot > tr > th,
+  .table-bordered > thead > tr > td,
+  .table-bordered > tbody > tr > td,
+  .table-bordered > tfoot > tr > td {
+    border: 0.3px solid #056111;
+  }
+    
+  #profCustomers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #77bfe9;
+    /* background-image: linear-gradient(315deg, #f000a8 0%, #e40888 74%); */
+    color: rgb(253, 243, 243);
+    font-size: larger;
+  }
+  #profCustomers tr:hover {
+    background-color: rgb(240, 255, 249);
+  }
+  /* Header Styling */
+  .headerprofile {
+    padding: 20px;
+    text-align: center;    
+    color: rgb(160, 56, 56);
+    font-size: 30px;  
+    background-position-y: 5px;
+    background-image: url(../images/loginimg.jpg);
+  }
+  /* Body Styling */
+  body {
+    font-family: Arial;
+    margin: 0;
+  }
+ 
