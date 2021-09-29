@@ -20,6 +20,7 @@ class BookingDetails extends Component {
 
         //add texts
         doc.text(20,20,'Customer Report')
+     
         
         //Font
         doc.setFont('courier');
