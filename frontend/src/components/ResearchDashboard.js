@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import "../CSS/ResearchDashboard.css"
-
+import {Link} from 'react-router-dom';
 class ResearchDashboard extends Component {
   constructor(props){
   super(props);
@@ -94,7 +94,11 @@ onDelete =(id)=>{
                 <td>{researches.date_research_ended}</td>
                 <td>{researches.catergory}</td>
                 <td>{researches.research_name} </td>
-                <td>{researches.animal_id} </td>
+                <td>
+                <Link to = {`/animal/details/${researches.animal_id}`} style = {{textDecoration:"none"}}>
+                      {researches.animal_id} 
+                      </Link>
+               </td>
                 <td> <a className="btn btn-warning" href ={`/research/researchinfo/${researches._id}`}>
                      Research Data &nbsp;
                   </a>
@@ -120,6 +124,8 @@ onDelete =(id)=>{
         <button className="btn btn-success"><a href= "/research/add"style ={{textDecoration:'none',color:"white"}}>Create New Research</a></button>
         &nbsp; &nbsp;
         <button className="btn btn-success"><a href= "/research/collaboration/"style ={{textDecoration:'none',color:"white"}}>Collaboration</a></button>
+        <br/> <br/>
+        <br/> <br/>
        
       </div>
       

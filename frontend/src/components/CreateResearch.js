@@ -13,10 +13,14 @@ class CreateResearch extends Component {
                 catergory:"",
                 research_name:"",
                 animal_id:"",
-                research_information:""
+                research_information:"",
+                zooAnimal:[]
 
             }
         }
+        componentDidMount(){
+            this.retrieveAnimal();
+          }
        
         handleInputChange=(e)=>{
             const{name,value}=e.target;
@@ -68,6 +72,17 @@ class CreateResearch extends Component {
         else{
             this.onSubmit(e);
         }
+    }
+    
+    retrieveAnimal(){
+    axios.get("http://localhost:8015/animal").then(res=>{
+      if(res.data.success){
+        this.setState({
+          zooAnimal:res.data.existingPosts
+        });
+        console.log(this.state.zooAnimal);
+      }
+    });
     }
 
     render() {
@@ -129,8 +144,15 @@ class CreateResearch extends Component {
                             </div>
 
 
-                            
-                            <div className="form-group" style={{marginBottom:'15px'}}>
+                            <label for="animals">Choose an animal:</label>
+                            <select name="animal_id" id="animals"
+                              onChange={this.handleInputChange}
+                            >
+                            {this.state.zooAnimal.map((zooAnimal,index) =>(
+                                <option value={zooAnimal._id}>{zooAnimal.Animal_Name}</option>
+                            ))}
+                            </select>
+                            {/* <div className="form-group" style={{marginBottom:'15px'}}>
                             <label style ={{marginBottom:'5px',color:"black"}}>animal_id</label>
                             <input type="text"
                             className="form-control"
@@ -138,7 +160,7 @@ class CreateResearch extends Component {
                             placeholder="Enter the animal id"
                             value={this.state.animal_id}
                             onChange={this.handleInputChange}/>
-                            </div>
+                            </div> */}
 
                              
                             <div className="form-group" style={{marginBottom:'15px'}}>
