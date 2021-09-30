@@ -13,6 +13,7 @@ class EditResearch extends Component {
                 date_research_ended:"",
                 catergory:"",
                 research_name:"",
+                animal_id:"",
                 research_information:""
         }
     }
@@ -36,6 +37,7 @@ class EditResearch extends Component {
             date_research_ended,
             catergory,
             research_name,
+            animal_id,
             research_information} = this.state;
 
         const data={
@@ -44,6 +46,7 @@ class EditResearch extends Component {
             date_research_ended:date_research_ended,
             catergory: catergory,
             research_name:research_name,
+            animal_id:animal_id,
             research_information:research_information
         }
         console.log(data);
@@ -57,6 +60,7 @@ class EditResearch extends Component {
                     date_research_ended:"",
                     catergory:"",
                     research_name:"",
+                    animal_id:"",
                     research_information:""
                     }
                 )
@@ -76,6 +80,7 @@ class EditResearch extends Component {
                     date_research_ended:res.data.research.date_research_ended,
                     catergory:res.data.research.catergory,
                     research_name:res.data.research.research_name,
+                    animal_id:res.data.research.animal_id,
                     research_information:res.data.research.research_information
 
                 });
@@ -95,7 +100,7 @@ class EditResearch extends Component {
                         <label style={{marginBottom:'5px',color:"black"}}>Name of scientist/scientists</label>
                         <input type="text"
                             className="form-control"
-                            name=" name_of_scientist"
+                            name="name_of_scientist"
                             placeholder="Enter the scientist /scientists name"
                             value={this.state.name_of_scientist}
                             onChange={this.handleInputChange} />                    
