@@ -64,23 +64,21 @@ class TourGuideDashboard extends Component {
 jspdGenerator=()=>{
 
         
-  //doc obj
-  var doc =new jsPDF('p','pt');
+  //Create document obj
+  var doc =new jsPDF("p","pt","b2") 
+
+
+  doc.html(document.querySelector("#customerTable"), {
+    
+    callback:function(pdf){
+
+      pdf.save("DashboardCustomer.pdf");
+      
+    }
+
+  });
 
  
-
-  
-  for (let index = 0; index < 5; index++) {
-    
-    doc.text("Hello ",0)
-    
-  }
-
-
-  //Save pdf 
-  doc.save("Generated.pdf");
-
-
 }
 
 
@@ -113,8 +111,10 @@ jspdGenerator=()=>{
                         </input>
        
               </div>
-        <table className="table table-bordered">
+             
+        <table className="table table-bordered" id="customerTable">
           <thead className="thead-bg-dark">
+         
             <tr>
               <th scope="col">#</th>
               <th scope="col">
@@ -135,9 +135,11 @@ jspdGenerator=()=>{
               <th scope="col">
                 <b>Time</b>
               </th>
+           
               <th scope="col">
                 <b>Tour Guide</b>{" "}
               </th>
+
               <th scope="col">Action</th>
             </tr>
           </thead>
