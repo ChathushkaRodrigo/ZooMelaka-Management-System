@@ -32,6 +32,13 @@ constructor(props){
     this.state=initial
 
     this.ref = React.createRef();
+    this.ref1 = React.createRef();
+    this.ref2 = React.createRef();
+    this.ref3 = React.createRef();
+    this.ref4 = React.createRef();
+    this.ref5 = React.createRef();
+    this.ref6 = React.createRef();
+    this.ref7 = React.createRef();
 }
 
     handleInputChange =(e) =>{
@@ -127,6 +134,23 @@ constructor(props){
         })
         
     }
+    Demo = () => {
+        this.ref1.current.value = "Test1"
+        this.ref2.current.value = "Test2"
+        this.ref3.current.value = "Test3"
+        this.ref4.current.value = "Test4"
+        this.ref5.current.value = "Test5@"
+        this.ref6.current.value = "Test6"
+        this.ref7.current.value = "Test7"
+        this.state.email = "Test5@"
+        this.state.salary = "Test5@"
+        this.state.userName = "Test2"
+        this.state.firstName = "Test3"
+        this.state.lastName = "Test4"
+        this.state.address = "Test6"
+        this.state.eID = "Test7"
+        
+    }
 
     render() {
 
@@ -145,6 +169,7 @@ constructor(props){
                     <div className="form-group" style={{marginBottom:'15px'}}>
                     <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >eID</label>
                     <input type="text"
+                    ref={this.ref1}
                     className="form-control"
                     name="eID"
                     placeholder=""
@@ -159,6 +184,7 @@ constructor(props){
                 <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >Username</label>
                 <input type="text"
+                ref={this.ref2}
                 className="form-control"
                 name="userName"
                 placeholder=""
@@ -174,6 +200,7 @@ constructor(props){
                 <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >First Name</label>
                 <input type="text"
+                ref={this.ref3}
                 className="form-control"
                 name="firstName"
                 placeholder=""
@@ -183,6 +210,7 @@ constructor(props){
                 <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >Last Name</label>
                 <input type="text"
+                ref={this.ref4}
                 className="form-control"
                 name="lastName"
                 placeholder=""
@@ -193,6 +221,7 @@ constructor(props){
                 <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >E-mail</label>
                 <input type="text"
+                ref={this.ref5}
                 className="form-control"
                 name="email"
                 placeholder=""
@@ -209,6 +238,7 @@ constructor(props){
                 <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >Address</label>
                 <input type="text"
                 className="form-control"
+                ref={this.ref6}
                 name="address"
                 placeholder=""
                 value={this.state.address}
@@ -279,6 +309,7 @@ constructor(props){
                 <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >Salary</label>
                 <input type="text"
                 className="form-control"
+                ref={this.ref7}
                 name="salary"
                 placeholder=""
                 value={this.state.salary}
@@ -289,7 +320,10 @@ constructor(props){
                         <i className="far fa-check-square"></i>
                         &nbsp; Save
                     </button>
-
+                    <button className="btn btn-success" style={{marginTop:'15px'}} onClick={this.Demo} type="button">
+                        <i className="far fa-check-square"></i>
+                        &nbsp; Demo
+                    </button>
                     <br/><br/><br/><br/><br/>
 
 
