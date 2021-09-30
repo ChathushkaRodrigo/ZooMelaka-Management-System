@@ -3,6 +3,11 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 
+import SplitButton from 'react-bootstrap/SplitButton';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown';
+import Select from 'react-select'
+
 
 const initial = {
     userName:"",
@@ -15,8 +20,8 @@ const initial = {
         DOB:"",
         salary:"",
         userNameError:"",
-        emailError:""
-
+        emailError:"",
+        posts:[]
 
 }
 
@@ -25,7 +30,8 @@ export default class CreatePost extends Component {
 constructor(props){
     super(props);
     this.state=initial
-    
+
+    this.ref = React.createRef();
 }
 
     handleInputChange =(e) =>{
@@ -75,7 +81,7 @@ constructor(props){
 
             //clear form
             this.setState(initial)
-            
+            alert("Successfully added data to database");
             
 
         }else{
@@ -123,6 +129,15 @@ constructor(props){
     }
 
     render() {
+
+        const handleSelect=(e)=>{
+            console.log(e);
+            
+            this.state.employeeType = e
+            console.log("Helloooo: " + this.state.employeeType)
+            
+            this.ref.current.value = e
+        }
         return (
             <div className="col-md-8 mt-4 mx-auto">
                 <h1 className="h3 mb-3 font-weight-normal" style={{fontFamily:'Papyrus, fantasy'}}>Create new post</h1>
@@ -200,14 +215,53 @@ constructor(props){
                 onChange={this.handleInputChange}/></div>
 
 
-                <div className="form-group" style={{marginBottom:'15px'}}>
+                {/* <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >Employee Type</label>
                 <input type="text"
                 className="form-control"
                 name="employeeType"
                 placeholder=""
                 value={this.state.employeeType}
-                onChange={this.handleInputChange}/></div>
+                onChange={this.handleInputChange}/></div> */}
+
+            <div className="mb-2">
+                <DropdownButton align="center" title="Employee catagory" id="dropdown-menu-align-end" onSelect={handleSelect}>
+                <div>
+                
+                
+                <Dropdown.Item eventKey="Supervisor">
+                Supervisor
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="Researcher">
+                Researcher
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="Manager">
+                Manager
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="ZooKeeper">
+                ZooKeeper
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="Veterinarian">
+                Veterinarian
+                </Dropdown.Item>
+                
+                
+                </div>
+                
+                </DropdownButton>
+                <label style={{marginBottom:'5px'}} id="chamForm">Attended Zookeeper</label>
+                <input type="text"
+                id="chamathRet"
+                className="form-control"
+                name="Attended_Zookeeper"
+                placeholder="Enter The Last Attended Zookeeper:"
+                value={this.state.Attended_Zookeeper}
+                onChange={this.handleInputChange}
+                ref={this.ref}
+                />
+            </div>
+
+
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
