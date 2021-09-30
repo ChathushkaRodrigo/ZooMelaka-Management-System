@@ -38,6 +38,7 @@ class ResearchDetails extends Component {
             date_research_ended,
             catergory,
             research_name,
+            animal_id,
             research_information} =this.state.research;
 
   
@@ -50,36 +51,44 @@ class ResearchDetails extends Component {
                     <div className="details-form">
                     <form>
                     <div class="form-group">
-                        <label for="scientistName">Name of scientist</label>
+                        <label style ={{marginBottom:'5px',color:"black"}} for="scientistName">Name of scientist  </label>
                         <input type="text" class="form-control" id="scientistName" placeholder={name_of_scientist} disabled/>
                     </div>
                     <br/>
                     <div class="form-group">
-                    <label for="startDate"> Date research started</label>
+                    <label  style ={{marginBottom:'5px',color:"black"}}for="startDate"> Date research started</label>
                         <input type="text" class="form-control" id="startDate" placeholder={ date_research_started} disabled/>
                         
                     </div>
                     <br/>
                     <div class="form-group">
-                    <label for="endDate"> Date research ended</label>
+                    <label  style ={{marginBottom:'5px',color:"black"}}for="endDate"> Date research ended</label>
                         <input type="text" class="form-control" id="endDate" placeholder={ date_research_ended}  disabled/>
                         
                     </div>
                     <br/>
                     <div class="form-group">
-                    <label for="catogoryName"> Catergory</label>
+                    <label  style ={{marginBottom:'5px',color:"black"}}for="catogoryName"> Catergory</label>
                         <input type="text" class="form-control" id="catogoryName" placeholder={ catergory} disabled/>
                         
                     </div>
                     <br/>
                     <div class="form-group">
-                    <label for="researchName">Research name</label>
+                    <label  style ={{marginBottom:'5px',color:"black"}}for="researchName">Research name</label>
                         <input type="text" class="form-control" id="researchName" placeholder={research_name} disabled/>
                         
                     </div>
                     <br/>
+
                     <div class="form-group">
-                    <label for="researchInfo">Research information</label>
+                    <label  style ={{marginBottom:'5px',color:"black"}}for="animal_id">Animal Id</label>
+                        <input type="text" class="form-control" id="animal_id" placeholder={research_name} disabled/>
+                        
+                    </div>
+                    <br/>
+
+                    <div class="form-group">
+                    <label style ={{marginBottom:'5px',color:"black"}} for="researchInfo">Research information</label>
                         <input type="text" class="form-control" id="researchInfo" placeholder={research_information} disabled/>
                         
                     </div>

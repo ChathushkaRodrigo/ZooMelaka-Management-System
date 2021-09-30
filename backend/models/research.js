@@ -29,10 +29,17 @@ const researchSchema = new Schema({
         required:true
 
     },
+    
+    animal_id:{
+        type:String,
+        required:true
+
+    },
+
 
     research_information :{
         type :String,
-        required: true
+        required: false
 
     }
 
