@@ -25,6 +25,7 @@ export default class CreatePost extends Component {
 constructor(props){
     super(props);
     this.state=initial
+    
 }
 
     handleInputChange =(e) =>{

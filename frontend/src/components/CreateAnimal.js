@@ -2,6 +2,13 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import '../CSS/CreateAnimal.css';
 import { FormErrors } from './FormErrors';
+
+
+import SplitButton from 'react-bootstrap/SplitButton';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown';
+import Select from 'react-select'
+
 export default class CreateAnimal extends Component{
     
     constructor(props){
@@ -21,12 +28,33 @@ export default class CreateAnimal extends Component{
             Time_Of_Treatment_And_Medical_Care:"",
             Current_Enclosure_ID:"",
             Adoptability:"false",
-            
+            posts:[],
             formErrors: {Animal_ID: ''},
             Animal_IDValid: false,
-            formvalid: false
+            formvalid: false,
+            value:""
         }
+           this.ref = React.createRef();
+        this.retrievePosts()
     }
+
+     
+
+    
+    retrievePosts(){
+        axios.get("/posts").then(res =>{
+            if(res.data.success){
+                this.setState({
+                    posts:res.data.existingPosts
+                });
+                console.log(this.state.posts)
+            }
+        })
+    }
+    // componentDidMount(){
+    //     this.retrievePosts();
+    // }
+    
 
     handleInputChange = (e)=>{
         const {name,value} = e.target;
@@ -92,11 +120,14 @@ export default class CreateAnimal extends Component{
                     Date_Of_Treatment_And_Medical_Care:"",
                     Time_Of_Treatment_And_Medical_Care:"",
                     Current_Enclosure_ID:"",
-                    Adoptability:""
+                    Adoptability:"",
+                    value:""
+                    
                 }) 
                 alert("A New Animal Record Has Been Created Successfully!")
             }
         })
+
     }
     
     
@@ -125,8 +156,19 @@ export default class CreateAnimal extends Component{
       errorClass(error) {
         return(error.length === 0 ? '' : 'has-error');
       }
+      
+      
     
     render(){
+        
+        const handleSelect=(e)=>{
+            console.log(e);
+            
+            this.state.value = e
+            console.log("Helloooo: " + this.state.value)
+            this.state.Attended_Zookeeper = e
+            this.ref.current.value = e
+        }
         return(
             <div className="CreateAnimal-body">
             <div container="container-fluid" className="col-md-8 mx-auto" id="chamathCreaForm">
@@ -218,7 +260,7 @@ export default class CreateAnimal extends Component{
 
             
 
-            <div className="form-group" style={{marginBottom:'15px'}}>
+            {/* <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Attended Zookeeper</label>
                 <input type="text"
                 id="chamathRet"
@@ -228,7 +270,56 @@ export default class CreateAnimal extends Component{
                 value={this.state.Attended_Zookeeper}
                 onChange={this.handleInputChange}
                 />
+            </div> */}
+
+            {/* <div className="form-group" style={{marginBottom:'15px'}}>
+                <label style={{marginBottom:'5px'}} id="chamForm">Attended Zookeeper</label>
+                <input type="text"
+                id="chamathRet"
+                className="form-control"
+                name="Attended_Zookeeper"
+                placeholder="Enter The Last Attended Zookeeper:"
+                value={this.state.Attended_Zookeeper}
+                onChange={this.handleInputChange}
+                />
+            </div> */}
+
+            
+           
+                
+        <div className="mb-2">
+                <DropdownButton align="center" title="Attended Zookeeper" id="dropdown-menu-align-end" onSelect={handleSelect}>
+                <div>
+                {this.state.posts.map(posts =>(
+                
+                <Dropdown.Item eventKey={posts.userName}>
+                {posts.userName}
+                </Dropdown.Item>
+                
+                ))}</div>
+                
+                </DropdownButton>
+                <label style={{marginBottom:'5px'}} id="chamForm">Attended Zookeeper</label>
+                <input type="text"
+                id="chamathRet"
+                className="form-control"
+                name="Attended_Zookeeper"
+                placeholder="Enter The Last Attended Zookeeper:"
+                value={this.state.Attended_Zookeeper}
+                onChange={this.handleInputChange}
+                ref={this.ref}
+                />
             </div>
+
+
+
+
+
+
+
+
+
+            
 
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Date Of Treatment And Medical Care</label>
