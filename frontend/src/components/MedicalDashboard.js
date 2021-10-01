@@ -93,7 +93,7 @@ onDelete =(id)=>{
         </table>
         <button className="btn btn-success"><a href= "medical/create"style ={{textDecoration:'none',color:"white"}}>Create New Medical Report</a></button>
         
-       
+       <br/><br/><br/><br/><br/><br/><br/>
       </div>
     );
   }
