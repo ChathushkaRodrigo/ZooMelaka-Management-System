@@ -13,6 +13,7 @@ class BookingDetails extends Component {
         };
     }
 
+
     //Report Generate Function onClick
     jspdGenerator=()=>{
 
