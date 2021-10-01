@@ -36,6 +36,19 @@ export default class CreateAnimal extends Component{
         }
            this.ref = React.createRef();
         this.retrievePosts()
+        
+        this.ref = React.createRef();
+        this.ref1 = React.createRef();
+        this.ref2 = React.createRef();
+        this.ref3 = React.createRef();
+        this.ref4 = React.createRef();
+        this.ref5 = React.createRef();
+        this.ref6 = React.createRef();
+        this.ref7 = React.createRef();
+        this.ref8 = React.createRef();
+        this.ref9 = React.createRef();
+        this.ref10 = React.createRef();
+        this.ref11 = React.createRef();
     }
 
      
@@ -157,7 +170,31 @@ export default class CreateAnimal extends Component{
         return(error.length === 0 ? '' : 'has-error');
       }
       
-      
+      Demo = () => {
+        this.ref1.current.value = "Test1"
+        this.ref2.current.value = "Test2"
+        this.ref3.current.value = "Test3"
+        this.ref4.current.value = "Test4"
+        this.ref5.current.value = "Test5@"
+        this.ref6.current.value = "Test6"
+        this.ref7.current.value = "Test7"
+        this.ref8.current.value = "Test8"
+        this.ref9.current.value = "Test9"
+        this.ref10.current.value = "Test10"
+        
+        this.state.Animal_ID = "Test5@"
+        this.state.Animal_Name = "Test5@"
+        this.state.Animal_Species = "Test2"
+        this.state.Animal_Date_Of_Birth = "Test3"
+        this.state.Animal_Gender= "Test4"
+        this.state.Feeding_And_Watering_Date = "Test6"
+        this.state.Feeding_And_Watering_Time = "Test7"
+        this.state.Date_Of_Treatment_And_Medical_Care = "Test8"
+        this.state.Time_Of_Treatment_And_Medical_Care = "Test9"
+        this.state.Current_Enclosure_ID = "Test10"
+
+        
+    }
     
     render(){
         
@@ -178,6 +215,7 @@ export default class CreateAnimal extends Component{
                 <label style={{marginBottom:'5px'}} id="chamForm">Animal ID</label>
                 <input type="text"
                 className="form-control"
+                ref={this.ref1}
                 id="chamathRet"
                 name="Animal_ID"
                 placeholder="Enter The Animal ID:"
@@ -190,6 +228,7 @@ export default class CreateAnimal extends Component{
                 <label style={{marginBottom:'5px'}} id="chamForm">Animal Name</label>
                 <input type="text"
                 id="chamathRet"
+                ref={this.ref2}
                 className="form-control"
                 name="Animal_Name"
                 placeholder="Enter The Animal Name:"
@@ -202,6 +241,7 @@ export default class CreateAnimal extends Component{
                 <label style={{marginBottom:'5px'}} id="chamForm">Animal Species</label>
                 <input type="text"
                 id="chamathRet"
+                ref={this.ref3}
                 className="form-control"
                 name="Animal_Species"
                 placeholder="Enter The Animal Species:"
@@ -214,6 +254,7 @@ export default class CreateAnimal extends Component{
                 <label style={{marginBottom:'5px'}} id="chamForm">Animal Date Of Birth</label>
                 <input type="text"
                 id="chamathRet"
+                ref={this.ref4}
                 className="form-control"
                 name="Animal_Date_Of_Birth"
                 placeholder="Enter The Animal Date Of Birth:"
@@ -226,6 +267,7 @@ export default class CreateAnimal extends Component{
                 <label style={{marginBottom:'5px'}} id="chamForm">Animal Gender</label>
                 <input type="text"
                 id="chamathRet"
+                ref={this.ref5}
                 className="form-control"
                 name="Animal_Gender"
                 placeholder="Enter The Animal Gender:"
@@ -238,6 +280,7 @@ export default class CreateAnimal extends Component{
                 <label style={{marginBottom:'5px'}} id="chamForm">Feeding And Watering Date</label>
                 <input type="text"
                 id="chamathRet"
+                ref={this.ref6}
                 className="form-control"
                 name="Feeding_And_Watering_Date"
                 placeholder="Enter The Feeding And Watering Date:"
@@ -251,6 +294,7 @@ export default class CreateAnimal extends Component{
                 <input type="text"
                 id="chamathRet"
                 className="form-control"
+                ref={this.ref7}
                 name="Feeding_And_Watering_Time"
                 placeholder="Enter The Feeding And Watering Time:"
                 value={this.state.Feeding_And_Watering_Time}
@@ -326,6 +370,7 @@ export default class CreateAnimal extends Component{
                 <input type="text"
                 id="chamathRet"
                 className="form-control"
+                ref={this.ref8}
                 name="Date_Of_Treatment_And_Medical_Care"
                 placeholder="Enter The Date Of Treatment And Medical Care:"
                 value={this.state.Date_Of_Treatment_And_Medical_Care}
@@ -337,6 +382,7 @@ export default class CreateAnimal extends Component{
                 <label style={{marginBottom:'5px'}} id="chamForm">Time Of Treatment And Medical Care</label>
                 <input type="text"
                 id="chamathRet"
+                ref={this.ref9}
                 className="form-control"
                 name="Time_Of_Treatment_And_Medical_Care"
                 placeholder="Enter The Time Of Treatment And Medical Care:"
@@ -349,6 +395,7 @@ export default class CreateAnimal extends Component{
                 <label style={{marginBottom:'5px'}} id="chamForm">Current Enclosure ID</label>
                 <input type="text"
                 id="chamathRet"
+                ref={this.ref10}
                 className="form-control"
                 name="Current_Enclosure_ID"
                 placeholder="Enter The Current Enclosure ID:"
@@ -372,6 +419,10 @@ export default class CreateAnimal extends Component{
             <i className="fa fa-bug"></i>
             &nbsp;<b>Create!</b>
             </button>
+            <button className="btn btn-success" style={{marginTop:'15px'}} onClick={this.Demo} type="button">
+                        <i className="far fa-check-square"></i>
+                        &nbsp; Demo
+                    </button>
             <br/>
 
             <a className="btn btn-light btn-small justify-content-between btn-outline-danger" href={`/animaldashboard`} style={{marginTop:'10px',marginBottom:'100px'}}>

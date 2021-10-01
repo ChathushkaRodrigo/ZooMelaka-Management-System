@@ -110,7 +110,7 @@ onDelete =(id)=>{
 
         <button className="btn btn-success"><a href= "/research/add"style ={{textDecoration:'none',color:"white"}}>Create New Research</a></button>
         
-       
+       <br/><br/><br/><br/><br/><br/><br/>
       </div>
       
     );
