@@ -106,7 +106,7 @@ handleSearchArea = (e) => {
             <th scope="col">Attended Zookeeper</th>
             {/* <th scope="col">Date Of Medical Care</th>
             <th scope="col">Time Of Medical Care</th> */}
-            <th scope="col">Current Enclosure ID</th>
+            <th scope="col">Enclosure ID</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
