@@ -4,8 +4,8 @@
     font-weight: bolder;
     color: black;
     background-position: center;
-    background-color: azure;
-    background-image: url(../images/chamathPic1.jpg);
+    background-color: ghostwhite;
+    /* background-image: url(../images/chamathPic1.jpg); */
     background-size: cover;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -27,13 +27,14 @@
     color:darkgreen;
     font-size: xx-large;
     width: 60%;
-    margin-left: 200px;
+    margin-left: 100px;
+    margin-right: 100px;
    
     
 }
 
 .container-fluid{
-    width: 60%;
+    width: 50%;
     
 }
     
@@ -50,6 +51,9 @@
     background-color: azure;
     opacity: 80%;
     padding-top: 20px;
+    margin-bottom: 100px;
+    margin-top: 25px;
+    
 }
 
 #chamathRet{

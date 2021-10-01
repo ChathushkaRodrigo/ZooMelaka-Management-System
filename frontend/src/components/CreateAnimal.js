@@ -138,7 +138,7 @@ export default class CreateAnimal extends Component{
         switch(fieldName) {
           
           case 'Animal_ID':
-            Animal_IDValid = value.length <= 4;
+            Animal_IDValid = value.length <= 5;
             fieldValidationErrors.Animal_ID = Animal_IDValid ? '': ' is too long';
             break;
           default:
@@ -187,7 +187,7 @@ export default class CreateAnimal extends Component{
             </div><div id="ChamathValidation"><FormErrors formErrors={this.state.formErrors} className="FormError"/></div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Animal Name</label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Name</label>
                 <input type="text"
                 id="chamathRet"
                 className="form-control"
@@ -199,7 +199,7 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Animal Species</label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Species</label>
                 <input type="text"
                 id="chamathRet"
                 className="form-control"
@@ -211,7 +211,7 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Animal Date Of Birth</label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Date Of Birth</label>
                 <input type="text"
                 id="chamathRet"
                 className="form-control"
@@ -223,7 +223,7 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Animal Gender</label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Gender</label>
                 <input type="text"
                 id="chamathRet"
                 className="form-control"
@@ -235,7 +235,7 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Feeding And Watering Date</label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Feeding Date</label>
                 <input type="text"
                 id="chamathRet"
                 className="form-control"
@@ -247,7 +247,7 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Feeding And Watering Time</label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Feeding Time</label>
                 <input type="text"
                 id="chamathRet"
                 className="form-control"
@@ -288,7 +288,7 @@ export default class CreateAnimal extends Component{
            
                 
         <div className="mb-2">
-                <DropdownButton align="center" title="Attended Zookeeper" id="dropdown-menu-align-end" onSelect={handleSelect}>
+                <DropdownButton align="center" title="Assigned Zookeeper" id="dropdown-menu-align-end" onSelect={handleSelect}>
                 <div>
                 {this.state.posts.map(posts =>(
                 
@@ -299,7 +299,7 @@ export default class CreateAnimal extends Component{
                 ))}</div>
                 
                 </DropdownButton>
-                <label style={{marginBottom:'5px'}} id="chamForm">Attended Zookeeper</label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Assigned Zookeeper</label>
                 <input type="text"
                 id="chamathRet"
                 className="form-control"
@@ -322,7 +322,7 @@ export default class CreateAnimal extends Component{
             
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Date Of Treatment And Medical Care</label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Date Of Medical Care</label>
                 <input type="text"
                 id="chamathRet"
                 className="form-control"
@@ -334,7 +334,7 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Time Of Treatment And Medical Care</label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Time Of Medical Care</label>
                 <input type="text"
                 id="chamathRet"
                 className="form-control"
@@ -346,7 +346,7 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Current Enclosure ID</label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Enclosure ID</label>
                 <input type="text"
                 id="chamathRet"
                 className="form-control"

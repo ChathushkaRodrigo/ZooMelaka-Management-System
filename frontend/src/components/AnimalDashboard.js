@@ -116,7 +116,7 @@ handleSearchArea = (e) => {
                   <tr key={index}>
                     
                     <td className="anRowing">
-                      <a href={`animal/details/${zooAnimal._id}`} style = {{textDecoration:'none'}}>
+                      <a href={`animal/details/${zooAnimal._id}`} style = {{textDecoration:'none'}} id="chamathAnimalID">
                       {zooAnimal.Animal_ID}
                       </a>
                     </td>
