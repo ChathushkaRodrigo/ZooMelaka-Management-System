@@ -122,11 +122,11 @@ class CreateResearch extends Component {
 
 
 <div className="mb-2">
-                <DropdownButton align="center" title="Attended Zookeeper" id="dropdown-menu-align-end" onSelect={handleSelect}>
+                <DropdownButton align="center" title="name_of_scientist" id="dropdown-menu-align-end" onSelect={handleSelect}>
                 <div>
                 {this.state.posts.map(posts =>(
                 <div>
-                {posts.employeeType=="Supervisor" && 
+                {posts.employeeType=="Researcher" && 
 
                 <Dropdown.Item eventKey={posts.userName}>
                 {posts.userName}
@@ -141,7 +141,7 @@ class CreateResearch extends Component {
                 className="form-control"
                 name="Attended_Zookeeper"
                 placeholder="Enter The Last Attended Zookeeper:"
-                value={this.state.Attended_Zookeeper}
+                value={this.state.name_of_scientist}
                 onChange={this.handleInputChange}
                 ref={this.ref1}
                 />

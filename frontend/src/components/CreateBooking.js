@@ -4,6 +4,12 @@ import axios from 'axios';
 import '../CSS/create-booking.css'
 import { FormErrors } from './FormErrors';
 
+
+import SplitButton from 'react-bootstrap/SplitButton';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown';
+import Select from 'react-select'
+
 export default class CreateBooking extends Component {
     constructor(props) {
         super(props);
@@ -19,16 +25,32 @@ export default class CreateBooking extends Component {
             formErrors: {email: '', password:''},
             emailValid: false,
            
-            formvalid: false
+            formvalid: false,
+            posts:[]
+
          
             
         }
+        this.retrievePosts();
         this.ref1 = React.createRef();
         this.ref2 = React.createRef();
         this.ref3 = React.createRef();
         this.ref4 = React.createRef();
         this.ref5 = React.createRef();
     }
+
+    retrievePosts(){
+        axios.get("/posts").then(res =>{
+            if(res.data.success){
+                this.setState({
+                    posts:res.data.existingPosts
+                });
+                console.log(this.state.posts)
+            }
+        })
+    }
+
+
     validateField(fieldName, value) {
         let fieldValidationErrors = this.state.formErrors;
         let emailValid = this.state.emailValid;
@@ -117,6 +139,15 @@ export default class CreateBooking extends Component {
     }
 
     render() {
+        const handleSelect=(e)=>{
+            console.log(e);
+            
+            this.state.TourGuideName = e
+            
+            
+            this.ref5.current.value = e
+            
+        }
         return (
             <div className="create-booking-body">
             <div class="d-flex flex-column justify-content-center w-100 h-100">
@@ -207,8 +238,38 @@ export default class CreateBooking extends Component {
                         onChange={this.handleInputChange} required />
                         
                     </div>
+                 
+                    <div className="mb-2">
+                <DropdownButton align="center" title="Tour Guide" id="dropdown-menu-align-end1" onSelect={handleSelect} >
+                <div>
+                {this.state.posts.map(posts =>(
+                <div>
+                {posts.employeeType=="Tour Guide" && 
+
+                <Dropdown.Item eventKey={posts.userName}>
+                {posts.userName}
+                </Dropdown.Item>
+                }</div>
+                ))}</div>
+                
+                </DropdownButton>
+                <label style={{marginBottom:'5px'}} id="chamForm">Tour Guide Name</label>
+                <input type="text"
+                id="vinodRet"
+                className="form-control"
+                name="Supervisor"
+                placeholder="Enter Tour Guide"
+                
+                value={this.state.TourGuideName}
+                onChange={this.handleInputChange}
+                ref={this.ref5}
+                />
+            </div>    
+            
+                
+
                     <br/>
-                    <div className="form-group">
+                    {/* <div className="form-group">
                     <label for="TName" style={{marginBottom:'5px'}}>Tour Guide Name</label>
                         <input type="text" 
                         className="form-control"
@@ -219,7 +280,12 @@ export default class CreateBooking extends Component {
                         defaultValue={this.state.TourGuideName}  
                         onChange={this.handleInputChange} required/>
                         
-                    </div>
+                    </div> */}
+
+                    
+                    
+
+
                         <br/><br/>
                        
                     <button className="btn btn-success" type="submit" style={{marginBottom:'15px'}} onClick={this.onsubmit}>
