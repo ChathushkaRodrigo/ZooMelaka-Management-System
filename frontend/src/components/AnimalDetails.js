@@ -94,7 +94,7 @@ export default class AnimalDetails extends Component{
 </a></center>
 
 <center>
-<a className="btn btn-light btn-small justify-content-center btn-outline-primary" href={`/medicalDashboard`} style={{marginTop:'5px',marginBottom:'100px'}} id="ChamathUpsss">
+<a className="btn btn-light btn-small justify-content-center btn-outline-primary" href={`/medicalDashboard`} style={{marginTop:'5px',marginBottom:'10px'}} id="ChamathUpsss">
 <i className="fa fa-paw"></i>&nbsp;<b>Check Medical Records!</b>
 </a></center>
             </div></div>

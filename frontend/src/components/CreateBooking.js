@@ -5,10 +5,10 @@ import '../CSS/create-booking.css'
 import { FormErrors } from './FormErrors';
 
 
-import SplitButton from 'react-bootstrap/SplitButton';
+
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
-import Select from 'react-select'
+
 
 export default class CreateBooking extends Component {
     constructor(props) {
