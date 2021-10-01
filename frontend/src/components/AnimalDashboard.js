@@ -48,7 +48,7 @@ onDelete = (id) => {
 
 filterData(zooAnimal,searchAnimalKey){
   const searchResult = zooAnimal.filter((zooAnimal)=>
-  zooAnimal.Animal_Name.includes(searchAnimalKey))
+  zooAnimal.Animal_ID.includes(searchAnimalKey))
   this.setState({zooAnimal:searchResult})
 }
 
@@ -87,7 +87,7 @@ handleSearchArea = (e) => {
       className="form-control"
       id = "animalSearch"
       type="search"
-      placeholder="Search By Animal Name"
+      placeholder="Search By Animal ID"
       name="searchQuery"
       onChange={this.handleSearchArea}>
       </input>
@@ -101,17 +101,11 @@ handleSearchArea = (e) => {
           <tr className="animalRow">  
             
             <th scope="col">Animal ID</th>
-            <th scope="col">Animal Name</th>
-            <th scope="col">Animal Species</th>
-            <th scope="col">Animal Date Of Birth</th>
-            <th scope="col">Animal Gender</th>
-            <th scope="col">Feeding And Watering Date</th>
-            <th scope="col">Feeding And Watering Time</th>
-            <th scope="col">Animal Satisfaction Level</th>
-            <th scope="col">Animal Health Level</th>
+            <th scope="col">Feeding Date</th>
+            <th scope="col">Feeding Time</th>
             <th scope="col">Attended Zookeeper</th>
-            <th scope="col">Date Of Treatment And Medical Care</th>
-            <th scope="col">Time Of Treatment And Medical Care</th>
+            {/* <th scope="col">Date Of Medical Care</th>
+            <th scope="col">Time Of Medical Care</th> */}
             <th scope="col">Current Enclosure ID</th>
             <th scope="col">Action</th>
           </tr>
@@ -122,28 +116,22 @@ handleSearchArea = (e) => {
                   <tr key={index}>
                     
                     <td className="anRowing">
-                      <a href={`animal/details/${zooAnimal._id}`} style = {{textDecoration:'none'}}>
+                      <a href={`animal/details/${zooAnimal._id}`} style = {{textDecoration:'none'}} id="chamathAnimalID">
                       {zooAnimal.Animal_ID}
                       </a>
                     </td>
-                    <td className="anRowing">{zooAnimal.Animal_Name}</td>
-                    <td className="anRowing">{zooAnimal.Animal_Species}</td>
-                    <td className="anRowing">{zooAnimal.Animal_Date_Of_Birth}</td>
-                    <td className="anRowing">{zooAnimal.Animal_Gender}</td>
                     <td className="anRowing">{zooAnimal.Feeding_And_Watering_Date}</td>
                     <td className="anRowing">{zooAnimal.Feeding_And_Watering_Time}</td>
-                    <td className="anRowing">{zooAnimal.Animal_Satisfaction_Level}</td>
-                    <td className="anRowing">{zooAnimal.Animal_Health_Level}</td>
                     <td className="anRowing">{zooAnimal.Attended_Zookeeper}</td>
-                    <td className="anRowing">{zooAnimal.Date_Of_Treatment_And_Medical_Care}</td>
-                    <td className="anRowing">{zooAnimal.Time_Of_Treatment_And_Medical_Care}</td>
+                    {/* <td className="anRowing">{zooAnimal.Date_Of_Treatment_And_Medical_Care}</td>
+                    <td className="anRowing">{zooAnimal.Time_Of_Treatment_And_Medical_Care}</td> */}
                     <td className="anRowing">{zooAnimal.Current_Enclosure_ID}</td>
                     <td className="anRowing">
-                        <a className="btn btn-light btn-small justify-content-center btn-outline-primary" href={`animal/update/${zooAnimal._id}`}>
+                        <a className="btn btn-light btn-small justify-content-center btn-outline-primary" href={`animal/update/${zooAnimal._id}`} id="updateButton">
                             <i className="fas fa-feather-alt"></i>&nbsp;<b>Update</b>
                         </a>
                         
-                        <a className="btn btn-light btn-small justify-content-center btn-outline-danger" href="#" onClick={() => this.onDelete(zooAnimal._id)}>
+                        <a className="btn btn-light btn-small justify-content-center btn-outline-danger" href="#" onClick={() => this.onDelete(zooAnimal._id)} id="deleteButton">
                             <i className="fas fa-spider"></i>&nbsp;<b>Delete</b>
                         </a>
                     </td>
