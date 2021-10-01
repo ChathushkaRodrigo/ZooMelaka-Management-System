@@ -89,8 +89,13 @@ export default class AnimalDetails extends Component{
 
            
 <center>
-<a className="btn btn-light btn-small justify-content-center btn-outline-success" href={`/animaldashboard`} style={{marginTop:'25px',marginBottom:'100px'}} id="ChamathUp">
+<a className="btn btn-light btn-small justify-content-center btn-outline-success" href={`/animaldashboard`} style={{marginTop:'5px',marginBottom:'5px'}} id="ChamathUpss">
                             <i className="fa fa-paw"></i>&nbsp;<b>Retreival Completed!</b>
+</a></center>
+
+<center>
+<a className="btn btn-light btn-small justify-content-center btn-outline-primary" href={`/medicalDashboard`} style={{marginTop:'5px',marginBottom:'100px'}} id="ChamathUpsss">
+<i className="fa fa-paw"></i>&nbsp;<b>Check Medical Records!</b>
 </a></center>
             </div></div>
         )

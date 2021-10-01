@@ -274,6 +274,9 @@ constructor(props){
                 <Dropdown.Item eventKey="Veterinarian">
                 Veterinarian
                 </Dropdown.Item>
+                <Dropdown.Item eventKey="Tour Guide">
+                Tour Guide
+                </Dropdown.Item>
                 
                 
                 </div>

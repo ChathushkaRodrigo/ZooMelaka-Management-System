@@ -151,7 +151,7 @@ export default class CreateAnimal extends Component{
         switch(fieldName) {
           
           case 'Animal_ID':
-            Animal_IDValid = value.length <= 4;
+            Animal_IDValid = value.length <= 5;
             fieldValidationErrors.Animal_ID = Animal_IDValid ? '': ' is too long';
             break;
           default:
@@ -178,8 +178,8 @@ export default class CreateAnimal extends Component{
         this.ref5.current.value = "Test5@"
         this.ref6.current.value = "Test6"
         this.ref7.current.value = "Test7"
-        this.ref8.current.value = "Test8"
-        this.ref9.current.value = "Test9"
+        // this.ref8.current.value = "Test8"
+        // this.ref9.current.value = "Test9"
         this.ref10.current.value = "Test10"
         
         this.state.Animal_ID = "Test5@"
@@ -189,8 +189,8 @@ export default class CreateAnimal extends Component{
         this.state.Animal_Gender= "Test4"
         this.state.Feeding_And_Watering_Date = "Test6"
         this.state.Feeding_And_Watering_Time = "Test7"
-        this.state.Date_Of_Treatment_And_Medical_Care = "Test8"
-        this.state.Time_Of_Treatment_And_Medical_Care = "Test9"
+        // this.state.Date_Of_Treatment_And_Medical_Care = "Test8"
+        // this.state.Time_Of_Treatment_And_Medical_Care = "Test9"
         this.state.Current_Enclosure_ID = "Test10"
 
         
@@ -209,7 +209,7 @@ export default class CreateAnimal extends Component{
         return(
             <div className="CreateAnimal-body">
             <div container="container-fluid" className="col-md-8 mx-auto" id="chamathCreaForm">
-            <center><h1 className="h1-CreateAnimal">Lets Facilitate A New Animal To The Zoo</h1></center>
+            <center><h1 className="h1-CreateAnimal">Create A New Animal For The Zoo</h1></center>
             <form className="CreateAniHead" noValidate>
                 <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Animal ID</label>
@@ -225,7 +225,7 @@ export default class CreateAnimal extends Component{
             </div><div id="ChamathValidation"><FormErrors formErrors={this.state.formErrors} className="FormError"/></div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Animal Name</label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Name</label>
                 <input type="text"
                 id="chamathRet"
                 ref={this.ref2}
@@ -238,7 +238,7 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Animal Species</label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Species</label>
                 <input type="text"
                 id="chamathRet"
                 ref={this.ref3}
@@ -251,8 +251,8 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Animal Date Of Birth</label>
-                <input type="text"
+                <label style={{marginBottom:'5px'}} id="chamForm">Date Of Birth</label>
+                <input type="date"
                 id="chamathRet"
                 ref={this.ref4}
                 className="form-control"
@@ -264,7 +264,7 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Animal Gender</label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Gender</label>
                 <input type="text"
                 id="chamathRet"
                 ref={this.ref5}
@@ -277,8 +277,8 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Feeding And Watering Date</label>
-                <input type="text"
+                <label style={{marginBottom:'5px'}} id="chamForm">Feeding Date</label>
+                <input type="date"
                 id="chamathRet"
                 ref={this.ref6}
                 className="form-control"
@@ -290,8 +290,8 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Feeding And Watering Time</label>
-                <input type="text"
+                <label style={{marginBottom:'5px'}} id="chamForm">Feeding Time</label>
+                <input type="time"
                 id="chamathRet"
                 className="form-control"
                 ref={this.ref7}
@@ -332,18 +332,20 @@ export default class CreateAnimal extends Component{
            
                 
         <div className="mb-2">
-                <DropdownButton align="center" title="Attended Zookeeper" id="dropdown-menu-align-end" onSelect={handleSelect}>
+                <DropdownButton align="center" title="Assigned Zookeeper" id="dropdown-menu-align-end" onSelect={handleSelect}>
                 <div>
                 {this.state.posts.map(posts =>(
-                
+                <div>
+                {posts.employeeType=="ZooKeeper" && 
+
                 <Dropdown.Item eventKey={posts.userName}>
                 {posts.userName}
                 </Dropdown.Item>
-                
+                }</div>
                 ))}</div>
                 
                 </DropdownButton>
-                <label style={{marginBottom:'5px'}} id="chamForm">Attended Zookeeper</label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Assigned Zookeeper</label>
                 <input type="text"
                 id="chamathRet"
                 className="form-control"
@@ -365,8 +367,8 @@ export default class CreateAnimal extends Component{
 
             
 
-            <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Date Of Treatment And Medical Care</label>
+            {/* <div className="form-group" style={{marginBottom:'15px'}}>
+                <label style={{marginBottom:'5px'}} id="chamForm">Date Of Medical Care</label>
                 <input type="text"
                 id="chamathRet"
                 className="form-control"
@@ -379,7 +381,7 @@ export default class CreateAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Time Of Treatment And Medical Care</label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Time Of Medical Care</label>
                 <input type="text"
                 id="chamathRet"
                 ref={this.ref9}
@@ -389,10 +391,10 @@ export default class CreateAnimal extends Component{
                 value={this.state.Time_Of_Treatment_And_Medical_Care}
                 onChange={this.handleInputChange}
                 />
-            </div>
+            </div> */}
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Current Enclosure ID</label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Enclosure ID</label>
                 <input type="text"
                 id="chamathRet"
                 ref={this.ref10}
@@ -419,7 +421,7 @@ export default class CreateAnimal extends Component{
             <i className="fa fa-bug"></i>
             &nbsp;<b>Create!</b>
             </button>
-            <button className="btn btn-success" style={{marginTop:'15px'}} onClick={this.Demo} type="button">
+            <button className="btn btn-success" style={{marginTop:'0px', marginLeft:'25px'}} onClick={this.Demo} type="button">
                         <i className="far fa-check-square"></i>
                         &nbsp; Demo
                     </button>
