@@ -178,8 +178,8 @@ export default class CreateAnimal extends Component{
         this.ref5.current.value = "Test5@"
         this.ref6.current.value = "Test6"
         this.ref7.current.value = "Test7"
-        this.ref8.current.value = "Test8"
-        this.ref9.current.value = "Test9"
+        // this.ref8.current.value = "Test8"
+        // this.ref9.current.value = "Test9"
         this.ref10.current.value = "Test10"
         
         this.state.Animal_ID = "Test5@"
@@ -189,8 +189,8 @@ export default class CreateAnimal extends Component{
         this.state.Animal_Gender= "Test4"
         this.state.Feeding_And_Watering_Date = "Test6"
         this.state.Feeding_And_Watering_Time = "Test7"
-        this.state.Date_Of_Treatment_And_Medical_Care = "Test8"
-        this.state.Time_Of_Treatment_And_Medical_Care = "Test9"
+        // this.state.Date_Of_Treatment_And_Medical_Care = "Test8"
+        // this.state.Time_Of_Treatment_And_Medical_Care = "Test9"
         this.state.Current_Enclosure_ID = "Test10"
 
         
@@ -209,7 +209,7 @@ export default class CreateAnimal extends Component{
         return(
             <div className="CreateAnimal-body">
             <div container="container-fluid" className="col-md-8 mx-auto" id="chamathCreaForm">
-            <center><h1 className="h1-CreateAnimal">Lets Facilitate A New Animal To The Zoo</h1></center>
+            <center><h1 className="h1-CreateAnimal">Create A New Animal For The Zoo</h1></center>
             <form className="CreateAniHead" noValidate>
                 <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Animal ID</label>
@@ -252,7 +252,7 @@ export default class CreateAnimal extends Component{
 
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Date Of Birth</label>
-                <input type="text"
+                <input type="date"
                 id="chamathRet"
                 ref={this.ref4}
                 className="form-control"
@@ -278,7 +278,7 @@ export default class CreateAnimal extends Component{
 
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Feeding Date</label>
-                <input type="text"
+                <input type="date"
                 id="chamathRet"
                 ref={this.ref6}
                 className="form-control"
@@ -291,7 +291,7 @@ export default class CreateAnimal extends Component{
 
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Feeding Time</label>
-                <input type="text"
+                <input type="time"
                 id="chamathRet"
                 className="form-control"
                 ref={this.ref7}
@@ -335,11 +335,13 @@ export default class CreateAnimal extends Component{
                 <DropdownButton align="center" title="Assigned Zookeeper" id="dropdown-menu-align-end" onSelect={handleSelect}>
                 <div>
                 {this.state.posts.map(posts =>(
-                
+                <div>
+                {posts.employeeType=="ZooKeeper" && 
+
                 <Dropdown.Item eventKey={posts.userName}>
                 {posts.userName}
                 </Dropdown.Item>
-                
+                }</div>
                 ))}</div>
                 
                 </DropdownButton>
@@ -365,7 +367,7 @@ export default class CreateAnimal extends Component{
 
             
 
-            <div className="form-group" style={{marginBottom:'15px'}}>
+            {/* <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Date Of Medical Care</label>
                 <input type="text"
                 id="chamathRet"
@@ -389,7 +391,7 @@ export default class CreateAnimal extends Component{
                 value={this.state.Time_Of_Treatment_And_Medical_Care}
                 onChange={this.handleInputChange}
                 />
-            </div>
+            </div> */}
 
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Enclosure ID</label>
@@ -419,7 +421,7 @@ export default class CreateAnimal extends Component{
             <i className="fa fa-bug"></i>
             &nbsp;<b>Create!</b>
             </button>
-            <button className="btn btn-success" style={{marginTop:'15px'}} onClick={this.Demo} type="button">
+            <button className="btn btn-success" style={{marginTop:'0px', marginLeft:'25px'}} onClick={this.Demo} type="button">
                         <i className="far fa-check-square"></i>
                         &nbsp; Demo
                     </button>

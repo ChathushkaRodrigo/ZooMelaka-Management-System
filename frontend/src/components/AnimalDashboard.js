@@ -104,8 +104,8 @@ handleSearchArea = (e) => {
             <th scope="col">Feeding Date</th>
             <th scope="col">Feeding Time</th>
             <th scope="col">Attended Zookeeper</th>
-            <th scope="col">Date Of Medical Care</th>
-            <th scope="col">Time Of Medical Care</th>
+            {/* <th scope="col">Date Of Medical Care</th>
+            <th scope="col">Time Of Medical Care</th> */}
             <th scope="col">Current Enclosure ID</th>
             <th scope="col">Action</th>
           </tr>
@@ -123,8 +123,8 @@ handleSearchArea = (e) => {
                     <td className="anRowing">{zooAnimal.Feeding_And_Watering_Date}</td>
                     <td className="anRowing">{zooAnimal.Feeding_And_Watering_Time}</td>
                     <td className="anRowing">{zooAnimal.Attended_Zookeeper}</td>
-                    <td className="anRowing">{zooAnimal.Date_Of_Treatment_And_Medical_Care}</td>
-                    <td className="anRowing">{zooAnimal.Time_Of_Treatment_And_Medical_Care}</td>
+                    {/* <td className="anRowing">{zooAnimal.Date_Of_Treatment_And_Medical_Care}</td>
+                    <td className="anRowing">{zooAnimal.Time_Of_Treatment_And_Medical_Care}</td> */}
                     <td className="anRowing">{zooAnimal.Current_Enclosure_ID}</td>
                     <td className="anRowing">
                         <a className="btn btn-light btn-small justify-content-center btn-outline-primary" href={`animal/update/${zooAnimal._id}`} id="updateButton">

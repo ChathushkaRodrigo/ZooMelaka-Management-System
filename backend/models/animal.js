@@ -49,12 +49,10 @@ const postSchema = new mongoose.Schema({
         required:true
     },
     Date_Of_Treatment_And_Medical_Care:{
-        type:String,
-        required:true
+        type:String
     },
     Time_Of_Treatment_And_Medical_Care:{
-        type:String,
-        required:true
+        type:String
     },
     Current_Enclosure_ID:{
         type:String,
