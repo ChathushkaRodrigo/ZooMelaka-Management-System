@@ -2,6 +2,13 @@
 import React, { Component } from 'react';
 import axios from'axios'
 import "../CSS/CreateResearch.css"
+
+
+import SplitButton from 'react-bootstrap/SplitButton';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown';
+import Select from 'react-select'
+
 class CreateResearch extends Component {
         constructor(props){
             super(props);
@@ -11,15 +18,28 @@ class CreateResearch extends Component {
                 date_research_ended:"",
                 catergory:"",
                 research_name:"",
-                research_information:""
+                research_information:"",
+                posts:[]
 
             }
+            this.retrievePosts()
             this.ref1 = React.createRef();
             this.ref2 = React.createRef();
             this.ref3 = React.createRef();
             this.ref4 = React.createRef();
         }
-       
+
+        retrievePosts(){
+            axios.get("/posts").then(res =>{
+                if(res.data.success){
+                    this.setState({
+                        posts:res.data.existingPosts
+                    });
+                    console.log(this.state.posts)
+                }
+            })
+        }
+
         handleInputChange=(e)=>{
             const{name,value}=e.target;
             this.setState({
@@ -75,13 +95,21 @@ class CreateResearch extends Component {
         
     }
     render() {
+        const handleSelect=(e)=>{
+            console.log(e);
+            
+            this.state.name_of_scientist = e
+            console.log("Helloooo: " + this.state.name_of_scientist)
+            this.state.name_of_scientist = e
+            this.ref1.current.value = e
+        }
         return (
             <div className="topic">
             <div classsName="col-md-8-mt-4-mx-auto">
                 <h1 className="h3-mb-3 font-weight-normal">Create new Research</h1>
                 <div className="  image4"> </div>
                 <form className=" formbody needs-validation" noValidate>
-                    <div className="form-group" style={{marginBottom:'15px'}}>
+                    {/* <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px'}}>name_of_scientist</label>
                         <input type="text" required
                         ref = {this.ref1}
@@ -90,7 +118,36 @@ class CreateResearch extends Component {
                         placeholder="Enter the scientist /scientists name"
                         value={this.state.name_of_scientist}
                         onChange={this.handleInputChange}/>
-                        </div>
+                        </div> */}
+
+
+<div className="mb-2">
+                <DropdownButton align="center" title="Attended Zookeeper" id="dropdown-menu-align-end" onSelect={handleSelect}>
+                <div>
+                {this.state.posts.map(posts =>(
+                <div>
+                {posts.employeeType=="Supervisor" && 
+
+                <Dropdown.Item eventKey={posts.userName}>
+                {posts.userName}
+                </Dropdown.Item>
+                }</div>
+                ))}</div>
+                
+                </DropdownButton>
+                <label style={{marginBottom:'5px'}} id="chamForm">Attended Zookeeper</label>
+                <input type="text"
+                id="chamathRet"
+                className="form-control"
+                name="Attended_Zookeeper"
+                placeholder="Enter The Last Attended Zookeeper:"
+                value={this.state.Attended_Zookeeper}
+                onChange={this.handleInputChange}
+                ref={this.ref1}
+                />
+            </div>
+
+
                         <div className="form-group" style={{marginBottom:'15px'}}>
                             <label style ={{marginBottom:'5px'}}>date_research_started</label>
                             <input type="date"

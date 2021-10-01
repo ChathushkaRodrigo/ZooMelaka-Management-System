@@ -23,6 +23,11 @@ export default class CreateBooking extends Component {
          
             
         }
+        this.ref1 = React.createRef();
+        this.ref2 = React.createRef();
+        this.ref3 = React.createRef();
+        this.ref4 = React.createRef();
+        this.ref5 = React.createRef();
     }
     validateField(fieldName, value) {
         let fieldValidationErrors = this.state.formErrors;
@@ -96,6 +101,20 @@ export default class CreateBooking extends Component {
 
         
     }
+    Demo = () => {
+        this.ref1.current.value = "Test1@gmail.com"
+        this.ref2.current.value = "Test2"
+        this.ref3.current.value = "0745645789"
+        this.ref4.current.value = "Test4"
+        this.ref5.current.value = "Test5"
+
+        this.state.CustomerEmail = "Test1@gmail.com"
+        this.state.CustomerName = "Test2"
+        this.state.MobileNumber = "0745645789"
+        this.state.TourOption = "Test4"
+        this.state.TourGuideName = "Test5"
+
+    }
 
     render() {
         return (
@@ -116,6 +135,7 @@ export default class CreateBooking extends Component {
                     <input type="email" 
                         className="form-control" 
                         name="CustomerEmail" 
+                        ref={this.ref1}
                         id="cEmail"
                         placeholder="Enter your email " 
                         defaultValue={this.state.CustomerEmail}
@@ -132,6 +152,7 @@ export default class CreateBooking extends Component {
                     <label for="cName" style={{marginBottom:'5px'}}>Customer Name</label>
                         <input type="text" 
                         className="form-control" 
+                        ref={this.ref2}
                         id="cName" name="CustomerName" 
                         placeholder="Enter your Name" 
                         defaultValue= {this.state.CustomerName}  
@@ -141,8 +162,9 @@ export default class CreateBooking extends Component {
                     <br/>
                     <div className="form-group">
                     <label for="MobileNo" style={{marginBottom:'5px'}}>Mobile Number</label>
-                        <input type="number" 
+                        <input type="tel" 
                         className="form-control" 
+                        ref={this.ref3}
                         id="MobileNo"name="MobileNumber" 
                         placeholder="Enter your mobile number"
                         defaultValue={this.state.MobileNumber}  
@@ -154,6 +176,7 @@ export default class CreateBooking extends Component {
                     <label for="TourOp" style={{marginBottom:'5px'}}>Tour Option</label>
                         <input type="text" 
                         className="form-control" 
+                        ref={this.ref4}
                         id="TourOp" name="TourOption" 
                         placeholder="Enter tour option" 
                         defaultValue={this.state.TourOption}  
@@ -188,7 +211,8 @@ export default class CreateBooking extends Component {
                     <div className="form-group">
                     <label for="TName" style={{marginBottom:'5px'}}>Tour Guide Name</label>
                         <input type="text" 
-                        className="form-control" 
+                        className="form-control"
+                        ref={this.ref5} 
                         id="TName" 
                         name="TourGuideName" 
                         placeholder="Enter tour guide name" 
@@ -212,7 +236,10 @@ export default class CreateBooking extends Component {
                     <button className ="btn btn-success"><a href="/TourGuideDashboard" style={{textDecoration:'none' ,color:'white' }}>  Dashboard </a></button>
                     </div> <br/><br/>
                     <div>
-                    <button className ="btn btn-success"><a href="#" style={{textDecoration:'none' ,color:'white' }}>  Demo </a></button>
+                    <button className="btn btn-success" style={{marginTop:'15px'}} onClick={this.Demo} type="button">
+                        <i className="far fa-check-square"></i>
+                        &nbsp; Demo
+                    </button>
                     </div> <br/><br/>
                     </form>
 
