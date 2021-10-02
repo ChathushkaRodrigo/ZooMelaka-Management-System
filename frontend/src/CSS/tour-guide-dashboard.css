@@ -1,7 +1,7 @@
 .hero-dashboard .bg_tour {
   display: block;
   position: relative;
-  top: -63px;
+  top: -110px;
 
   width: 43%;
   float: right;
@@ -70,8 +70,10 @@
 }
 .Tourdashboard {
   position: relative;
-  top: -270px;
+  /* Shift Dashboard up and down */
+  top: -200px;
 }
+
 
 #tgdb {
   background-color: lavender;
