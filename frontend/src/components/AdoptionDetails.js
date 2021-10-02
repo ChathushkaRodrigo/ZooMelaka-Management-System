@@ -38,7 +38,7 @@ class AdoptionDetails extends Component {
                 <div className = "all-hero">
                     <div class="bg_image bgimage"></div>
                     <div className = "content">
-                        Adoptions Details
+                        <p className = "adpt-det-topic">Adoptions Details</p>
                     </div>
                 </div>
                 <div className = "the_content">
