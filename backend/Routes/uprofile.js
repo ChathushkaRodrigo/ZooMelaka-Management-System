@@ -1,7 +1,9 @@
 const express = require('express');
 const profiles = require('../models/uprofile');
+
 const Profiles = require('../models/uprofile');
 const Profile = require('../models/uprofile');
+
 const router = express.Router();
 
 //Create profile
@@ -22,6 +24,7 @@ router.post('/profile/create',(req,res)=>{
 });
 
 //get profile
+
 router.get('/profiles',(req,res)=>{
     Profiles.find().exec((err,profiles) =>{
         if(err){

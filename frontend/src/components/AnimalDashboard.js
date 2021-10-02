@@ -5,8 +5,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import '../CSS/AnimalDashboard.css';
-import jsPDF from 'jspdf'
-import 'jspdf-autotable'
 
 
 export default class Home extends Component{
@@ -62,25 +60,6 @@ handleSearchArea = (e) => {
      this.filterData(res.data.existingPosts,searchAnimalKey)
     }
   });
-}
-//Report Generate Function onClick
-jspdGenerator=()=>{
-
-        
-  //Create document obj
-  var doc =new jsPDF("p","pt","b3") 
-
-
-  doc.html(document.querySelector("#AnimalTableChamath"), {
-    
-    callback:function(pdf){
-
-      pdf.save("AllAnimalRecords.pdf");
-      
-    }
-
-  });
-
 }
 
 
@@ -163,26 +142,28 @@ jspdGenerator=()=>{
               </tbody>
         </table></div>
 
-<a className="dashButton btn btn-light btn-small justify-content-center btn-outline-success" href={`animal/add`} style={{marginTop:'10px'}}>
+
+<a className="dashButton btn btn-light btn-small justify-content-center btn-outline-success" href={`animal/add`} style={{marginTop:'10px',marginBottom:'5px'}} id="chamCreaButton">
                             <i className="fas fa-dragon"></i>&nbsp;<b>Create Animal Portfolio!</b>
 </a>
-<br/>
 
-<div>
-        <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
-        <br/><br/>
-        <button className="btn btn-success" >
-        <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
-           Admin Home
-          </a>
-          
 
-         </button>
+<a className="dashButton btn btn-light btn-small justify-content-center btn-outline-primary" href={`adminpanelhome`} style={{marginTop:'5px'}} id="chamAdminNav">
+                    <i className="fa fa-hand-o-left"></i>&nbsp;<b>Navigate To Admin Panel!</b>
+</a>
 
-        
-        </div>
 
-    </div>)
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    )
   }
 }
 
