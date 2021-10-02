@@ -26,7 +26,7 @@ export default class Create extends Component{
             //validation part
             formErrors: {projectID: ''},
             projectIDValid: false,
-            formvalid: false
+            formvalid: false,
 
             value:"",
             posts:[]
@@ -212,7 +212,7 @@ export default class Create extends Component{
                 </form>
                </div>
 
-            <div><NavBar/>
+            <div>
                 <div style={{height:'70px',textAlign:'center',backgroundColor:'#009900'}}>
                 <h3 className="pageCaption" style={{marginTop:'10px',color:'#FFFFFF',padding:'19px 0'}}>Create New Project</h3>
             </div>
@@ -290,6 +290,7 @@ export default class Create extends Component{
                 <br/><br/><br/><br/><br/><br/><br/>
 
             </div>
+        </div>
         </div>
         )
     }  
