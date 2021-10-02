@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import '../CSS/AllAdoptions.css';
-import jsPDF from 'jspdf'
-import 'jspdf-autotable'
 
 
 class AllAdoptions extends Component {
@@ -83,25 +81,6 @@ class AllAdoptions extends Component {
     //       }})
     //     }
 
-    //Report Generate Function onClick
-jspdGenerator=()=>{
-
-        
-  //Create document obj
-  var doc =new jsPDF("p","pt","c3") 
-
-
-  doc.html(document.querySelector("#adoptions"), {
-    
-    callback:function(pdf){
-
-      pdf.save("AllAdoptionRecords.pdf");
-      
-    }
-
-  });
-
-}
   render() {
     return (
  
@@ -120,7 +99,7 @@ jspdGenerator=()=>{
               <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange = {this.handleSearchArea}></input>
             </div>
             <br/>
-            <table className="table table-light table-bordered table-hover container " id="adoptions">
+            <table className="table table-light table-bordered table-hover container ">
               <thead>
               <tr>
                 <th scope= "col">#</th>
@@ -180,20 +159,6 @@ jspdGenerator=()=>{
             
             <div className = "bottomspace"></div>
             </div>
-            <br/>
-            <div>
-        <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
-        <br/><br/>
-        <button className="btn btn-success" >
-        <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
-           Admin Home
-          </a>
-          
-
-         </button>
-
-        
-        </div>
           </div>
         
         

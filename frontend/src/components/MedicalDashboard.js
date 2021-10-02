@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import "../CSS/Medicaldashboard.css"
-import jsPDF from 'jspdf'
-import 'jspdf-autotable'
 
 class MedicalDashboard extends Component {
   constructor(props){
@@ -40,26 +38,6 @@ onDelete =(id)=>{
   })
   
 }
-//Report Generate Function onClick
-jspdGenerator=()=>{
-
-        
-  //Create document obj
-  var doc =new jsPDF("p","pt","c2") 
-
-
-  doc.html(document.querySelector("#medicals"), {
-    
-    callback:function(pdf){
-
-      pdf.save("AllMedicalRecords.pdf");
-      
-    }
-
-  });
-
-}
-
 
   render() {
     return (
@@ -68,7 +46,7 @@ jspdGenerator=()=>{
         <h1 className ="titlepage">All Medical Records</h1>
         <div className= "imagemed2"> </div>
 
-        <table className="table  table-bordered " id="medicals">
+        <table className="table  table-bordered ">
           <thead>
             <tr>
               <th scope = "col">#</th>
@@ -115,20 +93,7 @@ jspdGenerator=()=>{
         </table>
         <button className="btn btn-success"><a href= "medical/create"style ={{textDecoration:'none',color:"white"}}>Create New Medical Report</a></button>
         
-       <br/><br/>
-       <div>
-        <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
-        <br/><br/>
-        <button className="btn btn-success" >
-        <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
-           Admin Home
-          </a>
-          
-
-         </button>
-
-        
-        </div>
+       <br/><br/><br/><br/><br/><br/><br/>
       </div>
     );
   }

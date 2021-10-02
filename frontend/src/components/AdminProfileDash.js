@@ -2,8 +2,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import "../CSS/memberdashboard.css";
-import jsPDF from 'jspdf'
-import 'jspdf-autotable'
 
 class memberdashboard extends Component {
 
@@ -39,25 +37,6 @@ class memberdashboard extends Component {
       this.retrieveProfiles();
     })    
   }
-//Report Generate Function onClick
-jspdGenerator=()=>{
-
-        
-  //Create document obj
-  var doc =new jsPDF("p","pt","b3") 
-
-
-  doc.html(document.querySelector("#Customers"), {
-    
-    callback:function(pdf){
-
-      pdf.save("AllMemberRecords.pdf");
-      
-    }
-
-  });
-
-}
 
   render() {
     return (
@@ -99,7 +78,7 @@ jspdGenerator=()=>{
                   <tr key={index}>
                     <th scope="row">{index+1}</th>
                     <td>
-                        <a href={`/uprofile/${profiles._id}`} style={{textDecoration:'none'}}>
+                        <a href={`/profile/${profiles._id}`} style={{textDecoration:'none'}}>
                             {profiles.fName}
                         </a>
                     </td>
@@ -121,22 +100,8 @@ jspdGenerator=()=>{
                   </tr>
                 ))}
               </tbody>
-            </table>
-
+            </table>    
           </div>
-          <div>
-        <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
-        <br/><br/>
-        <button className="btn btn-success" >
-        <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
-           Admin Home
-          </a>
-          
-
-         </button>
-
-        
-        </div>
           </div>        
     );
   }
