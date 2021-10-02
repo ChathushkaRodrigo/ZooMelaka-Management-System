@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import NavBar from './NavBar';
 
 export default class Reports extends Component{
     constructor(props){
@@ -30,21 +31,16 @@ export default class Reports extends Component{
         const {projectID,name,title,description,supervisor,workingTeam} = this.state.post;
 
         return(
-            <div className="reportback">
-                <div className="Caption">
-                <h1 className="pageCaption">Project Report</h1>
-                </div>
-                <div className="report">
-                
-                <center>
-                <h4 className="reportheader">
-                    Project&nbsp;
-                    {name}
-                    &nbsp;Report
+            <div>
+                <NavBar/>
+                <h4 style={{textAlign:'center',marginTop:'30px'}}>
+                    <u><b>Project&nbsp;</b></u>
+                    <u><b>{name}</b></u>
+                    <u><b>&nbsp;Report</b></u>
                 </h4>
             
                 <p></p>
-             <div className="content">
+             <div style={{paddingTop:'50px',paddingLeft:'100px',paddingRight:'100px'}}>
                 <d1 className="row" style={{textAlign:'left'}}>
                     <dt className="col-sm-3">Project ID:</dt>
                     <dd className="col-sm-9">{projectID}</dd>
@@ -59,8 +55,6 @@ export default class Reports extends Component{
                     <dt className="col-sm-3">Working Team:</dt>
                     <dd className="col-sm-9">{workingTeam}</dd>
                 </d1>
-                <button className="print" onClick="window.print()">Print report</button>
-             </div></center>
              </div>
 
             </div>                   
