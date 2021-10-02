@@ -7,7 +7,7 @@ let Research = require("../models/research");
 
 const router =express.Router();
 
-//Save booking details 
+//Save research details 
 
 router.post("/research/add",(req,res)=>{
 
@@ -33,7 +33,7 @@ router.post("/research/add",(req,res)=>{
 
 
 
-//get booking details
+//get research details
 
 router.get('/research',(req,res)=>{
 
@@ -54,32 +54,9 @@ router.get('/research',(req,res)=>{
 });
 
 
-// router.route("research/update/:id").put(async(req,res)=>{
-//     let userID =req.params.id;
-//     const {name_of_scientist,
-//         date_research_started,
-//         date_research_ended,
-//         catergory,
-//         research_name,
-//         research_information } = req.body;
-//     const updateResearch ={
-//         name_of_scientist,
-//         date_research_started,
-//         date_research_ended,
-//         catergory,
-//         research_name,
-//         research_information 
-//     }
-//     const update = await Research.findByIdAndUpdate(userID,updateResearch)
-//     .then(() => {
-//     res.status(200).send({status: "User update"})
-// }).catch((err) => {
-//     console.log(err);
-//     res.status(500).send({status:"Error with updating data",error:err.message});
-//     })
-// })
 
-//Update Bookig Details
+
+//Update research Details
 
 router.put('/research/update/:id',(req,res)=>{
 
@@ -105,7 +82,7 @@ router.put('/research/update/:id',(req,res)=>{
 
 
 
-//Delete Booking Details
+//Delete research Details
 
 router.delete('/research/delete/:id',(req,res)=>{
 

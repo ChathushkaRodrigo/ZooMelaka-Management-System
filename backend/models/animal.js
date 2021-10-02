@@ -37,26 +37,28 @@ const postSchema = new mongoose.Schema({
         required:true
     },
     Animal_Satisfaction_Level:{
-        type:String,
-        required:true
+        type:String
+
     },
     Animal_Health_Level:{
-        type:String,
-        required:true
+        type:String
+        
     },
     Attended_Zookeeper:{
         type:String,
         required:true
     },
     Date_Of_Treatment_And_Medical_Care:{
-        type:String,
-        required:true
+        type:String
     },
     Time_Of_Treatment_And_Medical_Care:{
+        type:String
+    },
+    Current_Enclosure_ID:{
         type:String,
         required:true
     },
-    Current_Enclosure_ID:{
+    Adoptability:{
         type:String,
         required:true
     }

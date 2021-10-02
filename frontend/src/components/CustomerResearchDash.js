@@ -112,7 +112,8 @@ filterData(researches, searchkey){
 
      
         
-       
+        
+        <button className="btn btn-success"><a href= "/research/createCollaboration/"style ={{textDecoration:'none',color:"white"}}>Create New Collaboration</a></button>
       </div>
       
     );

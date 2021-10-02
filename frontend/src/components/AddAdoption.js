@@ -19,6 +19,7 @@ class AddAdoption extends Component {
         this.guardian = this.guardian.bind(this);
         this.protector = this.protector.bind(this);
         this.partner = this.partner.bind(this);
+        this.validateform = this.validateform.bind(this);
 
         this.state = {
             animal_name: '',
@@ -34,6 +35,10 @@ class AddAdoption extends Component {
             yearly:'$300/yearly'
 
         }
+        const id = this.props.match.params.id;
+
+        this.state.animal_id = id;
+        this.state.member_id = 'M00069';
 
         this.state.adptlvl = 
             <div>
@@ -48,8 +53,7 @@ class AddAdoption extends Component {
                     </div>
             </div>
         
-        this.state.animal_id = 'A00069';
-        this.state.member_id = 'M00069';
+        
     }
 
 
@@ -172,13 +176,32 @@ class AddAdoption extends Component {
             <h4 className = "add-topic">Partner Level Adoption</h4>
             <p><ul>
                 <li>adoption certification</li>
-                <li>free once a week visit pass</li>
+                <li>unlimited visit passes</li>
                 <li>encounter</li>
                 </ul></p>
                 </div>
         </div>
         })
     }
+
+    validateform(e){
+        if(this.state.animal_name === '' || this.state.adoption_level === '' || this.state.payment_plan === '' || this.state.live_cam === ''){
+            //alert("All the inputs must be filled!");
+            if(this.state.animal_name === ''){
+                alert("Animal Name must be added!");
+            }
+            if(this.state.adoption_level === ''){
+                alert("Adoption Level must be selected!");
+            }
+            if(this.state.payment_plan === ''){
+                alert("Payment Plan must be selected!");
+            }
+        }
+        else{
+            this.saveAdoption(e);
+        }
+    }
+
     render() {
         return (
 
@@ -194,7 +217,7 @@ class AddAdoption extends Component {
                     <br/>
                 <div className = "add-formdiv container">
                 <div className="form-group">
-                    Animal Name
+                    Give a Name for the Animal :
                     <input type="text" className="form-control" id="name" placeholder="Enter Animal name" value = {this.state.animal_name} onChange = {this.setAnimalName}/>
                     
                 </div>
@@ -239,7 +262,7 @@ class AddAdoption extends Component {
                     <input type="text" className="form-control" id="age" placeholder="Enter Memeber Id" value = {this.state.member_id} onChange = {this.setMemberId}/>
              
                 </div> */}
-                  <button className="btn btn-primary" onClick = {this.saveAdoption}>Submit</button>
+                  <button className="btn btn-primary" onClick = {this.validateform}>Submit</button>
                     
                 </div>
                 <br/>
@@ -250,6 +273,7 @@ class AddAdoption extends Component {
                     {this.state.adptlvl}
 
                 </div>
+                <div className = 'footerspace'><br/></div>
             </div>
         );
     }
