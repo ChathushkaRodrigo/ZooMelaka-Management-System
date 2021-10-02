@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import "../CSS/AdoptionDetails.css"
+import jsPDF from 'jspdf'
+import 'jspdf-autotable'
 class AdoptionDetails extends Component {
     constructor(props){
         super(props);
@@ -9,6 +11,44 @@ class AdoptionDetails extends Component {
             adoption: [],
 
         }
+    }
+      // Generate Medical report 
+      jspdGenerator=()=>{
+
+        
+        //doc obj
+        var doc =new jsPDF('p','pt');
+
+        doc.autoTable({ html: '#my-table' })
+        //add texts
+
+        doc.text(200,20,'Medical Report')
+    
+        doc.autoTable({
+           
+           tableWidth:'auto',
+           margin: { top: 10 },
+            columnStyles: { europe: { halign: 'center' } },
+            theme:'grid',
+            head: [['Animal Name', 'Adoption', 'Payment Plan','Live cam','Date of Adoption','Animal ID','Member ID']],
+            body: [
+               
+              [this.state.adoption.animal_name,this.state.adoption.adoption_level,this.state.adoption.payment_plan,this.state.adoption.adoption_date,this.state.adoption.animal_id,this.state.adoption.member_id], 
+            ],
+           
+        //const { animal_name, adoption_level, payment_plan, live_cam, adoption_date, animal_id, member_id} = this.state.adoption;
+            styles: {  fontSize:10 },
+         
+            
+          })
+          
+     
+
+     
+        //Save pdf 
+        doc.save("Adoption Report.pdf");
+
+
     }
 
     componentDidMount() {
@@ -26,8 +66,8 @@ class AdoptionDetails extends Component {
     }
 
 
+
     render() {
-        //const { animal_name, adoption_level, payment_plan, live_cam, adoption_date, animal_id, member_id} = this.state.adoption;
         
         
         
@@ -67,6 +107,21 @@ class AdoptionDetails extends Component {
                                 <div >
                                         
                                 </div>
+                                <br/><br/><br/><br/><br/><br/>
+                                <div>
+        <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
+        <br/><br/>
+        <button className="btn btn-success" >
+        <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
+           Admin Home
+          </a>
+          
+
+         </button>
+
+        
+        </div>
+        <br/>
                             </div>
                 
 

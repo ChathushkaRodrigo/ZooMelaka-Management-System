@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import axios from 'axios';
-import '../CSS/Projects.css';
 
 
 
@@ -63,58 +62,58 @@ export default class Search extends Component {
   render(){
     return(
         
-     <div className="searchback">
+     <div>
         
-      <div className="container1">
+      <div className="container">
         <div className="row">
           <div>
-                <div className="Caption">
-                <h1 className="pageCaption">All Projects</h1>
-            </div>
-          <div id="psearchbar">
-            <input className="form-control" id="psearch" type="search" placeholder="Search.." name="searchQuery" onChange={this.handleSearchArea}></input>
+          <div style={{height:'70px',textAlign:'center',backgroundColor:'#009900'}}>
+             <h3 className="pageCaption" style={{marginTop:'10px',color:'#FFFFFF',padding:'19px 0'}}>All Projects</h3>
+          </div>
+          <div className="col-lg-3 mt-2 mb-2">
+            <input className="form-control" type="search" placeholder="Search.." name="searchQuery" onChange={this.handleSearchArea}></input>
           </div>
           </div>
         </div>
 
       </div>
      
-      <div className="containerpr">
+      <div className="container">
         <p/><p/>
-        <table>
+        <table className="allProjectsT" cellSpacing="20" cellPadding="7" style={{width:'100%'}}>
           <thead>
               <tr style={{fontSize:'18px',borderBottom:'2px solid black ',borderLeft:'none',borderRight:'none'}}>
-                <th scope="col" style={{width:'2%'}}>#</th>
-                <th scope="col" style={{width:'14%'}}>ID</th>
-                <th scope="col" style={{width:'14%'}}>Name</th>
-                <th scope="col" style={{width:'14%'}}>Title</th>
-                <th scope="col" style={{width:'14%'}}>Descrip.</th>
-                <th scope="col" style={{width:'14%'}}>Supervisor</th>
-                <th scope="col" style={{width:'14%'}}>Working Team</th>
-                <th scope="col" style={{width:'14%'}}>Edit/Delete</th>
+                <th scope="col">#</th>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Title</th>
+                <th scope="col" style={{width:'200px'}}>Descrip.</th>
+                <th scope="col">Supervisor</th>
+                <th scope="col">Working Team</th>
+                <th scope="col">Actions</th>
               </tr>
            </thead>
            <tbody>
             {this.state.projects.map((projects,index) =>(
-              <tr id="tr" key={index} style={{borderLeft:'none',borderRight:'none',borderBottom:'0.5px solid black'}}>
+              <tr key={index} style={{borderLeft:'none',borderRight:'none',borderBottom:'0.5px solid black'}}>
                 <th scope="row">{index+1}</th>
                 <td>{projects.projectID}
                 </td>
                 <td>
-                  <a href={`/project/report/${projects._id}`} className="searchlink">{projects.name}</a>
+                  <a href={`/project/report/${projects._id}`} style={{textDecoration:'none'}}>{projects.name}</a>
                 </td>
                 <td>{projects.title}</td>
                 <td>{projects.description}</td>
                 <td>{projects.supervisor}</td>
                 <td>{projects.workingTeam}</td>
                 <td>
-                  <a className="btn btn-warning" id="sedit" href={`/project/edit/${projects._id}`}>
-                    <i className="fas fa-edit"></i>
+                  <a className="btn btn-warning" href={`/project/edit/${projects._id}`}>
+                    <i className="fas fa-edit"></i>&nbsp;Edit
                   </a>
                   &nbsp;
-                  <a className="btn btn-danger" id="sdelete"
+                  <a className="btn btn-danger"
                   onClick={() =>this.onDelete(projects._id)}>
-                    <i className="far fa-trash-alt"></i>
+                    <i className="far fa-trash-alt"></i>&nbsp; Delete
                   </a>
                 </td>
               </tr>

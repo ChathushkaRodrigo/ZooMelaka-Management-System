@@ -1,12 +1,23 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import '../CSS/AnimalDetails.css';
+
+import jsPDF from 'jspdf'
+import 'jspdf-autotable'
+
+import {Link} from 'react-router-dom';
+
 export default class AnimalDetails extends Component{
     constructor(props){
         super(props);
         this.state={
-            zooAnimal:{}
+            zooAnimal:{},
+            posts:[],
+            Medical:[]
         };
+
+        this.retrievePosts();
+        this.retrieveMedical();
     }
 
     componentDidMount(){
@@ -20,6 +31,74 @@ export default class AnimalDetails extends Component{
             }
         });
     }
+
+
+    // Generate Medical report 
+    jspdGenerator=()=>{
+
+        
+        //doc obj
+        var doc =new jsPDF('p','pt');
+
+        doc.autoTable({ html: '#my-table' })
+        //add texts
+
+        doc.text(200,20,'Animal Report')
+    
+        doc.autoTable({
+           
+           tableWidth:'auto',
+           margin: { top: 10 },
+            columnStyles: { europe: { halign: 'center' } },
+            theme:'grid',
+            head: [['Animal ID', 'Animal Name', 'Species','D.O.B','Gender','Adoptability']],
+            body: [
+               
+              [this.state.zooAnimal.Animal_ID,this.state.zooAnimal.Animal_Name,this.state.zooAnimal.Animal_Species,this.state.zooAnimal.Animal_Date_Of_Birth,this.state.zooAnimal.Animal_Gender,this.state.zooAnimal.Adoptability], 
+            ],
+           
+            styles: {  fontSize:10 },
+         
+            
+          })
+
+        //Save pdf 
+        doc.save("Animal Report.pdf");
+
+
+    }
+
+
+
+
+
+    retrievePosts(){
+        axios.get("/posts").then(res =>{
+            if(res.data.success){
+                this.setState({
+                    posts:res.data.existingPosts
+                });
+                console.log(this.state.posts)
+            }
+        })
+    }
+
+
+    retrieveMedical(){
+        axios.get("http://localhost:8015/medical/").then(res =>{
+          if(true){
+            this.setState({
+              Medical:res.data.existingMedical
+            });
+            console.log(this.state.Medical)
+          }
+        })
+      
+        
+      }
+
+
+
     render(){
         const { Animal_ID,
                 Animal_Name,
@@ -86,6 +165,38 @@ export default class AnimalDetails extends Component{
                     </form></div>
 
 
+                    {/* <div>
+                {this.state.Medical.map(Medical =>(
+                <div>
+                  {Medical.animalID =="ZooKeeper" && 
+  
+                {Medical.animalID}
+                {Medical._id}
+                
+                }</div>
+                ))}</div> */}
+
+            <div className="btn btn-light btn-small justify-content-center btn-outline-info" style={{marginTop:'5px',marginBottom:'5px'}} id="ChamathUpsss">
+            <i className="fa fa-heartbeat"></i>
+                {this.state.Medical.map(Medical =>(
+                <div>
+                {Medical.animalID == Animal_ID && 
+
+                <div>
+
+                <Link to = {`/medical/details/${Medical._id}`} style = {{textDecoration:"none"}}>
+                            Check Medical Records!
+                      </Link>
+
+                </div>
+
+                }</div>
+                ))}</div>
+                
+
+                
+
+
 
            
 <center>
@@ -93,11 +204,18 @@ export default class AnimalDetails extends Component{
                             <i className="fa fa-paw"></i>&nbsp;<b>Retreival Completed!</b>
 </a></center>
 
-<center>
-<a className="btn btn-light btn-small justify-content-center btn-outline-primary" href={`/medicalDashboard`} style={{marginTop:'5px',marginBottom:'100px'}} id="ChamathUpsss">
+{/* <center>
+<a className="btn btn-light btn-small justify-content-center btn-outline-primary" href={`/medicalDashboard`} style={{marginTop:'5px',marginBottom:'10px'}} id="ChamathUpsss">
 <i className="fa fa-paw"></i>&nbsp;<b>Check Medical Records!</b>
+
 </a></center>
-            </div></div>
+            </div>
+            <br/>
+
+                    <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
+
+            </div>
+
         )
     }
 }
