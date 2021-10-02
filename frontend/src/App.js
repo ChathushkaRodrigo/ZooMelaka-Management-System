@@ -30,6 +30,8 @@ import CreateResearch from './components/CreateResearch';
 import CustomerResearchDash from './components/CustomerResearchDash';
 import ResearchCollaboration from './components/ResearchCollaboration';
 import CreateCollaboration from './components/CreateCollaboration';
+import ResearchInfo from './components/ResearchInfo';
+
 
 //Project Management
 import ProjectsHome from './components/ProjectsHome';
@@ -104,6 +106,7 @@ render() {
         <Route path = "/research/details/:id" component = {ResearchDetails}/> 
         <Route path = "/research/customerDash/" component = {CustomerResearchDash}/> 
         <Route path = "/research/collaboration/" component = {ResearchCollaboration}/> 
+        <Route path = "/research/researchinfo/:id" component = {ResearchInfo}/> 
         <Route path = "/research/createCollaboration/" component = {CreateCollaboration}/> 
 
 

@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import axios from'axios'
 import "../CSS/CreateCollaboration.css"
+import { FormErrors } from './FormErrors';
 
 class CreateCollaboration extends Component {
         constructor(props){
@@ -12,17 +13,21 @@ class CreateCollaboration extends Component {
                 name:"",
                 email:"",
                 contact_no:"",
-                zoological_institution:""
+                zoological_institution:"",
+            formErrors: {email: '', contact_no:''},
+            emailValid: false,
+            contact_noValid: false,
+            formvalid: false
 
             }
         }
-       
-        handleInputChange=(e)=>{
-            const{name,value}=e.target;
+        handleInputChange = (e)=>{
+            const {name,value} = e.target;
             this.setState({
                 ...this.state,
                 [name]:value
-            })
+            },() => { this.validateField(name, value) }
+        );
         }
         onSubmit=(e)=>{
             e.preventDefault();
@@ -61,6 +66,39 @@ class CreateCollaboration extends Component {
             }
         })
     }
+    validateField(fieldName, value) {
+        let fieldValidationErrors = this.state.formErrors;
+        let emailValid = this.state.emailValid;
+        let contact_noValid = this.state.contact_noValid;
+    
+        switch(fieldName) {
+          case 'email':
+            emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+            fieldValidationErrors.email = emailValid ? '' : ' is invalid';
+            break;
+          case 'contact_no':
+            contact_noValid = value.length >= 10;
+            fieldValidationErrors.contact_no =contact_noValid ? '': ' is too short';
+            break;
+          default:
+            break;
+        }
+        this.setState({formErrors: fieldValidationErrors,
+                        emailValid: emailValid,
+                        contact_noValid: contact_noValid
+                      }, this.validateForm);
+      }
+    
+      validateForm() {
+        this.setState({formValid: this.state.emailValid && this.state.contact_noValid});
+      }
+    
+      errorClass(error) {
+        return(error.length === 0 ? '' : 'has-error');
+      }
+
+
+
     render() {
         return (
             <div className="topic">
@@ -68,8 +106,9 @@ class CreateCollaboration extends Component {
                 <h1 className="h3-mb-3 font-weight-normal">Create new Collaboration</h1>
                 <div className="  image4"> </div>
                 <form className=" formbody needs-validation" noValidate>
+                <FormErrors formErrors={this.state.formErrors} className="FormError"/>
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>research_feild</label>
+                        <label style={{marginBottom:'5px',color:"black"}}>research_feild</label>
                         <input type="text" required
                         
                         className="form-control"
@@ -79,7 +118,7 @@ class CreateCollaboration extends Component {
                         onChange={this.handleInputChange}/>
                         </div>
                         <div className="form-group" style={{marginBottom:'15px'}}>
-                            <label style ={{marginBottom:'5px'}}>research_topic</label>
+                            <label style ={{marginBottom:'5px',color:"black"}}>research_topic</label>
                             <input type="text"
                             className="form-control"
                             name="research_topic"
@@ -90,7 +129,7 @@ class CreateCollaboration extends Component {
 
 
                             <div className="form-group" style={{marginBottom:'15px'}}>
-                            <label style ={{marginBottom:'5px'}}>name</label>
+                            <label style ={{marginBottom:'5px',color:"black"}}>name</label>
                             <input type="text"
                             className="form-control"
                             name="name"
@@ -104,7 +143,7 @@ class CreateCollaboration extends Component {
 
 
                             <div className="form-group" style={{marginBottom:'15px'}}>
-                            <label style ={{marginBottom:'5px'}}>email</label>
+                            <label style ={{marginBottom:'5px',color:"black"}}>email</label>
                             <input type="text"
                             className="form-control"
                             name="email"
@@ -114,7 +153,7 @@ class CreateCollaboration extends Component {
                             </div>
                             
                             <div className="form-group" style={{marginBottom:'15px'}}>
-                            <label style ={{marginBottom:'5px'}}>contact_no</label>
+                            <label style ={{marginBottom:'5px',color:"black"}}>contact_no</label>
                             <input type="number"
                             className="form-control"
                             name="contact_no"
@@ -125,7 +164,7 @@ class CreateCollaboration extends Component {
 
                             
                             <div className="form-group" style={{marginBottom:'15px'}}>
-                            <label style ={{marginBottom:'5px'}}>zoological_institution</label>
+                            <label style ={{marginBottom:'5px',color:"black"}}>zoological_institution</label>
                             <input type="text"
                             className="form-control"
                             name="zoological_institution"
