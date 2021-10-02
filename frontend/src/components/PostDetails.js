@@ -2,15 +2,31 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import "../CSS/ShasRet.css"
 
-
+import {Link} from 'react-router-dom';
 export default class PostDetails extends Component {
     constructor(props){
         super(props);
 
         this.state={
-            post:{}
+            post:{},
+            ret:[],
+            Research:[]
         };
+        this.retrievePosts();
+        this.retrieveResearch();
     }
+
+    retrievePosts(){
+        axios.get("http://localhost:8015/posts").then(res=>{
+          if(res.data.success){
+            this.setState({
+              ret:res.data.existingPosts
+            })
+            console.log(this.state.ret)
+          }
+        })
+      }
+      
 
     componentDidMount(){
         const id =  this.props.match.params.id;
@@ -24,6 +40,19 @@ export default class PostDetails extends Component {
             }
         })
     }
+
+    retrieveResearch(){
+        axios.get("http://localhost:8015/research").then(res =>{
+          if(true){
+            this.setState({
+              Research:res.data.existingResearch
+            });
+            console.log(this.state.Research)
+          }
+        })
+      
+        
+      }
     
     render() {
 
@@ -99,6 +128,30 @@ export default class PostDetails extends Component {
 
                     
                     </form>
+
+                <div>
+
+                
+                <div>
+                {this.state.Research.map(Research =>(
+                   
+                <div>
+               {Research.name_of_scientist==userName && 
+
+             
+                    <div>
+                        <center>
+                        <Link to = {`/animal/details/${Research.animal_id}`} style = {{textDecoration:"none"}}>
+                      <h2>Click to See latest research!</h2>
+                      </Link>
+                </center>
+                    </div>
+    }</div>
+    
+                ))}</div>
+
+                </div>
+                <br/><br/><br/><br/><br/><br/>
 
                 {/* <table style={{color:'black'}}> 
                 <tr>
