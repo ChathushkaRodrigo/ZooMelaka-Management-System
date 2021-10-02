@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react'
 import axios from 'axios';
+import jsPDF from 'jspdf'
+import 'jspdf-autotable'
 
 import '../CSS/EmployeeDashboard.css'
 
@@ -57,6 +59,22 @@ handleSearchArea = (e) =>{
         }
       })
 }
+//Report Generate Function onClick
+jspdGenerator=()=>{
+
+        
+  //Create document obj
+  var doc =new jsPDF("p","pt","c3") 
+
+
+  doc.html(document.querySelector("#employees"), {
+    callback:function(pdf){
+      pdf.save("AllEmployees.pdf");
+    }
+
+  });
+
+}
 
   render() {
     return (
@@ -83,8 +101,10 @@ handleSearchArea = (e) =>{
               </div>
               </div>
            
-        <table className="table table-bordered table-sm table-hover"  style={{width:'25%', marginLeft:'30px'}} id="shas99Table">
-          <thead>
+
+        <table className="table" style={{width:"100%"}} id="employees">
+          <thead style={{backgroundColor:"#333",color:"white",textTransform:'uppercase'}}>
+
             <tr>
               <th scope="col">#</th>
               <th scope="col">Employee ID</th>
@@ -139,7 +159,23 @@ handleSearchArea = (e) =>{
     <button className="btn btn-success" style={{margin:"15px"}}><a href="/employee/add" style={{textDecoration:'none',color:'white'}}>Create New Post</a>
 
         </button>
-        <br/><br/><br/><br/>
+        <br/><br/>
+        <div>
+        <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
+        <br/><br/>
+        <button className="btn btn-success" >
+        <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
+           Admin Home
+          </a>
+          
+
+         </button>
+
+        
+        </div>
+        
+        
+        <br/><br/>
       </div> 
 
     

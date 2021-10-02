@@ -19,6 +19,7 @@ import EditProfile from './components/EditProfile';
 import Profile from './components/profile'
 import Signup from './components/signup';
 import AdminUProfileEdit from './components/AdminUProfileEdit';
+import uProfile from './components/uprofile'
 
 
 //Employee Management
@@ -108,6 +109,7 @@ render() {
         {/* <Route path ="/profile/:id" component={Profile}/> */}
         <Route path ="/signup" component={Signup}/>
         <Route path ="/AdminUProfileEdit/:id" component={AdminUProfileEdit}/>
+        <Route path ="/uprofile/:id" component={uProfile}/>
         
         
         
@@ -176,7 +178,6 @@ render() {
          
             
 
-        <Footer/>
       </Router>
     </div>  
     )
