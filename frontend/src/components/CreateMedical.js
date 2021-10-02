@@ -18,7 +18,8 @@ export default class CreateMedical extends Component {
                 animalID:"",
                 injID:"",
                 sinfo:"",
-                posts:[]
+                posts:[],
+                zooAnimal:[]
 
 
 
@@ -31,6 +32,23 @@ export default class CreateMedical extends Component {
         this.ref4 = React.createRef();
         this.ref5 = React.createRef();
     }
+
+    componentDidMount(){
+        this.retrieveAnimal();
+      }
+
+
+      retrieveAnimal(){
+        axios.get("http://localhost:8015/animal").then(res=>{
+          if(res.data.success){
+            this.setState({
+              zooAnimal:res.data.existingPosts
+            });
+            console.log(this.state.zooAnimal);
+          }
+        });
+        }
+
 
     retrievePosts(){
         axios.get("/posts").then(res =>{
@@ -61,7 +79,7 @@ export default class CreateMedical extends Component {
             zname:zname,
             animalID:animalID,
             injID:injID,
-            sinfo:"nuduja"
+            sinfo:"eye checkup"
         }
         console.log(data);
 
@@ -114,9 +132,22 @@ export default class CreateMedical extends Component {
             
             this.state.zname = e
             console.log("Helloooo: " + this.state.vname)
-            this.state.vname = e
+            
             this.ref2.current.value = e
         }
+
+        const handleSelect2=(e)=>{
+            console.log(e);
+            
+            this.state.animalID = e
+            console.log("Helloooo: " + this.state.animalID)
+            
+            this.ref3.current.value = e
+        }
+
+
+
+
         return (
            
             <div classsName="col-md-8-mt-4-mx-auto">
@@ -169,7 +200,7 @@ export default class CreateMedical extends Component {
                 <div>
                 {this.state.posts.map(posts =>(
                 <div>
-                {posts.employeeType=="Veterinarian" && 
+                {posts.employeeType=="ZooKeeper" && 
 
                 <Dropdown.Item eventKey={posts.userName}>
                 {posts.userName}
@@ -201,7 +232,37 @@ export default class CreateMedical extends Component {
                         onChange={this.handleInputChange}/>
                         </div> */}
 
-                        <div className="form-group" style={{marginBottom:'15px'}}>
+                        
+                <div className="mb-2">
+                <DropdownButton align="center" title="Animal ID" id="dropdown-menu-align-end" onSelect={handleSelect2}>
+                <div>
+                {this.state.zooAnimal.map(zooAnimal =>(//
+                
+
+                <Dropdown.Item eventKey={zooAnimal.Animal_ID}>
+                {zooAnimal.Animal_ID}
+                </Dropdown.Item>
+                
+                ))}</div>
+                
+                </DropdownButton>
+                <label style={{marginBottom:'5px'}} id="chamForm">Animal ID</label>
+                <input type="text"
+                id="chamathRet"
+                className="form-control"
+                name="Attended_Zookeeper"
+                placeholder="Enter The Animal ID:"
+                value={this.state.animalID}
+                onChange={this.handleInputChange}
+                ref={this.ref3}
+                />
+            </div>
+                        
+                        
+                        
+                        
+                        
+                        {/* <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px'}}>Animal ID</label>
                         <input type="text"
                         className="form-control"
@@ -210,7 +271,7 @@ export default class CreateMedical extends Component {
                         placeholder="Enter the animalID"
                         value={this.state.animalID}
                         onChange={this.handleInputChange}/>
-                        </div>
+                        </div> */}
                             
 
                             
