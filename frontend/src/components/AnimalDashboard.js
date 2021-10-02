@@ -5,8 +5,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import '../CSS/AnimalDashboard.css';
-import jsPDF from 'jspdf'
-import 'jspdf-autotable'
 
 
 export default class Home extends Component{
@@ -62,25 +60,6 @@ handleSearchArea = (e) => {
      this.filterData(res.data.existingPosts,searchAnimalKey)
     }
   });
-}
-//Report Generate Function onClick
-jspdGenerator=()=>{
-
-        
-  //Create document obj
-  var doc =new jsPDF("p","pt","b3") 
-
-
-  doc.html(document.querySelector("#AnimalTableChamath"), {
-    
-    callback:function(pdf){
-
-      pdf.save("AllAnimalRecords.pdf");
-      
-    }
-
-  });
-
 }
 
 
@@ -166,21 +145,6 @@ jspdGenerator=()=>{
 <a className="dashButton btn btn-light btn-small justify-content-center btn-outline-success" href={`animal/add`} style={{marginTop:'10px'}}>
                             <i className="fas fa-dragon"></i>&nbsp;<b>Create Animal Portfolio!</b>
 </a>
-<br/>
-
-<div>
-        <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
-        <br/><br/>
-        <button className="btn btn-success" >
-        <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
-           Admin Home
-          </a>
-          
-
-         </button>
-
-        
-        </div>
 
     </div>)
   }

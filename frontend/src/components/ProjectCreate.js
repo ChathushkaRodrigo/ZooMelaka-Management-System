@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import NavBar from './NavBar';
 
 //integration
 import SplitButton from 'react-bootstrap/SplitButton';
@@ -117,7 +117,7 @@ export default class Create extends Component{
             
         }
         return(
-            <div>
+            <div><NavBar/>
                 <div style={{height:'70px',textAlign:'center',backgroundColor:'#009900'}}>
                 <h3 className="pageCaption" style={{marginTop:'10px',color:'#FFFFFF',padding:'19px 0'}}>Create New Project</h3>
             </div>
