@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import '../CSS/booking-details.css'
+
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
+
 
 class BookingDetails extends Component {
     constructor(props) {
@@ -71,6 +73,7 @@ class BookingDetails extends Component {
 
 
     }
+
 
 
 
@@ -153,7 +156,9 @@ class BookingDetails extends Component {
                    
                     </form>
                     </div>
+
                     <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
+
 
 
                                         
