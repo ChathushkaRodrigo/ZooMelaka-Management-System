@@ -156,8 +156,9 @@ class BookingDetails extends Component {
                    
                     </form>
                     </div>
-
+                    <br/>
                     <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
+                    <br/><br/><br/>
 
 
 
