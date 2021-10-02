@@ -13,13 +13,26 @@ export default class PostDetails extends Component {
             Research:[],
             projects:[],
             bookings: [],
-            Medical:[]
+            Medical:[],
+            zooAnimal:[],
+            
         };
+        this.retrieveAnimal();
         this.retrieveBookings();
         this.retrieveResearch();
         this.retrieveProjects();
         this.retrieveMedical();
     }
+    retrieveAnimal(){
+        axios.get("http://localhost:8015/animal").then(res=>{
+          if(res.data.success){
+            this.setState({
+              zooAnimal:res.data.existingPosts
+            });
+            console.log(this.state.zooAnimal);
+          }
+        });
+        }
     retrieveMedical(){
         axios.get("http://localhost:8015/medical/").then(res =>{
           if(true){
@@ -170,16 +183,16 @@ export default class PostDetails extends Component {
 
                 
                 <div>
-                {this.state.Research.map(Research =>(
+                {this.state.zooAnimal.map(zooAnimal =>(
                    
                 <div>
-               {Research.name_of_scientist==userName && 
+               {zooAnimal.Attended_Zookeeper==userName && 
 
              
                     <div>
                         <center>
-                        <Link to = {`/research/researchinfo/${Research._id}`} style = {{textDecoration:"none"}}>
-                      <h2>Click to See latest research!</h2>
+                        <Link to = {`animal/details/${zooAnimal._id}`} style = {{textDecoration:"none"}}>
+                      <h2>Click to See Animals under the preview of our Zookeeper</h2>
                       </Link>
                 </center>
                     </div>
@@ -226,11 +239,27 @@ export default class PostDetails extends Component {
 
              
 
+<div>
+                {this.state.Medical.map(Medical =>(
+                   
+                <div>
+               {Medical.vname == userName && 
+
+             
+                    <div>
+                        <center>
+                        <Link to = {`/medical/details/${Medical._id}`} style = {{textDecoration:"none"}}>
+                      <h2>Click to see veterinarians appointments!</h2>
+                      </Link>
+                </center>
+                    </div>
+    }</div>
+    ))}</div>
 
 
                 
 
-//                 </div>
+              </div>
                 <br/><br/><br/><br/><br/><br/>
 
                 {/* <table style={{color:'black'}}> 
