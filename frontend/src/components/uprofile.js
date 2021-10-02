@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import "../CSS/profile.css";
 // import Link from 'Link';
+import jsPDF from 'jspdf'
+import 'jspdf-autotable'
 
 class profile extends Component {
 
@@ -28,6 +30,43 @@ class profile extends Component {
             }
         });
     }
+// Generate Medical report 
+jspdGenerator=()=>{
+
+        
+  //doc obj
+  var doc =new jsPDF('p','pt');
+
+  doc.autoTable({ html: '#my-table' })
+  //add texts
+
+  doc.text(200,20,'Member Report')
+
+  doc.autoTable({
+     
+     tableWidth:'auto',
+     margin: { top: 10 },
+      columnStyles: { europe: { halign: 'center' } },
+      theme:'grid',
+      head: [['Firstname', 'Lastname', 'Username','Email','password']],
+      body: [
+         
+        [this.state.profile.fName,this.state.profile.lName,this.state.profile.uName,this.state.profile.email,this.state.profile.password], 
+      ],
+     
+      styles: {  fontSize:10 },
+   
+      
+    })
+  
+  //Save pdf 
+  doc.save("Member Report.pdf");
+
+
+}
+
+
+
 
     render() {
         
@@ -135,6 +174,8 @@ class profile extends Component {
                 </div>
             </div>      
            </div>
+           <br/>
+           <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
            </div>
         );
     }    
