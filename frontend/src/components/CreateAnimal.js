@@ -332,7 +332,7 @@ export default class CreateAnimal extends Component{
            
                 
         <div className="mb-2">
-                <DropdownButton align="center" title="Assigned Zookeeper" id="dropdown-menu-align-end" onSelect={handleSelect}>
+                <DropdownButton align="left" title="Assigned Zookeeper" id="dropdown-menu-align-end" onSelect={handleSelect}>
                 <div>
                 {this.state.posts.map(posts =>(
                 <div>
@@ -345,7 +345,7 @@ export default class CreateAnimal extends Component{
                 ))}</div>
                 
                 </DropdownButton>
-                <label style={{marginBottom:'5px'}} id="chamForm">Assigned Zookeeper</label>
+                <label style={{marginBottom:'5px'}} id="chamForm"></label>
                 <input type="text"
                 id="chamathRet"
                 className="form-control"
