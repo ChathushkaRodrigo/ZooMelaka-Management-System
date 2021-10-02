@@ -52,22 +52,7 @@ class BookingDetails extends Component {
          
             
           })
-          
-     
 
-
-
-
-
-
-
-
-
-
-
-
-        
-     
         //Save pdf 
         doc.save("Generated.pdf");
 
