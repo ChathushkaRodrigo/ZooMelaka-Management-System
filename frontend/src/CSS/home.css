@@ -42,6 +42,7 @@
 .headerContainer2 {
   align-items: center;
   font-size: 30px;
+  height:100px;
   font-weight: lighter;
   background: -webkit-Radial-gradient(#eee 65%, #333);
   -webkit-background-clip: text;
