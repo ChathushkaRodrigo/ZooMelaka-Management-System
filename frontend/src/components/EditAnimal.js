@@ -2,6 +2,11 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import '../CSS/EditAnimal.css';
+
+import SplitButton from 'react-bootstrap/SplitButton';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown';
+import Select from 'react-select'
 export default class EditAnimal extends Component{
    
     constructor(props){
@@ -15,9 +20,29 @@ export default class EditAnimal extends Component{
             Attended_Zookeeper:"",
             Date_Of_Treatment_And_Medical_Care:"",
             Time_Of_Treatment_And_Medical_Care:"",
-            Current_Enclosure_ID:""
+            Current_Enclosure_ID:"",
+            Adoptability:"false",
+            posts:[]
+            
         }
+
+        this.ref = React.createRef();
+        this.retrievePosts()
+
     }
+
+    retrievePosts(){
+        axios.get("/posts").then(res =>{
+            if(res.data.success){
+                this.setState({
+                    posts:res.data.existingPosts
+                });
+                console.log(this.state.posts)
+            }
+        })
+    }
+
+
 
     handleInputChange = (e) =>{
         const {name,value} = e.target;
@@ -39,7 +64,9 @@ export default class EditAnimal extends Component{
                 Attended_Zookeeper,
                 Date_Of_Treatment_And_Medical_Care,
                 Time_Of_Treatment_And_Medical_Care,
-                Current_Enclosure_ID 
+                Current_Enclosure_ID,
+                Adoptability
+                
             }=this.state;
 
         const data={
@@ -51,7 +78,9 @@ export default class EditAnimal extends Component{
                 Attended_Zookeeper:Attended_Zookeeper,
                 Date_Of_Treatment_And_Medical_Care:Date_Of_Treatment_And_Medical_Care,
                 Time_Of_Treatment_And_Medical_Care:Time_Of_Treatment_And_Medical_Care,
-                Current_Enclosure_ID:Current_Enclosure_ID 
+                Current_Enclosure_ID:Current_Enclosure_ID,
+                Adoptability:Adoptability
+                
         }
 
         console.log(data);
@@ -68,7 +97,9 @@ export default class EditAnimal extends Component{
                     Attended_Zookeeper:"",
                     Date_Of_Treatment_And_Medical_Care:"",
                     Time_Of_Treatment_And_Medical_Care:"",
-                    Current_Enclosure_ID:""
+                    Current_Enclosure_ID:"",
+                    Adoptability:""
+                    
                 })
             }
         })
@@ -95,7 +126,11 @@ export default class EditAnimal extends Component{
 
                     Time_Of_Treatment_And_Medical_Care:res.data.post.Time_Of_Treatment_And_Medical_Care,
 
-                    Current_Enclosure_ID:res.data.post.Current_Enclosure_ID
+                    Current_Enclosure_ID:res.data.post.Current_Enclosure_ID,
+
+                    Adoptability:"false"
+
+                   
                 });
                 
                 console.log(this.state.post);
@@ -104,14 +139,29 @@ export default class EditAnimal extends Component{
     }
    
     render(){
+
+        const handleSelect=(e)=>{
+            console.log(e);
+            
+            this.state.Attended_Zookeeper = e
+            console.log("Helloooo: " + this.state.Attended_Zookeeper)
+            this.state.Attended_Zookeeper = e
+            this.ref.current.value = e
+        }
+
+
+
+
         return(
             <div className="EditAnimal-body">
-            <div container="container-fluid" className="col-md-8 mt-4 mx-auto">
-            <h1 className="h3 mb-3 font-weight-normal">Lets Update The Animal Portfolio</h1>
-            <form className="needs-validation" noValidate>
+            <div container="container-fluid" className="col-md-8  mx-auto" >
+            <center><h1 className="UpdateAniHead">Update The Animal Portfolio</h1></center>
+            <div className="ChamathUpdateForm" id="chamathCreaForm">
+            <form className="myFormszzChamath" noValidate>
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Feeding And Watering Date</label>
-                <input type="text"
+                <label style={{marginBottom:'5px'}} id="chamForm">Feeding And Watering Date</label>
+                <input type="date"
+                id="chamathRet"
                 className="form-control"
                 name="Feeding_And_Watering_Date"
                 placeholder="Enter The Feeding_And_Watering_Date:"
@@ -121,8 +171,9 @@ export default class EditAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Feeding And Watering Time</label>
-                <input type="text"
+                <label style={{marginBottom:'5px'}} id="chamForm">Feeding And Watering Time</label>
+                <input type="time"
+                id="chamathRet"
                 className="form-control"
                 name="Feeding_And_Watering_Time"
                 placeholder="Enter The Feeding_And_Watering_Time:"
@@ -131,42 +182,62 @@ export default class EditAnimal extends Component{
                 />
             </div>
 
-            <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Animal Satisfaction Level</label>
+           
+
+            
+            <div className="mb-2">
+                <DropdownButton align="center" title="Assigned Zookeeper" id="dropdown-menu-align-end" onSelect={handleSelect}>
+                <div>
+                {this.state.posts.map(posts =>(
+                <div>
+                {posts.employeeType=="ZooKeeper" && 
+
+                <Dropdown.Item eventKey={posts.userName}>
+                {posts.userName}
+                </Dropdown.Item>
+                }</div>
+                ))}</div>
+                
+                </DropdownButton>
+                <label style={{marginBottom:'5px'}} id="chamForm">Assigned Zookeeper</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
-                name="Animal_Satisfaction_Level"
-                placeholder="Enter The Animal_Satisfaction_Level:"
-                value={this.state.Animal_Satisfaction_Level}
+                name="Attended_Zookeeper"
+                placeholder="Enter The Last Attended Zookeeper:"
+                value={this.state.Attended_Zookeeper}
                 onChange={this.handleInputChange}
+                ref={this.ref}
                 />
             </div>
 
-            <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Animal Health Level</label>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            {/* <div className="form-group" style={{marginBottom:'15px'}}>
+                <label style={{marginBottom:'5px'}} id="chamForm">Attended Zookeeper</label>
                 <input type="text"
-                className="form-control"
-                name="Animal_Health_Level"
-                placeholder="Enter The Animal_Health_Level:"
-                value={this.state.Animal_Health_Level}
-                onChange={this.handleInputChange}
-                />
-            </div>
-
-            <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Attended Zookeeper</label>
-                <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Attended_Zookeeper"
                 placeholder="Enter The Last Attended_Zookeeper:"
                 value={this.state.Attended_Zookeeper}
                 onChange={this.handleInputChange}
                 />
-            </div>
+            </div> */}
 
-            <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Date Of Treatment And Medical Care</label>
+            {/* <div className="form-group" style={{marginBottom:'15px'}}>
+                <label style={{marginBottom:'5px'}} id="chamForm">Date Of Treatment And Medical Care</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Date_Of_Treatment_And_Medical_Care"
                 placeholder="Enter The Date_Of_Treatment_And_Medical_Care:"
@@ -176,19 +247,21 @@ export default class EditAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Time Of Treatment And Medical Care</label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Time Of Treatment And Medical Care</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Time_Of_Treatment_And_Medical_Care"
                 placeholder="Enter The Time_Of_Treatment_And_Medical_Care:"
                 value={this.state.Time_Of_Treatment_And_Medical_Care}
                 onChange={this.handleInputChange}
                 />
-            </div>
+            </div> */}
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}}>Current Enclosure ID</label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Current Enclosure ID</label>
                 <input type="text"
+                id="chamathRet"
                 className="form-control"
                 name="Current_Enclosure_ID"
                 placeholder="Enter The Current_Enclosure_ID:"
@@ -197,17 +270,26 @@ export default class EditAnimal extends Component{
                 />
             </div>
 
+            <div className="form-group" style={{marginBottom:'15px'}}>
+                <label style={{marginBottom:'5px'}} for='Adoptability' id="chamForm">Adoptability</label>&nbsp;&nbsp;
+                <input type="checkbox" 
+                id="Adoptability"
+                name="Adoptability"
+                placeholder="Enter The Adoptability Status:"
+                value="true"
+                onChange={this.handleInputChange}
+                />
+            </div> </form></div>
 
-            <button className="btn btn-warning btn-lg justify-content-between" type="submit" style={{marginTop:'25px',marginBottom:'25px'}} onClick={this.onSubmit}>
-            <i className="fa fa-wrench"></i>
+            <button className="btn btn-light btn-small justify-content-between btn-outline-primary" type="submit"  id="ChamathUp" onClick={this.onSubmit}>
+            <i className="fas fa-otter"></i>
             &nbsp;<b>Update The Animal Portfolio!</b>
-            </button>
-<br/>
-            <a className="btn btn-primary btn-lg justify-content-between " href={`/animaldashboard`} style={{fontFamily:'Papyrus,fantasy',marginTop:'25px',marginBottom:'25px'}}>
-            <i className="fa fa-arrow-circle-left"></i>&nbsp;<b>Navigate To Animal Portfolio!</b>
+            </button><br/>
+            <a className="btn btn-light btn-small justify-content-between btn-outline-danger" href={`/animaldashboard`}  id="ChamathUpssz">
+            <i className="fas fa-kiwi-bird"></i>&nbsp;<b>Navigate To Animal Portfolio!</b>
             </a>
 
-            </form>
+           
               
             </div></div>
         )

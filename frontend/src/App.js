@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {Switch} from 'react-router-dom'
+
+import { Provider } from 'react-redux';
+import store from './store';
+
+
 import NavBar from './components/NavBar';
 import Footer from './components/footer';
 import './CSS/App.css';
@@ -30,6 +36,8 @@ import CreateResearch from './components/CreateResearch';
 import CustomerResearchDash from './components/CustomerResearchDash';
 import ResearchCollaboration from './components/ResearchCollaboration';
 import CreateCollaboration from './components/CreateCollaboration';
+import ResearchInfo from './components/ResearchInfo';
+
 
 //Project Management
 import ProjectsHome from './components/ProjectsHome';
@@ -67,6 +75,9 @@ import AnimalDetails from './components/AnimalDetails';
 import AnimalsforAdoption from './components/AnimalsforAdoption';
 import MemberAdoptedAnimals from './components/MemberAdoptedAnimals';
 
+import Register from './components/Register';
+
+
 
 import { FormErrors } from './components/FormErrors';
 
@@ -77,17 +88,31 @@ class TourApp extends Component {
 render() {
     return (
       <div>
+
+      
       <Router>
-        <NavBar/>
+        <Provider store={store}>
+          <NavBar/>
+          <Route path="/" exact component={Home}/>
+
+          <Route exact path ="/profile" component={Profile}/>
+          <Route path = "/adoption/add" component = {CreateAdoption}/>
+          <Route path = "/AnimalsforAdoption" component = {AnimalsforAdoption}/>
+          
+
+
+        </Provider>
         
-        <Route path="/" exact component={Home}/>
+        
+
+       
       
       
         {/* Routes for Profile management */}
-        <Route path ="/login" component={Login}/>
+        
         <Route path ="/AdminProfileDash" component={AdminProfileDashboard}/>
         <Route path ="/profile/update/:id" component={EditProfile}/>
-        <Route path ="/profile/:id" component={Profile}/>
+        {/* <Route path ="/profile/:id" component={Profile}/> */}
         <Route path ="/signup" component={Signup}/>
         <Route path ="/AdminUProfileEdit/:id" component={AdminUProfileEdit}/>
         
@@ -111,6 +136,7 @@ render() {
         <Route path = "/research/details/:id" component = {ResearchDetails}/> 
         <Route path = "/research/customerDash/" component = {CustomerResearchDash}/> 
         <Route path = "/research/collaboration/" component = {ResearchCollaboration}/> 
+        <Route path = "/research/researchinfo/:id" component = {ResearchInfo}/> 
         <Route path = "/research/createCollaboration/" component = {CreateCollaboration}/> 
 
 
@@ -143,8 +169,8 @@ render() {
         <Route path = "/AllAdoptions" component = {AllAdoptions}/>
         <Route path = "/adoption/details/:id" component = {AdoptionDetails}/>
         <Route path = "/adoption/edit/:id" component = {EditAdoptionDetails}/>
-        <Route path = "/adoption/add" component = {CreateAdoption}/>
-        <Route path = "/AnimalsforAdoption" component = {AnimalsforAdoption}/>
+        
+        
         <Route path = "/profile/adoptedanimals" component = {MemberAdoptedAnimals}/>
 
         <Route path = "/animaldashboard" component = {AnimalDashboard}/>

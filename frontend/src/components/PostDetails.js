@@ -55,7 +55,7 @@ export default class PostDetails extends Component {
                     <td style={{border:"0px"}} className="col-sm-9">{address}</td>
                 </tr>
                 <tr>
-                    <td style={{border:"0px"}} className="col-sm-3">Employee Type</td>
+                    <td style={{border:"0px"}} className="col-sm-3">Designation</td>
                     <td style={{border:"0px"}} className="col-sm-9">{employeeType}</td>
                 </tr>
                 <tr>

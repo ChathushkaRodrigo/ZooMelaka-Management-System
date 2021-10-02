@@ -1,149 +1,143 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import {
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  Card,
+   CardTitle,
+   CardSubtitle,
+  CardBody,
+  Alert,
+  Spinner
+} from "reactstrap";
+import { connect } from "react-redux"; // API to connect component state to redux store
+import PropTypes from "prop-types";
+import { buttonClicked,isLoading } from "../actions/uiActions";
+import { login } from "../actions/authActions";
 
-import "../CSS/Loginps.css";
-import { FormErrors } from './FormErrors';
-import "../CSS/FormError.css";
+import { Link, Redirect } from 'react-router-dom'
+import './style.css';
+
+
 
 class Login extends Component {
 
-    constructor(props){
-        super(props);
-
-        this.state ={           
-            email:"",
-            password:"",
-
-            // Variables to handle Validation
-            formErrors: {email: '', password:''},
-            emailValid: false,
-            passwordValid: false,
-            formvalid: false
-        }
-    }
-
-    // Method to handle user input
-    handleInputChange = (e)=>{
-      const {name,value} = e.target;
-      this.setState({
-          ...this.state,
-          [name]:value
-      },() => { this.validateField(name, value) }
-  );
-  }   
-  
-  // Method to Validate the user Input
-  validateField(fieldName, value) {
-    let fieldValidationErrors = this.state.formErrors;
-    let emailValid = this.state.emailValid;
-    let passwordValid = this.state.passwordValid;
-
-    switch(fieldName) {
-      case 'email':
-        emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-        fieldValidationErrors.email = emailValid ? '' : ' is invalid';
-        break;
-      case 'password':
-        passwordValid = value.length >= 6;
-        fieldValidationErrors.password = passwordValid ? '': ' is too short';
-        break;
-      default:
-        break;
-    }
-    this.setState({formErrors: fieldValidationErrors,
-                    emailValid: emailValid,
-                    passwordValid: passwordValid
-                  }, this.validateForm);
+  state = {
+    email: "",
+    password: "",
+    msg: ""
   }
 
-  validateForm() {
-    this.setState({formValid: this.state.emailValid && this.state.passwordValid});
-  }
+  static propTypes = {
+    buttonClicked: PropTypes.func.isRequired,
+    isLoading: PropTypes.func.isRequired,
+    button: PropTypes.bool,
+    login: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool,
+    status: PropTypes.object.isRequired,
+    loading: PropTypes.bool
+  };
 
-  errorClass(error) {
-    return(error.length === 0 ? '' : 'has-error');
-  }
-
-    render() {
-        return (
-            <div className="col-md-8 mt-4 mx-auto">
-            <h1 className="h3 mb-3 font-weight-normal">Login</h1>              
-
-            {/* Begining of Login Overlay */}
-            <section class="vh-100">
-            <div class="container-fluid h-custom">
-              <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-md-9 col-lg-6 col-xl-5">
-                  <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid"
-                    alt="Sample image"/>
-                </div>
-                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-
-                  {/* Tag to display Form validation Errors */}
-                <FormErrors formErrors={this.state.formErrors} className="FormError"/>
-
-                {/* Begining of the Form */}
-                  <form>
-                    <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                      <p class="lead fw-normal mb-0 me-3">Sign in with</p>
-                      <button type="button" class="btn btn-primary btn-floating mx-1">
-                        <i class="fab fa-facebook-f"></i>
-                      </button>
-          
-                      <button type="button" class="btn btn-primary btn-floating mx-1">
-                        <i class="fab fa-twitter"></i>
-                      </button>
-          
-                      <button type="button" class="btn btn-primary btn-floating mx-1">
-                        <i class="fab fa-linkedin-in"></i>
-                      </button>
-                    </div>
-          
-                    <div class="divider d-flex align-items-center my-4">
-                      <p class="text-center fw-bold mx-3 mb-0">Or</p>
-                    </div>
-          
-                    {/* <!-- Email input --> */}
-                    <div class="form-outline mb-4">
-                      <input type="email" id="form3Example3" class="form-control form-control-lg"
-                        placeholder="Enter a valid email address" />
-                      <label class="form-label" for="form3Example3">Email address</label>
-                    </div>
-          
-                    {/* <!-- Password input --> */}
-                    <div class="form-outline mb-3">
-                      <input type="password" id="form3Example4" class="form-control form-control-lg"
-                        placeholder="Enter password" />
-                      <label class="form-label" for="form3Example4">Password</label>
-                    </div>
-          
-                    <div class="d-flex justify-content-between align-items-center">
-                      {/* <!-- Checkbox --> */}
-                      <div class="form-check mb-0">
-                        <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
-                        <label class="form-check-label" for="form2Example3">
-                          Remember me
-                        </label>
-                      </div>
-                      <a href="#!" class="text-body">Forgot password?</a>
-                    </div>
-          
-                    <div class="text-center text-lg-start mt-4 pt-2">
-                      {/* Submit Button named Login */}
-                      <button type="button" class="btn btn-primary btn-lg"><a href="./AdminPanelHome"
-                          >Login</a></button>
-                          {/* Button to Signup Page */}
-                      <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/signup"
-                          class="link-danger">Register</a>
-                     </p>
-                    </div>          
-                  </form>
-                </div>
-              </div>
-            </div>           
-          </section>               
-          </div>
-        )
-    }
+  componentDidMount() {
+    this.props.buttonClicked();
 }
-export default Login;
+
+componentDidUpdate(prevProps) {
+      const status = this.props.status;
+
+     if (status !== prevProps.status) {
+
+      if (status.id === "LOGIN_FAIL") {
+        this.setState({ msg: status.statusMsg });
+      }
+    
+    }
+};
+
+
+onChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+onSubmit = (e) => {
+    e.preventDefault();
+
+    const { email, password} = this.state;
+
+    const user = { email, password};
+    this.props.isLoading();
+    this.props.login(user);
+  };
+
+
+  render() {
+    
+    if(this.props.isAuthenticated) {
+      return <Redirect to="/profile" />
+    }
+
+
+    let className = 'divStyle';
+    if (!this.props.button) {
+      className = 'formStyle';
+    }
+    return (
+      <div className={className}>
+            <Card>
+                <CardBody >
+                  <CardTitle> <h2><strong>Login</strong></h2></CardTitle>
+                <CardSubtitle className="text-muted">Don't have an account?
+                <Link to="/register"> Register. </Link></CardSubtitle>
+                <br/>
+                {this.state.msg ? (
+              <Alert color="danger">{this.state.msg}</Alert>
+            ) : null}
+                  <Form onSubmit={this.onSubmit} >
+                  <FormGroup>
+
+                    <Label for="email">E-mail</Label>
+                    <Input
+                      type="email"
+                      name="email"
+                      id="email"
+                      size="lg"
+                      placeholder="you@youremail.com"
+                      className="mb-3"
+                      onChange={this.onChange}
+                    />
+
+                    <Label for="password">Password</Label>
+                    <Input
+                      type="password"
+                      name="password"
+                      id="password"
+                      size="lg"
+                      placeholder="Enter your Password"
+                      className="mb-3"
+                      onChange={this.onChange}
+                    />
+                    <Button size="lg" color="dark" style={{ marginTop: "2rem" }} block>
+                       { this.props.loading ?
+                       <span >Logging in.. <Spinner size="sm" color="light" /></span> : <span>Login</span>}
+                    </Button>
+                  </FormGroup>
+                </Form>
+                </CardBody>
+            </Card>
+
+      </div>
+    )
+  }
+}
+
+const mapStateToProps = (state) => ({ //Maps state element in redux store to props
+  //location of element in the state is on the right and key is on the left
+  button: state.ui.button, //store.getState().ui.button another way to get button bool
+  isAuthenticated: state.auth.isAuthenticated,
+  status: state.status,
+  loading: state.ui.loading
+});
+
+export default connect(mapStateToProps,{ login, isLoading, buttonClicked })(Login);
