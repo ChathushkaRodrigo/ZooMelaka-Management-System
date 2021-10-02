@@ -32,6 +32,7 @@ export default class Create extends Component{
             posts:[]
 
         }
+
         //integration
         this.ref = React.createRef();
         this.retrievePosts()
@@ -185,10 +186,37 @@ export default class Create extends Component{
                         <label className="formLabels">Project Description</label>
                         <textarea  className="form-control" name="description" rows="5" placeholder="Enter Project Description" value={this.state.description} onChange={this.handleInputChange}/>
                     </div>
-                    <div className="form-group" style={{paddingTop:'15px'}}> 
+                    {/* <div className="form-group" style={{paddingTop:'15px'}}> 
                         <label className="formLabels">Supervisor</label>
                         <input type="text" style={{marginTop:'0px'}} className="form-control"  name="supervisor" placeholder="Enter Supervisor" value={this.state.supervisor} onChange={this.handleInputChange}/>
-                    </div>
+                    </div> */}
+                    {/* integraion */}
+                    <div className="mb-2">
+                <DropdownButton align="center" title="Supervisor" id="dropdown-menu-align-end1" onSelect={handleSelect} >
+                <div>
+                {this.state.posts.map(posts =>(
+                <div>
+                {posts.employeeType=="Supervisor" && 
+
+                <Dropdown.Item eventKey={posts.userName}>
+                {posts.userName}
+                </Dropdown.Item>
+                }</div>
+                ))}</div>
+                
+                </DropdownButton>
+                <label style={{marginBottom:'5px'}} id="chamForm">Supervisor</label>
+                <input type="text"
+                id="vinodRet"
+                className="form-control"
+                name="Supervisor"
+                placeholder="Enter supervisor"
+                
+                value={this.state.supervisor}
+                onChange={this.handleInputChange}
+                ref={this.ref}
+                />
+            </div>
                     <div className="form-group">
                         <label className="formLabels">Working Team</label>
                         <input type="text" style={{marginTop:'0px'}} className="form-control"  name="workingTeam" placeholder="Enter Working Team" value={this.state.workingTeam} onChange={this.handleInputChange}/>
@@ -212,11 +240,11 @@ export default class Create extends Component{
                 </form>
                </div>
 
-            <div>
+            {/* <div>
                 <div style={{height:'70px',textAlign:'center',backgroundColor:'#009900'}}>
                 <h3 className="pageCaption" style={{marginTop:'10px',color:'#FFFFFF',padding:'19px 0'}}>Create New Project</h3>
-            </div>
-                <form>
+            </div> */}
+                {/* <form>
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px'}}>Project ID</label>
                         <input type="text" ref={this.ref1} className="form-control" name="projectID" placeholder="Enter Project ID" value={this.state.projectID} onChange={this.handleInputChange}/>
@@ -239,7 +267,7 @@ export default class Create extends Component{
                     </div> */}
 
                 {/* integraion */}
-                    <div className="mb-2">
+                    {/* <div className="mb-2">
                 <DropdownButton align="center" title="Supervisor" id="dropdown-menu-align-end1" onSelect={handleSelect} >
                 <div>
                 {this.state.posts.map(posts =>(
@@ -286,10 +314,12 @@ export default class Create extends Component{
                         <i className="far fa-check-square"></i>
                         &nbsp; Demo
                     </button>
-                </form>
-                <br/><br/><br/><br/><br/><br/><br/>
+                </form>  */}
+                {/* <br/><br/><br/><br/><br/><br/><br/>
 
             </div>
+          </div>
+        </div> */}
         </div>
         </div>
         )
