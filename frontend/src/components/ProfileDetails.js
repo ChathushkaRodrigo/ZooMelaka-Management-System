@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import jsPDF from 'jspdf'
+import 'jspdf-autotable'
+
 
 class ProfileDetails extends Component {
 
@@ -50,6 +53,7 @@ class ProfileDetails extends Component {
   
                         </dl>
                 </div>
+                
             </div>
         );
     }

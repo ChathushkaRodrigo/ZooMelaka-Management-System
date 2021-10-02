@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import '../CSS/AnimalDetails.css';
+import jsPDF from 'jspdf'
+import 'jspdf-autotable'
 export default class AnimalDetails extends Component{
     constructor(props){
         super(props);
@@ -20,6 +22,43 @@ export default class AnimalDetails extends Component{
             }
         });
     }
+
+    // Generate Medical report 
+    jspdGenerator=()=>{
+
+        
+        //doc obj
+        var doc =new jsPDF('p','pt');
+
+        doc.autoTable({ html: '#my-table' })
+        //add texts
+
+        doc.text(200,20,'Animal Report')
+    
+        doc.autoTable({
+           
+           tableWidth:'auto',
+           margin: { top: 10 },
+            columnStyles: { europe: { halign: 'center' } },
+            theme:'grid',
+            head: [['Animal ID', 'Animal Name', 'Species','D.O.B','Gender','Adoptability']],
+            body: [
+               
+              [this.state.zooAnimal.Animal_ID,this.state.zooAnimal.Animal_Name,this.state.zooAnimal.Animal_Species,this.state.zooAnimal.Animal_Date_Of_Birth,this.state.zooAnimal.Animal_Gender,this.state.zooAnimal.Adoptability], 
+            ],
+           
+            styles: {  fontSize:10 },
+         
+            
+          })
+
+        //Save pdf 
+        doc.save("Animal Report.pdf");
+
+
+    }
+
+
     render(){
         const { Animal_ID,
                 Animal_Name,
@@ -97,7 +136,12 @@ export default class AnimalDetails extends Component{
 <a className="btn btn-light btn-small justify-content-center btn-outline-primary" href={`/medicalDashboard`} style={{marginTop:'5px',marginBottom:'100px'}} id="ChamathUpsss">
 <i className="fa fa-paw"></i>&nbsp;<b>Check Medical Records!</b>
 </a></center>
-            </div></div>
+            </div>
+            <br/>
+
+                    <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
+
+            </div>
         )
     }
 }

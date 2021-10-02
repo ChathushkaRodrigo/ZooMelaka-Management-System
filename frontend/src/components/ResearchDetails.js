@@ -41,7 +41,7 @@ class ResearchDetails extends Component {
         doc.autoTable({ html: '#my-table' })
         //add texts
 
-        doc.text(200,20,'Medical Report')
+        doc.text(200,20,'Research Report')
     
         doc.autoTable({
            
@@ -52,7 +52,7 @@ class ResearchDetails extends Component {
             head: [['Scientist ', 'Started Date', 'Ended Date','Catagory','Animal ID','Description']],
             body: [
                
-              [this.state.research.name_of_scientist,this.state.research.date_research_started,this.state.research.animal_id,this.state.research.research_information], 
+              [this.state.research.name_of_scientist,this.state.research.date_research_started,this.state.research.date_research_ended,this.state.research.catergory,this.state.research.animal_id,this.state.research.research_information], 
             ],
            
             styles: {  fontSize:10 },
