@@ -142,11 +142,28 @@ handleSearchArea = (e) => {
               </tbody>
         </table></div>
 
-<a className="dashButton btn btn-light btn-small justify-content-center btn-outline-success" href={`animal/add`} style={{marginTop:'10px'}}>
+
+<a className="dashButton btn btn-light btn-small justify-content-center btn-outline-success" href={`animal/add`} style={{marginTop:'10px',marginBottom:'5px'}} id="chamCreaButton">
                             <i className="fas fa-dragon"></i>&nbsp;<b>Create Animal Portfolio!</b>
 </a>
 
-    </div>)
+
+<a className="dashButton btn btn-light btn-small justify-content-center btn-outline-primary" href={`adminpanelhome`} style={{marginTop:'5px'}} id="chamAdminNav">
+                    <i className="fa fa-hand-o-left"></i>&nbsp;<b>Navigate To Admin Panel!</b>
+</a>
+
+
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    )
   }
 }
 
