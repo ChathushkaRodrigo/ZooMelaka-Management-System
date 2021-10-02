@@ -2,6 +2,11 @@
 import React, { Component } from "react";
 import axios from "axios";
 import '../CSS/tour-guide-dashboard.css'
+import jsPDF from 'jspdf'
+import 'jspdf-autotable'
+
+
+
 
 class TourGuideDashboard extends Component {
   constructor(props) {
@@ -11,6 +16,10 @@ class TourGuideDashboard extends Component {
       bookings: [],
     };
   }
+
+
+
+
   componentDidMount() {
     this.retrieveBookings();
   }
@@ -24,6 +33,7 @@ class TourGuideDashboard extends Component {
       }
     });
   }
+
   onDelete = (id) => {
     alert("Deleted Successfully");
     axios.delete(`http://localhost:8015/booking/delete/${id}`).then((res) => {
@@ -50,9 +60,31 @@ class TourGuideDashboard extends Component {
     });
   };
 
+//Report Generate Function onClick
+jspdGenerator=()=>{
+
+        
+  //Create document obj
+  var doc =new jsPDF("p","pt","b2") 
+
+
+  doc.html(document.querySelector("#customerTable"), {
+    
+    callback:function(pdf){
+
+      pdf.save("DashboardCustomer.pdf");
+      
+    }
+
+  });
+
+ 
+}
+
+
   render() {
     return (
-      <div className="tgdb">
+      <div className="tgdb" id="tgdb">
         <div className="hero-dashboard">
           <div className="bg_tour"></div> &nbsp;
           <div className="header">
@@ -63,9 +95,26 @@ class TourGuideDashboard extends Component {
         </div>
 
         <br />
+       
+        <br />
         <div className="Tourdashboard" id="Customers">
-        <table className="table table-bordered">
+{/* Search Booking */}
+              <div className="col-lg-3 mt-2 mb-2" style={{margin:"15px",marginLeft:"350px"}} >
+                    <input style={{width:"500px"}}
+                        className="form-control"
+                        type="search"
+                        placeholder="Search for bookings"
+                        name="searchQuery"
+                        onChange={this.handleSearchBookingQuery}>
+
+
+                        </input>
+       
+              </div>
+             
+        <table className="table table-bordered" id="customerTable">
           <thead className="thead-bg-dark">
+         
             <tr>
               <th scope="col">#</th>
               <th scope="col">
@@ -86,9 +135,11 @@ class TourGuideDashboard extends Component {
               <th scope="col">
                 <b>Time</b>
               </th>
+           
               <th scope="col">
                 <b>Tour Guide</b>{" "}
               </th>
+
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -135,6 +186,20 @@ class TourGuideDashboard extends Component {
             Add new Tour Booking{" "}
           </a>
         </button>
+        <br/><br/>
+        </div>
+        <div>
+        <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
+        <br/><br/>
+        <button className="btn btn-success" >
+        <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
+           Admin Home
+          </a>
+          
+
+         </button>
+
+        
         </div>
         </div>
       </div>

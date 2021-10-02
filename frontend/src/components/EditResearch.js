@@ -13,6 +13,7 @@ class EditResearch extends Component {
                 date_research_ended:"",
                 catergory:"",
                 research_name:"",
+                animal_id:"",
                 research_information:""
         }
     }
@@ -36,6 +37,7 @@ class EditResearch extends Component {
             date_research_ended,
             catergory,
             research_name,
+            animal_id,
             research_information} = this.state;
 
         const data={
@@ -44,6 +46,7 @@ class EditResearch extends Component {
             date_research_ended:date_research_ended,
             catergory: catergory,
             research_name:research_name,
+            animal_id:animal_id,
             research_information:research_information
         }
         console.log(data);
@@ -57,6 +60,7 @@ class EditResearch extends Component {
                     date_research_ended:"",
                     catergory:"",
                     research_name:"",
+                    animal_id:"",
                     research_information:""
                     }
                 )
@@ -76,6 +80,7 @@ class EditResearch extends Component {
                     date_research_ended:res.data.research.date_research_ended,
                     catergory:res.data.research.catergory,
                     research_name:res.data.research.research_name,
+                    animal_id:res.data.research.animal_id,
                     research_information:res.data.research.research_information
 
                 });
@@ -92,16 +97,16 @@ class EditResearch extends Component {
               <form className=" formbody1 needs-validation" noValidate>
                   <div className="form-group" style={{marginBottom:'15px'}}>
                   <br/>
-                        <label style={{marginBottom:'5px'}}>Name of scientist/scientists</label>
+                        <label style={{marginBottom:'5px',color:"black"}}>Name of scientist/scientists</label>
                         <input type="text"
                             className="form-control"
-                            name=" name_of_scientist"
+                            name="name_of_scientist"
                             placeholder="Enter the scientist /scientists name"
                             value={this.state.name_of_scientist}
                             onChange={this.handleInputChange} />                    
                     </div>
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Date research started</label>
+                        <label style={{marginBottom:'5px',color:"black"}}>Date research started</label>
                         <input type="text"
                             className="form-control"
                             name="date_research_started"
@@ -110,7 +115,7 @@ class EditResearch extends Component {
                             onChange={this.handleInputChange} />                    
                     </div>
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Date research ended</label>
+                        <label style={{marginBottom:'5px',color:"black"}}>Date research ended</label>
                         <input type="text"
                             className="form-control"
                             name="date_research_ended"
@@ -119,7 +124,7 @@ class EditResearch extends Component {
                             onChange={this.handleInputChange} />                    
                     </div>
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Catergory</label>
+                        <label style={{marginBottom:'5px',color:"black"}}>Catergory</label>
                         <input type="text"
                             className="form-control"
                             name="catergory"
@@ -128,7 +133,7 @@ class EditResearch extends Component {
                             onChange={this.handleInputChange} />                    
                     </div>
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Research Name</label>
+                        <label style={{marginBottom:'5px',color:"black"}}>Research Name</label>
                         <input type="text"
                             className="form-control"
                             name="research_name"
@@ -137,9 +142,22 @@ class EditResearch extends Component {
                             onChange={this.handleInputChange} />                    
                     </div>
 
+                    <div className="form-group" style={{marginBottom:'15px'}}>
+                        <label style={{marginBottom:'5px',color:"black"}}>animal_id</label>
+                        <input type="text"
+                            className="form-control"
+                            name="animal_id"
+                            placeholder="Enter the animal id"
+                            value={this.state.animal_id}
+                            onChange={this.handleInputChange} />                    
+                    </div>
+
+
+
+
 
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Research Information </label>
+                        <label style={{marginBottom:'5px',color:"black"}}>Research Information </label>
                         <input type="text"
                             className="form-control"
                             name="research_information "
