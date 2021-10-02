@@ -10,11 +10,48 @@ export default class PostDetails extends Component {
         this.state={
             post:{},
             ret:[],
-            Research:[]
+            Research:[],
+            projects:[],
+            bookings: [],
+            Medical:[]
         };
-        this.retrievePosts();
+        this.retrieveBookings();
         this.retrieveResearch();
+        this.retrieveProjects();
+        this.retrieveMedical();
     }
+    retrieveMedical(){
+        axios.get("http://localhost:8015/medical/").then(res =>{
+          if(true){
+            this.setState({
+              Medical:res.data.existingMedical
+            });
+            console.log(this.state.Medical)
+          }
+        })
+      
+        
+      }
+    retrieveBookings() {
+        axios.get("http://localhost:8015/booking").then((res) => {
+          if (res.data.success) {
+            this.setState({
+              bookings: res.data.existingBookings,
+            });
+          }
+        });
+      }
+    retrieveProjects(){
+        axios.get('http://localhost:8015/projects').then(res =>{
+          if(res.data.success){
+            this.setState({
+              projects:res.data.existingPosts
+            });
+            console.log(this.state.projects)
+          }
+        });
+      }
+    
 
     retrievePosts(){
         axios.get("http://localhost:8015/posts").then(res=>{
@@ -141,16 +178,59 @@ export default class PostDetails extends Component {
              
                     <div>
                         <center>
-                        <Link to = {`/animal/details/${Research.animal_id}`} style = {{textDecoration:"none"}}>
+                        <Link to = {`/research/researchinfo/${Research._id}`} style = {{textDecoration:"none"}}>
                       <h2>Click to See latest research!</h2>
                       </Link>
                 </center>
                     </div>
     }</div>
-    
-                ))}</div>
+    ))}</div>
 
-                </div>
+
+{/* **************************Vinod not completed********************************* */}
+
+<div>
+                {this.state.bookings.map(bookings =>(
+                   
+                <div>
+               {bookings.TourGuideName == userName && 
+
+             
+                    <div>
+                        <center>
+                        <Link to = {`/booking/update/${bookings._id}`} style = {{textDecoration:"none"}}>
+                      <h2>Click to see tour Guide's work!</h2>
+                      </Link>
+                </center>
+                    </div>
+    }</div>
+    ))}</div>
+
+
+<div>
+                {this.state.Medical.map(Medical =>(
+                   
+                <div>
+               {Medical.vname == userName && 
+
+             
+                    <div>
+                        <center>
+                        <Link to = {`/medical/details/${Medical._id}`} style = {{textDecoration:"none"}}>
+                      <h2>Click to see veterinarians appointments!</h2>
+                      </Link>
+                </center>
+                    </div>
+    }</div>
+    ))}</div>
+
+             
+
+
+
+                
+
+//                 </div>
                 <br/><br/><br/><br/><br/><br/>
 
                 {/* <table style={{color:'black'}}> 
