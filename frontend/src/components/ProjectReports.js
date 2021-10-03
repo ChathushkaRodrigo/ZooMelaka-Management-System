@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+
 export default class Reports extends Component{
     constructor(props){
         super(props);
@@ -30,6 +31,7 @@ export default class Reports extends Component{
         const {projectID,name,title,description,supervisor,workingTeam} = this.state.post;
 
         return(
+
             <div className="reportback">
                 <div className="Caption">
                 <h1 className="pageCaption">Project Report</h1>
@@ -41,6 +43,7 @@ export default class Reports extends Component{
                     Project&nbsp;
                     {name}
                     &nbsp;Report
+
                 </h4>
             
                 <p></p>
