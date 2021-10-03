@@ -74,9 +74,9 @@ class Register extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    const { fName, lName, name, email, password } = this.state;
+    const { name, email, password } = this.state;
 
-    const user = { fName, lName, name, email, password };
+    const user = { name, email, password };
     this.props.isLoading();
     this.props.register(user);
   };

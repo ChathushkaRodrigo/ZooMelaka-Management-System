@@ -173,6 +173,12 @@ class EditResearch extends Component {
                     </button>
     
                 </form>
+
+                <button className="btn btn-success" style={{marginLeft:"0", marginTop:"0px",width:"150px"}} >
+                        <a href="/ResearchDashboard" style={{ textDecoration: "none", color: "white" }}>
+                            AdminDashboard
+                        </a>
+                    </button>
             </div>
             </div>
         );

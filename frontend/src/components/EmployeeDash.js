@@ -16,13 +16,16 @@ constructor(props){
   super(props);
 
   this.state={
-    posts:[]
+    posts:[],
+    lastID:"10"
   };
+  
 }
 
 
 componentDidMount(){
   this.retrievePosts();
+  localStorage.setItem('foo', this.state.lastID);
 }
 
 retrievePosts(){
@@ -136,7 +139,8 @@ jspdGenerator=()=>{
                                 <a href={`/employee/details/${posts._id}`}>
                                 {posts.eID}
                                 </a>
-                                
+                                {this.state.lastID = posts.eID}
+                                {localStorage.setItem('foo', posts.eID)}
                                 </td>
                             <td >{posts.userName}</td>
                              <td>{posts.firstName}</td>

@@ -1,3 +1,10 @@
-.formtxt{
-    background-color:aliceblue;
+.formtxt {
+  background-color: aliceblue;
+}
+
+#iidid {
+  background-image: url(../images/nudujabird.jpg);
+  background-size: cover;
+  height: 900px;
+  margin-top: -50px;
 }

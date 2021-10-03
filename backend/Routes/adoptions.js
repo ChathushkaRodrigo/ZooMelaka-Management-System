@@ -13,6 +13,7 @@ router.route("/adoption/add").post((req ,res) => {
     const live_cam = req.body.live_cam;
     const adoption_date = req.body.adoption_date;
     const animal_id = req.body.animal_id;
+    const aid = req.body.aid;
     const member_id = req.body.member_id;
 
 
@@ -24,6 +25,7 @@ router.route("/adoption/add").post((req ,res) => {
         live_cam,
         adoption_date,
         animal_id,
+        aid,
         member_id
     })
 

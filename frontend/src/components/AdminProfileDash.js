@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import "../CSS/memberdashboard.css";
-
+import {Link} from 'react-router-dom';
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
 
@@ -49,7 +49,7 @@ jspdGenerator=()=>{
   var doc =new jsPDF("p","pt","b3") 
 
 
-  doc.html(document.querySelector("#Customers"), {
+  doc.html(document.querySelector("#CustomersN"), {
     
     callback:function(pdf){
 
@@ -105,9 +105,9 @@ jspdGenerator=()=>{
                     <tr key={index} style={{borderBottomColor:'black',border:'1px'}}>
                       <td scope="row" style={{textAlign:'center'}}>{index+1}</td>
                       <td style={{textAlign:'center'}}>
-                          <a id="legendanchor" href={`/uprofile/${profiles._id}`} style={{textDecoration:'none'}}>
-                              {profiles.fName}
-                          </a>
+                        <Link to = {`/uprofile/${profiles._id}`} style={{textDecoration:'none'}}>
+                          {profiles.fName}
+                          </Link>
                       </td>
                       <td style={{textAlign:'center'}}>{profiles.lName}</td>
                       <td style={{textAlign:'center'}}>{profiles.uName}</td>
@@ -128,17 +128,17 @@ jspdGenerator=()=>{
                   ))}
                 </tbody>
               </table>
-              </div>  
-              <div>  
-             <button className="btn btn-success" style={{marginLeft:"0", marginTop:"0px",width:"150px"}} >
-              <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
-                Admin Home
-              </a>
-              </button>
-              </div>
-              <div>
-              <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Members Report</button>
-              </div>
+              </div> 
+                <div >
+                  <button className="btn btn-success" style={{marginLeft:"10%", marginTop:"0",width:"150px"}} >
+                    <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
+                      Admin Home
+                    </a>
+                    </button>
+                
+                
+                    <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Members Report</button>
+                </div>
             </div>
           </div>      
     );

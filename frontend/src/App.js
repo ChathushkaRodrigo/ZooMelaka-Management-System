@@ -163,7 +163,7 @@ render() {
         <Route path = "/adoption/edit/:id" component = {EditAdoptionDetails}/>
         
         
-        <Route path = "/profile/adoptedanimals" component = {MemberAdoptedAnimals}/>
+        <Route path = "/profile/adoptedanimals/:id" component = {MemberAdoptedAnimals}/>
 
         <Route path = "/animaldashboard" component = {AnimalDashboard}/>
         <Route path="/animal/add" component ={CreateAnimalPortfolio}/>

@@ -62,3 +62,10 @@
   background-position-y: 5px;
   /* background-image: url(../images/loginimg.jpg); */
 }
+
+#upN {
+  background-image: url(../images/francis.jpg);
+  background-size: cover;
+  background-position: top center;
+  height: 800px;
+}

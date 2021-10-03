@@ -29,7 +29,9 @@ class NavBar extends PureComponent {
         super(props)
 
         this.state = {
-            loggedin:''
+            loggedin:'',
+            id:'',
+            username:''
         }
         
     }
@@ -51,12 +53,18 @@ class NavBar extends PureComponent {
       }
       else{
          
-         this.state.loggedin =<div class="login-container"> <button size="lg" onClick={this.onLogout} color="primary">Logout</button></div>
+         this.state.loggedin =<div class="login-container"> 
+         <button size="lg" onClick={this.onLogout} color="primary">Logout</button>
+         <Link  to = {`/uprofile/${this.state.id}`}><button size="lg" color="primary">Profile</button></Link>
+         </div>
       }
    }
 
     render() {
+      const {user} = this.props.authState;
       this.isloggedin();
+
+
         return (
          <div>
           <nav id="navbody">
@@ -86,6 +94,9 @@ class NavBar extends PureComponent {
               <Route exact path ="/login" component={Login}/>
               <Route exact path ="/register" component={Register}/>
          </Switch>
+
+         <label hidden>{this.state.id = (user ? `${user.id}`: '' )}</label>
+         <label hidden>{this.state.username = (user ? `${user.name}`: '' )}</label>
       </div>
         
             

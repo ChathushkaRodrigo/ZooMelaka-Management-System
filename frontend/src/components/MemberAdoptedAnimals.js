@@ -13,11 +13,13 @@ export default class MemberAdoptedAnimals extends Component {
         this.state={
           adoptions:[],
           membersanimals:[],
-          memberid:'M00069'
+          memberid:''
         };
       }
     
       componentDidMount(){
+        const id = this.props.match.params.id;
+        this.setState({memberid: id});
         this.retrieveAdoptions();
       }
     

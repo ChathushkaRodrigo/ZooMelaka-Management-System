@@ -2,6 +2,8 @@
 /* eslint-disable react/no-direct-mutation-state */
 import React, { Component } from 'react';
 import axios from 'axios';
+import "../CSS/memberdashboard.css";
+
 
 import SplitButton from 'react-bootstrap/SplitButton';
 import DropdownButton from 'react-bootstrap/DropdownButton';
@@ -110,11 +112,12 @@ class AdminUProfileEdit extends Component {
         }
 
         return (
-          <div className="col-md-8 mt-4 mx-auto">
-            <h1 className="h3 mb-3 font-weight-normal">Edit Profile</h1>
+            <div id="NudujaEdit" >
+          <div className="col-md-8 mt-4 mx-auto" style={{backgroundColor:'white',marginBottom:'0px',height:'850px'}} >
+            <h1 className="h3 mb-3 font-weight-normal" style={{fontSize:'40px',marginLeft:'40%',paddingTop:'30px'}}>Edit Profile</h1>
               <form className="needs-validation" noValidate>
                   <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>First Name</label>
+                        <label style={{marginBottom:'5px',color:'black'}}>First Name</label>
                         <input type="text"
                             className="form-control"
                             name="fName"
@@ -123,7 +126,7 @@ class AdminUProfileEdit extends Component {
                             onChange={this.handleInputChange} />                    
                     </div>
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Last Name</label>
+                        <label style={{marginBottom:'5px',color:'black'}}>Last Name</label>
                         <input type="text"
                             className="form-control"
                             name="lName"
@@ -132,7 +135,7 @@ class AdminUProfileEdit extends Component {
                             onChange={this.handleInputChange} />                    
                     </div>
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>User Name</label>
+                        <label style={{marginBottom:'5px',color:'black'}}>User Name</label>
                         <input type="text"
                             className="form-control"
                             name="uName"
@@ -141,7 +144,7 @@ class AdminUProfileEdit extends Component {
                             onChange={this.handleInputChange} />                    
                     </div>
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Email</label>
+                        <label style={{marginBottom:'5px',color:'black'}}>Email</label>
                         <input type="text"
                             className="form-control"
                             name="email"
@@ -150,7 +153,7 @@ class AdminUProfileEdit extends Component {
                             onChange={this.handleInputChange} />                    
                     </div>
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Password</label>
+                        <label style={{marginBottom:'5px',color:'black'}}>Password</label>
                         <input type="text"
                             className="form-control"
                             name="password"
@@ -159,18 +162,25 @@ class AdminUProfileEdit extends Component {
                             onChange={this.handleInputChange} />                    
                     </div>
     
-                    <button className="btn btn-success" type="submit" onClick={this.onSubmit}>   
-                        <i className="far fa-check-square"> </i>
-                        &nbsp; Update
-                    </button>
+                    
     
                 </form>
-
-                <button className="btn btn-success" style={{marginLeft:"0", marginTop:"0px",width:"150px"}} >
-                  <a href="/adminprofiledash" style={{ textDecoration: "none", color: "white" }}>
-                  Admin Profile Management Dashboard
-                  </a>
-                </button>
+                <div style={{width:'80%',margin:'0 auto',display:'inline'}}>
+                    <div style={{float:'Right',marginRight:'126px'}}> 
+                        <button className="btn btn-success" type="submit" onClick={this.onSubmit}>   
+                                <i className="far fa-check-square"> </i>
+                                &nbsp; Update
+                            </button>
+                    </div>
+                    <div style={{float:'left',marginLeft:'126px'}}>
+                        <button className="btn btn-success" style={{marginTop:"0px",width:"200px"}} >
+                        <a href="/adminprofiledash" style={{ textDecoration: "none", color: "white" }}>
+                        Profile Dashboard
+                        </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
             </div>
         );
     }

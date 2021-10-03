@@ -155,7 +155,8 @@ constructor(props){
     }
 
     render() {
-
+        let data = localStorage.getItem('foo');
+        console.log(data)
         const handleSelect=(e)=>{
             console.log(e);
             

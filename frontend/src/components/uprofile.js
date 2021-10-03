@@ -7,6 +7,7 @@ import "../CSS/profile.css";
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
 import { ImageData } from './ImageData';
+import {Link} from 'react-router-dom';
 
 class profile extends Component {
 
@@ -79,7 +80,7 @@ jspdGenerator=()=>{
       // Variables Assigned with user Information
         const {fName,lName,uName,email,password,team} = this.state.profile;
         return (
-            <div>
+            <div id="upN">
               <div className="headerprofile">
                <div class="container">
                 <div class="main-body">    
@@ -111,19 +112,26 @@ jspdGenerator=()=>{
                         <ul class="list-group list-group-flush">
                           <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                             
-                            <span class="text-secondary"><b>My Bookings</b></span>
+                            <span class="text-secondary" style={{fontSize:'20px'}}><b>My Bookings</b></span>
                           </li>
                           <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                            
-                            <span class="text-secondary"><b>My Adoptions</b></span>
+                          <Link to = {`/profile/adoptedanimals/${this.state.userid}`} style = {{textDecoration:"none"}}>
+                            <span class="text-secondary" style={{fontSize:'20px'}}><b>My Adoptions</b></span>
+                            </Link>
                           </li>
+                          
+                          
                           {/* <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                             <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter mr-2 icon-inline text-info"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>Twitter</h6>
                             <span class="text-secondary">@bootdey</span>
                           </li>*/}
+                        
                         </ul>
                       </div>
+                      <br/>
+                          <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
                     </div>
+                    
                     <div class="col-md-8">
                       {/* Card to Display user Information */}
                       <div class="card mb-3">
@@ -132,9 +140,9 @@ jspdGenerator=()=>{
                           {/* Display First Name */}
                           <div class="row-1">
                             <div class="col-sm-3">
-                              <h6 class="mb-0">First Name</h6>
+                              <h4 class="mb-0">First Name</h4>
                             </div>
-                            <div class="col-sm-9 text-secondary">
+                            <div class="col-sm-9 text-secondary" style={{fontSize:'18px'}}>
                             {fName}
                             </div>
                           </div>
@@ -142,9 +150,9 @@ jspdGenerator=()=>{
                           {/* Display Last Name */}
                           <div class="row-1">
                             <div class="col-sm-3">
-                              <h6 class="mb-0">Last Name</h6>
+                              <h4 class="mb-0">Last Name</h4>
                             </div>
-                            <div class="col-sm-9 text-secondary">
+                            <div class="col-sm-9 text-secondary" style={{fontSize:'18px'}}>
                             {lName}
                             </div>
                           </div>
@@ -153,9 +161,9 @@ jspdGenerator=()=>{
                           {/* Display Userame */}
                           <div class="row-1">
                             <div class="col-sm-3">
-                              <h6 class="mb-0">Username</h6>
+                              <h4 class="mb-0">Username</h4>
                             </div>
-                            <div class="col-sm-9 text-secondary">
+                            <div class="col-sm-9 text-secondary" style={{fontSize:'18px'}}>
                             {uName}
                             </div>                                                       
                           </div>
@@ -164,27 +172,27 @@ jspdGenerator=()=>{
                           {/* Display Email */}
                           <div class="row-1">
                             <div class="col-sm-3">
-                              <h6 class="mb-0">Email</h6>
+                              <h4 class="mb-0">Email</h4>
                             </div>
-                            <div class="col-sm-9 text-secondary">
+                            <div class="col-sm-9 text-secondary" style={{fontSize:'18px'}}>
                             {email}
                             </div>
                           </div>
                           <hr/> 
-                          <br/>
+                          
 
                           {/* Display Team */}
                           <div class="row-1">
                             <div class="col-sm-3">
-                              <h6 class="mb-0">Team</h6>
+                              <h4 class="mb-0">Team</h4>
                             </div>
-                            <div class="col-sm-9 text-secondary">
+                            <div class="col-sm-9 text-secondary" style={{fontSize:'18px'}}>
                             {team}
                             </div>
                           </div>
                           <hr/> 
-                          <br/>
-                    <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
+                          
+                    
                         </div>
                       </div>  
                       {/* End of Card to Display User Information */}

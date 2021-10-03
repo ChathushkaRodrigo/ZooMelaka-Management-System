@@ -16,9 +16,9 @@ exports.isAuth = (req,res,next) => {
 };
 
 exports.registerUser = (req, res) => {
-  const { fName, lName, name, email, password } = req.body;
+  const { name, email, password } = req.body;
 
-  const result = registerSchema.validate({ fName, lName, name, email, password});
+  const result = registerSchema.validate({ name, email, password});
   if(!result.error) {
 
       // Check for existing user

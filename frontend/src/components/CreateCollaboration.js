@@ -186,6 +186,12 @@ class CreateCollaboration extends Component {
           
             
             </form>
+
+            <button className="btn btn-success" style={{marginLeft:"0", marginTop:"0px",width:"150px"}} >
+                        <a href="/research/customerDash" style={{ textDecoration: "none", color: "white" }}>
+                            Dashboard
+                        </a>
+                    </button>
         </div>
         </div>
         )

@@ -115,3 +115,29 @@ body {
 #legendanchor a:hover {
   color: 'white';
 }
+
+#Nbtns {
+  border-style: dashed;
+  border-width: 1px;
+  width: 80%;
+  display: 'inline';
+  margin: 0 auto;
+  margin-top: -200px;
+  margin-bottom: 100px;
+}
+
+#NH1 {
+  float: 'left';
+}
+
+#Nreport {
+  float: 'right';
+}
+
+#NudujaEdit {
+  margin-top: -24px;
+  background: linear-gradient(132deg, #132c0e 0%, #005020 80%);
+  background-size: 500% 400%;
+  animation: gradient 5s ease infinite;
+  height: 850px;
+}

@@ -56,7 +56,7 @@ class AddAdoption extends Component {
         const id = this.props.match.params.id;
 
         this.state.animal_id = id;
-        this.state.member_id = 'M00069';
+        
 
         
 
@@ -72,18 +72,11 @@ class AddAdoption extends Component {
                     </ul></p>
                     </div>
             </div>
+        //this.state.member_id='6157ebebe084d8971d736453';
         
-        const {user} = this.props.authState;
 
-        if(user){
-            console.log(`${user.id}`);
-            this.setMemberId(user.id);
-            
-        }
-        else{
-            this.setMemberId("M000069");
-        }
 
+        
     }
 
     componentDidMount() {
@@ -100,8 +93,7 @@ class AddAdoption extends Component {
         this.getanimal(this.state.animal_id);
 
         
-    
-
+        
       }
 
       getanimal(id){
@@ -154,7 +146,7 @@ class AddAdoption extends Component {
         
         console.log('Adoption data', this.state);
         
-       
+        console.log('animal id', this.state.aid);
 
         const adoption = {
             animal_name : this.state.animal_name,
@@ -278,8 +270,9 @@ class AddAdoption extends Component {
         if(!this.props.authState.isAuthenticated) {
             // return <Redirect to="/" />
           }
+          const {user} = this.props.authState;
        
-   
+         
         return (
             
             <div className = 'bckgrnd'>
@@ -329,7 +322,7 @@ class AddAdoption extends Component {
                     <br/>&nbsp;&nbsp;&nbsp;-$20/monthly
                     <br/>
                 </div>
-               
+                <label hidden>{this.state.member_id = (user ? `${user.id}`: '' )}</label>
                 {/* <div className="form-group">
                     <label for="age">Animal Id</label>
                     <input type="text" className="form-control" id="age" placeholder="Enter Animal Id" value = {this.state.animal_id} onChange = {this.setAnimalId}/>

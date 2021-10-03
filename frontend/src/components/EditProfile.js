@@ -33,6 +33,7 @@ class EditProfile extends Component {
             passwordValid: false,
             formvalid: false
         }
+        this.ref = React.createRef();
     }
     
     // Method to handle Input
@@ -111,7 +112,7 @@ class EditProfile extends Component {
                 });
                 console.log(this.state.profile);                
             }
-        });        
+        });               
     }
 
     // Method to validate user Input
@@ -160,11 +161,11 @@ class EditProfile extends Component {
 
 
         return (
-          <div>
-          <div class="container">
+          <div id="iidid">
+          <div class="container" style={{width:'70%',height:'900px',opacitiy:'90%'}}>
            <div class="main-body">    
-             <div class="row gutters-sm">
-               <div class="col-md-4 mb-3">
+             <div class="row gutters-sm" style={{opacitiy:'80%'}}>
+               <div class="col-md-4 mb-3" style={{margin:'0 auto'}}>
                    <br/>
                    {/* User Profile Identification card */}
                  <div class="card">
@@ -174,7 +175,7 @@ class EditProfile extends Component {
                          <h4>{this.state.fName} &nbsp; {this.state.lName}</h4>
                          <p class="text-secondary mb-1">@{this.state.uName}</p>                       
                              {/* Cancel button */}
-                           <a href={`/profile/${this.state.userid}`}> <button class="btn btn-primary">
+                           <a href={`/uprofile/${this.state.userid}`}> <button class="btn btn-primary">
                          &nbsp; Cancel 
                            </button></a> 
                            <a href="/" className="btn btn-outline-danger" onClick={() =>this.onDelete(this.state.userid)}>
@@ -189,11 +190,11 @@ class EditProfile extends Component {
                <FormErrors formErrors={this.state.formErrors} className="FormError"/>
 
                {/* Begining of the Form */}
-               <form className="needs-validation" noValidate>
+               <form className="needs-validation" style={{paddingBottom:'30px'}} noValidate>
 
                   {/* Edit First Name */}
                   <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>First Name</label>
+                        <label style={{marginBottom:'5px',color:'#000'}}>First Name</label>
                         <input className="formtxt" type="text"
                             className="form-control"
                             name="fName"
@@ -204,7 +205,7 @@ class EditProfile extends Component {
 
                     {/* Edit Last Name */}
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Last Name</label>
+                        <label style={{marginBottom:'5px',color:'#000'}}>Last Name</label>
                         <input type="text"
                             className="form-control"
                             name="lName"
@@ -215,7 +216,7 @@ class EditProfile extends Component {
 
                     {/* Edit userName */}
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>User Name</label>
+                        <label style={{marginBottom:'5px',color:'#000'}}>User Name</label>
                         <input type="text"
                             className="form-control"
                             name="uName"
@@ -226,7 +227,7 @@ class EditProfile extends Component {
 
                     {/* Edit Email */}
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Email</label>
+                        <label style={{marginBottom:'5px',color:'#000'}}>Email</label>
                         <input type="text"
                             className="form-control"
                             name="email"
@@ -236,7 +237,7 @@ class EditProfile extends Component {
                     </div>
                     {/* Edit Password */}
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Password</label>
+                        <label style={{marginBottom:'5px',color:'#000'}}>Password</label>
                         <input type="text"
                             className="form-control"
                             name="password"
@@ -245,8 +246,24 @@ class EditProfile extends Component {
                             onChange={this.handleInputChange} />                    
                     </div>
 
-                  <div className="mb-2">
-                    <DropdownButton align="center" title="Employee catagory" id="dropdown-menu-align-end" onSelect={handleSelect}>
+                  <div className="mb-2" style={{marginBottom:'15px',width:'70%',marginLeft:'10%'}}>
+
+                  <div className="form-group" style={{marginBottom:'15px',display:'inline',width:'40%'}}>
+                  <label style={{marginBottom:'5px',color:'#000',fontSize:'24px'}} id="chamForm">Team</label>
+                  <br/>
+                  <div style={{float:'left'}}>
+                    <input type="text" style={{width:'650px'}}
+                      id="chamathRet"
+                      className="form-control"
+                      name="Attended_Zookeeper"
+                      placeholder="Enter The Last Attended Zookeeper:"
+                      value={this.state.team}
+                      onChange={this.handleInputChange}
+                      ref={this.ref}
+                      />
+                      </div>
+                      <div style={{float:'right',paddingLeft:'-90px',marginTop:'10px'}}> 
+                      <DropdownButton align="center" title="Teams" id="dropdown-menu-align-end" onSelect={handleSelect}>
                       <div>                    
                     
                         <Dropdown.Item eventKey="Legends">
@@ -276,24 +293,20 @@ class EditProfile extends Component {
                       </div>
                     
                     </DropdownButton>
+                    </div>
+                    
 
-                    <label style={{marginBottom:'5px'}} id="chamForm">Designation</label>
-                    <input type="text"
-                      id="chamathRet"
-                      className="form-control"
-                      name="Attended_Zookeeper"
-                      placeholder="Enter The Last Attended Zookeeper:"
-                      value={this.state.team}
-                      onChange={this.handleInputChange}
-                      ref={this.ref}
-                    />
-            </div>
+                    
+              </div>
+              </div><br/><br/><br/>
 
+                    <div style={{width:'70%',margin:'0 auto',marginTop:'30px'}}>
                     {/* Submit Button named Update */}
                     <button className="btn btn-success" type="submit" onClick={this.onSubmit}>   
                         <i className="far fa-check-square"> </i>
                         &nbsp; Update
-                    </button>    
+                    </button>  
+                    </div>  
                 </form>
                 {/* End of Form */}
 
