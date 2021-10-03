@@ -3,6 +3,12 @@ import React, { Component } from 'react'
 import axios from 'axios';
 
 import '../CSS/EmployeeDashboard.css'
+import jsPDF from 'jspdf'
+import 'jspdf-autotable'
+
+
+
+
 
 
 export default class Home extends Component {
@@ -57,6 +63,29 @@ handleSearchArea = (e) =>{
         }
       })
 }
+
+//Report Generate Function onClick
+jspdGenerator=()=>{
+
+        
+  //Create document obj
+  var doc =new jsPDF("p","pt","b2") 
+
+
+  doc.html(document.querySelector("#shas99Table"), {
+    
+    callback:function(pdf){
+
+      pdf.save("DashboardCustomer.pdf");
+      
+    }
+
+  });
+
+ 
+}
+//End of function report 
+
 
   render() {
     return (
@@ -139,8 +168,24 @@ handleSearchArea = (e) =>{
     <button className="btn btn-success" style={{margin:"15px"}}><a href="/employee/add" style={{textDecoration:'none',color:'white'}}>Create New Post</a>
 
         </button>
-        <br/><br/><br/><br/>
+        <br/><br/>
+        {/* Copy generate from here */}
+
+        <div>
+        <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
+        <br/><br/>
+        <button className="btn btn-success" >
+        <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
+           Admin Home
+          </a>
+          
+
+         </button>
+
+        
+        </div><br/><br/>
       </div> 
+      {/* Iwara wena thana */}
 
     
       </div>)

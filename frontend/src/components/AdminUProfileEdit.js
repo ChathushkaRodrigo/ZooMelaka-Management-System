@@ -2,6 +2,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import SplitButton from 'react-bootstrap/SplitButton';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown';
+import Select from 'react-select'
+
 class AdminUProfileEdit extends Component {
 
     constructor(props){
@@ -13,7 +18,8 @@ class AdminUProfileEdit extends Component {
             lName:"",
             uName:"",
             email:"",
-            password:""
+            password:"",
+            team:""
         }
     }
 
@@ -31,14 +37,15 @@ class AdminUProfileEdit extends Component {
 
         e.preventDefault();
 
-        const {fName,lName,uName,email,password} = this.state;
+        const {fName,lName,uName,email,password,team} = this.state;
 
         const data={
             fName:fName,
             lName:lName,
             uName:uName,
             email:email,
-            password:password
+            password:password,
+            team:team
         }
         console.log(data);
 
@@ -51,7 +58,8 @@ class AdminUProfileEdit extends Component {
                         lName:"",
                         uName:"",
                         email:"",
-                        password:""
+                        password:"",
+                        team:""
                     }
                 )
             }          
@@ -82,13 +90,24 @@ class AdminUProfileEdit extends Component {
                     lName:res.data.profile.lName,
                     uName:res.data.profile.uName,
                     email:res.data.profile.email,
-                    password:res.data.profile.password
+                    password:res.data.profile.password,
+                    team:res.data.profile.team
                 });
                 console.log(this.state.profile);                
             }
         });        
     }
     render() {
+
+        const handleSelect=(e)=>{
+            console.log(e);
+            
+            this.state.team = e
+            console.log("Helloooo: " + this.state.team)
+            
+            this.ref.current.value = e
+        }
+
         return (
           <div className="col-md-8 mt-4 mx-auto">
             <h1 className="h3 mb-3 font-weight-normal">Edit Profile</h1>

@@ -6,6 +6,11 @@ import "../CSS/EditProfile.css";
 import { FormErrors } from './FormErrors';
 import "../CSS/FormError.css";
 
+import SplitButton from 'react-bootstrap/SplitButton';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown';
+import Select from 'react-select'
+
 class EditProfile extends Component {
 
     constructor(props){
@@ -18,6 +23,8 @@ class EditProfile extends Component {
             uName:"",
             email:"",
             password:"",
+            team:"",
+            profile:[],
 
 
             formErrors: {email: '', password:''},
@@ -44,14 +51,15 @@ class EditProfile extends Component {
 
         e.preventDefault();
 
-        const {fName,lName,uName,email,password} = this.state;
+        const {fName,lName,uName,email,password,team} = this.state;
 
         const data={
             fName:fName,
             lName:lName,
             uName:uName,
             email:email,
-            password:password
+            password:password,
+            team:team
         }
         console.log(data);
 
@@ -64,7 +72,8 @@ class EditProfile extends Component {
                         lName:"",
                         uName:"",
                         email:"",
-                        password:""
+                        password:"",
+                        team:""
                     }
                 )
             }          
@@ -96,7 +105,8 @@ class EditProfile extends Component {
                     lName:res.data.profile.lName,
                     uName:res.data.profile.uName,
                     email:res.data.profile.email,
-                    password:res.data.profile.password
+                    password:res.data.profile.password,
+                    team:res.data.profile.team
                 });
                 console.log(this.state.profile);                
             }
@@ -137,6 +147,17 @@ class EditProfile extends Component {
 
 
     render() {
+
+      const handleSelect=(e)=>{
+        console.log(e);
+        
+        this.state.team = e
+        console.log("Helloooo: " + this.state.team)
+        
+        this.ref.current.value = e
+      }
+
+
         return (
           <div>
           <div class="container">
@@ -222,6 +243,50 @@ class EditProfile extends Component {
                             value={this.state.password}
                             onChange={this.handleInputChange} />                    
                     </div>
+
+                  <div className="mb-2">
+                    <DropdownButton align="center" title="Employee catagory" id="dropdown-menu-align-end" onSelect={handleSelect}>
+                      <div>
+                    
+                    
+                        <Dropdown.Item eventKey="Legends">
+                          Legends
+                        </Dropdown.Item>
+
+                        <Dropdown.Item eventKey="Bashers">
+                          Bashers
+                        </Dropdown.Item>
+
+                        <Dropdown.Item eventKey="Fighters">
+                          Fighters
+                        </Dropdown.Item>
+
+                        <Dropdown.Item eventKey="Guardians">
+                          Guardians
+                        </Dropdown.Item>
+                        
+                        <Dropdown.Item eventKey="Protectors">
+                        Protectors
+                        </Dropdown.Item>
+                        <Dropdown.Item eventKey="Walkers">
+                        Walkers
+                        </Dropdown.Item>
+                    
+                    
+                      </div>
+                    
+                    </DropdownButton>
+                <label style={{marginBottom:'5px'}} id="chamForm">Designation</label>
+                <input type="text"
+                id="chamathRet"
+                className="form-control"
+                name="Attended_Zookeeper"
+                placeholder="Enter The Last Attended Zookeeper:"
+                value={this.state.team}
+                onChange={this.handleInputChange}
+                ref={this.ref}
+                />
+            </div>
 
                     {/* Submit Button named Update */}
                     <button className="btn btn-success" type="submit" onClick={this.onSubmit}>   

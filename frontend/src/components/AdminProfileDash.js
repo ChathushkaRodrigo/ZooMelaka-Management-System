@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import "../CSS/memberdashboard.css";
 
+import jsPDF from 'jspdf'
+import 'jspdf-autotable'
+
 class memberdashboard extends Component {
 
   constructor(props){
@@ -38,6 +41,29 @@ class memberdashboard extends Component {
     })    
   }
 
+  //Report Generate Function onClick
+jspdGenerator=()=>{
+
+        
+  //Create document obj
+  var doc =new jsPDF("p","pt","b2") 
+
+
+  doc.html(document.querySelector("#Customers"), {
+    
+    callback:function(pdf){
+
+      pdf.save("DashboardCustomer.pdf");
+      
+    }
+
+  });
+
+ 
+}
+//End of function report 
+
+
   render() {
     return (
       <div>
@@ -66,7 +92,7 @@ class memberdashboard extends Component {
                   <th scope="col">Last Name</th>
                   <th scope="col">Username</th>
                   <th scope="col">Email</th>
-                  <th scope="col">Password</th>
+                  <th scope="col">Team</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
@@ -78,14 +104,15 @@ class memberdashboard extends Component {
                   <tr key={index}>
                     <th scope="row">{index+1}</th>
                     <td>
-                        <a href={`/profile/${profiles._id}`} style={{textDecoration:'none'}}>
+                        <a href={`/uprofile/${profiles._id}`} style={{textDecoration:'none'}}>
                             {profiles.fName}
                         </a>
                     </td>
                     <td>{profiles.lName}</td>
                     <td>{profiles.uName}</td>
                     <td>{profiles.email}</td>
-                    <td>{profiles.password}</td>                    
+                    <td>{profiles.password}</td>  
+                    <td>{profiles.team}</td>                   
                     <td>  
                         {/* Profile Edit Button */}
                         <a className="btn btn-warning" href={`/AdminUProfileEdit/${profiles._id}`}>
@@ -101,6 +128,7 @@ class memberdashboard extends Component {
                 ))}
               </tbody>
             </table>    
+            <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
           </div>
           </div>        
     );

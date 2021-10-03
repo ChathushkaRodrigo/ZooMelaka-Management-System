@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import '../CSS/AllAdoptions.css';
-
+import jsPDF from 'jspdf'
+import 'jspdf-autotable'
 
 class AllAdoptions extends Component {
   constructor(props){
@@ -80,6 +81,27 @@ class AllAdoptions extends Component {
     //        console.log(animid);
     //       }})
     //     }
+    //Report Generate Function onClick
+jspdGenerator=()=>{
+
+        
+  //Create document obj
+  var doc =new jsPDF("p","pt","b2") 
+
+
+  doc.html(document.querySelector("#table1"), {
+    
+    callback:function(pdf){
+
+      pdf.save("DashboardCustomer.pdf");
+      
+    }
+
+  });
+
+ 
+}
+//End of function report 
 
   render() {
     return (
@@ -99,7 +121,7 @@ class AllAdoptions extends Component {
               <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange = {this.handleSearchArea}></input>
             </div>
             <br/>
-            <table className="table table-light table-bordered table-hover container ">
+            <table className="table table-light table-bordered table-hover container " id="table1">
               <thead>
               <tr>
                 <th scope= "col">#</th>
@@ -156,7 +178,7 @@ class AllAdoptions extends Component {
               
             </table>
             
-            
+            <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
             <div className = "bottomspace"></div>
             </div>
           </div>

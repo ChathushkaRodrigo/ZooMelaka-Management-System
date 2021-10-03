@@ -6,6 +6,9 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import '../CSS/AnimalDashboard.css';
 
+import jsPDF from 'jspdf'
+import 'jspdf-autotable'
+
 
 export default class Home extends Component{
   constructor(props){
@@ -62,7 +65,27 @@ handleSearchArea = (e) => {
   });
 }
 
+//Report Generate Function onClick
+jspdGenerator=()=>{
 
+        
+  //Create document obj
+  var doc =new jsPDF("p","pt","b2") 
+
+
+  doc.html(document.querySelector("#AnimalTableChamath"), {
+    
+    callback:function(pdf){
+
+      pdf.save("DashboardCustomer.pdf");
+      
+    }
+
+  });
+
+ 
+}
+//End of function report 
 
 
 
@@ -71,47 +94,47 @@ handleSearchArea = (e) => {
   render(){
     return(
     <div className="AnimalDashboard-body">
-    <div className="container-fluid">
-    <div className="col-lg-9 mt-2 mb-2">
-        <center><h1 id="animalHeading">Animal Portfolio</h1></center>
-    </div>
+      <div className="container-fluid">
+        <div className="col-lg-9 mt-2 mb-2">
+          <center><h1 id="animalHeading">Animal Portfolio</h1></center>
+        </div>
 
 
     
 
 
 
-    <div className="col-lg-3 mt-2 mb-2" id="searchingBox">
+        <div className="col-lg-3 mt-2 mb-2" id="searchingBox">
     
-      <input
-      className="form-control"
-      id = "animalSearch"
-      type="search"
-      placeholder="Search By Animal ID"
-      name="searchQuery"
-      onChange={this.handleSearchArea}>
-      </input>
+          <input
+          className="form-control"
+          id = "animalSearch"
+          type="search"
+          placeholder="Search By Animal ID"
+          name="searchQuery"
+          onChange={this.handleSearchArea}>
+          </input>
         </div>
-        </div>
+      </div>
         <div>
-        <table id="AnimalTableChamath">
+          <table id="AnimalTableChamath">
 
-        
-        <thead>
-          <tr className="animalRow">  
-            
-            <th scope="col">Animal ID</th>
-            <th scope="col">Feeding Date</th>
-            <th scope="col">Feeding Time</th>
-            <th scope="col">Attended Zookeeper</th>
-            {/* <th scope="col">Date Of Medical Care</th>
-            <th scope="col">Time Of Medical Care</th> */}
-            <th scope="col">Enclosure ID</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
+          
+            <thead>
+              <tr className="animalRow">  
+                
+                <th scope="col">Animal ID</th>
+                <th scope="col">Feeding Date</th>
+                <th scope="col">Feeding Time</th>
+                <th scope="col">Attended Zookeeper</th>
+                {/* <th scope="col">Date Of Medical Care</th>
+                <th scope="col">Time Of Medical Care</th> */}
+                <th scope="col">Enclosure ID</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
               
-              <tbody className="anCol">
+            <tbody className="anCol">
                 {this.state.zooAnimal.map((zooAnimal,index) =>(
                   <tr key={index}>
                     
@@ -139,22 +162,39 @@ handleSearchArea = (e) => {
                     
                   </tr>
                 ))}
-              </tbody>
-        </table></div>
+            </tbody>
+          </table>
+          <div>
+        <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
+        <br/><br/>
+        <button className="btn btn-success" >
+        <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
+           Admin Home
+          </a>
+          
+
+         </button>
+
+        
+        </div><br/><br/>
+          
+        </div>
 
 
-<a className="dashButton btn btn-light btn-small justify-content-center btn-outline-success" href={`animal/add`} style={{marginTop:'10px',marginBottom:'5px'}} id="chamCreaButton">
+                    <a className="dashButton btn btn-light btn-small justify-content-center btn-outline-success" href={`animal/add`} style={{marginTop:'10px',marginBottom:'5px'}} id="chamCreaButton">
                             <i className="fas fa-dragon"></i>&nbsp;<b>Create Animal Portfolio!</b>
-</a>
+                      </a>
+                        
 
-
-<a className="dashButton btn btn-light btn-small justify-content-center btn-outline-primary" href={`adminpanelhome`} style={{marginTop:'5px'}} id="chamAdminNav">
-                    <i className="fa fa-hand-o-left"></i>&nbsp;<b>Navigate To Admin Panel!</b>
-</a>
+                      <a className="dashButton btn btn-light btn-small justify-content-center btn-outline-primary" href={`adminpanelhome`} style={{marginTop:'5px'}} id="chamAdminNav">
+                          <i className="fa fa-hand-o-left"></i>&nbsp;<b>Navigate To Admin Panel!</b>
+                      </a>
 
 
 
     </div>
+  
+
     
     
     

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import "../CSS/Createmedical.css"
+import jsPDF from 'jspdf'
+import 'jspdf-autotable'
 
 class MedicalDetails extends Component {
     constructor(props) {
@@ -10,6 +12,60 @@ class MedicalDetails extends Component {
             medical:{}
         };
     }
+    jspdGenerator=()=>{
+
+        
+        //doc obj
+        var doc =new jsPDF('p','pt');
+      
+          
+        
+        doc.autoTable({ html: '#my-table' })
+        //add texts
+      
+        doc.text(200,20,'Employee Report')
+      
+        doc.autoTable({
+           
+           tableWidth:'auto',
+           margin: { top: 10 },
+            columnStyles: { europe: { halign: 'center' } },
+            theme:'grid',
+            head: [['vname','zname','animalID','injID','sinfo']],
+            body: [
+             
+              [this.state.medical.vname,this.state.medical.zname,this.state.medical.animalID,this.state.medical.injID,this.state.medical.sinfo],
+      
+            
+              
+            ],
+           
+            styles: {  fontSize:10 },
+         
+            
+          })
+          
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+        //Save pdf 
+        doc.save("Generated.pdf");
+      
+      
+      }
+      
 
     componentDidMount(){
 
@@ -84,7 +140,7 @@ class MedicalDetails extends Component {
                    
                     </form>
 
-
+                    <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
                                         
 
 

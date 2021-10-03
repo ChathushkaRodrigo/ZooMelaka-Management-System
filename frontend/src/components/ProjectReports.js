@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import jsPDF from 'jspdf'
+import 'jspdf-autotable'
+
 
 
 export default class Reports extends Component{
@@ -25,6 +28,45 @@ export default class Reports extends Component{
         });
 
     }
+    //Report Generate Function onClick
+jspdGenerator=()=>{
+
+        
+    //doc obj
+    var doc =new jsPDF('p','pt');
+  
+      
+    
+    doc.autoTable({ html: '#my-table' })
+    //add texts
+  
+    doc.text(200,20,'Employee Report')
+  
+    doc.autoTable({
+       
+       tableWidth:'auto',
+       margin: { top: 10 },
+        columnStyles: { europe: { halign: 'center' } },
+        theme:'grid',
+        head: [['Project ID', 'Name of Project ', 'Title','decription','Supervisor','workingTeam']],
+        body: [
+         
+          [this.state.post.projectID,this.state.post.name,this.state.post.title,this.state.post.description,this.state.post.supervisor,this.state.post.workingTeam],
+  
+        
+          
+        ],
+       
+        styles: {  fontSize:10 },
+     
+        
+      })
+      
+    //Save pdf 
+    doc.save("Generated.pdf");
+  
+  
+  }
 
     render() {
 
@@ -88,7 +130,9 @@ export default class Reports extends Component{
                         <td>{workingTeam}</td>
                     </tr>
                 </table>
-                <button className="print" onClick="window.print()">Print report</button>
+
+               <br/>
+                    <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
              </div></center>
              </div>
 

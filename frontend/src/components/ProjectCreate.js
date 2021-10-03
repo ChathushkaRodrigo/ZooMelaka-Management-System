@@ -239,6 +239,10 @@ export default class Create extends Component{
                             <i className="far fa-check-square"></i>
                             &nbsp; Submit
                         </button>
+                        <button className="btn btn-success" style={{marginTop:'15px'}} onClick={this.Demo} type="button">
+                        <i className="far fa-check-square"></i>
+                        &nbsp; Demo
+                    </button>
                    
                 </form>
                </div>

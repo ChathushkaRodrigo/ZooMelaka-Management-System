@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import "../CSS/ShasRet.css"
+import jsPDF from 'jspdf'
+import 'jspdf-autotable'
 
 import {Link} from 'react-router-dom';
 export default class PostDetails extends Component {
@@ -23,6 +25,65 @@ export default class PostDetails extends Component {
         this.retrieveProjects();
         this.retrieveMedical();
     }
+//Report Generate Function onClick
+jspdGenerator=()=>{
+
+        
+  //doc obj
+  var doc =new jsPDF('p','pt');
+
+    
+  
+  doc.autoTable({ html: '#my-table' })
+  //add texts
+
+  doc.text(200,20,'Employee Report')
+
+  doc.autoTable({
+     
+     tableWidth:'auto',
+     margin: { top: 10 },
+      columnStyles: { europe: { halign: 'center' } },
+      theme:'grid',
+      head: [['eID', 'userName', 'firstName','lastName','email','address','employeeType','DOB','salary']],
+      body: [
+       
+        [this.state.post.eID,this.state.post.userName,this.state.post.firstName,this.state.post.lastName,this.state.post.email,this.state.post.address,this.state.post.employeeType,this.state.post.DOB,this.state.post.salary],
+
+      
+        
+      ],
+     
+      styles: {  fontSize:10 },
+   
+      
+    })
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  //Save pdf 
+  doc.save("Generated.pdf");
+
+
+}
+
+
+
+
+
     retrieveAnimal(){
         axios.get("http://localhost:8015/animal").then(res=>{
           if(res.data.success){
@@ -178,6 +239,8 @@ export default class PostDetails extends Component {
 
                     
                     </form>
+                    <br/>
+                    <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
 
                 <div>
 

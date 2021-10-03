@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import '../CSS/Projects.css';
 
+import jsPDF from 'jspdf'
+import 'jspdf-autotable'
+
 
 
 export default class Search extends Component {
@@ -60,6 +63,28 @@ export default class Search extends Component {
 
   }
 
+//Report Generate Function onClick
+jspdGenerator=()=>{
+
+        
+  //Create document obj
+  var doc =new jsPDF("p","pt","b2") 
+
+
+  doc.html(document.querySelector("#ProjectsAll"), {
+    
+    callback:function(pdf){
+
+      pdf.save("DashboardCustomer.pdf");
+      
+    }
+
+  });
+
+ 
+}
+//End of function report 
+
   render(){
     return(
         
@@ -81,7 +106,7 @@ export default class Search extends Component {
      
       <div className="containerpr">
         <p/><p/>
-        <table>
+        <table id="ProjectsAll">
           <thead>
               <tr style={{fontSize:'18px',borderBottom:'2px solid black ',borderLeft:'none',borderRight:'none'}}>
                 <th scope="col" style={{width:'2%'}}>#</th>
@@ -121,9 +146,28 @@ export default class Search extends Component {
            ))}
           </tbody>
           </table>
+
+          {/* Copy generate from here */}
+
+        <div>
+        <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
+        <br/><br/>
+        <button className="btn btn-success" >
+        <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
+           Admin Home
+          </a>
+          
+
+         </button>
+
+        
+        </div><br/><br/>
+      </div> 
+      {/* Iwara wena thana */}
           
       </div>
-      </div>
+      
+      
 
     )
   }

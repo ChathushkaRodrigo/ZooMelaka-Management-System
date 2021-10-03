@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import "../CSS/Medicaldashboard.css"
 
+import jsPDF from 'jspdf'
+import 'jspdf-autotable'
+
 class MedicalDashboard extends Component {
   constructor(props){
   super(props);
@@ -38,6 +41,27 @@ onDelete =(id)=>{
   })
   
 }
+//Report Generate Function onClick
+jspdGenerator=()=>{
+
+        
+  //Create document obj
+  var doc =new jsPDF("p","pt","b2") 
+
+
+  doc.html(document.querySelector("#Print"), {
+    
+    callback:function(pdf){
+
+      pdf.save("DashboardCustomer.pdf");
+      
+    }
+
+  });
+
+ 
+}
+//End of function report 
 
   render() {
     return (
@@ -46,7 +70,7 @@ onDelete =(id)=>{
         <h1 className ="titlepage">All Medical Records</h1>
         <div className= "imagemed2"> </div>
 
-        <table className="table  table-bordered ">
+        <table className="table  table-bordered " id="Print">
           <thead>
             <tr>
               <th scope = "col">#</th>
@@ -92,7 +116,7 @@ onDelete =(id)=>{
           </tbody>
         </table>
         <button className="btn btn-success"><a href= "medical/create"style ={{textDecoration:'none',color:"white"}}>Create New Medical Report</a></button>
-        
+        <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
        <br/><br/><br/><br/><br/><br/><br/>
       </div>
     );

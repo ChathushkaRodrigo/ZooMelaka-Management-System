@@ -19,7 +19,7 @@ import EditProfile from './components/EditProfile';
 import Profile from './components/profile'
 import Signup from './components/signup';
 import AdminUProfileEdit from './components/AdminUProfileEdit';
-
+import uProfile from './components/uprofile'
 
 //Employee Management
 import AdminPanelHome from './components/AdminPanelHome';
@@ -89,7 +89,7 @@ render() {
           <Route path="/" exact component={Home}/>
 
           <Route exact path ="/profile" component={Profile}/>
-          <Route path = "/adoption/add" component = {CreateAdoption}/>
+          <Route path = "/adoption/add/:id" component = {CreateAdoption}/>
           <Route path = "/AnimalsforAdoption" component = {AnimalsforAdoption}/>
           
 
@@ -108,7 +108,7 @@ render() {
         {/* <Route path ="/profile/:id" component={Profile}/> */}
         <Route path ="/signup" component={Signup}/>
         <Route path ="/AdminUProfileEdit/:id" component={AdminUProfileEdit}/>
-        
+        <Route path ="/uprofile/:id" component={uProfile}/>
         
         
 
@@ -176,7 +176,7 @@ render() {
          
             
 
-        <Footer/>
+      
       </Router>
     </div>  
     )

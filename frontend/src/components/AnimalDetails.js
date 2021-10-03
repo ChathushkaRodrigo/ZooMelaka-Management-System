@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import '../CSS/AnimalDetails.css';
 import {Link} from 'react-router-dom';
+import jsPDF from 'jspdf'
+import 'jspdf-autotable'
 export default class AnimalDetails extends Component{
     constructor(props){
         super(props);
@@ -14,6 +16,65 @@ export default class AnimalDetails extends Component{
         this.retrievePosts();
         this.retrieveMedical();
     }
+
+    jspdGenerator=()=>{
+
+        
+        //doc obj
+        var doc =new jsPDF('p','pt');
+      
+          
+        
+        doc.autoTable({ html: '#my-table' })
+        //add texts
+      
+        doc.text(200,20,'Employee Report')
+      
+        doc.autoTable({
+           
+           tableWidth:'auto',
+           margin: { top: 10 },
+            columnStyles: { europe: { halign: 'center' } },
+            theme:'grid',
+            head: [['Animal ID','Name','Species','Date_Of_Birth','Gender','Adoptability']],
+            body: [
+             
+              [this.state.zooAnimal.Animal_ID,this.state.zooAnimal.Animal_Name,this.state.zooAnimal.Animal_Species,this.state.zooAnimal.Animal_Date_Of_Birth,this.state.zooAnimal.Animal_Gender,this.state.zooAnimal.Adoptability],
+      
+            
+              
+            ],
+           
+            styles: {  fontSize:10 },
+         
+            
+          })
+          
+      
+          
+          
+     
+        
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+        //Save pdf 
+        doc.save("Generated.pdf");
+      
+      
+      }
+      
 
     componentDidMount(){
         const id = this.props.match.params.id;
@@ -121,7 +182,7 @@ export default class AnimalDetails extends Component{
                     </div>
                     </form></div>
 
-
+                    <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
                     {/* <div>
                 {this.state.Medical.map(Medical =>(
                 <div>
