@@ -45,9 +45,6 @@ import AddProject from './components/ProjectCreate';
 import ProjectDetails from './components/ProjectSearch';
 import EditDetails from './components/ProjectEdit';
 import ProjectReport from './components/ProjectReports';
-//importing projects slider
-import ProjectSlider from './components/ProjectSlider/ProjectSlider';
-
 //Medical Management
 import MedicalDashboard from './components/MedicalDashboard';
 import CreateMedical from './components/CreateMedical';
@@ -76,10 +73,6 @@ import AnimalsforAdoption from './components/AnimalsforAdoption';
 import MemberAdoptedAnimals from './components/MemberAdoptedAnimals';
 
 import Register from './components/Register';
-
-
-
-import { FormErrors } from './components/FormErrors';
 
 
 
@@ -140,17 +133,13 @@ render() {
         <Route path = "/research/createCollaboration/" component = {CreateCollaboration}/> 
 
 
-
-
         <Route path = "/ProjectsHome" component = {ProjectsHome}/>
         <Route path = "/project/add" component = {AddProject}/>
         <Route path ="/project/find" component={ProjectDetails}/>
         <Route path ="/project/edit/:id" component={EditDetails}/>
-        <Route path = "/project/report/:id" component={ProjectReport}/>
-        <Route path ="/ProjectSlider" component={ProjectSlider}/>
+        <Route path ="/project/report/:id" component={ProjectReport}/>
         
-
-
+        
         <Route path = "/medicalDashboard" component = {MedicalDashboard}/>
         <Route path = "/medical/create" component = {CreateMedical}/>
         <Route path = "/medical/update/:id" component = {EditMedical}/>
@@ -174,15 +163,15 @@ render() {
         <Route path = "/profile/adoptedanimals" component = {MemberAdoptedAnimals}/>
 
         <Route path = "/animaldashboard" component = {AnimalDashboard}/>
-        <Route path = "/animal/add" component ={CreateAnimalPortfolio}/>
-        <Route path = "/animal/update/:id" component={UpdateAnimalPortfolio}/>
-        <Route path = "/animal/details/:id" component={AnimalDetails}/>
+        <Route path="/animal/add" component ={CreateAnimalPortfolio}/>
+        <Route path="/animal/update/:id" component={UpdateAnimalPortfolio}/>
+        <Route path="/animal/details/:id" component={AnimalDetails}/>
 
 
         
 
         
-        <Route path = "/FormErrors" component={FormErrors}/>
+        
         
          
             
