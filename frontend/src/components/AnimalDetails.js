@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import '../CSS/AnimalDetails.css';
+
+import {Link} from 'react-router-dom';
+
 export default class AnimalDetails extends Component{
     constructor(props){
         super(props);
@@ -20,6 +23,37 @@ export default class AnimalDetails extends Component{
             }
         });
     }
+
+
+
+
+    retrievePosts(){
+        axios.get("/posts").then(res =>{
+            if(res.data.success){
+                this.setState({
+                    posts:res.data.existingPosts
+                });
+                console.log(this.state.posts)
+            }
+        })
+    }
+
+
+    retrieveMedical(){
+        axios.get("http://localhost:8015/medical/").then(res =>{
+          if(true){
+            this.setState({
+              Medical:res.data.existingMedical
+            });
+            console.log(this.state.Medical)
+          }
+        })
+      
+        
+      }
+
+
+
     render(){
         const { Animal_ID,
                 Animal_Name,
@@ -96,7 +130,9 @@ export default class AnimalDetails extends Component{
 <center>
 <a className="btn btn-light btn-small justify-content-center btn-outline-primary" href={`/medicalDashboard`} style={{marginTop:'5px',marginBottom:'100px'}} id="ChamathUpsss">
 <i className="fa fa-paw"></i>&nbsp;<b>Check Medical Records!</b>
-</a></center>
+
+</a></center> */}
+
             </div></div>
         )
     }
