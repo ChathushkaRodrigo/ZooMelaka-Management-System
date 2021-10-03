@@ -1,3 +1,4 @@
+/* eslint-disable react/no-direct-mutation-state */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react'
 import axios from 'axios';
@@ -124,17 +125,17 @@ export default class CreateBooking extends Component {
         
     }
     Demo = () => {
-        this.ref1.current.value = "Test1@gmail.com"
-        this.ref2.current.value = "Test2"
-        this.ref3.current.value = "0745645789"
-        this.ref4.current.value = "Test4"
-        this.ref5.current.value = "Test5"
+        this.ref1.current.value = "chandimaljay@gmail.com"
+        this.ref2.current.value = "Chandimal Jayaweera"
+        this.ref3.current.value = "072223949"
+        this.ref4.current.value = "Basic"
+        this.ref5.current.value = "Mr.Alex Soma"
 
-        this.state.CustomerEmail = "Test1@gmail.com"
-        this.state.CustomerName = "Test2"
-        this.state.MobileNumber = "0745645789"
-        this.state.TourOption = "Test4"
-        this.state.TourGuideName = "Test5"
+        this.state.CustomerEmail = "chandimaljay@gmail.com"
+        this.state.CustomerName = "Chandimal Jayaweera"
+        this.state.MobileNumber = "072223949"
+        this.state.TourOption = "Basic"
+        this.state.TourGuideName = "Mr.Alex Soma"
 
     }
 
@@ -238,13 +239,13 @@ export default class CreateBooking extends Component {
                         onChange={this.handleInputChange} required />
                         
                     </div>
-                 
+                 <br/><br/>
                     <div className="mb-2">
                 <DropdownButton align="center" title="Tour Guide" id="dropdown-menu-align-end1" onSelect={handleSelect} >
                 <div>
                 {this.state.posts.map(posts =>(
                 <div>
-                {posts.employeeType=="Tour Guide" && 
+                {posts.employeeType==="Tour Guide" && 
 
                 <Dropdown.Item eventKey={posts.userName}>
                 {posts.userName}
@@ -253,7 +254,7 @@ export default class CreateBooking extends Component {
                 ))}</div>
                 
                 </DropdownButton>
-                <label style={{marginBottom:'5px'}} id="chamForm">Tour Guide Name</label>
+                <label style={{marginBottom:'5px'}}>Tour Guide Name</label>
                 <input type="text"
                 id="vinodRet"
                 className="form-control"
