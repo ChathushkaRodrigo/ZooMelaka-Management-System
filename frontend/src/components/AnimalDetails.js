@@ -54,6 +54,7 @@ export default class AnimalDetails extends Component{
 
 
 
+
     render(){
         const { Animal_ID,
                 Animal_Name,
@@ -132,6 +133,7 @@ export default class AnimalDetails extends Component{
 <i className="fa fa-paw"></i>&nbsp;<b>Check Medical Records!</b>
 
 </a></center> */}
+
 
             </div></div>
         )

@@ -84,6 +84,7 @@ handleSearchArea = (e) =>{
 
         <table className="table table-bordered table-sm table-hover"  style={{width:'25%', marginLeft:'30px'}} id="shas99Table">
           <thead>
+
             <tr>
               <th scope="col" style={{backgroundColor:"#333",color:"white"}}>#</th>
               <th scope="col" >eID</th>

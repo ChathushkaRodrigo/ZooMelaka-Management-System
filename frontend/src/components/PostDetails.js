@@ -141,12 +141,14 @@ export default class PostDetails extends Component {
 
       }
 
+
     
     render() {
 
         const {eID,userName,firstName,lastName,email,address,employeeType,DOB,salary} = this.state.post;
 
         return (
+
 
             <div style={{marginTop:'20px',backgroundColor:"#00002b"}}>
 
@@ -155,6 +157,7 @@ export default class PostDetails extends Component {
                 <hr/>
 
                 <table style={{color:'white'}}> 
+
 
 
                 <form className="shasForms">

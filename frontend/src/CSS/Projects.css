@@ -226,7 +226,9 @@ body {
 
 .reportback{
     background-image: url('../images/zoologo.jpg');
+
     height: 700px;
+
 }
 
 .report{
@@ -253,6 +255,10 @@ body {
 }
 
 .content{
+
+    border-style:solid;
+    margin-top:400px;
+
     padding-left: 60px;
     padding-right: 60px;
     height: auto;
