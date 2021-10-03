@@ -74,6 +74,14 @@ class AddAdoption extends Component {
     componentDidMount() {
         // Check if session cookie is present
         store.dispatch(isAuth());
+
+        let today =new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0'); 
+        let yyyy = today.getFullYear();
+        today = yyyy + '-' + mm + '-' + dd;
+        this.setAdoptionDate(today);
+
       }
 
 
@@ -104,12 +112,7 @@ class AddAdoption extends Component {
         
         console.log('Adoption data', this.state);
         
-        let today =new Date();
-        let dd = String(today.getDate()).padStart(2, '0');
-        let mm = String(today.getMonth() + 1).padStart(2, '0'); 
-        let yyyy = today.getFullYear();
-        today = yyyy + '-' + mm + '-' + dd;
-        this.setAdoptionDate(today);
+       
 
         const adoption = {
             animal_name : this.state.animal_name,
@@ -126,6 +129,11 @@ class AddAdoption extends Component {
         .catch(error => {
             alert (error.message);
         });
+    }
+
+    udpatememid(mid){
+        this.setState({member_id:mid});
+        return mid;
     }
 
     advocate(){
@@ -228,18 +236,21 @@ class AddAdoption extends Component {
             // return <Redirect to="/" />
           }
 
-          const {user} = this.props.authState;
+        const {user} = this.props.authState;
 
+       
+   
         return (
-
+            
             <div className = 'bckgrnd'>
                 <div className = "add-hero">
                     <div class="add-bg_image add-bgimage"></div>
                     <div id = "addcontent" className = "add-content">
-                        <p className = "add-topic">Adopt an Animal{ user ? `Welcome, ${user.id}`: ''}</p><br/>
+                        <p className = "add-topic">Adopt an Animal</p><br/>
                         <p className = 'add-sub-content'>Become a proud conservationist of a Zoo Melaka animal today! By adopting an <br/> animal, you not only help the care and feeding of that animal, but also <br/>support education and conservation programs at the Zoo Melaka.</p>
                   </div>
                 </div>
+                {}
                 <div className = "add-contentdiv">
                     <br/>
                 <div className = "add-formdiv container">

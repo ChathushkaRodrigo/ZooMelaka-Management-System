@@ -5,6 +5,7 @@ import '../CSS/AnimalDetails.css';
 import {Link} from 'react-router-dom';
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
+import { ImageData } from './ImageData';
 export default class AnimalDetails extends Component{
     constructor(props){
         super(props);
@@ -26,10 +27,13 @@ export default class AnimalDetails extends Component{
       
           
         
+        var imageData =ImageData.IMAGE_DATA;
+          
+        doc.addImage(imageData,"ReportLogo",120, 300, 370, 200);
         doc.autoTable({ html: '#my-table' })
         //add texts
       
-        doc.text(200,20,'Employee Report')
+        doc.text(200,20,'Animal Report')
       
         doc.autoTable({
            
@@ -37,7 +41,7 @@ export default class AnimalDetails extends Component{
            margin: { top: 10 },
             columnStyles: { europe: { halign: 'center' } },
             theme:'grid',
-            head: [['Animal ID','Name','Species','Date_Of_Birth','Gender','Adoptability']],
+            head: [['Animal ID','Name','Species','Date Of Birth','Gender','Adoptability']],
             body: [
              
               [this.state.zooAnimal.Animal_ID,this.state.zooAnimal.Animal_Name,this.state.zooAnimal.Animal_Species,this.state.zooAnimal.Animal_Date_Of_Birth,this.state.zooAnimal.Animal_Gender,this.state.zooAnimal.Adoptability],
@@ -51,23 +55,7 @@ export default class AnimalDetails extends Component{
             
           })
           
-      
-          
-          
-     
-        
 
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
         
       
         //Save pdf 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
+import { ImageData } from './ImageData';
 
 
 
@@ -35,6 +36,9 @@ jspdGenerator=()=>{
     //doc obj
     var doc =new jsPDF('p','pt');
   
+    var imageData =ImageData.IMAGE_DATA;
+          
+    doc.addImage(imageData,"ReportLogo",120, 300, 370, 200);
       
     
     doc.autoTable({ html: '#my-table' })

@@ -46,7 +46,7 @@ jspdGenerator=()=>{
 
         
   //Create document obj
-  var doc =new jsPDF("p","pt","b2") 
+  var doc =new jsPDF("p","pt","b3") 
 
 
   doc.html(document.querySelector("#Customers"), {
@@ -128,6 +128,12 @@ jspdGenerator=()=>{
                 ))}
               </tbody>
             </table>    
+            <button className="btn btn-success" style={{marginLeft:"0", marginTop:"0px",width:"150px"}} >
+        <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
+           Admin Home
+          </a>
+          </button>
+          <br/>
             <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Members Report</button>
           </div>
           </div>        

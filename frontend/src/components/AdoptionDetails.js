@@ -3,6 +3,7 @@ import axios from "axios";
 import "../CSS/AdoptionDetails.css"
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
+import { ImageData } from './ImageData';
 class AdoptionDetails extends Component {
     constructor(props){
         super(props);
@@ -35,6 +36,9 @@ jspdGenerator=()=>{
     var doc =new jsPDF('p','pt');
   
       
+    var imageData =ImageData.IMAGE_DATA;
+          
+    doc.addImage(imageData,"ReportLogo",120, 300, 370, 200);
     
     doc.autoTable({ html: '#my-table' })
     //add texts

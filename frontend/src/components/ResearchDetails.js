@@ -4,6 +4,7 @@ import axios from 'axios';
 import "../CSS/ResearchDetails.css"
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
+import { ImageData } from './ImageData';
 
 
 class ResearchDetails extends Component {
@@ -41,11 +42,14 @@ jspdGenerator=()=>{
   var doc =new jsPDF('p','pt');
 
     
+  var imageData =ImageData.IMAGE_DATA;
+          
+  doc.addImage(imageData,"ReportLogo",120, 300, 370, 200);
   
   doc.autoTable({ html: '#my-table' })
   //add texts
 
-  doc.text(200,20,'Employee Report')
+  doc.text(200,20,'Research Report')
 
   doc.autoTable({
      
@@ -53,7 +57,7 @@ jspdGenerator=()=>{
      margin: { top: 10 },
       columnStyles: { europe: { halign: 'center' } },
       theme:'grid',
-      head: [['Scientist', 'Started Date ', 'Ended Date','Catagory','Research Name','Animal ID','Decription']],
+      head: [['Scientist', 'Started Date ', 'Ended Date','Catagory','Research Name','Animal ID','Description']],
       body: [
        
         [this.state.research.name_of_scientist,this.state.research.date_research_started,this.state.research.date_research_ended,this.state.research.catergory,this.state.research.research_name,this.state.research.animal_id,this.state.research.research_information],

@@ -2,8 +2,10 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
   color: black;
-  background-color: blanchedalmond;
-
+  /* background-color: blanchedalmond; */
+  /* background-color: #0f2b08;
+  background-image: linear-gradient(200deg, #27b105 54%, #a2d240 40%); */
+  background-image: url(../images/serviceBanner.jpg);
   align-items: center;
   display: flex;
   justify-content: center;
@@ -51,8 +53,19 @@
   margin-left: 0%;
 }
 
-.empbtns{
+.empbtns {
   border-style: dashed;
   border-width: 1px;
   margin-left: 25px;
 }
+
+::placeholder {
+  color: white;
+  font-size: large;
+  font-weight: bold;
+}
+
+#ShasCreate{
+  background-image: url(../images/serviceBanner.jpg);
+}
+

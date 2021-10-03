@@ -3,6 +3,7 @@ import axios from 'axios'
 import "../CSS/ShasRet.css"
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
+import { ImageData } from './ImageData';
 
 import {Link} from 'react-router-dom';
 export default class PostDetails extends Component {
@@ -33,6 +34,9 @@ jspdGenerator=()=>{
   var doc =new jsPDF('p','pt');
 
     
+  var imageData =ImageData.IMAGE_DATA;
+          
+  doc.addImage(imageData,"ReportLogo",120, 300, 370, 200);
   
   doc.autoTable({ html: '#my-table' })
   //add texts

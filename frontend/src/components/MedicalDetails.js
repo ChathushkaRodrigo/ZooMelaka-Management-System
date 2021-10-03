@@ -3,6 +3,7 @@ import axios from 'axios';
 import "../CSS/Createmedical.css"
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
+import { ImageData } from './ImageData';
 
 class MedicalDetails extends Component {
     constructor(props) {
@@ -18,6 +19,10 @@ class MedicalDetails extends Component {
         //doc obj
         var doc =new jsPDF('p','pt');
       
+
+        var imageData =ImageData.IMAGE_DATA;
+          
+        doc.addImage(imageData,"ReportLogo",120, 300, 370, 200);
           
         
         doc.autoTable({ html: '#my-table' })

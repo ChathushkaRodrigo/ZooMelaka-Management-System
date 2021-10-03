@@ -61,7 +61,12 @@ class home extends PureComponent{
                     <div className="card1">
                         <center>
                             <h1>The Community</h1>
-                            <p>vemvklvmmdcmkldamcmdscmdcmldmklcmaddcmlkmklcm<br/>jkcjkncjksmcwlkoc<br/></p>
+                            <p>The Melaka Zoo and Night Safari advocate conservation, education, and recreation organization dedicated to the reproduction, protection, and exhibition of animals, plants, and their habitats.
+                                
+                            <br/><br/></p>
+                        
+                        
+                        
                         </center>
     
                     </div>  

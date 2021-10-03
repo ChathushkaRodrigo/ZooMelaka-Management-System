@@ -3,6 +3,7 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react'
 import axios from 'axios';
+import '../CSS/EmployeeDashboard.css'
 
 import SplitButton from 'react-bootstrap/SplitButton';
 import DropdownButton from 'react-bootstrap/DropdownButton';
@@ -164,7 +165,7 @@ constructor(props){
             this.ref.current.value = e
         }
         return (
-            <div className="col-md-8 mt-4 mx-auto">
+            <div className="col-md-8 mt-4 mx-auto" id="ShasCreate">
                 <h1 className="h3 mb-3 font-weight-normal" style={{fontFamily:'Papyrus, fantasy'}}>Create new post</h1>
                 <form className="needs-validation" noValidate>
                     <div className="form-group" style={{marginBottom:'15px'}}>

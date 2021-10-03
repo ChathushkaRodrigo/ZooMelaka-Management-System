@@ -42,7 +42,7 @@
 .headerContainer2 {
   align-items: center;
   font-size: 30px;
-  height:100px;
+  height: 100px;
   font-weight: lighter;
   background: -webkit-Radial-gradient(#eee 65%, #333);
   -webkit-background-clip: text;
@@ -221,14 +221,22 @@
 }
 
 .card1 h1 {
-  padding-top: -100px;
+  /* padding-top: -600px; */
 }
 
 .card1 h1:hover {
-  font-size: 90px;
+  /* font-size: 10px; */
 }
 
 .card1 p:hover {
-  font-size: 60px;
-  padding-top: 30px;
+  font-size: 30px;
+  padding-top: -800px;
+}
+
+.card1 {
+  width: 900px;
+  text-align: justify-content;
+  margin-left: 275px;
+  height: 900px;
+  font-size: medium;
 }

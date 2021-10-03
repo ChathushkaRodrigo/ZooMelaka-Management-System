@@ -6,6 +6,7 @@ import "../CSS/profile.css";
 // import Link from 'Link';
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
+import { ImageData } from './ImageData';
 
 class profile extends Component {
 
@@ -39,6 +40,9 @@ jspdGenerator=()=>{
   var doc =new jsPDF('p','pt');
 
     
+  var imageData =ImageData.IMAGE_DATA;
+          
+  doc.addImage(imageData,"ReportLogo",120, 300, 370, 200);
   
   doc.autoTable({ html: '#my-table' })
   //add texts

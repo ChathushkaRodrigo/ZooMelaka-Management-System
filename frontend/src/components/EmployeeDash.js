@@ -100,7 +100,7 @@ jspdGenerator=()=>{
               <div className="employeeImg"> </div>
               </div>
               <div className="col-lg-3 mt-2 mb-2" id="shas99SearchBar">
-              <input 
+              <input style={{color:'#000'}}
               className="form-control"
               type="search"
               placeholder="                                         Search for records"
@@ -165,8 +165,8 @@ jspdGenerator=()=>{
       
       
       </table>
-      <div id="empbtns" style={{marginBottom:'30px'}}>
-      <button className="btn btn-success" style={{marginLeft:"3%", marginTop:"20px",width:"150px"}} >
+      <div id="empbtns" style={{marginTop:'30px',marginBottom:'30px',width:'100%'}}>
+      <button className="btn btn-success" style={{marginLeft:"0", marginTop:"0px",width:"150px"}} >
         <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
            Admin Home
           </a>
@@ -176,9 +176,9 @@ jspdGenerator=()=>{
         {/* Copy generate from here */}
 
         
-        <button className="btn btn-success" onClick={this.jspdGenerator} style={{marginLeft:"30%", marginTop:"20px"}}>Generate Employee Report</button>
+        <button className="btn btn-success" onClick={this.jspdGenerator} style={{margin:'2 0',marginLeft:'30%'}}>Generate Employee Report</button>
         
-        <button className="btn btn-success" style={{marginLeft:"auto",marginRight:"3%", marginTop:"20px"}}><a href="/employee/add" style={{textDecoration:'none',color:'white'}}>Add New Employee</a>
+        <button className="btn btn-success" style={{marginLeft:'560px'}}><a href="/employee/add" style={{textDecoration:'none',color:'white'}}>Add New Employee</a>
 
 </button>
 

@@ -24,7 +24,7 @@ jspdGenerator=()=>{
   var doc =new jsPDF("p","pt","b2") 
   doc.html(document.querySelector("#researches"), {
     callback:function(pdf){
-      pdf.save("DashboardCustomer.pdf");
+      pdf.save("Report Details.pdf");
     }
   });
 }
