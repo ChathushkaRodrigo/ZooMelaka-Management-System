@@ -2,15 +2,81 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import "../CSS/ShasRet.css"
 
-
+import {Link} from 'react-router-dom';
 export default class PostDetails extends Component {
     constructor(props){
         super(props);
 
         this.state={
-            post:{}
+            post:{},
+            ret:[],
+            Research:[],
+            projects:[],
+            bookings: [],
+            Medical:[],
+            zooAnimal:[],
+            
         };
+        this.retrieveAnimal();
+        this.retrieveBookings();
+        this.retrieveResearch();
+        this.retrieveProjects();
+        this.retrieveMedical();
     }
+    retrieveAnimal(){
+        axios.get("http://localhost:8015/animal").then(res=>{
+          if(res.data.success){
+            this.setState({
+              zooAnimal:res.data.existingPosts
+            });
+            console.log(this.state.zooAnimal);
+          }
+        });
+        }
+    retrieveMedical(){
+        axios.get("http://localhost:8015/medical/").then(res =>{
+          if(true){
+            this.setState({
+              Medical:res.data.existingMedical
+            });
+            console.log(this.state.Medical)
+          }
+        })
+      
+        
+      }
+    retrieveBookings() {
+        axios.get("http://localhost:8015/booking").then((res) => {
+          if (res.data.success) {
+            this.setState({
+              bookings: res.data.existingBookings,
+            });
+          }
+        });
+      }
+    retrieveProjects(){
+        axios.get('http://localhost:8015/projects').then(res =>{
+          if(res.data.success){
+            this.setState({
+              projects:res.data.existingPosts
+            });
+            console.log(this.state.projects)
+          }
+        });
+      }
+    
+
+    retrievePosts(){
+        axios.get("http://localhost:8015/posts").then(res=>{
+          if(res.data.success){
+            this.setState({
+              ret:res.data.existingPosts
+            })
+            console.log(this.state.ret)
+          }
+        })
+      }
+      
 
     componentDidMount(){
         const id =  this.props.match.params.id;
@@ -24,6 +90,19 @@ export default class PostDetails extends Component {
             }
         })
     }
+
+    retrieveResearch(){
+        axios.get("http://localhost:8015/research").then(res =>{
+          if(true){
+            this.setState({
+              Research:res.data.existingResearch
+            });
+            console.log(this.state.Research)
+          }
+        })
+      
+        
+      }
     
     render() {
 
@@ -99,6 +178,89 @@ export default class PostDetails extends Component {
 
                     
                     </form>
+
+                <div>
+
+                
+                <div>
+                {this.state.zooAnimal.map(zooAnimal =>(
+                   
+                <div>
+               {zooAnimal.Attended_Zookeeper==userName && 
+
+             
+                    <div>
+                        <center>
+                        <Link to = {`animal/details/${zooAnimal._id}`} style = {{textDecoration:"none"}}>
+                      <h2>Click to See Animals under the preview of our Zookeeper</h2>
+                      </Link>
+                </center>
+                    </div>
+    }</div>
+    ))}</div>
+
+
+{/* **************************Vinod not completed********************************* */}
+
+<div>
+                {this.state.bookings.map(bookings =>(
+                   
+                <div>
+               {bookings.TourGuideName == userName && 
+
+             
+                    <div>
+                        <center>
+                        <Link to = {`/booking/update/${bookings._id}`} style = {{textDecoration:"none"}}>
+                      <h2>Click to see tour Guide's work!</h2>
+                      </Link>
+                </center>
+                    </div>
+    }</div>
+    ))}</div>
+
+
+<div>
+                {this.state.Medical.map(Medical =>(
+                   
+                <div>
+               {Medical.vname == userName && 
+
+             
+                    <div>
+                        <center>
+                        <Link to = {`/medical/details/${Medical._id}`} style = {{textDecoration:"none"}}>
+                      <h2>Click to see veterinarians appointments!</h2>
+                      </Link>
+                </center>
+                    </div>
+    }</div>
+    ))}</div>
+
+             
+
+<div>
+                {this.state.Medical.map(Medical =>(
+                   
+                <div>
+               {Medical.vname == userName && 
+
+             
+                    <div>
+                        <center>
+                        <Link to = {`/medical/details/${Medical._id}`} style = {{textDecoration:"none"}}>
+                      <h2>Click to see veterinarians appointments!</h2>
+                      </Link>
+                </center>
+                    </div>
+    }</div>
+    ))}</div>
+
+
+                
+
+              </div>
+                <br/><br/><br/><br/><br/><br/>
 
                 {/* <table style={{color:'black'}}> 
                 <tr>
