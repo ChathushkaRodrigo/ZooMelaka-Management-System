@@ -8,11 +8,14 @@ export default class AnimalDetails extends Component{
         this.state={
             zooAnimal:{},
             posts:[],
-            Medical:[]
+            Medical:[],
+            // Research:[]
+            
         };
 
         this.retrievePosts();
         this.retrieveMedical();
+        // this.retrieveResearch();
     }
 
     componentDidMount(){
@@ -26,6 +29,33 @@ export default class AnimalDetails extends Component{
             }
         });
     }
+
+
+
+
+    // componentDidMount(){
+
+    //     const id = this.props.match.params.id;
+
+    //     axios.get(`http://localhost:8015/research/${id}`).then((res)=>{
+            
+    //     if(res.data.success){
+    //             this.setState({
+    //                    research:res.data.research
+    //             });
+
+    //             console.log(this.state.research);
+    //         }
+           
+    //     });
+     
+                
+    // }
+
+
+
+
+
 
 
 
@@ -53,6 +83,25 @@ export default class AnimalDetails extends Component{
       
         
       }
+
+
+    //   retrieveResearch(){
+    //     axios.get("http://localhost:8015/research").then(res =>{
+    //       if(true){
+    //         this.setState({
+    //           Research:res.data.existingResearch
+    //         });
+    //         console.log(this.state.Research)
+    //       }
+    //     })
+      
+        
+    //   }
+
+
+
+
+
 
 
 
@@ -149,6 +198,26 @@ export default class AnimalDetails extends Component{
 
                 }</div>
                 ))}</div>
+
+
+
+
+            {/* <div className="btn btn-light btn-small justify-content-center btn-outline-warning" style={{marginTop:'5px',marginBottom:'5px'}} id="ChamathUpsssz">
+            <i className="fa fa-heartbeat"></i>
+                {this.state.Research.map(Research =>(
+                <div>
+                {Research.animal_id == Animal_ID && 
+
+                <div>
+
+                <Link to = {`/research/details/${Research.animal_id}`} style = {{textDecoration:"none"}}>
+                            Check Research Records!
+                      </Link>
+
+                </div>
+
+                }</div>
+                ))}</div> */}
                 
 
                 
