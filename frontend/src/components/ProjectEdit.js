@@ -84,43 +84,44 @@ export default class Edit extends Component{
 
     render() {
         return(
+            <div className="editback">
             <div>
-                <div style={{height:'70px',textAlign:'center',backgroundColor:'#009900'}}>
-                <h3 className="pageCaption" style={{marginTop:'10px',color:'#FFFFFF',padding:'19px 0'}}>Edit Project</h3>
-            </div>
-                <form>
-                    <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Project ID</label>
-                        <input type="text" className="form-control" name="projectID" placeholder="Enter Project ID" value={this.state.projectID} onChange={this.handleInputChange}/>
+                <div className="Caption">
+                <h1 className="pageCaption">Edit Project - {this.state.name}</h1>
+                </div>
+             <div className="createF" style={{background:'rgba(255,255,255,0.7)'}}>
+                <form className="cform">
+                    <h3 style={{marginBottom:'15px', textAlign:'center'}}><b><u>Edit Project Form</u></b></h3>
+                    <div className="form-group">
+                        <label className="formLabels">Project Name</label>
+                        <input type="text" style={{marginTop:'0px'}} className="form-control" name="name" placeholder="Enter Project Name" value={this.state.name} onChange={this.handleInputChange}/>
                     </div>
-                    <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Project Name</label>
-                        <input type="text" className="form-control" name="name" placeholder="Enter Project Name" value={this.state.name} onChange={this.handleInputChange}/>
+                    <div className="form-group">
+                        <label className="formLabels">Project Title</label>
+                        <input type="text" style={{marginTop:'0px'}} className="form-control" name="title" placeholder="Enter Project Title" value={this.state.title} onChange={this.handleInputChange}/>
                     </div>
-                    <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Project Title</label>
-                        <input type="text" className="form-control" name="title" placeholder="Enter Project Title" value={this.state.title} onChange={this.handleInputChange}/>
+                    <div className="form-group">
+                        <label className="formLabels">Project Description</label>
+                        <textarea className="form-control" name="description" rows="5" placeholder="Enter Project Description" value={this.state.description} onChange={this.handleInputChange}/>
                     </div>
-                    <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Project Description</label>
-                        <input type="text" className="form-control" name="description" placeholder="Enter Project Description" value={this.state.description} onChange={this.handleInputChange}/>
+                    <div className="form-group" style={{paddingTop:'15px'}}> 
+                        <label className="formLabels">Supervisor</label>
+                        <input type="text" style={{marginTop:'0px'}} className="form-control" name="supervisor" placeholder="Enter Supervisor" value={this.state.supervisor} onChange={this.handleInputChange}/>
                     </div>
-                    <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Supervisor</label>
-                        <input type="text" className="form-control" name="supervisor" placeholder="Enter Supervisor" value={this.state.supervisor} onChange={this.handleInputChange}/>
-                    </div>
-                    <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px'}}>Working Team</label>
-                        <input type="text" className="form-control" name="workingTeam" placeholder="Enter Working Team" value={this.state.workingTeam} onChange={this.handleInputChange}/>
+                    <div className="form-group">
+                        <label className="formLabels">Working Team</label>
+                        <input type="text" style={{marginTop:'0px'}} className="form-control" name="workingTeam" placeholder="Enter Working Team" value={this.state.workingTeam} onChange={this.handleInputChange}/>
                     </div>
                     
-                    <button className="btn btn-success" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
+                    <button className="btn btn-success" id="eupdate" type="submit" onClick={this.onSubmit}>
                         <i className="far fa-check-square"></i>
                         &nbsp; Update
                     </button>
                 </form>
+                </div>
+              </div>
                 
             </div>
         )
-    }  
+    }    
 }

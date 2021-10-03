@@ -60,18 +60,16 @@ handleSearchArea = (e) =>{
 
   render() {
     return (
-        <div className="EmpDashBody">
         <div className="header1">
           <div className="row">
-          
+              
             <div className="col-lg-9 mt-2 mb-2"><b>
-              <h4 className="Shas99HeadingEmpDash">Employee Management Dashboard</h4>
-             
+              <h4 style={{color:"white",fontSize:"50px"}}>Employee Managment<br/> Dashboard</h4>
               </b>
               <div className="employeeImg"> </div>
               </div>
-              <div className="col-lg-3 mt-2 mb-2" id="shas99SearchBar">
-              <input 
+              <div className="col-lg-3 mt-2 mb-2" style={{margin:"15px",marginLeft:"350px"}}>
+              <input style={{width:"500px"}}
               className="form-control"
               type="search"
               placeholder="                                         Search for records"
@@ -83,33 +81,34 @@ handleSearchArea = (e) =>{
               </div>
               </div>
            
+
         <table className="table table-bordered table-sm table-hover"  style={{width:'25%', marginLeft:'30px'}} id="shas99Table">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">Employee ID</th>
-              <th scope="col">Username</th>
-              <th scope="col">Firstname</th>
-              <th scope="col">Lastname</th>
-              <th scope="col">E-mail</th>
-              <th scope="col">Address</th>
-              <th scope="col">Employee Type</th>
-              <th scope="col">Date Of Birth</th>
-              <th scope="col">Salary</th>
+              <th scope="col" style={{backgroundColor:"#333",color:"white"}}>#</th>
+              <th scope="col" >eID</th>
+              <th scope="col">userName</th>
+              <th scope="col">firstName</th>
+              <th scope="col">lastName</th>
+              <th scope="col">email</th>
+              <th scope="col">address</th>
+              <th scope="col">employeeType</th>
+              <th scope="col">DOB</th>
+              <th scope="col">salary</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
             {this.state.posts.map((posts,index) =>(
                           <tr>
-                            <th >{index+1}</th>
+                            <th scope="row" style={{backgroundColor: "#36c",color: "#fff"}}>{index+1}</th>
                             <td>
-                                <a href={`/employee/details/${posts._id}`}>
+                                <a href={`/employee/details/${posts._id}`} style={{textDecoration:'none'}}>
                                 {posts.eID}
                                 </a>
                                 
                                 </td>
-                            <td >{posts.userName}</td>
+                            <td>{posts.userName}</td>
                              <td>{posts.firstName}</td>
                             <td>{posts.lastName}</td>
                             <td>{posts.email}</td>
@@ -118,11 +117,11 @@ handleSearchArea = (e) =>{
                             <td>{posts.DOB}</td>
                             <td>{posts.salary}</td>
                             <td>
-                            <a className="btn btn-warning"  href={`/edit/employee/${posts._id}`} id="shasEdit">
+                            <a className="btn btn-warning" style={{margin:'10px'}} href={`/edit/employee/${posts._id}`}>
                               <i className="fas fa-edit"></i>&nbsp;Edit
                             </a>
-                            {/* &nbsp; */}
-                            <a className="btn btn-danger" href="#" onClick={() =>this.onDelete(posts._id)} id="shasDelete">
+                            &nbsp;
+                            <a className="btn btn-danger" href="#" onClick={() =>this.onDelete(posts._id)}>
                               <i className="far fa-trash-alt"></i>&nbsp;Delete
                             </a>
                             </td>
@@ -143,6 +142,6 @@ handleSearchArea = (e) =>{
       </div> 
 
     
-      </div>)
+    )
   }
 }

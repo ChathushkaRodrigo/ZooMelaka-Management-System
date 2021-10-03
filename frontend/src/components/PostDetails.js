@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+
 import "../CSS/ShasRet.css"
 
 import {Link} from 'react-router-dom';
+
 export default class PostDetails extends Component {
     constructor(props){
         super(props);
@@ -91,6 +93,7 @@ export default class PostDetails extends Component {
         })
     }
 
+
     retrieveResearch(){
         axios.get("http://localhost:8015/research").then(res =>{
           if(true){
@@ -144,11 +147,15 @@ export default class PostDetails extends Component {
         const {eID,userName,firstName,lastName,email,address,employeeType,DOB,salary} = this.state.post;
 
         return (
-            <div style={{marginTop:'20px'}}>
-                
+
+            <div style={{marginTop:'20px',backgroundColor:"#00002b"}}>
+
                  
-                <h1 style={{color:'black'}}>Hello, {userName}</h1>
+                <h1 style={{color:'white'}}>Hello, {userName}</h1>
                 <hr/>
+
+                <table style={{color:'white'}}> 
+
 
                 <form className="shasForms">
 
@@ -298,6 +305,7 @@ export default class PostDetails extends Component {
                 <br/><br/><br/><br/><br/><br/>
 
                 {/* <table style={{color:'black'}}> 
+
                 <tr>
                     <td style={{border:"0px"}} className="col-sm-3">FirstName</td>
                     <td style={{border:"0px"}} className="col-sm-9">{firstName}</td>
@@ -330,9 +338,11 @@ export default class PostDetails extends Component {
                     <td style={{border:"0px"}} className="col-sm-3">Salary</td>
                     <td style={{border:"0px"}} className="col-sm-9">{salary}</td>
                 </tr>
+
                 </table> */}
 
                 {/* <br/><br/><br/><br/><br/><br/><br/><br/><br/> */}
+
             </div>
         )
     }

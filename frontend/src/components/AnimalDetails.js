@@ -1,18 +1,15 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import '../CSS/AnimalDetails.css';
+
 import {Link} from 'react-router-dom';
+
 export default class AnimalDetails extends Component{
     constructor(props){
         super(props);
         this.state={
-            zooAnimal:{},
-            posts:[],
-            Medical:[]
+            zooAnimal:{}
         };
-
-        this.retrievePosts();
-        this.retrieveMedical();
     }
 
     componentDidMount(){
@@ -26,6 +23,7 @@ export default class AnimalDetails extends Component{
             }
         });
     }
+
 
 
 
@@ -122,38 +120,6 @@ export default class AnimalDetails extends Component{
                     </form></div>
 
 
-                    {/* <div>
-                {this.state.Medical.map(Medical =>(
-                <div>
-                  {Medical.animalID =="ZooKeeper" && 
-  
-                {Medical.animalID}
-                {Medical._id}
-                
-                }</div>
-                ))}</div> */}
-
-            <div className="btn btn-light btn-small justify-content-center btn-outline-info" style={{marginTop:'5px',marginBottom:'5px'}} id="ChamathUpsss">
-            <i className="fa fa-heartbeat"></i>
-                {this.state.Medical.map(Medical =>(
-                <div>
-                {Medical.animalID == Animal_ID && 
-
-                <div>
-
-                <Link to = {`/medical/details/${Medical._id}`} style = {{textDecoration:"none"}}>
-                            Check Medical Records!
-                      </Link>
-
-                </div>
-
-                }</div>
-                ))}</div>
-                
-
-                
-
-
 
            
 <center>
@@ -161,10 +127,12 @@ export default class AnimalDetails extends Component{
                             <i className="fa fa-paw"></i>&nbsp;<b>Retreival Completed!</b>
 </a></center>
 
-{/* <center>
-<a className="btn btn-light btn-small justify-content-center btn-outline-primary" href={`/medicalDashboard`} style={{marginTop:'5px',marginBottom:'10px'}} id="ChamathUpsss">
+<center>
+<a className="btn btn-light btn-small justify-content-center btn-outline-primary" href={`/medicalDashboard`} style={{marginTop:'5px',marginBottom:'100px'}} id="ChamathUpsss">
 <i className="fa fa-paw"></i>&nbsp;<b>Check Medical Records!</b>
+
 </a></center> */}
+
             </div></div>
         )
     }

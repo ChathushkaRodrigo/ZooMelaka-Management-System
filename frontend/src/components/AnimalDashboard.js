@@ -106,7 +106,7 @@ handleSearchArea = (e) => {
             <th scope="col">Attended Zookeeper</th>
             {/* <th scope="col">Date Of Medical Care</th>
             <th scope="col">Time Of Medical Care</th> */}
-            <th scope="col">Enclosure ID</th>
+            <th scope="col">Current Enclosure ID</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -146,6 +146,7 @@ handleSearchArea = (e) => {
 <a className="dashButton btn btn-light btn-small justify-content-center btn-outline-success" href={`animal/add`} style={{marginTop:'10px',marginBottom:'5px'}} id="chamCreaButton">
                             <i className="fas fa-dragon"></i>&nbsp;<b>Create Animal Portfolio!</b>
 </a>
+
 
 
 <a className="dashButton btn btn-light btn-small justify-content-center btn-outline-primary" href={`adminpanelhome`} style={{marginTop:'5px'}} id="chamAdminNav">
