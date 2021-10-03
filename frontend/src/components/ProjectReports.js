@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import NavBar from './NavBar';
+
 
 export default class Reports extends Component{
     constructor(props){
@@ -31,17 +31,24 @@ export default class Reports extends Component{
         const {projectID,name,title,description,supervisor,workingTeam} = this.state.post;
 
         return(
-            <div>
-                <NavBar/>
-                <h4 style={{textAlign:'center',marginTop:'30px'}}>
-                    <u><b>Project&nbsp;</b></u>
-                    <u><b>{name}</b></u>
-                    <u><b>&nbsp;Report</b></u>
+
+            <div className="reportback">
+                <div className="Caption">
+                <h1 className="pageCaption">Project Report</h1>
+                </div>
+                <div className="report">
+                
+                <center>
+                <h4 className="reportheader">
+                    Project&nbsp;
+                    {name}
+                    &nbsp;Report
+
                 </h4>
             
                 <p></p>
-             <div style={{paddingTop:'50px',paddingLeft:'100px',paddingRight:'100px'}}>
-                <d1 className="row" style={{textAlign:'left'}}>
+             <div className="content">
+                {/* <d1 className="row" style={{textAlign:'left'}}>
                     <dt className="col-sm-3">Project ID:</dt>
                     <dd className="col-sm-9">{projectID}</dd>
                     <dt className="col-sm-3">Project Name:</dt>
@@ -54,7 +61,35 @@ export default class Reports extends Component{
                     <dd className="col-sm-9">{supervisor}</dd>
                     <dt className="col-sm-3">Working Team:</dt>
                     <dd className="col-sm-9">{workingTeam}</dd>
-                </d1>
+                </d1> */}
+                <table>
+                    <tr>
+                        <th>Project ID:</th>
+                        <td>{projectID}</td>
+                    </tr>
+                    <tr>
+                        <th>Project Name:</th>
+                        <td>{name}</td>
+                    </tr>
+                    <tr>
+                        <th>Title:</th>
+                        <td>{title}</td>
+                    </tr>
+                    <tr>
+                        <th>Projects Description:</th>
+                        <td>{description}</td>
+                    </tr>
+                    <tr>
+                        <th>Supervisor:</th>
+                        <td>{supervisor}</td>
+                    </tr>
+                    <tr>
+                        <th>Working Team:</th>
+                        <td>{workingTeam}</td>
+                    </tr>
+                </table>
+                <button className="print" onClick="window.print()">Print report</button>
+             </div></center>
              </div>
 
             </div>                   

@@ -159,7 +159,7 @@ export default class EditAnimal extends Component{
             <div className="ChamathUpdateForm" id="chamathCreaForm">
             <form className="myFormszzChamath" noValidate>
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Feeding Date</label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Feeding And Watering Date</label>
                 <input type="date"
                 id="chamathRet"
                 className="form-control"
@@ -171,7 +171,7 @@ export default class EditAnimal extends Component{
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Feeding Time</label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Feeding And Watering Time</label>
                 <input type="time"
                 id="chamathRet"
                 className="form-control"
@@ -186,7 +186,7 @@ export default class EditAnimal extends Component{
 
             
             <div className="mb-2">
-                <DropdownButton align="left" title="Assigned Zookeeper" id="dropdown-menu-align-end" onSelect={handleSelect}>
+                <DropdownButton align="center" title="Assigned Zookeeper" id="dropdown-menu-align-end" onSelect={handleSelect}>
                 <div>
                 {this.state.posts.map(posts =>(
                 <div>
@@ -199,7 +199,7 @@ export default class EditAnimal extends Component{
                 ))}</div>
                 
                 </DropdownButton>
-                <label style={{marginBottom:'5px'}} id="chamForm"></label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Assigned Zookeeper</label>
                 <input type="text"
                 id="chamathRet"
                 className="form-control"

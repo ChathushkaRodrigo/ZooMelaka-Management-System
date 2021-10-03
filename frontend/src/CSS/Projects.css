@@ -1,0 +1,265 @@
+body {
+    font-family: Open sans, sans-serif;
+    
+    background: #f1f1f1;
+    overflow: scroll;
+  }
+
+  /* Captions */
+
+  .Caption{
+    height:80px;
+    width: 100%;
+    text-align:center;
+    background-color:#011a01;
+    margin: 0 auto;
+  }
+
+  .pageCaption{
+    margin-top:10px;
+    font-weight: bold;
+    color:#FFFFFF;
+    padding:19px 0px;
+    padding-bottom: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  a{
+      text-decoration: none;
+  }
+
+
+/* Projects Dashboard */
+
+  .Hback{
+      background-image: url(../images/ProjecttHome2.jpg);
+      background-attachment: fixed;
+      background-position: -150px -0; 
+  }
+
+  #PHomeBtn{
+    max-width: 700px;  
+    margin-top:40px;
+    /* margin-bottom: 50px; */
+    padding-bottom: 80px;
+  }
+
+  .HomeB1{
+    background-color: #011a01;
+    color: #FFFFFF;
+    height: 50px;
+    font-size: 20px;
+    width:100%;
+    border-style: none;
+    transition:scale;
+
+  }
+
+  .HomeB1:Hover{
+      color: #011a01;
+      background-color: #FFFFFF;
+      font-size: 23px;
+      font-weight: bold;
+      transform: scale(1.03);
+      border-color: #011a01;
+      border-style: groove;
+      border-width: 1px;
+  }
+
+  /* Create */
+
+  .createback{
+      background-image: url(../images/projectCreate.jpg);
+      background-size: cover;
+      border-style: hidden;
+      height: 1100px;
+      overflow: scroll;
+  }
+
+  .createF{
+      border: #011a01 outset 5px;
+      width: 60%;
+      margin: 0 auto;
+      margin-top: 50px;
+      margin-bottom: 100px;
+      border-style: double;
+      padding-top: 50px;
+      padding-bottom: 10px;
+      background: rgba(255,255,255,0.3);
+  }
+
+  .form-group{
+      width: 80%;
+      margin: 0 auto;
+      display: block;
+     
+  }
+
+  .formLabels{  
+    font-size: large;
+  }
+
+  .form-control{
+     margin-top: -3px;
+      
+  }
+
+ 
+
+  .Cbtn{
+      width: 100%;
+      margin-bottom: 8%;
+  }
+
+  #btnreset{
+      background-color: red;
+      border-color: black;
+  }
+
+  #btnsubmit{
+    background-color: rgb(0, 138, 18);
+    border-color: black;
+ }
+  
+ #btnreset:Hover{
+     transform: scale(1.1);
+ }
+
+ #btnsubmit:Hover{
+    transform: scale(1.1);
+}
+
+
+/* Search Project */
+
+.searchback{
+    background-image: url(../images/ProjectSearch.jpg);
+    background-size: cover;
+    background-position: 0 -100px;
+    border-style: hidden;
+    height: 900px;
+    /* overflow: scroll;  */
+    
+}
+
+.container{
+    margin-top: 50px;
+    background:rgb(255, 255, 255,0.5);
+    margin-bottom: 60px;
+    height: 600px;
+    overflow-y: scroll;
+    overflow-x: unset;
+}
+ 
+#psearchbar{
+    width: 100%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#psearch{
+    width: 300px;
+    margin-left: auto;
+    margin-right: 0;
+    margin-bottom: 1px;
+    padding-bottom: 1px;
+}
+
+#tr{
+    color: black;
+}
+
+#tr:Hover{
+    background-color: rgb(180, 180, 180);
+    color: #FFFFFF;
+}
+
+.searchlink{
+    color: rgb(40, 40, 41);
+    text-decoration: underline;
+    font-weight: bold;
+
+}
+
+#sdelete{
+    background-color: rgb(243, 0, 0);
+    transition-duration: 0.2s;
+}
+  
+#sdelete:Hover{
+    transform: scale(1.055);    
+}
+
+#sedit{
+    background-color: rgb(252, 248, 36);
+    transition-duration: 0.2s;
+    border-style: none;
+}
+
+#sedit:Hover{
+    transform: scale(1.055);    
+}
+
+
+/* Project Ediit */
+
+.editback{
+    background-image: url(../images/PojectEdit.jpg);
+    background-size: cover;
+    border-style: hidden;
+    height: 900px;
+}
+
+#eupdate{
+    margin-top: 40px;
+    margin-left: 81px;
+    background-color:rgb(0, 138, 18);
+}
+
+#eupdate:hover{
+    transform: scale(1.1);
+}
+
+
+
+/* Project Reports*/
+
+.reportback{
+    background-image: url('../images/zoologo.jpg');
+    height: auto;
+}
+
+.report{
+    background-color: #f1f1f1;
+    margin: 50px auto 100px;
+    padding-top: 5px;
+    padding-left: 30px;
+    padding-bottom: 40px;
+    width: 60%;
+    min-height: 70%;
+    opacity: 95%;
+    overflow: visible;
+    height: auto;
+    border-style: solid;
+    border-width: 3px;
+
+}
+
+.reportheader{
+    margin: 50px auto;
+    margin-right: 50px;
+    text-decoration-line: underline;
+    font-size: 28px;
+}
+
+.content{
+    border-style:solid;
+    margin-top:400px;
+    padding-left: 60px;
+    padding-right: 60px;
+    height: auto;
+}
+
+.col-sm-3{
+    padding-bottom: 15px;
+}
