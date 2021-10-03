@@ -101,8 +101,43 @@ export default class PostDetails extends Component {
           }
         })
       
+
+            //doc obj
+            var doc =new jsPDF('p','pt');
+    
+            doc.autoTable({ html: '#my-table' })
+            //add texts
+    
+            doc.text(200,20,'Project Report')
         
+            doc.autoTable({
+               
+               tableWidth:'auto',
+               margin: { top: 10 },
+                columnStyles: { europe: { halign: 'center' } },
+                theme:'grid',
+                head: [['Firstname', 'Lastname', 'EID','Email','Address','Designation','D.O.B','Salary']],
+                body: [
+                   
+                  [this.state.post.firstName,this.state.post.lastName,this.state.post.eID,this.state.post.email,this.state.post.address,this.state.post.employeeType,this.state.post.DOB,this.state.post.salary], 
+                ],
+               
+                styles: {  fontSize:10 },
+             
+                
+              })
+              
+         
+    
+         
+            //Save pdf 
+            doc.save("Employee Report.pdf");
+    
+    
+        }
+
       }
+
     
     render() {
 
