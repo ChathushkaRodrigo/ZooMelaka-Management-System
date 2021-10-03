@@ -8,6 +8,12 @@ const researchSchema = new Schema({
 
     },
 
+    employee_id :{
+        type :String,
+        required: true
+
+    },
+
     date_research_started :{
         type :String,
         required: true

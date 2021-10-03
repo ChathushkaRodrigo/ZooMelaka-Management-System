@@ -35,7 +35,7 @@ class AdminPanelHome extends PureComponent {
                                 {/* Management Section  */}
 
                                 <div id="service" class="Services">
-         <div class="container">
+         <div class="containerDash">
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">

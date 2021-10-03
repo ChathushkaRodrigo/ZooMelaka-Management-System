@@ -246,8 +246,7 @@ class EditProfile extends Component {
 
                   <div className="mb-2">
                     <DropdownButton align="center" title="Employee catagory" id="dropdown-menu-align-end" onSelect={handleSelect}>
-                      <div>
-                    
+                      <div>                    
                     
                         <Dropdown.Item eventKey="Legends">
                           Legends
@@ -264,28 +263,29 @@ class EditProfile extends Component {
                         <Dropdown.Item eventKey="Guardians">
                           Guardians
                         </Dropdown.Item>
-                        
+
                         <Dropdown.Item eventKey="Protectors">
-                        Protectors
+                          Protectors
                         </Dropdown.Item>
+
                         <Dropdown.Item eventKey="Walkers">
-                        Walkers
-                        </Dropdown.Item>
-                    
+                          Walkers
+                        </Dropdown.Item>                   
                     
                       </div>
                     
                     </DropdownButton>
-                <label style={{marginBottom:'5px'}} id="chamForm">Designation</label>
-                <input type="text"
-                id="chamathRet"
-                className="form-control"
-                name="Attended_Zookeeper"
-                placeholder="Enter The Last Attended Zookeeper:"
-                value={this.state.team}
-                onChange={this.handleInputChange}
-                ref={this.ref}
-                />
+
+                    <label style={{marginBottom:'5px'}} id="chamForm">Designation</label>
+                    <input type="text"
+                      id="chamathRet"
+                      className="form-control"
+                      name="Attended_Zookeeper"
+                      placeholder="Enter The Last Attended Zookeeper:"
+                      value={this.state.team}
+                      onChange={this.handleInputChange}
+                      ref={this.ref}
+                    />
             </div>
 
                     {/* Submit Button named Update */}

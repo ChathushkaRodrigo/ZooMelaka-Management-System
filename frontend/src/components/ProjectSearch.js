@@ -150,7 +150,7 @@ jspdGenerator=()=>{
           {/* Copy generate from here */}
 
         <div>
-        <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
+        <button className="btn btn-success" onClick={this.jspdGenerator}> Generate Projects Report</button>
         <br/><br/>
         <button className="btn btn-success" >
         <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>

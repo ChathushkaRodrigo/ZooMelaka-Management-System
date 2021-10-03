@@ -85,11 +85,13 @@ render() {
       
       <Router>
         <Provider store={store}>
+          
           <NavBar/>
           <Route path="/" exact component={Home}/>
 
           <Route exact path ="/profile" component={Profile}/>
           <Route path = "/adoption/add/:id" component = {CreateAdoption}/>
+          <Route path = "/booking/add" component = {CreateBooking}/>
           <Route path = "/AnimalsforAdoption" component = {AnimalsforAdoption}/>
           
 
@@ -147,7 +149,7 @@ render() {
 
 
         <Route path = "/TourGuideDashboard" component = {TourGuideDashboard}/> 
-        <Route path = "/booking/add" component = {CreateBooking}/>
+       
         <Route path = "/booking/update/:id" component = {UpdateBooking}/>
         <Route path=  "/booking/details/:id" component={BookingDetails}/>
         <Route path="/booking/request" component={RequestBooking}/>
@@ -171,7 +173,7 @@ render() {
         
 
         
-        
+        <Footer/>
         
          
             

@@ -1,9 +1,24 @@
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import store from '../store';
+import { isAuth } from '../actions/authActions'
+
+import { logout } from '../actions/authActions';
+import { buttonReset} from '../actions/uiActions';
+
 import axios from 'axios';
 import React, { Component } from 'react';
 import "../CSS/AddAdoption.css";
 
 
 class AddAdoption extends Component {
+
+    static propTypes = {
+        button: PropTypes.bool,
+        authState: PropTypes.object.isRequired,
+        buttonReset: PropTypes.func.isRequired,
+        logout: PropTypes.func.isRequired,
+      };
 
     constructor(props){
         super(props);
@@ -55,6 +70,11 @@ class AddAdoption extends Component {
         
         
     }
+
+    componentDidMount() {
+        // Check if session cookie is present
+        store.dispatch(isAuth());
+      }
 
 
     setAnimalName(e){
@@ -203,13 +223,20 @@ class AddAdoption extends Component {
     }
 
     render() {
+
+        if(!this.props.authState.isAuthenticated) {
+            // return <Redirect to="/" />
+          }
+
+          const {user} = this.props.authState;
+
         return (
 
             <div className = 'bckgrnd'>
                 <div className = "add-hero">
                     <div class="add-bg_image add-bgimage"></div>
                     <div id = "addcontent" className = "add-content">
-                        <p className = "add-topic">Adopt an Animal</p><br/>
+                        <p className = "add-topic">Adopt an Animal{ user ? `Welcome, ${user.id}`: ''}</p><br/>
                         <p className = 'add-sub-content'>Become a proud conservationist of a Zoo Melaka animal today! By adopting an <br/> animal, you not only help the care and feeding of that animal, but also <br/>support education and conservation programs at the Zoo Melaka.</p>
                   </div>
                 </div>
@@ -278,5 +305,9 @@ class AddAdoption extends Component {
         );
     }
 }
+const mapStateToProps = (state) => ({ //Maps state to redux store as props
+    button: state.ui.button,
+    authState: state.auth
+  });
 
-export default AddAdoption;
+export default connect(mapStateToProps, { logout, buttonReset })(AddAdoption);

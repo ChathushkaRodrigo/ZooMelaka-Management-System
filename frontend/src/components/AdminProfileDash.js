@@ -128,7 +128,7 @@ jspdGenerator=()=>{
                 ))}
               </tbody>
             </table>    
-            <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
+            <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Members Report</button>
           </div>
           </div>        
     );

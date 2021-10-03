@@ -69,14 +69,14 @@ jspdGenerator=()=>{
 
         
   //Create document obj
-  var doc =new jsPDF("p","pt","b2") 
+  var doc =new jsPDF("p","pt","c3") 
 
 
   doc.html(document.querySelector("#shas99Table"), {
     
     callback:function(pdf){
 
-      pdf.save("DashboardCustomer.pdf");
+      pdf.save("AllEmployeeDetails.pdf");
       
     }
 
@@ -93,7 +93,7 @@ jspdGenerator=()=>{
         <div className="header1">
           <div className="row">
           
-            <div className="col-lg-9 mt-2 mb-2"><b>
+            <div className="col-lg-9 mt-2 mb-2" id="EmpCaption"><b>
               <h4 className="Shas99HeadingEmpDash">Employee Management Dashboard</h4>
              
               </b>
@@ -112,7 +112,7 @@ jspdGenerator=()=>{
               </div>
               </div>
            
-        <table className="table table-bordered table-sm table-hover"  style={{width:'25%', marginLeft:'30px'}} id="shas99Table">
+        <table className="table table-bordered table-sm table-hover"  style={{}} id="shas99Table">
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -165,25 +165,24 @@ jspdGenerator=()=>{
       
       
       </table>
-    <button className="btn btn-success" style={{margin:"15px"}}><a href="/employee/add" style={{textDecoration:'none',color:'white'}}>Create New Post</a>
-
-        </button>
-        <br/><br/>
-        {/* Copy generate from here */}
-
-        <div>
-        <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
-        <br/><br/>
-        <button className="btn btn-success" >
+      <div id="empbtns" style={{marginBottom:'30px'}}>
+      <button className="btn btn-success" style={{marginLeft:"3%", marginTop:"20px",width:"150px"}} >
         <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
            Admin Home
           </a>
-          
-
-         </button>
+          </button>
+       
+    
+        {/* Copy generate from here */}
 
         
-        </div><br/><br/>
+        <button className="btn btn-success" onClick={this.jspdGenerator} style={{marginLeft:"40%", marginTop:"20px"}}>Generate Employee Report</button>
+        
+        <button className="btn btn-success" style={{marginLeft:"auto",marginRight:"3%", marginTop:"20px"}}><a href="/employee/add" style={{marginTop:'20px',textDecoration:'none',color:'white'}}>Add New Employee</a>
+
+</button>
+
+        </div>
       </div> 
       {/* Iwara wena thana */}
 

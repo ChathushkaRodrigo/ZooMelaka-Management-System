@@ -46,7 +46,7 @@ jspdGenerator=()=>{
 
         
   //Create document obj
-  var doc =new jsPDF("p","pt","b2") 
+  var doc =new jsPDF("p","pt","c2") 
 
 
   doc.html(document.querySelector("#Print"), {
@@ -116,7 +116,8 @@ jspdGenerator=()=>{
           </tbody>
         </table>
         <button className="btn btn-success"><a href= "medical/create"style ={{textDecoration:'none',color:"white"}}>Create New Medical Report</a></button>
-        <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
+       <br/>
+        <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Medicals Report</button>
        <br/><br/><br/><br/><br/><br/><br/>
       </div>
     );

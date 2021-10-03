@@ -1,55 +1,58 @@
-.EmpDashBody{
-  font-family:Arial, Helvetica, sans-serif;
+.EmpDashBody {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
-  color:black;
+  color: black;
   background-color: blanchedalmond;
- 
+
   align-items: center;
   display: flex;
   justify-content: center;
- 
-
-  
 }
 
-.Shas99HeadingEmpDash{
+#EmpCaption {
+  border-style: dashed;
+  border-width: 1px;
+  width: 100%;
+  text-align: center;
+}
+
+.Shas99HeadingEmpDash {
   font-size: xx-large;
-  margin-left: 450px;
-  color: green;
+  margin-left: 0;
+  color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bolder;
 }
 
-
-#shas99SearchBar{
+#shas99SearchBar {
+  width: 400px;
   margin-top: 10px;
-  margin-left:450px;
+  margin-left: 69%;
   margin-bottom: 10px;
-  width: 600px;
-  
 }
 
-
-
-
-
-#shasEdit{
+#shasEdit {
   margin-bottom: 5px;
   margin-top: 5px;
   margin-left: 5px;
   margin-right: 5px;
 }
 
-#shasDelete{
+#shasDelete {
   margin-bottom: 5px;
   margin-top: 5px;
   margin-left: 5px;
   margin-right: 5px;
 }
 
-
-#shas99Table{
-
+#shas99Table {
+  width: 100%;
   background-color: white;
+  margin-left: 0%;
 }
 
+.empbtns{
+  border-style: dashed;
+  border-width: 1px;
+  margin-left: 25px;
+}

@@ -3,9 +3,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import "../CSS/ResearchDashboard.css"
 import {Link} from 'react-router-dom';
-import jsPDF from 'jspdf'
-import 'jspdf-autotable'
-
 class ResearchDashboard extends Component {
   constructor(props){
   super(props);
@@ -42,27 +39,6 @@ onDelete =(id)=>{
   })
   
 }
-//Report Generate Function onClick
-jspdGenerator=()=>{
-
-        
-  //Create document obj
-  var doc =new jsPDF("p","pt","b2") 
-
-
-  doc.html(document.querySelector("#researches"), {
-    
-    callback:function(pdf){
-
-      pdf.save("DashboardCustomer.pdf");
-      
-    }
-
-  });
-
- 
-}
-
 
   render() {
     return (
@@ -73,13 +49,14 @@ jspdGenerator=()=>{
          <div className="  image6"> </div>
          <br/>
        
-        <table className="table table-bordered table-hover" id ="researches">
+        <table className="table table-bordered table-hover">
           <thead className="thead-bg-dark">
             <tr>
               <th scope="col">#</th>
               <th scope="col">
                 <b>Name_of_scientist</b>
               </th>
+
               <th scope="col">
                 <b>Date_research_started</b>
               </th>
@@ -113,7 +90,9 @@ jspdGenerator=()=>{
                     {index + 1}
                   </a>
                 </th>
-                <td>{researches.name_of_scientist}</td>
+                <td> <Link to = {`/employee/details/${researches.employee_id}`} style = {{textDecoration:"none"}}>
+                      {researches.name_of_scientist} 
+                      </Link></td>
                 <td>{researches.date_research_started}</td>
                 <td>{researches.date_research_ended}</td>
                 <td>{researches.catergory}</td>
@@ -149,22 +128,7 @@ jspdGenerator=()=>{
         &nbsp; &nbsp;
         <button className="btn btn-success"><a href= "/research/collaboration/"style ={{textDecoration:'none',color:"white"}}>Collaboration</a></button>
         <br/> <br/>
-        <br/> 
-        <div>
-        <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
-        <br/><br/>
-        <button className="btn btn-success" >
-        <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
-           Admin Home
-          </a>
-          
-
-         </button>
-
-        
-        </div>
-        
-        <br/>
+        <br/> <br/>
        
       </div>
       
