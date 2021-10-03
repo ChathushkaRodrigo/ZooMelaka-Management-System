@@ -126,49 +126,51 @@ export default class AnimalDetails extends Component{
             <div className = "container-fluid">
             <center><h1 id="AniDetHead">Retrieve Animal Portfolio</h1></center>
             <hr/>
-            <div className="ChamathRetreiveForm" id="chamathCreaForm">
+            
+            <div className="ChamathRetreiveForm" id="chamathRetForm">
             <form className="myFormsChamath">
                     <div class="form-group">
-                        <label for="emailC" id="chamForm">Animal Identification Number</label>
-                        <input type="text" class="form-control" id="chamathRet" placeholder={Animal_ID} readOnly/>
+                        <label for="emailC" id="chamFormzaaa">Animal ID</label>
+                        <input type="text" class="form-control" id="chamathRetzzz" placeholder={Animal_ID} readOnly/>
                     </div>
 
                   
                     
                     <div class="form-group">
-                    <label for="cName" id="chamForm">Animal Name</label>
-                        <input type="text" class="form-control" id="chamathRet" placeholder={Animal_Name} readOnly/>
+                    <label for="cName" id="chamFormzaaa">Animal Name</label>
+                        <input type="text" class="form-control" id="chamathRetzzz" placeholder={Animal_Name} readOnly/>
                         
                     </div>
                     
 
                     <div class="form-group">
-                    <label for="cName" id="chamForm">Animal Species</label>
-                        <input type="text" class="form-control" id="chamathRet" placeholder={Animal_Species} readOnly/>
+                    <label for="cName" id="chamFormzaaa">Animal Species</label>
+                        <input type="text" class="form-control" id="chamathRetzzz" placeholder={Animal_Species} readOnly/>
                         
                     </div>
                    
 
                     <div class="form-group">
-                    <label for="cName" id="chamForm">Date Of Birth</label>
-                        <input type="text" class="form-control" id="chamathRet" placeholder={Animal_Date_Of_Birth} readOnly/>
+                    <label for="cName" id="chamFormzaaa">Date Of Birth</label>
+                        <input type="text" class="form-control" id="chamathRetzzz" placeholder={Animal_Date_Of_Birth} readOnly/>
                         
                     </div>
                     
 
                     <div class="form-group">
-                    <label for="cName" id="chamForm">Animal Gender</label>
-                        <input type="text" class="form-control" id="chamathRet" placeholder={Animal_Gender} readOnly/>
+                    <label for="cName" id="chamFormzaaa">Animal Gender</label>
+                        <input type="text" class="form-control" id="chamathRetzzz" placeholder={Animal_Gender} readOnly/>
                         
                     </div>
                    
 
                     <div class="form-group">
-                    <label for="cName" id="chamForm">Animal Adoptability</label>
-                        <input type="text" class="form-control" id="chamathRet" placeholder={Adoptability} readOnly/>
+                    <label for="cName" id="chamFormzaaa">Adoptability</label>
+                        <input type="text" class="form-control" id="chamathRetzzz" placeholder={Adoptability} readOnly/>
                         
                     </div>
                     </form></div>
+                    
 
 
                     {/* <div>
@@ -182,7 +184,7 @@ export default class AnimalDetails extends Component{
                 }</div>
                 ))}</div> */}
 
-            <div className="btn btn-light btn-small justify-content-center btn-outline-info" style={{marginTop:'5px',marginBottom:'5px'}} id="ChamathUpsss">
+            <div className="btn btn-light btn-small justify-content-center btn-outline-info" style={{marginTop:'5px',marginBottom:'5px'}} id="ChamathUpzzz">
             <i className="fa fa-heartbeat"></i>
                 {this.state.Medical.map(Medical =>(
                 <div>
