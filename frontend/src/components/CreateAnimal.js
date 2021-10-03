@@ -209,7 +209,7 @@ export default class CreateAnimal extends Component{
         return(
             <div className="CreateAnimal-body">
             <div container="container-fluid" className="col-md-8 mx-auto" id="chamathCreaForm">
-            <center><h1 className="h1-CreateAnimal">Create A New Animal For The Zoo</h1></center>
+            <center><h1 className="h1-CreateAnimal">Create An Animal</h1></center>
             <form className="CreateAniHead" noValidate>
                 <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Animal ID</label>
@@ -350,7 +350,7 @@ export default class CreateAnimal extends Component{
                 id="chamathRet"
                 className="form-control"
                 name="Attended_Zookeeper"
-                placeholder="Enter The Last Attended Zookeeper:"
+                placeholder="Assigned Zookeeper:"
                 value={this.state.Attended_Zookeeper}
                 onChange={this.handleInputChange}
                 ref={this.ref}
@@ -400,7 +400,7 @@ export default class CreateAnimal extends Component{
                 ref={this.ref10}
                 className="form-control"
                 name="Current_Enclosure_ID"
-                placeholder="Enter The Current Enclosure ID:"
+                placeholder="Enter The Enclosure ID:"
                 value={this.state.Current_Enclosure_ID}
                 onChange={this.handleInputChange}
                 />
@@ -417,17 +417,17 @@ export default class CreateAnimal extends Component{
                 />
             </div>
 
-            <button className="btn btn-light btn-small justify-content-between btn-outline-primary" type="submit" style={{marginTop:'25px',marginBottom:'25px'}} onClick={this.onSubmit}>
+            <button className="btn btn-light btn-small justify-content-between btn-outline-primary" type="submit" style={{marginTop:'5px',marginBottom:'5px'}} onClick={this.onSubmit}>
             <i className="fa fa-bug"></i>
             &nbsp;<b>Create!</b>
             </button>
-            <button className="btn btn-success" style={{marginTop:'0px', marginLeft:'25px'}} onClick={this.Demo} type="button">
+            <button className="btn btn-success" style={{marginTop:'0px', marginLeft:'85px'}} onClick={this.Demo} type="button">
                         <i className="far fa-check-square"></i>
                         &nbsp; Demo
                     </button>
             <br/>
 
-            <a className="btn btn-light btn-small justify-content-between btn-outline-danger" href={`/animaldashboard`} style={{marginTop:'10px',marginBottom:'100px'}}>
+            <a className="btn btn-light btn-small justify-content-between btn-outline-danger" href={`/animaldashboard`} style={{marginTop:'5px',marginBottom:'10px',padding:'5px'}}>
             <i className="fas fa-hippo"></i>&nbsp;<b>Navigate To Animal Portfolio!</b>
 </a>
             

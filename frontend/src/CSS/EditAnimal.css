@@ -6,7 +6,7 @@
         background: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
     background-size: 500% 400%;
     animation: gradient 15s ease infinite;
-    height: 200vh;
+    height: 115vh;
 }
 
 .UpdateAniHead{
@@ -38,13 +38,14 @@
         
 } 
 
-#chamathCreaForm{
+#chamathUpdaForm{
         
-        border-style: 5px solid darkgreen;
-        border-color: darkgreen;
-        background-color: azure;
+        border-style: 5px solid black;
+        border-color: black;
+        background-color: white;
         opacity: 80%;
         margin-bottom: 5px;
+        border: 5px solid black;
        
        
     }
