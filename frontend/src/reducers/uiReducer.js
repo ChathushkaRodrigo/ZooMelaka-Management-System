@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import {
   BUTTON_CLICKED,
   BUTTON_RESET,

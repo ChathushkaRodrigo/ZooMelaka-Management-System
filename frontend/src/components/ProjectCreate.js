@@ -1,3 +1,5 @@
+/* eslint-disable react/no-direct-mutation-state */
+/* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import axios from 'axios';
 
@@ -201,7 +203,7 @@ export default class Create extends Component{
                 <div>
                 {this.state.posts.map(posts =>(
                 <div>
-                {posts.employeeType=="Supervisor" && 
+                {posts.employeeType=== "Supervisor" && 
 
                 <Dropdown.Item eventKey={posts.userName}>
                 {posts.userName}

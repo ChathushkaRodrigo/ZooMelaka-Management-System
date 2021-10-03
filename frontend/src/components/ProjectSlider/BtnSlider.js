@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import "./Slider.css";
 import leftArrow from "./icons/left-arrow.svg";

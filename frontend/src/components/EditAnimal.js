@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/no-direct-mutation-state */
 /* eslint-disable react/jsx-no-duplicate-props */
 import React, {Component} from 'react';
 import axios from 'axios';
@@ -190,7 +192,7 @@ export default class EditAnimal extends Component{
                 <div>
                 {this.state.posts.map(posts =>(
                 <div>
-                {posts.employeeType=="ZooKeeper" && 
+                {posts.employeeType==="ZooKeeper" && 
 
                 <Dropdown.Item eventKey={posts.userName}>
                 {posts.userName}

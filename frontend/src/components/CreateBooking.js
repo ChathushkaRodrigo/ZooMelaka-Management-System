@@ -1,3 +1,5 @@
+/* eslint-disable react/no-direct-mutation-state */
+/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react'
 import axios from 'axios';
@@ -300,7 +302,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
                 <div>
                 {this.state.posts.map(posts =>(
                 <div>
-                {posts.employeeType=="Tour Guide" && 
+                {posts.employeeType==="Tour Guide" && 
 
                 <Dropdown.Item eventKey={posts.userName}>
                 {posts.userName}

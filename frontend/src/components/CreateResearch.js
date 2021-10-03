@@ -8,6 +8,7 @@ class CreateResearch extends Component {
             super(props);
             this.handleEmployee=this.handleEmployee.bind(this);
             this.getemployee=this.getemployee.bind(this);
+            this.getanimal=this.getanimal.bind(this);
 
             this.validateform = this.validateform.bind(this);
             this.state={
@@ -18,6 +19,7 @@ class CreateResearch extends Component {
                 catergory:"",
                 research_name:"",
                 animal_id:"",
+                a_id:"",
                 research_information:"",
                 zooAnimal:[],
                 posts:[],
@@ -61,19 +63,28 @@ class CreateResearch extends Component {
             console.log(this.state.name_of_scientist);
         }
 
+        handleAnimal=(e)=>{
+            
+            this.setState({animal_id:e.target.value});
+            this.getanimal(e.target.value);
+            
+         
+            
+        }
+
         getanimal(aid){
             console.log(aid);
                
             axios.get(`/animal/${aid}`).then((res) =>{
                 if(res.data.success){
                     this.setState({
-                        post:res.data.post
+                        animal:res.data.post
                     })
-                    console.log(this.state.post)
+                    console.log(this.state.animal)
                 }
             });
-            this.setState({name_of_scientist:this.state.post.userName});
-            console.log(this.state.name_of_scientist);
+            this.setState({aid:this.state.animal.Animal_ID});
+            console.log(this.state.aid);
         }
 
 

@@ -176,9 +176,9 @@ jspdGenerator=()=>{
         {/* Copy generate from here */}
 
         
-        <button className="btn btn-success" onClick={this.jspdGenerator} style={{marginLeft:"40%", marginTop:"20px"}}>Generate Employee Report</button>
+        <button className="btn btn-success" onClick={this.jspdGenerator} style={{marginLeft:"30%", marginTop:"20px"}}>Generate Employee Report</button>
         
-        <button className="btn btn-success" style={{marginLeft:"auto",marginRight:"3%", marginTop:"20px"}}><a href="/employee/add" style={{marginTop:'20px',textDecoration:'none',color:'white'}}>Add New Employee</a>
+        <button className="btn btn-success" style={{marginLeft:"auto",marginRight:"3%", marginTop:"20px"}}><a href="/employee/add" style={{textDecoration:'none',color:'white'}}>Add New Employee</a>
 
 </button>
 

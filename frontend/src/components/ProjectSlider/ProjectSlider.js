@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, {useState} from 'react'
 import './Slider.css'
 import BtnSlider from './BtnSlider'

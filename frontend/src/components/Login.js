@@ -75,7 +75,7 @@ onSubmit = (e) => {
   render() {
     
     if(this.props.isAuthenticated) {
-      return <Redirect to="/profile" />
+      return <Redirect to="/adminpanelhome" />
     }
 
 

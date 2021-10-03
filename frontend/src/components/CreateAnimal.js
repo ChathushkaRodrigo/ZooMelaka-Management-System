@@ -1,3 +1,5 @@
+/* eslint-disable react/no-direct-mutation-state */
+/* eslint-disable no-unused-vars */
 import React, {Component} from 'react';
 import axios from 'axios';
 import '../CSS/CreateAnimal.css';
@@ -336,7 +338,7 @@ export default class CreateAnimal extends Component{
                 <div>
                 {this.state.posts.map(posts =>(
                 <div>
-                {posts.employeeType=="ZooKeeper" && 
+                {posts.employeeType==="ZooKeeper" && 
 
                 <Dropdown.Item eventKey={posts.userName}>
                 {posts.userName}

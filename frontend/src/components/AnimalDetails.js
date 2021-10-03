@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, {Component} from 'react';
 import axios from 'axios';
 import '../CSS/AnimalDetails.css';
@@ -198,7 +199,7 @@ export default class AnimalDetails extends Component{
             <i className="fa fa-heartbeat"></i>
                 {this.state.Medical.map(Medical =>(
                 <div>
-                {Medical.animalID == Animal_ID && 
+                {Medical.animalID === Animal_ID && 
 
                 <div>
 

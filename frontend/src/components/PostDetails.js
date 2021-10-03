@@ -249,7 +249,7 @@ jspdGenerator=()=>{
                 {this.state.zooAnimal.map(zooAnimal =>(
                    
                 <div>
-               {zooAnimal.Attended_Zookeeper==userName && 
+               {zooAnimal.Attended_Zookeeper===userName && 
 
              
                     <div>
@@ -269,7 +269,7 @@ jspdGenerator=()=>{
                 {this.state.bookings.map(bookings =>(
                    
                 <div>
-               {bookings.TourGuideName == userName && 
+               {bookings.TourGuideName === userName && 
 
              
                     <div>
@@ -287,7 +287,7 @@ jspdGenerator=()=>{
                 {this.state.Medical.map(Medical =>(
                    
                 <div>
-               {Medical.vname == userName && 
+               {Medical.vname === userName && 
 
              
                     <div>
@@ -306,7 +306,7 @@ jspdGenerator=()=>{
                 {this.state.Medical.map(Medical =>(
                    
                 <div>
-               {Medical.vname == userName && 
+               {Medical.vname === userName && 
 
              
                     <div>

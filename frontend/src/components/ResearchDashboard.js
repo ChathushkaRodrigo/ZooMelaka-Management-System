@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import "../CSS/ResearchDashboard.css"
 import {Link} from 'react-router-dom';
+import jsPDF from 'jspdf'
+import 'jspdf-autotable'
+
 class ResearchDashboard extends Component {
   constructor(props){
   super(props);
@@ -12,6 +15,21 @@ class ResearchDashboard extends Component {
 
   };
 }
+
+//Report Generate Function onClick
+jspdGenerator=()=>{
+
+
+  //Create document obj
+  var doc =new jsPDF("p","pt","b2") 
+  doc.html(document.querySelector("#researches"), {
+    callback:function(pdf){
+      pdf.save("DashboardCustomer.pdf");
+    }
+  });
+}
+
+
 componentDidMount(){
   this.retrieveResearch();
 }
@@ -49,7 +67,7 @@ onDelete =(id)=>{
          <div className="  image6"> </div>
          <br/>
        
-        <table className="table table-bordered table-hover">
+         <table className="table table-bordered table-hover" id ="researches">
           <thead className="thead-bg-dark">
             <tr>
               <th scope="col">#</th>
@@ -128,8 +146,17 @@ onDelete =(id)=>{
         &nbsp; &nbsp;
         <button className="btn btn-success"><a href= "/research/collaboration/"style ={{textDecoration:'none',color:"white"}}>Collaboration</a></button>
         <br/> <br/>
-        <br/> <br/>
-       
+        <br/> 
+        <div>
+        <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
+        <br/><br/>
+        <button className="btn btn-success" >
+        <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
+           Admin Home
+          </a>
+         </button>
+        </div>
+        <br/>
       </div>
       
     );

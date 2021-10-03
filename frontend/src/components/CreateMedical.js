@@ -1,3 +1,4 @@
+/* eslint-disable react/no-direct-mutation-state */
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react'
 import axios from 'axios';
@@ -174,7 +175,7 @@ export default class CreateMedical extends Component {
                 <div>
                 {this.state.posts.map(posts =>(
                 <div>
-                {posts.employeeType=="Veterinarian" && 
+                {posts.employeeType==="Veterinarian" && 
 
                 <Dropdown.Item eventKey={posts.userName}>
                 {posts.userName}
@@ -200,7 +201,7 @@ export default class CreateMedical extends Component {
                 <div>
                 {this.state.posts.map(posts =>(
                 <div>
-                {posts.employeeType=="ZooKeeper" && 
+                {posts.employeeType==="ZooKeeper" && 
 
                 <Dropdown.Item eventKey={posts.userName}>
                 {posts.userName}
