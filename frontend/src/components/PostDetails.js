@@ -35,7 +35,7 @@ export default class PostDetails extends Component {
             doc.autoTable({ html: '#my-table' })
             //add texts
     
-            doc.text(200,20,'Medical Report')
+            doc.text(200,20,'Project Report')
         
             doc.autoTable({
                
