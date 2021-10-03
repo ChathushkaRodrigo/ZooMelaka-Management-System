@@ -165,11 +165,12 @@ constructor(props){
             this.ref.current.value = e
         }
         return (
-            <div className="col-md-8 mt-4 mx-auto" id="ShasCreate">
-                <h1 className="h3 mb-3 font-weight-normal" style={{fontFamily:'Papyrus, fantasy'}}>Create new post</h1>
+            <div id="ShasCreate">
+            <div className="col-md-8 mt-4 mx-auto"  style={{backgroundColor:'white',marginTop:'0px',paddingTop:'30px'}}>
+                <h1 className="h3 mb-3 font-weight-normal" style={{fontSize:'36px',textAlign:'center'}}>Create employee record</h1>
                 <form className="needs-validation" noValidate>
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                    <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >eID</label>
+                    <label style={{marginBottom:'5px',color:'black'}} >Employee ID</label>
                     <input type="text"
                     ref={this.ref1}
                     className="form-control"
@@ -184,7 +185,7 @@ constructor(props){
                     
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >Username</label>
+                <label style={{marginBottom:'5px',color:'black'}} >User Name</label>
                 <input type="text"
                 ref={this.ref2}
                 className="form-control"
@@ -200,7 +201,7 @@ constructor(props){
                     
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >First Name</label>
+                <label style={{marginBottom:'5px',color:'black'}} >First Name</label>
                 <input type="text"
                 ref={this.ref3}
                 className="form-control"
@@ -210,7 +211,7 @@ constructor(props){
                 onChange={this.handleInputChange}/></div>
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >Last Name</label>
+                <label style={{marginBottom:'5px',color:'black'}} >Last Name</label>
                 <input type="text"
                 ref={this.ref4}
                 className="form-control"
@@ -221,7 +222,7 @@ constructor(props){
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >E-mail</label>
+                <label style={{marginBottom:'5px', color:'black'}} >E-mail</label>
                 <input type="text"
                 ref={this.ref5}
                 className="form-control"
@@ -237,7 +238,7 @@ constructor(props){
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >Address</label>
+                <label style={{marginBottom:'5px', color:'black'}} >Address</label>
                 <input type="text"
                 className="form-control"
                 ref={this.ref6}
@@ -256,8 +257,19 @@ constructor(props){
                 value={this.state.employeeType}
                 onChange={this.handleInputChange}/></div> */}
 
-            <div className="mb-2">
-                <DropdownButton align="center" title="Employee catagory" id="dropdown-menu-align-end" onSelect={handleSelect}>
+            <div className="form-group">
+                <label style={{marginBottom:'5px', marginLeft:'0'}} id="chamForm">Designation</label>
+                <br/>
+                <input type="text" style={{width:'50%',float:'left'}}
+                id="chamathRet"
+                className="form-control"
+                name="Attended_Zookeeper"
+                placeholder="Enter The Last Attended Zookeeper:"
+                value={this.state.Attended_Zookeeper}
+                onChange={this.handleInputChange}
+                ref={this.ref}
+                />
+                <DropdownButton align="center" style={{marginTop:'8px'}} title="Employee catagory" id="dropdown-menu-align-end" onSelect={handleSelect}>
                 <div>
                 
                 
@@ -284,23 +296,14 @@ constructor(props){
                 </div>
                 
                 </DropdownButton>
-                <label style={{marginBottom:'5px'}} id="chamForm">Designation</label>
-                <input type="text"
-                id="chamathRet"
-                className="form-control"
-                name="Attended_Zookeeper"
-                placeholder="Enter The Last Attended Zookeeper:"
-                value={this.state.Attended_Zookeeper}
-                onChange={this.handleInputChange}
-                ref={this.ref}
-                />
-            </div>
+                
+            </div><br/><br/>
 
 
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >DOB</label>
+                <label style={{marginBottom:'5px',color:'black'}} >DOB</label>
                 <input type="text"
                 className="form-control"
                 name="DOB"
@@ -311,7 +314,7 @@ constructor(props){
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:'Papyrus, fantasy',color:'black'}} >Salary</label>
+                <label style={{marginBottom:'5px',color:'black'}} >Salary</label>
                 <input type="text"
                 className="form-control"
                 ref={this.ref7}
@@ -320,20 +323,31 @@ constructor(props){
                 value={this.state.salary}
                 onChange={this.handleInputChange}/></div>
                
+                    <div style={{width:'80%',margin:'0 auto'}}>
+                        <div style={{float:'left'}}>
+                            <button className="btn btn-success" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
+                                <i className="far fa-check-square"></i>
+                                &nbsp; Save
+                            </button>
+                        </div>
 
-                    <button className="btn btn-success" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
-                        <i className="far fa-check-square"></i>
-                        &nbsp; Save
-                    </button>
-                    <button className="btn btn-success" style={{marginTop:'15px'}} onClick={this.Demo} type="button">
-                        <i className="far fa-check-square"></i>
-                        &nbsp; Demo
-                    </button>
+                        <div style={{float:'Right'}} >
+                            <button className="btn btn-success" style={{marginTop:'15px'}} onClick={this.Demo} type="button">
+                                <i className="far fa-check-square"></i>
+                                &nbsp; Demo
+                            </button>
+                        </div>
+                        <div style={{float:'Right'}} >
+                            
+                            <button className="btn btn-success" style={{marginTop:'15px',marginRight:'300px'}} ><a href="/EmployeeDash"><i className="far fa-check-square"></i>EmployeeDashboard</a></button>
+                        </div>
+                    </div>
                     <br/><br/><br/><br/><br/>
-
+                
 
                 </form>
                 
+            </div>
             </div>
         )
     }

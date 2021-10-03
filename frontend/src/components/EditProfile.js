@@ -296,6 +296,8 @@ class EditProfile extends Component {
                     </button>    
                 </form>
                 {/* End of Form */}
+
+                
                 
              </div>
            </div>

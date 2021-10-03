@@ -3,6 +3,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+import '../CSS/EmployeeDashboard.css'
+
 
 const initial = {
     userName:"",
@@ -152,9 +154,10 @@ export default class EditPost extends Component {
     
     render() {
         return (
-            <div className="col-md-8 mt-4 mx-auto">
-                <h1 className="h3 mb-3 font-weight-normal" style={{fontFamily:"Arial"}}>Edit Records</h1>
-                <form className="needs-validation" noValidate>
+            <div className="ShasEdit">
+            <div className="col-md-8 mt-4 mx-auto" style={{backgroundColor:'white',marginTop:'0px',paddingTop:'30px'}}>
+                <h1 className="h3 mb-3 font-weight-normal" style={{fontSize:'36px',textAlign:'center'}}>Edit Records</h1>
+                <form className="needs-validation" style={{}} noValidate>
                     <div className="form-group" style={{marginBottom:'15px'}}>
                     <label style={{marginBottom:'5px',fontFamily:"Arial",color:'black'}} > eID</label>
                     <input type="text"
@@ -251,17 +254,20 @@ export default class EditPost extends Component {
                 value={this.state.salary}
                 onChange={this.handleInputChange}/></div>
                
-
-                    <button className="btn btn-success" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
+                
+                    <button className="btn btn-success" type="submit" style={{marginTop:'15px',marginLeft:'100px'}} onClick={this.onSubmit}>
                         <i className="far fa-check-square"></i>
                         &nbsp; Update
-                    </button>
+                    </button><br/>
+                    <button className="btn btn-success" ><a href="/EmployeeDash">EmployeeDashboard</a></button>
+                    
 
 
 
 
                 </form>
                 <br/><br/><br/><br/><br/>
+            </div>
             </div>
         )
     }

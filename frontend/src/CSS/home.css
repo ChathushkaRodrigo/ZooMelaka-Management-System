@@ -42,7 +42,7 @@
 .headerContainer2 {
   align-items: center;
   font-size: 30px;
-  height: 100px;
+  height: 1000px;
   font-weight: lighter;
   background: -webkit-Radial-gradient(#eee 65%, #333);
   -webkit-background-clip: text;
@@ -142,6 +142,7 @@
 .headerContainer {
   width: auto;
   margin-left: 50px;
+  height: auto;
 }
 
 .headerContainer h1 {
@@ -230,13 +231,17 @@
 
 .card1 p:hover {
   font-size: 30px;
-  padding-top: -800px;
 }
 
 .card1 {
   width: 900px;
-  text-align: justify-content;
+  text-align: center;
   margin-left: 275px;
-  height: 900px;
+  height: auto;
+  margin-top: 200px;
   font-size: medium;
+}
+
+.card1:hover {
+  height: auto;
 }

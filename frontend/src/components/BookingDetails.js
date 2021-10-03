@@ -27,6 +27,7 @@ class BookingDetails extends Component {
           
           doc.addImage(imageData,"ReportLogo",120, 300, 370, 200);
 
+          doc.text(110,200,"generated date : 5th Tuesday ");
 
         doc.autoTable({ html: '#my-table' })
         //add texts

@@ -65,7 +65,23 @@
   font-weight: bold;
 }
 
-#ShasCreate{
-  background-image: url(../images/serviceBanner.jpg);
+#ShasCreate {
+  margin-top: -25px;
+  background: linear-gradient(132deg, #0d2409 0%, #005020 80%);
+  background-size: 500% 400%;
+  animation: gradient 5s ease infinite;
 }
 
+
+.shasDetails {
+  margin-top: -20px;
+  background: linear-gradient(132deg, #0d2409 0%, #005020 80%);
+  background-size: 500% 400%;
+  animation: gradient 5s ease infinite;
+}
+.ShasEdit {
+  margin-top: -25px;
+  background: linear-gradient(132deg, #0d2409 0%, #005020 80%);
+  background-size: 500% 400%;
+  animation: gradient 5s ease infinite;
+}

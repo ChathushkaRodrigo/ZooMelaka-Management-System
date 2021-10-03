@@ -77,7 +77,7 @@ jspdGenerator=()=>{
 
 
   
-
+    
   //Save pdf 
   doc.save("Generated.pdf");
 
@@ -174,22 +174,23 @@ jspdGenerator=()=>{
         const {eID,userName,firstName,lastName,email,address,employeeType,DOB,salary} = this.state.post;
 
         return (
+          <div className="shasDetails">
             <div style={{marginTop:'20px'}}>
                 
                  
-                <h1 style={{color:'black'}}>Hello, {userName}</h1>
+                <h1 style={{color:'white', marginLeft:'20%', paddingTop:'20px'}}>Hello, {userName}</h1>
                 <hr/>
+
+                <div style={{backgroundColor:'white',width:'60%',margin:'0 auto'}}>
 
                 <form className="shasForms">
 
-                <div class="form-group" id="shaszz">
-                        <label style ={{marginBottom:'5px',color:"black"}} for="firstName">First Name  </label>
+                    <div class="form-group" id="shaszz" style={{paddingTop:'50px'}}>
+                        <label style ={{marginBottom:'5px',color:"black",float:'left'}} for="firstName">First Name  </label>
                         <input type="text" class="form-control" id="firstName" placeholder={firstName} disabled/>
                     </div>
 
-                
-
-                <br/>
+            
                     <div class="form-group" id="shaszz">
                     <label  style ={{marginBottom:'5px',color:"black"}}for="lastName"> Last Name</label>
                         <input type="text" class="form-control" id="lastName" placeholder={ lastName} disabled/>
@@ -197,55 +198,62 @@ jspdGenerator=()=>{
                     </div>
 
 
-                    <br/>
                     <div class="form-group" id="shaszz">
                     <label  style ={{marginBottom:'5px',color:"black"}}for="eID"> Employee ID</label>
                         <input type="text" class="form-control" id="eID" placeholder={ eID}  disabled/>
                         
                     </div>
-                    <br/>
+                    
                     <div class="form-group" id="shaszz">
                     <label  style ={{marginBottom:'5px',color:"black"}}for="email"> E-mail</label>
                         <input type="text" class="form-control" id="email" placeholder={ email} disabled/>
                         
                     </div>
-                    <br/>
+                    
 
                     <div class="form-group" id="shaszz">
                     <label  style ={{marginBottom:'5px',color:"black"}}for="address"> Address</label>
                         <input type="text" class="form-control" id="address" placeholder={ address} disabled/>
                         
                     </div>
-                    <br/>
+                    
 
                     <div class="form-group" id="shaszz">
                     <label  style ={{marginBottom:'5px',color:"black"}}for="employeeType"> Designation</label>
                         <input type="text" class="form-control" id="employeeType" placeholder={ employeeType} disabled/>
                         
                     </div>
-                    <br/>
+                    
 
                     <div class="form-group" id="shaszz">
                     <label  style ={{marginBottom:'5px',color:"black"}}for="DOB">Date Of Birth</label>
                         <input type="text" class="form-control" id="DOB" placeholder={DOB} disabled/>
                         
                     </div>
-                    <br/>
+                    
 
-                    <div class="form-group" id="shaszz">
+                    <div class="form-group" id="shaszz" style={{paddingBottom:'50px'}} >
                     <label style ={{marginBottom:'5px',color:"black"}} for="salary">Salary</label>
                         <input type="text" class="form-control" id="salary" placeholder={salary} disabled/>
                         
                     </div>
-                    <br/>
+                    
 
 
 
                     
                     </form>
-                    <br/>
-                    <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
-
+                    </div>
+                    
+                    <div style={{display:'block',width:'60%',margin:'0 auto',marginTop:'40px'}}>
+                      <div style={{float:'Right'}}>
+                        <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
+                      </div>
+                      <div style={{float:'Left'}}>
+                        <button className="btn btn-success" ><a href="/EmployeeDash">EmployeeDashboard</a></button>
+                      </div>
+                    </div>
+                    
                 <div>
 
                 
@@ -258,8 +266,25 @@ jspdGenerator=()=>{
              
                     <div>
                         <center>
-                        <Link to = {`animal/details/${zooAnimal._id}`} style = {{textDecoration:"none"}}>
-                      <h2>Click to See Animals under the preview of our Zookeeper</h2>
+                        <Link to = {`/animal/details/${zooAnimal._id}`} style = {{textDecoration:"none"}}>
+                      <h2 id="vet">Click to See Animals under the preview of our Zookeeper</h2>
+                      </Link>
+                </center>
+                    </div>
+    }</div>
+    ))}</div>
+
+<div>
+                {this.state.projects.map(projects =>(
+                   
+                <div>
+               {projects.supervisor===userName && 
+
+             
+                    <div>
+                        <center>
+                        <Link to = {`/project/report/${projects._id}`} style = {{textDecoration:"none"}}>
+                      <h2 id="vet">Click to see projects under this supervisor</h2>
                       </Link>
                 </center>
                     </div>
@@ -279,7 +304,7 @@ jspdGenerator=()=>{
                     <div>
                         <center>
                         <Link to = {`/booking/update/${bookings._id}`} style = {{textDecoration:"none"}}>
-                      <h2>Click to see tour Guide's work!</h2>
+                      <h2 id="vet">Click to see tour Guide's work!</h2>
                       </Link>
                 </center>
                     </div>
@@ -297,7 +322,7 @@ jspdGenerator=()=>{
                     <div>
                         <center>
                         <Link to = {`/medical/details/${Medical._id}`} style = {{textDecoration:"none"}}>
-                      <h2>Click to see veterinarians appointments!</h2>
+                      <h2 id="vet">Click to see veterinarians appointments!</h2>
                       </Link>
                 </center>
                     </div>
@@ -307,16 +332,16 @@ jspdGenerator=()=>{
              
 
 <div>
-                {this.state.Medical.map(Medical =>(
+                {this.state.Research.map(Research =>(
                    
                 <div>
-               {Medical.vname === userName && 
+               {Research.name_of_scientist === userName && 
 
              
                     <div>
                         <center>
-                        <Link to = {`/medical/details/${Medical._id}`} style = {{textDecoration:"none"}}>
-                      <h2>Click to see veterinarians appointments!</h2>
+                        <Link to = {`/research/researchinfo/${Research._id}`} style = {{textDecoration:"none"}}>
+                      <h2 id="vet">Click to see Reserch of this researcher!</h2>
                       </Link>
                 </center>
                     </div>
@@ -366,6 +391,7 @@ jspdGenerator=()=>{
 
                 {/* <br/><br/><br/><br/><br/><br/><br/><br/><br/> */}
             </div>
+          </div>
         )
     }
 }

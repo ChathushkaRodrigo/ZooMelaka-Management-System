@@ -35,6 +35,7 @@ class AddAdoption extends Component {
         this.protector = this.protector.bind(this);
         this.partner = this.partner.bind(this);
         this.validateform = this.validateform.bind(this);
+        //this.getanimal = this.getanimal.bind(this);
 
         this.state = {
             animal_name: '',
@@ -43,17 +44,21 @@ class AddAdoption extends Component {
             live_cam: 'false',
             adoption_date: '',
             animal_id: '',
+            aid:'',
             member_id: '',
             adptlvl: '',
             monthly:'$30/monthly',
             months_6:'$150/6 months',
-            yearly:'$300/yearly'
+            yearly:'$300/yearly',
+            animal:[]
 
         }
         const id = this.props.match.params.id;
 
         this.state.animal_id = id;
         this.state.member_id = 'M00069';
+
+        
 
         this.state.adptlvl = 
             <div>
@@ -68,7 +73,17 @@ class AddAdoption extends Component {
                     </div>
             </div>
         
-        
+        const {user} = this.props.authState;
+
+        if(user){
+            console.log(`${user.id}`);
+            this.setMemberId(user.id);
+            
+        }
+        else{
+            this.setMemberId("M000069");
+        }
+
     }
 
     componentDidMount() {
@@ -82,7 +97,33 @@ class AddAdoption extends Component {
         today = yyyy + '-' + mm + '-' + dd;
         this.setAdoptionDate(today);
 
+        this.getanimal(this.state.animal_id);
+
+        
+    
+
       }
+
+      getanimal(id){
+        console.log(id);
+           
+        axios.get(`http://localhost:8015/animal/${id}`).then((res) =>{
+            if(res.data.success){
+                this.setState({
+                    animal:res.data.post,
+                    aid:res.data.post.Animal_ID
+                })
+                console.log(this.state.animal.Animal_ID);
+                const animid = this.state.animal.Animal_ID;
+                console.log(animid);
+                this.setState({aid: animid})
+            }
+        });
+
+        
+        //this.setState({aid:a_id});
+        
+    }
 
 
     setAnimalName(e){
@@ -103,8 +144,9 @@ class AddAdoption extends Component {
     setAnimalId(e){
         this.setState({animal_id : e.target.value});
     }
-    setMemberId(e){
-        this.setState({member_id : e.target.value});
+    setMemberId(id){
+        this.setState({member_id : id});
+        console.log(this.state.member_id);
     }
 
     saveAdoption(e){
@@ -121,6 +163,7 @@ class AddAdoption extends Component {
             live_cam: this.state.live_cam,
             adoption_date: this.state.adoption_date,
             animal_id: this.state.animal_id,
+            aid:this.state.aid,
             member_id: this.state.member_id
         }
         axios.post("http://localhost:8015/adoption/add", adoption).then(() => {
@@ -235,9 +278,6 @@ class AddAdoption extends Component {
         if(!this.props.authState.isAuthenticated) {
             // return <Redirect to="/" />
           }
-
-        const {user} = this.props.authState;
-
        
    
         return (

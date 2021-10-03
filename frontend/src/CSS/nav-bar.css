@@ -6,9 +6,11 @@
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;  
 }
-body{
-  background-color: #000000;
-background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+#navbody{
+ background: linear-gradient(60deg, black 40%, rgb(19, 43, 1));
+  opacity: 0.8;
+
+
 }
 nav{  
   background: #171c24;
@@ -58,7 +60,7 @@ nav form{
 nav form button{
   padding: 0 15px;
   color: #fff;
-  font-size: 17px;
+  font-size: 20px;
   background: #00ff00;
   border: none;
   border-radius: 2px;

@@ -16,9 +16,9 @@ exports.isAuth = (req,res,next) => {
 };
 
 exports.registerUser = (req, res) => {
-  const { name, email, password } = req.body;
+  const { fName, lName, name, email, password } = req.body;
 
-  const result = registerSchema.validate({ name, email, password});
+  const result = registerSchema.validate({ fName, lName, name, email, password});
   if(!result.error) {
 
       // Check for existing user
@@ -27,6 +27,8 @@ exports.registerUser = (req, res) => {
 
         //New User created
         const newUser = new User({
+          fName,
+          lName,
           name,
           email,
           password

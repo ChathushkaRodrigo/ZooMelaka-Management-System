@@ -17,10 +17,14 @@ import PropTypes from "prop-types";
 import { buttonClicked, isLoading } from "../actions/uiActions";
 import { Link } from "react-router-dom";
 import { register } from "../actions/authActions";
-import "./style.css";
+// import "./style.css";
+// import "../CSS/style.css";
+
 
 class Register extends Component {
   state = {
+    fName:"",
+    lName:"",
     name: "",
     email: "",
     password: "",
@@ -70,9 +74,9 @@ class Register extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    const { name, email, password } = this.state;
+    const { fName, lName, name, email, password } = this.state;
 
-    const user = { name, email, password };
+    const user = { fName, lName, name, email, password };
     this.props.isLoading();
     this.props.register(user);
   };
@@ -113,6 +117,29 @@ class Register extends Component {
             {alert}
             <Form onSubmit={this.onSubmit}>
               <FormGroup className="text-center">
+
+              <Label for="fName">FName</Label>
+                <Input
+                  type="text"
+                  name="fName"
+                  id="fName"
+                  placeholder="Enter your fname"
+                  className="mb-3"
+                  size="lg"
+                  onChange={this.onChange}
+                />
+
+                <Label for="lName">lName</Label>
+                <Input
+                  type="text"
+                  name="lName"
+                  id="lName"
+                  placeholder="Enter your name"
+                  className="mb-3"
+                  size="lg"
+                  onChange={this.onChange}
+                />
+
                 <Label for="name">Name</Label>
                 <Input
                   type="text"

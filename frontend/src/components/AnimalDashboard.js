@@ -164,33 +164,64 @@ jspdGenerator=()=>{
                 ))}
             </tbody>
           </table>
+
+          {/* <a className="dashButton btn btn-light btn-small justify-content-center btn-outline-success" href={`animal/add`}  id="chamCreaButton">
+                            <i className="fas fa-dragon"></i>&nbsp;<b>Create Animal Portfolio!</b>
+                      </a> */}
+
+
+
+
           <div>
-        <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
-        <br/><br/>
-        <button className="btn btn-success" >
+
+
+          
+
+
+        <div id="ChamathReportGenDash"> 
+        <center>  
+        <button className="dashButton btn btn-light btn-small justify-content-center btn-outline-warning" onClick={this.jspdGenerator}>
+        <i className="fa fa-archive"><bold> Generate Report!</bold></i>
+        </button></center>
+        
+        
+        {/* <a className="dashButton btn btn-light btn-small justify-content-center btn-outline-success" href={`animal/add`}  id="chamCreaButton">
+                            <i className="fas fa-dragon"></i>&nbsp;<b>Create Animal Portfolio!</b>
+                      </a> */}
+        
+        
+        
+        
+        </div>
+        
+        {/* <button className="btn btn-success" >
         <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
            Admin Home
           </a>
           
 
-         </button>
+         </button> */}
+
+
+
+
 
         
-        </div><br/><br/>
+        </div>
           
         </div>
 
-
-                    <a className="dashButton btn btn-light btn-small justify-content-center btn-outline-success" href={`animal/add`} style={{marginTop:'10px',marginBottom:'5px'}} id="chamCreaButton">
+        
+                   
+                  
+        <a className="dashButton btn btn-light btn-small justify-content-center btn-outline-success" href={`animal/add`}  id="chamCreaButton">
                             <i className="fas fa-dragon"></i>&nbsp;<b>Create Animal Portfolio!</b>
                       </a>
                         
 
-                      <a className="dashButton btn btn-light btn-small justify-content-center btn-outline-primary" href={`adminpanelhome`} style={{marginTop:'5px'}} id="chamAdminNav">
+                      <a className="dashButton btn btn-light btn-small justify-content-center btn-outline-primary" href={`adminpanelhome`}  id="chamAdminNav">
                           <i className="fa fa-hand-o-left"></i>&nbsp;<b>Navigate To Admin Panel!</b>
                       </a>
-
-
 
     </div>
   

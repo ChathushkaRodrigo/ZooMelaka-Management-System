@@ -117,6 +117,11 @@ jspdGenerator=()=>{
             </div>
             <br/>
                     <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
+                    <button className="btn btn-success" style={{marginLeft:"0", marginTop:"0px",width:"150px"}} >
+                        <a href="/adminprofiledash" style={{ textDecoration: "none", color: "white" }}>
+                            Admin Profile Management Dashboard
+                        </a>
+                    </button>
             </div>
             </div>
         );

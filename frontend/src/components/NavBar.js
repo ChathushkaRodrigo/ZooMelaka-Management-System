@@ -44,8 +44,8 @@ class NavBar extends PureComponent {
       if(!this.props.authState.isAuthenticated) {
          this.state.loggedin = <div class="login-container">
             
-         <Link className='divStyle' to="/login"><button type="submit">Login</button></Link>
-         <Link className='divStyle' to="/register"><button type="submit">Sign In</button></Link>
+         <Link  to="/login"><button type="submit">Login</button></Link>
+         <Link  to="/register"><button type="submit">Sign In</button></Link>
 
          </div>
       }
@@ -58,8 +58,8 @@ class NavBar extends PureComponent {
     render() {
       this.isloggedin();
         return (
-            
-          <nav>
+         <div>
+          <nav id="navbody">
           <div class="menu-icon">
              <span class="fas fa-bars"></span>
           </div>
@@ -77,14 +77,16 @@ class NavBar extends PureComponent {
           </div>
           
           <div class="topnav">
-          <Switch>
-              <Route exact path ="/login" component={Login}/>
-              <Route exact path ="/register" component={Register}/>
-         </Switch>
+          
 
           {this.state.loggedin}
        </div>
        </nav>
+       <Switch>
+              <Route exact path ="/login" component={Login}/>
+              <Route exact path ="/register" component={Register}/>
+         </Switch>
+      </div>
         
             
         )

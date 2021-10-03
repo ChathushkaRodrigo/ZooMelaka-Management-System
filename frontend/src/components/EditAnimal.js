@@ -158,7 +158,7 @@ export default class EditAnimal extends Component{
             <div className="EditAnimal-body">
             <div container="container-fluid" className="col-md-8  mx-auto" >
             <center><h1 className="UpdateAniHead">Update The Animal Portfolio</h1></center>
-            <div className="ChamathUpdateForm" id="chamathCreaForm">
+            <div className="ChamathUpdateForm" id="chamathUpdaForm">
             <form className="myFormszzChamath" noValidate>
                 <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Feeding Date</label>
@@ -192,7 +192,7 @@ export default class EditAnimal extends Component{
                 <div>
                 {this.state.posts.map(posts =>(
                 <div>
-                {posts.employeeType==="ZooKeeper" && 
+                {posts.employeeType=="ZooKeeper" && 
 
                 <Dropdown.Item eventKey={posts.userName}>
                 {posts.userName}
