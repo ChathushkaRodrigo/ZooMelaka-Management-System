@@ -149,10 +149,15 @@ export default class PostDetails extends Component {
 
         return (
 
-            <div style={{marginTop:'20px'}}>
-                        
+
+            <div style={{marginTop:'20px',backgroundColor:"#00002b"}}>
+
+                 
                 <h1 style={{color:'white'}}>Hello, {userName}</h1>
                 <hr/>
+
+                <table style={{color:'white'}}> 
+
 
 
                 <form className="shasForms">

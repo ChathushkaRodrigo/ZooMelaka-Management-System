@@ -48,7 +48,9 @@ export default class Reports extends Component{
             
                 <p></p>
              <div className="content">
+
                 {/* <d1 className="row" style={{textAlign:'left'}}>
+
                     <dt className="col-sm-3">Project ID:</dt>
                     <dd className="col-sm-9">{projectID}</dd>
                     <dt className="col-sm-3">Project Name:</dt>
@@ -61,6 +63,7 @@ export default class Reports extends Component{
                     <dd className="col-sm-9">{supervisor}</dd>
                     <dt className="col-sm-3">Working Team:</dt>
                     <dd className="col-sm-9">{workingTeam}</dd>
+
                 </d1> */}
                 <table>
                     <tr>
@@ -88,6 +91,7 @@ export default class Reports extends Component{
                         <td>{workingTeam}</td>
                     </tr>
                 </table>
+
                 <button className="print" onClick="window.print()">Print report</button>
              </div></center>
              </div>
