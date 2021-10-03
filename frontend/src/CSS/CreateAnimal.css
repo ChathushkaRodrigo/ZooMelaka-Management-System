@@ -1,19 +1,14 @@
 .CreateAnimal-body{
     font-size: large;
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    /* font-weight: bolder; */
+    font-weight: bolder;
     color: black;
     background-position: center;
-    /* background-color: ghostwhite; */
+    background-color: ghostwhite;
     /* background-image: url(../images/chamathPic1.jpg); */
     background-size: cover;
     padding-top: 20px;
     padding-bottom: 20px;
-
-    background: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
-    background-size: 500% 400%;
-    animation: gradient 15s ease infinite;
-    height: 200vh;
    
 }
 
@@ -45,7 +40,8 @@
     
 #chamForm{
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    /* font-weight: bolder; */
+    font-weight: bolder;
+    color:darkblue;
     font-size: large;
     
 }   
@@ -62,7 +58,7 @@
 
 #chamathRet{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    /* font-weight: bolder; */
+    font-weight: bolder;
     color: black;
     font-size: large;
 }

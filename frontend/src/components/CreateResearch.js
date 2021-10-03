@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 import axios from'axios'
 import "../CSS/CreateResearch.css"
-
-import SplitButton from 'react-bootstrap/SplitButton';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown';
-import Select from 'react-select'
-
-
 class CreateResearch extends Component {
         constructor(props){
             super(props);
@@ -20,28 +13,10 @@ class CreateResearch extends Component {
                 research_name:"",
                 animal_id:"",
                 research_information:"",
-                zooAnimal:[],
-                posts:[]
+                zooAnimal:[]
 
             }
-            this.retrievePosts()
-            this.ref1 = React.createRef();
-            this.ref2 = React.createRef();
-            this.ref3 = React.createRef();
-            this.ref4 = React.createRef();
-
         }
-        retrievePosts(){
-            axios.get("/posts").then(res =>{
-                if(res.data.success){
-                    this.setState({
-                        posts:res.data.existingPosts
-                    });
-                    console.log(this.state.posts)
-                }
-            })
-        }
-
         componentDidMount(){
             this.retrieveAnimal();
           }
@@ -108,37 +83,15 @@ class CreateResearch extends Component {
       }
     });
     }
-    Demo = () => {
-        this.ref1.current.value = "Test1"
-        this.ref2.current.value = "Test2"
-        this.ref3.current.value = "Test3"
-        this.ref4.current.value = "Test4"
-
-        this.state.name_of_scientist = "Test1"
-        this.state.catergory = "Test2"
-        this.state.research_name = "Test3"
-        this.state.research_information = "Test4"
-
-        
-    }
 
     render() {
-        const handleSelect=(e)=>{
-            console.log(e);
-            
-            this.state.name_of_scientist = e
-            console.log("Helloooo: " + this.state.name_of_scientist)
-            this.state.name_of_scientist = e
-            this.ref1.current.value = e
-        }
         return (
-            
             <div className="topic">
             <div classsName="col-md-8-mt-4-mx-auto">
                 <h1 className="h3-mb-3 font-weight-normal">Create new Research</h1>
                 <div className="  image4"> </div>
                 <form className=" formbody needs-validation">
-                    {/* <div className="form-group" style={{marginBottom:'15px'}}>
+                    <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px',color:"black"}}>name_of_scientist</label>
                         <input type="text" required
                         
@@ -147,32 +100,7 @@ class CreateResearch extends Component {
                         placeholder="Enter the scientist /scientists name"
                         value={this.state.name_of_scientist}
                         onChange={this.handleInputChange}/>
-                        </div> */}
-                        <div className="mb-2">
-                <DropdownButton align="center" title="name_of_scientist" id="dropdown-menu-align-end" onSelect={handleSelect}>
-                <div>
-                {this.state.posts.map(posts =>(
-                <div>
-                {posts.employeeType=="Researcher" && 
-
-                <Dropdown.Item eventKey={posts.userName}>
-                {posts.userName}
-                </Dropdown.Item>
-                }</div>
-                ))}</div>
-                
-                </DropdownButton>
-                <label style={{marginBottom:'5px'}} id="chamForm">Attended Zookeeper</label>
-                <input type="text"
-                id="chamathRet"
-                className="form-control"
-                name="Attended_Zookeeper"
-                placeholder="Enter The Last Attended Zookeeper:"
-                value={this.state.name_of_scientist}
-                onChange={this.handleInputChange}
-                ref={this.ref1}
-                />
-            </div>
+                        </div>
                         <div className="form-group" style={{marginBottom:'15px'}}>
                             <label style ={{marginBottom:'5px',color:"black"}}>date_research_started</label>
                             <input type="date"
@@ -200,7 +128,6 @@ class CreateResearch extends Component {
                             name="catergory"
                             placeholder="Enter the catergory"
                             value={this.state.catergory}
-                            ref = {this.ref2}
                             onChange={this.handleInputChange}/>
                             </div>
 
@@ -210,7 +137,6 @@ class CreateResearch extends Component {
                             <input type="text"
                             className="form-control"
                             name="research_name"
-                            ref = {this.ref3}
                             placeholder="Enter the research name"
                             value={this.state.research_name}
                             onChange={this.handleInputChange}/>
@@ -241,7 +167,6 @@ class CreateResearch extends Component {
                             <input type="text"
                             className="form-control"
                             name="research_information"
-                            ref = {this.ref4}
                             placeholder="Enter the researchinformation "
                             defualtValue={this.state.research_information }
                             onChange={this.handleInputChange}/>
@@ -252,10 +177,6 @@ class CreateResearch extends Component {
                             <i className="far fa-check-square"></i>
                             &nbsp;Save
                             </button>
-                            <button className="btn btn-success" style={{marginTop:'15px'}} onClick={this.Demo} type="button">
-                        <i className="far fa-check-square"></i>
-                        &nbsp; Demo
-                    </button>
                          
 
           

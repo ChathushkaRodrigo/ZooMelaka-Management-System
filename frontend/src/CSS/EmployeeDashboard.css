@@ -1,55 +1,60 @@
-.EmpDashBody{
-  font-family:Arial, Helvetica, sans-serif;
-  font-size: medium;
-  color:black;
-  background-color: blanchedalmond;
- 
-  align-items: center;
-  display: flex;
-  justify-content: center;
- 
 
+/*  
+
+body{
+  background-color: rgb(0, 0, 43);
+}
+
+table{
+    width: 100%;
+    
+}
+
+
+th, td {
+    border: 1px solid black;
+  }
+
+.cell-highlight {
+
+    font-weight: bold;
+}
+
+.blue{
+
+    background-color: "#333";
+    color:"white"
+}
+
+.header1{
+  background-color: rgb(0, 0, 43);
+}
+
+.row{
+  background-color: rgb(0, 0, 43);
+}
+
+
+.addForm{
+  background-color: blue;
+}
+
+.employeeImg {
+  position: relative;
+  background-size: cover !important;
+  background-position: center top !important;
+  max-width: 135%;
   
-}
-
-.Shas99HeadingEmpDash{
-  font-size: xx-large;
-  margin-left: 450px;
-  color: green;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bolder;
-}
-
-
-#shas99SearchBar{
-  margin-top: 10px;
-  margin-left:450px;
-  margin-bottom: 10px;
-  width: 600px;
+  height: 700px;
+  min-height: 250px;
+  width: 1350px;
   
-}
+  
 
 
+ 
+  background-image: url(../images/hoomanAnimal.jpg);
+ 
 
-
-
-#shasEdit{
-  margin-bottom: 5px;
-  margin-top: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-#shasDelete{
-  margin-bottom: 5px;
-  margin-top: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-
-#shas99Table{
-
-  background-color: white;
-}
+} */
 

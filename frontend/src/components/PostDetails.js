@@ -47,63 +47,61 @@ class ProfileDetails extends Component {
         });
 
     }
-
-    
-      render() {
+    render() {
 
         
 
-        const {fName,lName,uName,email,password} = this.state.profile;
+      const {fName,lName,uName,email,password} = this.state.profile;
 
-    return (
+  return (
 
-        <div>
+      <div>
 
-            Profile Details
-
-
-
-            <div style={{marginTop:'20px'}}>
-
-            <center> <h4>{uName}</h4> </center>
-
-            <hr/>
-
-                 
-
-                    <dl className="row">
-
-                    <dt className="col-sm-3">First Name :</dt>
-
-                    <dd className="col-sm-9">{fName}</dd>
+          Profile Details
 
 
 
-                    <dt className="col-sm-3">Last Name :</dt>
+          <div style={{marginTop:'20px'}}>
 
-                    <dd className="col-sm-9"> {lName} </dd>
+          <center> <h4>{uName}</h4> </center>
 
+          <hr/>
 
+               
 
-                    <dt className="col-sm-3">Email :</dt>
+                  <dl className="row">
 
-                    <dd className="col-sm-9"> {email} </dd>
+                  <dt className="col-sm-3">First Name :</dt>
 
-
-
-                    <dt className="col-sm-3">password :</dt>
-
-                    <dd className="col-sm-9"> {password} </dd>
+                  <dd className="col-sm-9">{fName}</dd>
 
 
 
-                    </dl>
+                  <dt className="col-sm-3">Last Name :</dt>
 
-            </div>
+                  <dd className="col-sm-9"> {lName} </dd>
 
-        </div>
 
-    );
+
+                  <dt className="col-sm-3">Email :</dt>
+
+                  <dd className="col-sm-9"> {email} </dd>
+
+
+
+                  <dt className="col-sm-3">password :</dt>
+
+                  <dd className="col-sm-9"> {password} </dd>
+
+
+
+                  </dl>
+
+          </div>
+
+      </div>
+
+  );
 
 }
 
