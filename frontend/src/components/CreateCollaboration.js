@@ -103,12 +103,12 @@ class CreateCollaboration extends Component {
         return (
             <div className="topic">
             <div classsName="col-md-8-mt-4-mx-auto">
-                <h1 className="h3-mb-3 font-weight-normal">Create new Collaboration</h1>
-                <div className="  image4"> </div>
-                <form className=" formbody needs-validation" noValidate>
+                <h1 className="h3-mb-3 font-weight-normal" style={{color:'white',fontSize:'40px'}}>Create new Collaboration</h1>
+                <div style={{backgroundColor:'white',width:'80%',marginLeft:''}}>
+                <form className="formbody needs-validation" noValidate>
                 <FormErrors formErrors={this.state.formErrors} className="FormError"/>
                     <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label style={{marginBottom:'5px',color:"black"}}>research_feild</label>
+                        <label style={{marginBottom:'5px',color:"black",marginTop:'20px'}}>research_feild</label>
                         <input type="text" required
                         
                         className="form-control"
@@ -176,22 +176,25 @@ class CreateCollaboration extends Component {
                              
                           
 
-
-                            <button className="btn btn-success"type ="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
+                        <div>
+                            <button className="btn btn-success"type ="submit" style={{marginLeft:"50px",marginTop:'15px'}} onClick={this.onSubmit}>
                             <i className="far fa-check-square"></i>
                             &nbsp;Save
                             </button>
-                         
+
+                            <button className="btn btn-success" style={{marginLeft:"700px", marginTop:"-60px",width:"150px",marginBottom:'00px'}} >
+                            <a href="/research/customerDash" style={{ textDecoration: "none", color: "white" }}>
+                            Dashboard
+                            </a>
+                            </button>
+                        </div>
 
           
             
             </form>
+            </div>
 
-            <button className="btn btn-success" style={{marginLeft:"0", marginTop:"0px",width:"150px"}} >
-                        <a href="/research/customerDash" style={{ textDecoration: "none", color: "white" }}>
-                            Dashboard
-                        </a>
-                    </button>
+            
         </div>
         </div>
         )

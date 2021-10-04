@@ -21,6 +21,7 @@ const initial = {
         employeeType:"",
         DOB:"",
         salary:"",
+        additional:"",
         userNameError:"",
         emailError:"",
         posts:[]
@@ -41,6 +42,7 @@ constructor(props){
     this.ref5 = React.createRef();
     this.ref6 = React.createRef();
     this.ref7 = React.createRef();
+    this.ref8 = React.createRef();
 }
 
     handleInputChange =(e) =>{
@@ -144,6 +146,7 @@ constructor(props){
         this.ref5.current.value = "Test5@"
         this.ref6.current.value = "Test6"
         this.ref7.current.value = "Test7"
+        this.ref8.current.value = "Test8"
         this.state.email = "Test5@"
         this.state.salary = "Test5@"
         this.state.userName = "Test2"
@@ -151,6 +154,8 @@ constructor(props){
         this.state.lastName = "Test4"
         this.state.address = "Test6"
         this.state.eID = "Test7"
+        // this.state.
+        
         
     }
 
@@ -337,7 +342,7 @@ constructor(props){
                 name="salary"
                 placeholder=""
                 value={this.state.salary}
-                onChange={this.handleInputChange}></textarea></div>
+                onChange={this.handleInputChange}>Hello</textarea></div>
 
                 
                

@@ -37,16 +37,16 @@ retrieveResearchCollaboration(){
     return (
     
      
-      <div classsName ="container">
+      <div classsName ="researchcolman">
          <h1 className ="heading"> Research Collaborations</h1>
-         <div className="  image6"> </div>
+         
          <br/>
         
-
+        <div id="researchcol">
         <table className="table table-bordered">
           <thead className="thead-bg-dark">
             <tr>
-              <th scope="col">#</th>
+              <th scope="col" style={{color:'white'}}>#</th>
               <th scope="col">
                 <b>Research_feild</b>
               </th>
@@ -89,7 +89,7 @@ retrieveResearchCollaboration(){
               </tr>
             ))}
           </tbody>
-        </table>
+        </table></div>
 
      
         

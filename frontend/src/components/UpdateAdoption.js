@@ -249,7 +249,7 @@ class UpdateAdoption extends Component {
                     <input type="text" className="form-control" id="age" placeholder="Enter Memeber Id" value = {this.state.member_id} onChange = {this.setMemberId}/>
              
                 </div> */}
-                <button className="btn btn-primary" onClick = {this.saveAdoption}>Update</button>
+                <button className="btn btn-primary" onClick = {this.saveAdoption}style = {{textDecoration:"none",marginLeft:'70px',marginTop:'30px'}}>Update</button>
                     
                 </div>
                 <br/>

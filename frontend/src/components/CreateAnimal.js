@@ -174,10 +174,10 @@ export default class CreateAnimal extends Component{
       
       Demo = () => {
         // this.ref1.current.value = "Test1"
-        this.ref2.current.value = "Test2"
-        // this.ref3.current.value = "Test3"
+        this.ref2.current.value = "Tom The Cat"
+        this.ref3.current.value = "Panthera Felix"
         // this.ref4.current.value = "Test4"
-        this.ref5.current.value = "Test5@"
+        // this.ref5.current.value = "Test5@"
         // this.ref6.current.value = "Test6"
         // this.ref7.current.value = "Test7"
         // this.ref8.current.value = "Test8"
@@ -185,8 +185,8 @@ export default class CreateAnimal extends Component{
         // this.ref10.current.value = "Test10"
         
         // this.state.Animal_ID = "Test5@"
-        this.state.Animal_Name = "Test5@"
-        this.state.Animal_Species = "Test2"
+        this.state.Animal_Name = "Tom The Cat"
+        this.state.Animal_Species = "Panthera Felix"
         // this.state.Animal_Date_Of_Birth = "Test3"
         // this.state.Animal_Gender= "Test4"
         // this.state.Feeding_And_Watering_Date = "Test6"

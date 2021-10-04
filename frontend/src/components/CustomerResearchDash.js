@@ -62,6 +62,7 @@ filterData(researches, searchkey){
          <br/>
          <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange = {this.handleSearchArea}></input>
 
+        <div style={{backgroundColor:'white'}}>
         <table className="table table-bordered">
           <thead className="thead-bg-dark">
             <tr>
@@ -109,6 +110,7 @@ filterData(researches, searchkey){
             ))}
           </tbody>
         </table>
+        </div>
 
      
         

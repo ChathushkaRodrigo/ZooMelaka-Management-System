@@ -186,9 +186,9 @@ class CreateResearch extends Component {
         return (
             <div className="topic">
             <div classsName="col-md-8-mt-4-mx-auto">
-                <h1 className="h3-mb-3 font-weight-normal">Create new Research</h1>
-                <div className="  image4"> </div>
-                {/* <form className=" formbody needs-validation"> */}
+                <h1 className="h3-mb-3 font-weight-normal" style={{color:'white',fontSize:'40px'}}>Create new Research</h1>
+                <div className="ResCreate" style={{backgroundColor:'white'}}> 
+                    {/* <form className=" formbody needs-validation"> */}
                     {/* <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px',color:"black"}}>name_of_scientist</label>
                         <input type="text" required
@@ -202,7 +202,7 @@ class CreateResearch extends Component {
 
                         
                         <div className="form-group" style={{marginBottom:'15px'}}>
-                       <label for="scientits">Choose a scientist:</label>
+                       <label for="scientits" style={{color:'black', marginTop:'10px'}}>Choose a scientist:</label>
                             <select name="employee_id" id="scientits"
                               onChange={this.handleEmployee}
                             >
@@ -259,7 +259,7 @@ class CreateResearch extends Component {
                             </div>
 
                             <div className="form-group" style={{marginBottom:'15px'}}>
-                            <label for="animals">Choose an animal:</label>
+                            <label for="animals" style={{color:'black'}}>Choose an animal:</label>
                             <select name="animal_id" id="animals"
                               onChange={this.handleInputChange}
                             >
@@ -289,20 +289,22 @@ class CreateResearch extends Component {
                             onChange={this.handleInputChange}/>
                             </div>
 
-
-                            <button className="btn btn-success"type ="submit" style={{marginTop:'15px'}} onClick={this.validateform} >
+                            <div>
+                            <button className="btn btn-success"type ="submit" style={{marginTop:'20px',marginLeft:'150px',marginBottom:'20px'}} onClick={this.validateform} >
                             <i className="far fa-check-square"></i>
                             &nbsp;Save
                             </button>
-                            <button className="btn btn-success" style={{marginLeft:"0", marginTop:"0px",width:"150px"}} >
-                            <a href="/research/customerDash" style={{ textDecoration: "none", color: "white" }}>
+                            <button className="btn btn-success" style={{marginLeft:"1010px", marginTop:"20px",width:"160px",marginBottom:'20px'}} >
+                            <a href="/ResearchDashboard" style={{ textDecoration: "none", color: "white" }}>
                             AdminDashboard
                             </a>
                             </button>
+                            </div>
 
           
             
-            {/* </form> */}
+                            {/* </form> */}
+                </div>
         </div>
 
         </div>

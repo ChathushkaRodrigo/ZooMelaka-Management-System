@@ -92,7 +92,7 @@ jspdGenerator=()=>{
         return (
             <div>
                   <div className="col-md-8 mt-4 mx-auto" id="edit-booking-body">
-                    <h1>    Research Details</h1> 
+                    <h1 style={{color:'white',fontSize:'40px'}}>    Research Details</h1> 
                     <br/>
                     <br/>
                     <div className="details-form">
@@ -144,8 +144,8 @@ jspdGenerator=()=>{
                    
                     </form>
                     <br/>
-                    <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
-                    <button className="btn btn-success" style={{marginLeft:"0", marginTop:"0px",width:"150px"}} >
+                    <button className="btn btn-success" onClick={this.jspdGenerator} style={{marginLeft:'120px',marginBottom:'30px'}}>Generate Report</button>
+                    <button className="btn btn-success" style={{marginLeft:"690px", marginTop:"0px",width:"160px",marginBottom:'30px'}} >
                         <a href="/ResearchDashboard" style={{ textDecoration: "none", color: "white" }}>
                             AdminDashboard
                         </a>
