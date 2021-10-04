@@ -28,7 +28,7 @@ class CreateResearch extends Component {
                 animal:[]
 
             }
-            this.retrievescientist();
+           
             this.ref1 = React.createRef();
             this.ref2 = React.createRef();
             this.ref3 = React.createRef();
@@ -38,6 +38,7 @@ class CreateResearch extends Component {
         componentDidMount(){
             this.retrieveAnimal();
             this.retrievePosts();
+            this.retrievescientist();
             
           }
        

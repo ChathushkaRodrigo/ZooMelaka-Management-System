@@ -235,7 +235,7 @@ export default class Create extends Component{
                         <input type="text" style={{marginTop:'0px'}} ref={this.ref3} className="form-control" name="title" value={this.state.title} onChange={this.handleInputChange}/>
                     </div>
                     <div className="form-group">
-                    <div id="Error"><label className="formLabels">Project Description</label><FormErrors formErrors={this.state.formErrors} className="FormError" style={{marginLeft:'80%'}}/></div>
+                        <label className="formLabels">Project Description</label>
                         <textarea  className="form-control" ref={this.ref4} name="description" rows="5" value={this.state.description} onChange={this.handleInputChange}/>
                     </div>
                     {/* <div className="form-group" style={{paddingTop:'15px'}}> 
