@@ -58,7 +58,9 @@ filterData(researches, searchkey){
      
       <div classsName ="container">
          <h1 className ="heading"> All researches </h1>
-         <div className="  image6"> </div>
+         <div className = "imagedivm">
+           <div className="image6"> </div>
+          </div>
          <br/>
          <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange = {this.handleSearchArea}></input>
 

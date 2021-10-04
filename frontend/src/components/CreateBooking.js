@@ -170,7 +170,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
                 });
             }
         }).catch(error => {
-            alert (error.message);
+            alert ("Empty fields are not accepted");
         });
 
         

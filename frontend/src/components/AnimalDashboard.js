@@ -70,7 +70,7 @@ jspdGenerator=()=>{
 
         
   //Create document obj
-  var doc =new jsPDF("p","pt","a") 
+  var doc =new jsPDF("p","pt","a2") 
 
 
   doc.html(document.querySelector("#AnimalTableChamath"), {

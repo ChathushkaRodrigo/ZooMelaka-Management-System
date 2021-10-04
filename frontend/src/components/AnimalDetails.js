@@ -188,13 +188,13 @@ export default class AnimalDetails extends Component{
                 }</div>
                 ))}</div> */}
 
-            <div style={{marginTop:'5px',marginBottom:'5px',width:'227px'}} id="ChamathUpzzz">
+            <div style={{marginTop:'5px',marginBottom:'5px'}} id="ChamathUpzzz">
            
                 {this.state.Medical.map(Medical =>(
                 <div>
                 {Medical.animalID === Animal_ID && 
                 <div>
-                <div className="btn btn-light btn-small justify-content-center btn-outline-info">
+                <div className="btn btn-light btn-small justify-content-center btn-outline-info" style={{width:'228px'}}>
                 <i className="fa fa-heartbeat ">  
                 <Link to = {`/medical/details/${Medical._id}`} style = {{textDecoration:"none",paddingLeft:'3px'}}>
                     Medical Records!

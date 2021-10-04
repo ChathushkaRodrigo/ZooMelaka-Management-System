@@ -28,10 +28,6 @@ class CreateResearch extends Component {
                 animal:[]
 
             }
-            this.ref3 = React.createRef();
-            this.ref1 = React.createRef();
-            this.ref2 = React.createRef();
-
         }
         componentDidMount(){
             this.retrieveAnimal();
@@ -114,7 +110,6 @@ class CreateResearch extends Component {
          }
 
 
-
         onSubmit=(e)=>{
             e.preventDefault();
             const { name_of_scientist,
@@ -183,20 +178,6 @@ class CreateResearch extends Component {
           }
         })
       }
-
-      Demo = () => {
-        this.ref1.current.value = "Test1"
-        this.ref2.current.value = "Test2"
-        this.ref3.current.value = "Test3"
-
-        this.state.research_name = "Test1"
-        this.state.research_information = "Test2"
-        this.state.catergory= "Test3"
-
-        // this.state.
-        
-        
-    }
       
 
 
@@ -259,7 +240,6 @@ class CreateResearch extends Component {
                             <label style ={{marginBottom:'5px',color:"black"}}>catergory</label>
                             <input type="text"
                             className="form-control"
-                            ref={this.ref3}
                             name="catergory"
                             placeholder="Enter the catergory"
                             value={this.state.catergory}
@@ -271,7 +251,6 @@ class CreateResearch extends Component {
                             <label style ={{marginBottom:'5px',color:"black"}}>research_name</label>
                             <input type="text"
                             className="form-control"
-                            ref={this.ref1}
                             name="research_name"
                             placeholder="Enter the research name"
                             value={this.state.research_name}
@@ -303,7 +282,6 @@ class CreateResearch extends Component {
                             <label style ={{marginBottom:'5px',color:"black"}}>research_information </label>
                             <input type="text"
                             className="form-control"
-                            ref={this.ref2}
                             name="research_information"
                             placeholder="Enter the researchinformation "
                             defualtValue={this.state.research_information }
@@ -315,12 +293,6 @@ class CreateResearch extends Component {
                             <i className="far fa-check-square"></i>
                             &nbsp;Save
                             </button>
-                            <div style={{float:'Right'}} >
-                            <button className="btn btn-success" style={{marginTop:'15px'}} onClick={this.Demo} type="button">
-                                <i className="far fa-check-square"></i>
-                                &nbsp; Demo
-                            </button>
-                        </div>
                             <button className="btn btn-success" style={{marginLeft:"1010px", marginTop:"20px",width:"160px",marginBottom:'20px'}} >
                             <a href="/ResearchDashboard" style={{ textDecoration: "none", color: "white" }}>
                             AdminDashboard

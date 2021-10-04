@@ -144,22 +144,22 @@ constructor(props){
         
     }
     Demo = () => {
-        this.ref1.current.value = "Test1"
-        this.ref2.current.value = "Test2"
-        this.ref3.current.value = "Test3"
-        this.ref4.current.value = "Test4"
-        this.ref5.current.value = "Test5@"
-        this.ref6.current.value = "Test6"
-        this.ref7.current.value = "Test7"
-        this.ref8.current.value = "Test8"
-        this.state.email = "Test5@"
+        
+        this.ref2.current.value = "Science Guy"
+        this.ref3.current.value = "Bill"
+        this.ref4.current.value = "Nye"
+        this.ref5.current.value = "Nye@billnye.com"
+        this.ref6.current.value = "45, Hawks nex lane, California, USA"
+        this.ref7.current.value = "45000"
+        
+        this.state.email = "Nye@billnye.com"
         this.state.salary = "Test5@"
-        this.state.userName = "Test2"
-        this.state.firstName = "Test3"
-        this.state.lastName = "Test4"
-        this.state.address = "Test6"
-        this.state.eID = "Test7"
-        this.state.additional = "Test8"
+        this.state.userName = "Science Guy"
+        this.state.firstName = "Bill"
+        this.state.lastName = "Nye"
+        this.state.address = "45, Hawks nex lane, California, USA"
+        
+
         // this.state.
         
         

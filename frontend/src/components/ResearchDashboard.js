@@ -58,6 +58,31 @@ onDelete =(id)=>{
   
 }
 
+
+
+// filterData(Research, searchkey){
+//   const result = Research.filter((Research) => 
+//   Research.animal_name.toLowerCase().includes(searchkey)
+//   );
+//   this.setState({Research:result});
+//   }
+
+
+
+handleSearchArea = (e) => {
+  const searchkey = e.currentTarget.value;
+
+  axios.get("http://localhost:8015/research").then(res =>{
+      if(res.data.success){
+          this.filterData(res.data.existingResearch, searchkey)
+      }
+      
+      });
+  }
+
+
+
+
   render() {
     return (
     

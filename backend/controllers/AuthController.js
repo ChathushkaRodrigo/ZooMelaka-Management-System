@@ -26,9 +26,7 @@ exports.registerUser = (req, res) => {
         if (user) return res.status(400).json("User already exists");
 
         //New User created
-        const newUser = new User({
-          fName,
-          lName,
+        const newUser = new User({          
           name,
           email,
           password

@@ -14,6 +14,7 @@ const initial = {
         email:"",
         address:"",
         employeeType:"",
+        additional:"",
         DOB:"",
         salary:"",
         userNameError:"",
@@ -85,7 +86,7 @@ export default class EditPost extends Component {
             }
             const id =  this.props.match.params.id;
             
-            const {userName,firstName,eID,lastName,email,address,employeeType,DOB,salary} = this.state;
+            const {userName,firstName,eID,lastName,email,address,employeeType,DOB,salary,additional} = this.state;
       
     
     
@@ -99,7 +100,8 @@ export default class EditPost extends Component {
                 address:address,
                 employeeType:employeeType,
                 DOB:DOB,
-                salary:salary
+                salary:salary,
+                additional:additional
             }
     
             console.log(data)
@@ -117,7 +119,8 @@ export default class EditPost extends Component {
                       address:"",
                       employeeType:"",
                       DOB:"",
-                      salary:""
+                      salary:"",
+                      additional:""
     
                     }
                     )
@@ -141,12 +144,14 @@ export default class EditPost extends Component {
                     address:res.data.post.address,
                     employeeType:res.data.post.employeeType,
                     DOB:res.data.post.DOB,
-                    salary:res.data.post.salary
+                    salary:res.data.post.salary,
+                    additional:res.data.post.additional
 
                 })
-                console.log(this.state.post)
+              
             }
         })
+        console.log(this.state)
     }
 
     //font-family: Papyrus, fantasy;
@@ -245,6 +250,19 @@ export default class EditPost extends Component {
                 placeholder="Enter Post Category"
                 value={this.state.salary}
                 onChange={this.handleInputChange}/></div>
+                
+
+<div className="form-group" style={{marginBottom:'15px'}}>
+                <label style={{marginBottom:'5px',color:'black'}} >Additional Information about the employee</label>
+                <textarea type="text"
+                rows="10"
+                cols="50"
+                className="form-control"
+                ref={this.ref8}
+                name="additional"
+                placeholder=""
+                value={this.state.additional}
+                onChange={this.handleInputChange}></textarea></div>
                
                 
                     <button className="btn btn-success" type="submit" style={{marginTop:'15px',marginLeft:'100px'}} onClick={this.onSubmit}>

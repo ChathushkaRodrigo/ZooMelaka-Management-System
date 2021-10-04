@@ -13,6 +13,7 @@ header {
   width: 100%;
   height: var(--heading-height);
 }
+
 input[type='text'],
 select {
   width: 100%;

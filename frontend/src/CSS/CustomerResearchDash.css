@@ -14,3 +14,12 @@
   .heading{
       text-align: center;
   }
+
+  
+.imagedivm {
+    background-image: url(https://zoo.sandiegozoo.org/sites/default/files/styles/hero_large_1920x1080/public/2019-01/hero-amurleopardcats_0.jpg?itok=DyDpSP8o);
+    height: 300px;
+    width: 6000px;
+    background-position: 95% 50%;
+    /* background-repeat: repeat-y; */
+  }
