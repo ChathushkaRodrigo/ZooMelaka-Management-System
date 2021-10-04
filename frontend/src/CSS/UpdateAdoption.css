@@ -1,18 +1,15 @@
-.update-bgimage{
-  
-    background-image: url('https://www.adventurestudenttravel.com/wp-content/uploads/2014/01/San-Antonio-Zoo-Lory-Landing-Bird-Feeding-scaled.jpg');
-    backface-visibility:initial;
-    opacity: 0.5;
-    
-   
+.update-bgimage {
+  background-image: url('https://www.adventurestudenttravel.com/wp-content/uploads/2014/01/San-Antonio-Zoo-Lory-Landing-Bird-Feeding-scaled.jpg');
+  backface-visibility: initial;
+  opacity: 0.5;
 }
 
-.update-topic{
-    font-size: 20px;
-    color:white;
-    margin-top: 130px;
+.update-topic {
+  font-size: 30px;
+  color: white;
+  margin-top: 130px;
 }
 
-.footerspace{
-    padding-bottom:230px;
+.footerspace {
+  padding-bottom: 230px;
 }

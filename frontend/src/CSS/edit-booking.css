@@ -1,11 +1,12 @@
 body {
   font-family: Arial;
   margin: 0;
-  background-color: lavender;
+  background: linear-gradient(132deg, #0d2409 0%, #01441c 80%);
 }
 
 header {
   position: fixed;
+
   width: 100%;
   height: var(--heading-height);
 }
@@ -33,15 +34,14 @@ input[type='submit']:hover {
   background-color: #45a049;
 }
 
-#edit-header{
+#edit-header {
   font-size: 50px;
-  
-
+  color: white;
 }
 
-#label-form{
+#label-form {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color:black;
+  color: black;
 }
 .edit-form {
   border-radius: 10px;

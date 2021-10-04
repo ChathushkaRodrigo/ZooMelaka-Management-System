@@ -155,8 +155,10 @@ constructor(props){
     }
 
     render() {
-        let data = localStorage.getItem('foo');
-        console.log(data)
+        let data = parseInt(localStorage.getItem('foo'));
+        data++;
+        console.log(String(data))
+        this.state.eID = String(data)
         const handleSelect=(e)=>{
             console.log(e);
             
@@ -178,7 +180,8 @@ constructor(props){
                     name="eID"
                     placeholder=""
                     value={this.state.eID}
-                    onChange={this.handleInputChange}/>
+                    onChange={this.handleInputChange}
+                    readonly/>
                     </div>
 
                     
@@ -323,6 +326,20 @@ constructor(props){
                 placeholder=""
                 value={this.state.salary}
                 onChange={this.handleInputChange}/></div>
+
+                <div className="form-group" style={{marginBottom:'15px'}}>
+                <label style={{marginBottom:'5px',color:'black'}} >Additional Information about the employee</label>
+                <textarea type="text"
+                rows="10"
+                cols="50"
+                className="form-control"
+                ref={this.ref7}
+                name="salary"
+                placeholder=""
+                value={this.state.salary}
+                onChange={this.handleInputChange}></textarea></div>
+
+                
                
                     <div style={{width:'80%',margin:'0 auto'}}>
                         <div style={{float:'left'}}>

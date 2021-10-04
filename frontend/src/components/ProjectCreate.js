@@ -154,6 +154,10 @@ export default class Create extends Component{
 
 
     render() {
+        let data1 = parseInt(localStorage.getItem('boo'));
+        data1++;
+        console.log(String(data1))
+        this.state.projectID = String(data1)
         //integration
         const handleSelect=(e)=>{
             console.log(e);

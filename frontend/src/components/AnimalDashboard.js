@@ -70,14 +70,14 @@ jspdGenerator=()=>{
 
         
   //Create document obj
-  var doc =new jsPDF("p","pt","b2") 
+  var doc =new jsPDF("p","pt","a") 
 
 
   doc.html(document.querySelector("#AnimalTableChamath"), {
     
     callback:function(pdf){
 
-      pdf.save("DashboardCustomer.pdf");
+      pdf.save("AllAnimalDetails.pdf");
       
     }
 
@@ -122,7 +122,7 @@ jspdGenerator=()=>{
           
             <thead>
               <tr className="animalRow">  
-                
+              
                 <th scope="col">Animal ID</th>
                 <th scope="col">Feeding Date</th>
                 <th scope="col">Feeding Time</th>
@@ -140,7 +140,7 @@ jspdGenerator=()=>{
                     
                     <td className="anRowing">
                       <a href={`animal/details/${zooAnimal._id}`} style = {{textDecoration:'none'}} id="chamathAnimalID">
-                      {zooAnimal.Animal_ID}
+                      {"A" + zooAnimal.Animal_ID}
                       </a>
                     </td>
                     <td className="anRowing">{zooAnimal.Feeding_And_Watering_Date}</td>
@@ -148,7 +148,9 @@ jspdGenerator=()=>{
                     <td className="anRowing">{zooAnimal.Attended_Zookeeper}</td>
                     {/* <td className="anRowing">{zooAnimal.Date_Of_Treatment_And_Medical_Care}</td>
                     <td className="anRowing">{zooAnimal.Time_Of_Treatment_And_Medical_Care}</td> */}
-                    <td className="anRowing">{zooAnimal.Current_Enclosure_ID}</td>
+                    <td className="anRowing">{"E" + zooAnimal.Current_Enclosure_ID}</td>
+                    {localStorage.setItem('goo', zooAnimal.Animal_ID)}
+                    {localStorage.setItem('too', zooAnimal.Current_Enclosure_ID)}
                     <td className="anRowing">
                         <a className="btn btn-light btn-small justify-content-center btn-outline-primary" href={`animal/update/${zooAnimal._id}`} id="updateButton">
                             <i className="fas fa-feather-alt"></i>&nbsp;<b>Update</b>

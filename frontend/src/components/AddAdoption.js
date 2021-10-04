@@ -337,7 +337,7 @@ class AddAdoption extends Component {
                     <input type="text" className="form-control" id="age" placeholder="Enter Memeber Id" value = {this.state.member_id} onChange = {this.setMemberId}/>
              
                 </div> */}
-                  <button className="btn btn-primary" onClick = {this.validateform}>Submit</button>
+                  <button className="btn btn-primary" onClick = {this.validateform} style = {{textDecoration:"none",paddingLeft:'3px'}}>Submit</button>
                     
                 </div>
                 <br/>

@@ -127,7 +127,7 @@ jspdGenerator=()=>{
               <th scope="col">Address</th>
               <th scope="col">Employee Type</th>
               <th scope="col">Date Of Birth</th>
-              <th scope="col">Salary</th>
+              <th scope="col">Salary(USD)</th>
               <th></th>
             </tr>
           </thead>
@@ -137,9 +137,9 @@ jspdGenerator=()=>{
                             <th >{index+1}</th>
                             <td>
                                 <a href={`/employee/details/${posts._id}`}>
-                                {posts.eID}
+                                {"E"+posts.eID}
                                 </a>
-                                {this.state.lastID = posts.eID}
+                                {/* {this.state.lastID = posts.eID} */}
                                 {localStorage.setItem('foo', posts.eID)}
                                 </td>
                             <td >{posts.userName}</td>
@@ -149,7 +149,7 @@ jspdGenerator=()=>{
                             <td>{posts.address}</td>
                             <td>{posts.employeeType}</td>
                             <td>{posts.DOB}</td>
-                            <td>{posts.salary}</td>
+                            <td>{posts.salary+"$"}</td>
                             <td>
                             <a className="btn btn-warning"  href={`/edit/employee/${posts._id}`} id="shasEdit">
                               <i className="fas fa-edit"></i>&nbsp;Edit

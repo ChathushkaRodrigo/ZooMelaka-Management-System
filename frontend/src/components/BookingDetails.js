@@ -156,9 +156,11 @@ class BookingDetails extends Component {
                     </div>
                    
                     </form>
+
+                    <button className="btn btn-success" onClick={this.jspdGenerator} style={{marginTop:'30px',marginBottom:'30px'}}>Generate Report</button>
                     </div>
 
-                    <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
+                    
 
 
 

@@ -2,7 +2,8 @@
   font-family: Arial;
   margin: 0;
 
-  background: linear-gradient(-45deg, #bbb7b6, #1d3277, #23a6d5, #23d5ab);
+  /* background: linear-gradient(-45deg, #bbb7b6, #1d3277, #23a6d5, #23d5ab); */
+  background: linear-gradient(132deg, #0d2409 0%, #01441c 80%);
   background-size: 500% 400%;
   animation: gradient 15s ease infinite;
   height: 200vh;
@@ -46,14 +47,13 @@ label {
   font-size: x-large;
   font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
 }
-#Error{
-  color:red;
-  width:200px;
-  font-size:50px;
-  
+#Error {
+  color: red;
+  width: 200px;
+  font-size: 50px;
 }
-#request-lable{
-  color:black;
+#request-lable {
+  color: black;
 }
 
 @keyframes gradient {
@@ -94,13 +94,14 @@ label {
   filter: blur(10px);
 }
 #crtH {
-  color: rgb(0, 0, 0);
-  font-size: 50px;
+  color: rgb(255, 255, 255);
+  font-size: 70px;
   margin: auto;
-  font-family: fantasy;
   padding-top: 50px;
+  margin:0 auto;
+  text-align:center;
 }
 
-#content{
+#content {
   margin-bottom: auto;
 }

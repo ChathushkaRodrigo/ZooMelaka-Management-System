@@ -43,7 +43,7 @@ jspdGenerator=()=>{
     doc.autoTable({ html: '#my-table' })
     //add texts
   
-    doc.text(200,20,'Employee Report')
+    doc.text(200,20,'Adoption Report')
   
     doc.autoTable({
        
@@ -80,9 +80,10 @@ jspdGenerator=()=>{
 
         <div className = "bodybackgrnd">
                 <div className = "all-hero">
-                    <div class="bg_image bgimage"></div>
-                    <div className = "content">
-                        <p className = "adpt-det-topic">Adoptions Details</p>
+                    <div className="bg_image bgimage">
+                        <div className = "content">
+                            <p className = "adpt-det-topic">Adoptions Details</p>
+                        </div>
                     </div>
                 </div>
                 <div className = "the_content">
@@ -116,9 +117,10 @@ jspdGenerator=()=>{
 
             </div>
             <br/>
-                    <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
-                    <button className="btn btn-success" style={{marginLeft:"0", marginTop:"0px",width:"150px"}} >
-                        <a href="/adminprofiledash" style={{ textDecoration: "none", color: "white" }}>
+                    <button className="btn btn-success" onClick={this.jspdGenerator} style={{marginLeft:'570px'}}>Generate Report</button>
+                    
+                    <button className="btn btn-success" style={{marginLeft:"430px", marginTop:"0px",width:"170px"}} >
+                        <a href="/AllAdoptions" style={{ textDecoration: "none", color: "white" }}>
                             AdminDashboard
                         </a>
                     </button>

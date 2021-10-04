@@ -62,11 +62,13 @@ onDelete =(id)=>{
     return (
     
      
-      <div classsName ="container">
+      <div id ="containerMN" style={{backgroundImage:'url(../images/cheetah.jpg)'}}>
          <h1 className ="heading"> All researches </h1>
-         <div className="  image6"> </div>
+         <div className = "imagedivm">
+           <div className="image6"> </div>
+          </div>
          <br/>
-       
+       <div style={{backgroundColor:'white', width:'95%',margin:'0 auto'}}>
          <table className="table table-bordered table-hover" id ="researches">
           <thead className="thead-bg-dark">
             <tr>
@@ -96,6 +98,7 @@ onDelete =(id)=>{
               </th>
               <th scope="col">Action</th>
             </tr>
+            
           </thead>
           <tbody>
             {this.state.Research.map((researches,index) =>(
@@ -141,6 +144,7 @@ onDelete =(id)=>{
             ))}
           </tbody>
         </table>
+        </div>
 
         <button className="btn btn-success"><a href= "/research/add"style ={{textDecoration:'none',color:"white"}}>Create New Research</a></button>
         &nbsp; &nbsp;

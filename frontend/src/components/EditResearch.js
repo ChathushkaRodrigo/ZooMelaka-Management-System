@@ -92,13 +92,13 @@ class EditResearch extends Component {
         return (
             <div className="topic1">
             <div className="col-md-8 mt-4 mx-auto">
-            <h1 className="h3 mb-3 font-weight-normal">Edit Research</h1>
-            <div className="  image5"> </div>
+            <h1 className="h3 mb-3 font-weight-normal" style={{color:'white',fontSize:'40px'}}>Edit Research</h1>
+            <div className="image5"> 
               <form className=" formbody1 needs-validation" noValidate>
                   <div className="form-group" style={{marginBottom:'15px'}}>
-                  <br/>
+                  
                         <label style={{marginBottom:'5px',color:"black"}}>Name of scientist/scientists</label>
-                        <input type="text"
+                        <input type="text" style={{width:'800px'}}
                             className="form-control"
                             name="name_of_scientist"
                             placeholder="Enter the scientist /scientists name"
@@ -107,7 +107,7 @@ class EditResearch extends Component {
                     </div>
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px',color:"black"}}>Date research started</label>
-                        <input type="text"
+                        <input type="text" style={{width:'800px'}}
                             className="form-control"
                             name="date_research_started"
                             placeholder="Enter the date research started"
@@ -116,7 +116,7 @@ class EditResearch extends Component {
                     </div>
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px',color:"black"}}>Date research ended</label>
-                        <input type="text"
+                        <input type="text" style={{width:'800px'}}
                             className="form-control"
                             name="date_research_ended"
                             placeholder="Enter the date research ended"
@@ -125,7 +125,7 @@ class EditResearch extends Component {
                     </div>
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px',color:"black"}}>Catergory</label>
-                        <input type="text"
+                        <input type="text" style={{width:'800px'}}
                             className="form-control"
                             name="catergory"
                             placeholder="Enter the catergory"
@@ -134,7 +134,7 @@ class EditResearch extends Component {
                     </div>
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px',color:"black"}}>Research Name</label>
-                        <input type="text"
+                        <input type="text" style={{width:'800px'}}
                             className="form-control"
                             name="research_name"
                             placeholder="Enter the research name"
@@ -144,7 +144,7 @@ class EditResearch extends Component {
 
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px',color:"black"}}>animal_id</label>
-                        <input type="text"
+                        <input type="text" style={{width:'800px'}}
                             className="form-control"
                             name="animal_id"
                             placeholder="Enter the animal id"
@@ -158,7 +158,7 @@ class EditResearch extends Component {
 
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px',color:"black"}}>Research Information </label>
-                        <input type="text"
+                        <input type="text" style={{width:'800px'}}
                             className="form-control"
                             name="research_information "
                             placeholder="Enter the researchinformation"
@@ -167,18 +167,22 @@ class EditResearch extends Component {
                     </div>
 
     
-                    <button className="btn btn-success" type="submit" onClick={this.onSubmit}>   
+                    <button className="btn btn-success" type="submit" onClick={this.onSubmit} style={{marginLeft:'50px',marginTop:'30px'}}>   
                         <i className="far fa-check-square"> </i>
                         &nbsp; Update
                     </button>
     
-                </form>
-
-                <button className="btn btn-success" style={{marginLeft:"0", marginTop:"0px",width:"150px"}} >
+                    <button className="btn btn-success" style={{marginLeft:"700px", marginTop:"-35px",width:"150px",marginBottom:'30px'}} >
                         <a href="/ResearchDashboard" style={{ textDecoration: "none", color: "white" }}>
                             AdminDashboard
                         </a>
                     </button>
+
+                </form>
+                
+
+                
+                    </div>
             </div>
             </div>
         );

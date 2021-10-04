@@ -93,7 +93,7 @@ export default class EditPost extends Component {
               
                 userName:userName,
                 firstName:firstName,
-                eID:eID,
+                
                 lastName:lastName,
                 email:email,
                 address:address,
@@ -158,15 +158,7 @@ export default class EditPost extends Component {
             <div className="col-md-8 mt-4 mx-auto" style={{backgroundColor:'white',marginTop:'0px',paddingTop:'30px'}}>
                 <h1 className="h3 mb-3 font-weight-normal" style={{fontSize:'36px',textAlign:'center'}}>Edit Records</h1>
                 <form className="needs-validation" style={{}} noValidate>
-                    <div className="form-group" style={{marginBottom:'15px'}}>
-                    <label style={{marginBottom:'5px',fontFamily:"Arial",color:'black'}} > eID</label>
-                    <input type="text"
-                    className="form-control"
-                    name="eID"
-                    placeholder="Enter Topic"
-                    value={this.state.eID}
-                    onChange={this.handleInputChange}/>
-                    </div>
+                    
 
                 
                 <div className="form-group" style={{marginBottom:'15px'}}>
@@ -246,7 +238,7 @@ export default class EditPost extends Component {
 
 
                 <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px',fontFamily:"Arial",color:'black'}} >Salary</label>
+                <label style={{marginBottom:'5px',fontFamily:"Arial",color:'black'}} >Salary(USD)</label>
                 <input type="text"
                 className="form-control"
                 name="salary"

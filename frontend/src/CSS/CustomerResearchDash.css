@@ -6,24 +6,6 @@
     height: 100vh;
   }
   
-  .image6 {
-    position: relative;
-    background-size: cover !important;
-    background-position: center top !important;
-    background-repeat: no-repeat !important;
-    margin-top: 10px;
-    height: 300px;
-    min-height: 250px;
-    width: 1400px;
-    
-    
-
-
-   
-    background-image: url(https://www.australiazoo.com.au/wp-content/uploads/2019/09/Experiences-Animal-Encounters-Pat-a-Koala-Encounter2240x700.jpg);
-   
-  
-  }
 
   .topic{
    margin :75px;

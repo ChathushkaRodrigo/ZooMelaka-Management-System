@@ -152,7 +152,7 @@ export default class CreateAnimal extends Component{
     
         switch(fieldName) {
           
-          case 'Animal_ID':
+          case 'Animal_Gender':
             Animal_IDValid = value.length <= 5;
             fieldValidationErrors.Animal_ID = Animal_IDValid ? '': ' is too long';
             break;
@@ -173,33 +173,40 @@ export default class CreateAnimal extends Component{
       }
       
       Demo = () => {
-        this.ref1.current.value = "Test1"
+        // this.ref1.current.value = "Test1"
         this.ref2.current.value = "Test2"
-        this.ref3.current.value = "Test3"
-        this.ref4.current.value = "Test4"
+        // this.ref3.current.value = "Test3"
+        // this.ref4.current.value = "Test4"
         this.ref5.current.value = "Test5@"
-        this.ref6.current.value = "Test6"
-        this.ref7.current.value = "Test7"
+        // this.ref6.current.value = "Test6"
+        // this.ref7.current.value = "Test7"
         // this.ref8.current.value = "Test8"
         // this.ref9.current.value = "Test9"
-        this.ref10.current.value = "Test10"
+        // this.ref10.current.value = "Test10"
         
-        this.state.Animal_ID = "Test5@"
+        // this.state.Animal_ID = "Test5@"
         this.state.Animal_Name = "Test5@"
         this.state.Animal_Species = "Test2"
-        this.state.Animal_Date_Of_Birth = "Test3"
-        this.state.Animal_Gender= "Test4"
-        this.state.Feeding_And_Watering_Date = "Test6"
-        this.state.Feeding_And_Watering_Time = "Test7"
+        // this.state.Animal_Date_Of_Birth = "Test3"
+        // this.state.Animal_Gender= "Test4"
+        // this.state.Feeding_And_Watering_Date = "Test6"
+        // this.state.Feeding_And_Watering_Time = "Test7"
         // this.state.Date_Of_Treatment_And_Medical_Care = "Test8"
         // this.state.Time_Of_Treatment_And_Medical_Care = "Test9"
-        this.state.Current_Enclosure_ID = "Test10"
+        // this.state.Current_Enclosure_ID = "Test10"
 
         
     }
     
     render(){
-        
+        let data2 = parseInt(localStorage.getItem('goo'));
+        data2++;
+        console.log(String(data2))
+        this.state.Animal_ID = String(data2)
+        let data3 = parseInt(localStorage.getItem('too'));
+        data3++;
+        console.log(String(data3))
+        this.state.Current_Enclosure_ID = String(data3)
         const handleSelect=(e)=>{
             console.log(e);
             
@@ -211,20 +218,9 @@ export default class CreateAnimal extends Component{
         return(
             <div className="CreateAnimal-body">
             <div container="container-fluid" className="col-md-8 mx-auto" id="chamathCreaForm">
-            <center><h1 className="h1-CreateAnimal">Create Zoo Animal!</h1></center>
+            <center><h1 className="h1-CreateAnimal">Add Zoo Animal!</h1></center>
             <form className="CreateAniHead" noValidate>
-                <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Animal ID</label>
-                <input type="text"
-                className="form-control"
-                ref={this.ref1}
-                id="chamathRet"
-                name="Animal_ID"
-                placeholder="Animal ID:"
-                value={this.state.Animal_ID}
-                onChange={this.handleInputChange}
-                />
-            </div><div id="ChamathValidation"><FormErrors formErrors={this.state.formErrors} className="FormError"/></div>
+                
 
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Animal Name</label>
@@ -395,18 +391,7 @@ export default class CreateAnimal extends Component{
                 />
             </div> */}
 
-            <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Enclosure ID</label>
-                <input type="text"
-                id="chamathRet"
-                ref={this.ref10}
-                className="form-control"
-                name="Current_Enclosure_ID"
-                placeholder="Enclosure ID:"
-                value={this.state.Current_Enclosure_ID}
-                onChange={this.handleInputChange}
-                />
-            </div>
+            
 
             <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} for='Adoptability' id="chamForm">Adoptability</label>&nbsp;&nbsp;

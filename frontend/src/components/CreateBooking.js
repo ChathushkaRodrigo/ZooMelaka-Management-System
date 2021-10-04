@@ -234,8 +234,8 @@ import Dropdown from 'react-bootstrap/Dropdown';
                     
                     <form className="create-form"  >
                    
-                    <div className="form-group" style={{marginBottom:'15px'}}>
-                        <label for="emailC" style={{marginBottom:'5px'}}>Email address</label>
+                    <div className="form-group" style={{marginTop:'50px',marginBottom:'15px'}}>
+                        <label for="emailC" style={{marginBottom:'5px',color:'#000'}}>Email address</label>
                     <input type="email" 
                         className="form-control" 
                         name="CustomerEmail" 
@@ -253,7 +253,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 
                     <br/>
                     <div className="form-group">
-                    <label for="cName" style={{marginBottom:'5px'}}>Customer Name</label>
+                    <label for="cName" style={{marginBottom:'5px',color:'#000'}}>Customer Name</label>
                         <input type="text" 
                         className="form-control" 
                         ref={this.ref2}
@@ -265,7 +265,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
                     </div>
                     <br/>
                     <div className="form-group">
-                    <label for="MobileNo" style={{marginBottom:'5px'}}>Mobile Number</label>
+                    <label for="MobileNo" style={{marginBottom:'5px',color:'#000'}}>Mobile Number</label>
                         <input type="tel" 
                         className="form-control" 
                         ref={this.ref3}
@@ -277,7 +277,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
                     </div>
                     <br/>
                     <div className="form-group">
-                    <label for="TourOp" style={{marginBottom:'5px'}}>Tour Option</label>
+                    <label for="TourOp" style={{marginBottom:'5px',color:'#000'}}>Tour Option</label>
                         <input type="text" 
                         className="form-control" 
                         ref={this.ref4}
@@ -289,7 +289,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
                     </div>
                     <br/>
                     <div className="form-group">
-                    <label for="Date" style={{marginBottom:'5px'}}>Date</label>
+                    <label for="Date" style={{marginBottom:'5px',color:'#000'}}>Date</label>
                         <input type="date" 
                         className="form-control" 
                         id="Date" 
@@ -301,7 +301,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
                     </div>
                     <br/>
                     <div className="form-group">
-                    <label for="Time" style={{marginBottom:'5px'}}>Allocated time</label>
+                    <label for="Time" style={{marginBottom:'5px',color:'#000'}}>Allocated time</label>
                         <input type="time" 
                         className="form-control" 
                         id="Time" 
@@ -312,13 +312,12 @@ import Dropdown from 'react-bootstrap/Dropdown';
                         
                     </div>
                  <br/>
-                    <div className="mb-2">
+                    <div className="form-group">
                 <DropdownButton align="center" title="Tour Guide" id="dropdown-menu-align-end1" onSelect={handleSelect} >
                 <div>
                 {this.state.posts.map(posts =>(
                 <div>
-                {posts.employeeType===+
-                "Tour Guide" && 
+                {posts.employeeType== "Tour Guide" && 
 
                 <Dropdown.Item eventKey={posts.userName}>
                 {posts.userName}
@@ -327,7 +326,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
                 ))}</div>
                 
                 </DropdownButton>
-                <label style={{marginBottom:'5px'}} id="chamForm">Tour Guide Name</label>
+                <label style={{marginBottom:'5px',fontSize:'24px'}} id="chamForm">Tour Guide Name</label>
                 <input type="text"
                 id="vinodRet"
                 className="form-control"
@@ -363,28 +362,27 @@ import Dropdown from 'react-bootstrap/Dropdown';
                         <br/>
                         <label hidden>{this.state.MemberID = (user ? `${user.id}`: '' )}</label>
                         
-                        
                         <br/>
+                        <div>
+                    <button className="btn btn-success" style={{marginTop:'0px',marginLeft:'120px'}} onClick={this.Demo} type="button">
+                        <i className="far fa-check-square"></i>
+                        &nbsp; Demo
+                    </button>
+                        
                        
-                    <button className="btn btn-success" type="submit" style={{marginBottom:'15px'}} onClick={this.onsubmit}>
+                    <button className="btn btn-success" type="submit" style={{marginBottom:'0px',marginLeft:'300px'}} onClick={this.onsubmit}>
                         <i className="far fa-check-square"></i>
                         &nbsp; Submit Booking
                     </button>
                     &nbsp;
-                    <br/>
+                    
                    
 
-                        <br/>
+                        
                     
-                    <div>
-                    <button className ="btn btn-success"><a href="/TourGuideDashboard" style={{textDecoration:'none' ,color:'white' }}>  Dashboard </a></button>
+                    <button className ="btn btn-success" style={{marginLeft:'290px'}}><a href="/TourGuideDashboard" style={{textDecoration:'none' ,color:'white' }}>  Dashboard </a></button>
                     </div> <br/><br/>
-                    <div>
-                    <button className="btn btn-success" style={{marginTop:'15px'}} onClick={this.Demo} type="button">
-                        <i className="far fa-check-square"></i>
-                        &nbsp; Demo
-                    </button>
-                    </div> <br/><br/>
+                    <br/><br/>
                     </form>
 
                 <br/>

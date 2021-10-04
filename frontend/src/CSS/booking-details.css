@@ -15,12 +15,12 @@ select {
   border-radius: 4px;
   box-sizing: border-box;
 }
-#details-lable{
+#details-lable {
   color: black;
-
 }
-#header-details{
+#header-details {
   font-size: 50px;
+  color: white;
 }
 input[type='submit'] {
   width: 100%;

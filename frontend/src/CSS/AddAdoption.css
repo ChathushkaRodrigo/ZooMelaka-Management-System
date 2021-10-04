@@ -54,8 +54,8 @@
 }
 .adoption_level {
   position: relative;
-  margin-top: -600px;
-  margin-left: 600px;
+  margin-top: -580px;
+  margin-left: 950px;
 }
 .adptlvl_img {
   height: 220px;
@@ -105,7 +105,7 @@
   display: inline-block;
   vertical-align: middle;
   white-space: normal;
-  margin-top: 100px;
+  margin-top: 60px;
   padding-left: 80px;
   padding-right: 120px;
   padding-right: 80px;
@@ -115,7 +115,7 @@
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .add-topic {
-  font-size: 20px;
+  font-size: 30px;
   color: white;
 }
 

@@ -68,14 +68,14 @@ jspdGenerator=()=>{
 
         
   //Create document obj
-  var doc =new jsPDF("p","pt","b2") 
+  var doc =new jsPDF("p","pt","a2") 
 
 
   doc.html(document.querySelector("#ProjectsAll"), {
     
     callback:function(pdf){
 
-      pdf.save("DashboardCustomer.pdf");
+      pdf.save("AllProjects.pdf");
       
     }
 
@@ -123,7 +123,7 @@ jspdGenerator=()=>{
             {this.state.projects.map((projects,index) =>(
               <tr id="tr" key={index} style={{borderLeft:'none',borderRight:'none',borderBottom:'0.5px solid black',textAlign:'center',fontSize:'17px'}}>
                 <th scope="row">{index+1}</th>
-                <td>{projects.projectID}
+                <td>{"P" + projects.projectID}
                 </td>
                 <td>
                   <a href={`/project/report/${projects._id}`} className="searchlink">{projects.name}</a>
@@ -132,6 +132,7 @@ jspdGenerator=()=>{
                 <td>{projects.description}</td>
                 <td>{projects.supervisor}</td>
                 <td>{projects.workingTeam}</td>
+                {localStorage.setItem('boo', projects.projectID)}
                 <td>
                   <a className="btn btn-warning" id="sedit" href={`/project/edit/${projects._id}`}>
                     <i className="fas fa-edit"></i>

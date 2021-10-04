@@ -12,12 +12,13 @@
     background-position: center top !important;
     background-repeat: no-repeat !important;
     margin-top: 10px;
-    height: 350px;
+    height: auto;
     min-height: 250px;
+    background-color: white;
 
 
    
-    background-image: url(https://www.australiazoo.com.au/wp-content/uploads/2019/10/Visit-Us-Events-Calendar2240x700.jpg);
+    /* background-image: url(https://www.australiazoo.com.au/wp-content/uploads/2019/10/Visit-Us-Events-Calendar2240x700.jpg); */
    
   
   }
