@@ -9,21 +9,22 @@
 /* .image6 {
   position: relative;
   background-size: cover !important;
-  /* background-position: center top !important; */
-/* background-repeat: no-repeat !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
   height: 300px;
   min-height: 250px;
   width: 1400px;
   border-style: solid;
-  border-width: 1px; */
+  border-width: 1px;
+} */
 
-/* //background-image: url(https://www.australiazoo.com.au/wp-content/uploads/2019/09/Experiences-Animal-Encounters-Pat-a-Koala-Encounter2240x700.jpg); */
-/* }  */
-
-/* .imagedivm { */
-/* background-image: url(https://www.australiazoo.com.au/wp-content/uploads/2019/09/Experiences-Animal-Encounters-Pat-a-Koala-Encounter2240x700.jpg); */
-/* } */
-
+.imagedivm {
+  background-image: url(https://zoo.sandiegozoo.org/sites/default/files/st…/2019-01/hero-amurleopardcats_0.jpg);
+  height: 400px;
+  width: 6000px;
+  background-position: 90% 20%;
+  /* background-repeat: repeat-y; */
+}
 
 .topic {
   margin: 75px;

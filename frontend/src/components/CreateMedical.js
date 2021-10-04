@@ -155,7 +155,7 @@ export default class CreateMedical extends Component {
             <br/>
                 <h1 className="titlepage" id="RandiCreaTit">Create Medical Record</h1>
                 
-                <div className= "imagemed"> </div>
+                <div style={{backgroundColor:'white',width:'80%',margin:'0 auto'}}>
         
                 <form className=" needs-validation " noValidate id="RandiForm1">
                     {/* <div className="form-group" style={{marginBottom:'15px'}}>
@@ -170,8 +170,8 @@ export default class CreateMedical extends Component {
                         </div> */}
 
 
-<div className="mb-2">
-                <DropdownButton align="center" title="Veterinarian" id="dropdown-menu-align-end" onSelect={handleSelect}>
+                <div className="form-group">
+                <DropdownButton style={{marginLeft:'-100px'}} align="center" title="Veterinarian" id="dropdown-menu-align-end" onSelect={handleSelect}>
                 <div>
                 {this.state.posts.map(posts =>(
                 <div>
@@ -185,7 +185,7 @@ export default class CreateMedical extends Component {
                 
                 </DropdownButton>
                 <label style={{marginBottom:'5px'}} id="RandiForm1">Veterinarian</label>
-                <input type="text"
+                <input type="text" style={{marginLeft:'-100px'}}
                 id="randimal"
                 className="form-control"
                 name="Attended_Zookeeper"
@@ -196,8 +196,8 @@ export default class CreateMedical extends Component {
                 />
             </div>
 
-            <div className="mb-2">
-                <DropdownButton align="center" title="Attended Zookeeper" id="dropdown-menu-align-end" onSelect={handleSelect1}>
+            <div className="form-group">
+                <DropdownButton style={{marginLeft:'-100px'}} align="center" title="Attended Zookeeper" id="dropdown-menu-align-end" onSelect={handleSelect1}>
                 <div>
                 {this.state.posts.map(posts =>(
                 <div>
@@ -211,7 +211,7 @@ export default class CreateMedical extends Component {
                 
                 </DropdownButton>
                 <label style={{marginBottom:'5px'}} id="RandiForm1">Attended Zookeeper</label>
-                <input type="text"
+                <input type="text" style={{marginLeft:'-100px'}}
                id="randimal"
                 className="form-control"
                 name="Attended_Zookeeper"
@@ -234,8 +234,8 @@ export default class CreateMedical extends Component {
                         </div> */}
 
                         
-                <div className="mb-2">
-                <DropdownButton align="center" title="Animal ID" id="dropdown-menu-align-end" onSelect={handleSelect2}>
+                <div className="form-group">
+                <DropdownButton style={{marginLeft:'-100px'}} align="center" title="Animal ID" id="dropdown-menu-align-end" onSelect={handleSelect2}>
                 <div>
                 {this.state.zooAnimal.map(zooAnimal =>(//
                 
@@ -249,7 +249,7 @@ export default class CreateMedical extends Component {
                 </DropdownButton>
                 <label style={{marginBottom:'5px'}} id="RandiForm1">Animal ID</label>
                 <input type="text"
-                id="randimal"
+                id="randimal" style={{marginLeft:'-100px'}}
                 className="form-control"
                 name="Attended_Zookeeper"
                 placeholder="Enter The Animal ID:"
@@ -278,7 +278,7 @@ export default class CreateMedical extends Component {
                             
                             <div className="form-group" style={{marginBottom:'15px'}}>
                             <label style ={{marginBottom:'5px'}} id="RandiForm1">Injection ID</label>
-                            <input type="text"
+                            <input type="text" style={{marginLeft:'-100px'}}
                             id="randimal"
                             className="form-control"
                             ref={this.ref4}
@@ -291,7 +291,7 @@ export default class CreateMedical extends Component {
                              
                             <div className="form-group" style={{marginBottom:'15px'}}>
                             <label style ={{marginBottom:'5px'}} id="RandiForm1">Surjery Info </label>
-                            <input type="text"
+                            <input type="text" style={{marginLeft:'-100px'}}
                             id="randimal"
                             className="form-control"
                             ref={this.ref5}
@@ -301,23 +301,26 @@ export default class CreateMedical extends Component {
                             onChange={this.handleInputChange}/>
                             </div>
                         <br/><br/>
-                    <button className="btn btn-success" type="submit" style={{marginBottom:'15px'}} onClick={this.onsubmit}>
+
+                    <div>
+                    <button className="btn btn-success" type="submit" style={{marginBottom:'15px',marginLeft:'50px'}} onClick={this.onsubmit}>
                         <i className="far fa-check-square"></i>
                         &nbsp; Submit Medical Report
                     </button>
 
-                    <button className="btn btn-success" style={{marginTop:'15px'}} onClick={this.Demo} type="button">
+                    <button className="btn btn-success" style={{marginTop:'-16px', marginLeft:'400px'}} onClick={this.Demo} type="button">
                         <i className="far fa-check-square"></i>
                         &nbsp; Demo
                     </button>
-                    <br/><br/><br/><br/><br/>
-                    
+
+                    <button className ="btn btn-success" style={{marginTop:'-50px',marginLeft:'700px'}}><a href="/medicalDashboard" style={{textDecoration:'none' ,color:'white'}}>  Dashboard </a></button>
+                    </div>
                    
                     </form>
+                    </div>
                 <br/>
 
     
-                <button className ="btn btn-success"><a href="/medicalDashboard" style={{textDecoration:'none' ,color:'white' }}>  Dashboard </a></button>
                   
      
 

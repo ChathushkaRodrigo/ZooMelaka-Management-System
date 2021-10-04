@@ -42,7 +42,7 @@ class CreateCollaboration extends Component {
 
             const data={research_feild:research_feild,
                 research_topic:research_topic,
-                name:"jk",
+                name:name,
                 email:email,
                 contact_no:contact_no,
                 zoological_institution:zoological_institution

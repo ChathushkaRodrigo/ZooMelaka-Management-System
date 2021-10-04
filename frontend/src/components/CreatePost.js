@@ -43,6 +43,9 @@ constructor(props){
     this.ref6 = React.createRef();
     this.ref7 = React.createRef();
     this.ref8 = React.createRef();
+    this.state.additional = "GCE Advanced Level Qualifications\nProfessional English Qualifications\nResearch Contributions\nZoological Management Qualifications\nJob Experience"
+                             
+    
 }
 
     handleInputChange =(e) =>{
@@ -99,7 +102,7 @@ constructor(props){
             alert("Requirements not fulfiled, Try again");
             return false
         }
-        const {userName,firstName,eID,lastName,email,address,employeeType,DOB,salary} = this.state;
+        const {userName,firstName,eID,lastName,email,address,employeeType,DOB,salary,additional} = this.state;
         
         
         
@@ -113,7 +116,8 @@ constructor(props){
             address:address,
             employeeType:employeeType,
             DOB:DOB,
-            salary:salary
+            salary:salary,
+            additional:additional
         }
         
         console.log(data)
@@ -130,7 +134,8 @@ constructor(props){
                   address:"",
                   employeeType:"",
                   DOB:"",
-                  salary:""
+                  salary:"",
+                  additional:"",
 
                 }
                 )
@@ -154,6 +159,7 @@ constructor(props){
         this.state.lastName = "Test4"
         this.state.address = "Test6"
         this.state.eID = "Test7"
+        this.state.additional = "Test8"
         // this.state.
         
         
@@ -172,6 +178,8 @@ constructor(props){
             
             this.ref.current.value = e
         }
+        
+
         return (
             <div id="ShasCreate">
             <div className="col-md-8 mt-4 mx-auto"  style={{backgroundColor:'white',marginTop:'0px',paddingTop:'30px'}}>
@@ -338,11 +346,11 @@ constructor(props){
                 rows="10"
                 cols="50"
                 className="form-control"
-                ref={this.ref7}
-                name="salary"
+                ref={this.ref8}
+                name="additional"
                 placeholder=""
-                value={this.state.salary}
-                onChange={this.handleInputChange}>Hello</textarea></div>
+                value={this.state.additional}
+                onChange={this.handleInputChange}></textarea></div>
 
                 
                

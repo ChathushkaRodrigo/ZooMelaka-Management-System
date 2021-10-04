@@ -217,8 +217,9 @@ export default class CreateAnimal extends Component{
         }
         return(
             <div className="CreateAnimal-body">
-            <div container="container-fluid" className="col-md-8 mx-auto" id="chamathCreaForm">
             <center><h1 className="h1-CreateAnimal">Add Zoo Animal!</h1></center>
+            <div container="container-fluid" className="col-md-8 mx-auto" id="chamathCreaForm">
+            
             <form className="CreateAniHead" noValidate>
                 
 
@@ -414,7 +415,7 @@ export default class CreateAnimal extends Component{
                     </button>
             <br/>
 
-            <a className="btn btn-light btn-small justify-content-between btn-outline-danger" href={`/animaldashboard`} style={{marginTop:'10px',marginBottom:'100px'}}>
+            <a className="btn btn-light btn-small justify-content-between btn-outline-danger" href={`/animaldashboard`} style={{marginTop:'10px',marginBottom:'100px',padding:'5px'}}>
             <i className="fas fa-hippo"></i>&nbsp;<b>Navigate To Animal Portfolio!</b>
 </a>
             

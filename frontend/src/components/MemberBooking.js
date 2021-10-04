@@ -3,7 +3,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-import '../CSS/MemberAdoptedAnimals.css'
+import '../CSS/member-booking.css'
 
 export default class MemberBooking extends Component {
 

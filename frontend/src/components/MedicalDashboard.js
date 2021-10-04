@@ -65,11 +65,11 @@ jspdGenerator=()=>{
 
   render() {
     return (
-      <div classsName ="container">
+      <div classsName ="containerRan">
         <br/>
         <h1 className ="titlepage">All Medical Records</h1>
         <div className= "imagemed2"> </div>
-
+        <div id="RandimalTable" style={{backgroundColor:'white',width:'80%',marginLeft:'0 auto'}}>
         <table className="table  table-bordered " id="Print">
           <thead>
             <tr>
@@ -114,16 +114,17 @@ jspdGenerator=()=>{
             
         ))}
           </tbody>
-        </table>
-        <button className="btn btn-success"><a href= "medical/create"style ={{textDecoration:'none',color:"white"}}>Create New Medical Report</a></button>
-       <br/>
-        <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Medicals Report</button>
-       <br/><br/><br/><br/><br/><br/><br/>
-       <button className="btn btn-success" style={{marginLeft:"0", marginTop:"0px",width:"150px"}} >
+        </table></div>
+        <div>
+        <button className="btn btn-success" style={{marginLeft:'190px'}}><a href= "medical/create"style ={{textDecoration:'none',color:"white"}}>Create New Medical Report</a></button>
+
+        <button className="btn btn-success" style={{marginLeft:'290px'}} onClick={this.jspdGenerator}>Generate Medicals Report</button>
+       <button className="btn btn-success" style={{marginLeft:"0", marginTop:"0px",width:"160px",marginLeft:'590px'}} >
                         <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
                             AdminDashboard
                         </a>
         </button>
+        </div>
       </div>
     );
   }

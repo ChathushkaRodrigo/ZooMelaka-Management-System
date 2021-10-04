@@ -82,8 +82,8 @@ class EditMedical extends Component {
         return (
             <div classsName="col-md-8-mt-4-mx-auto">
                 <br/>
-                <h1 className="titlepage">Edit Medical Record</h1>
-                <div className= "imagemed"> </div>
+                <h1 className="titlepage" style={{color:'white',fontSize:'40px'}}>Edit Medical Record</h1>
+                <div id="editform" style={{backgroundColor:'white',width:'80%',margin:'0 auto',paddingTop:'30px',paddingBottom:"30px"}}>
                 <form className="needs-validation" noValidate>
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px'}}>Vetenarian Name</label>
@@ -138,17 +138,21 @@ class EditMedical extends Component {
                             </div>
 
     
-                    <button className="btn btn-success" type="submit" onClick={this.onSubmit}>   
+                    
+                    <button className="btn btn-success" style={{marginLeft:"150px", marginTop:"0px",width:"160px"}} >
+                        <a href="/medicalDashboard" style={{ textDecoration: "none", color: "white" }}>
+                            AdminDashboard
+                        </a>
+                    </button>
+                    <button className="btn btn-success" style={{marginLeft:'955px'}} type="submit" onClick={this.onSubmit}>   
                         <i className="far fa-check-square"> </i>
                         &nbsp; Update
                     </button>
     
                 </form>
-                <button className="btn btn-success" style={{marginLeft:"0", marginTop:"0px",width:"150px"}} >
-                        <a href="/medicalDashboard" style={{ textDecoration: "none", color: "white" }}>
-                            AdminDashboard
-                        </a>
-                    </button>
+                </div>
+
+                
 
             </div>
         );

@@ -39,7 +39,12 @@ const postSchema = new mongoose.Schema({
     salary:{
         type:String,
         required:true
+    },
+    additional:{
+        type:String,
+        required:true
     }
+    
 
 });
 
