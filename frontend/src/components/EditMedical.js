@@ -144,6 +144,12 @@ class EditMedical extends Component {
                     </button>
     
                 </form>
+                <button className="btn btn-success" style={{marginLeft:"0", marginTop:"0px",width:"150px"}} >
+                        <a href="/medicalDashboard" style={{ textDecoration: "none", color: "white" }}>
+                            AdminDashboard
+                        </a>
+                    </button>
+
             </div>
         );
     }

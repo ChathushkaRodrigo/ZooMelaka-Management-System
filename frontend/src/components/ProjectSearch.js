@@ -149,24 +149,26 @@ jspdGenerator=()=>{
 
           {/* Copy generate from here */}
 
-        <div style={{marginTop:'30px',display:'inline',borderStyle:'solid'}}>
-            <div style={{float:'left'}}>
+       
+        
+
+        
+       
+      </div> 
+
+      <div style={{marginTop:'10px',display:'flex',width:'85%',margin:'0 auto'}}>
+            <div style={{}}>
                 <button className="btn btn-success" >
               <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
                 Admin Home
                 </a>
               </button>
             </div>
-            <div style={{float:'left'}}>
+            <div style={{marginLeft:'77.5%'}}>
               <button className="btn btn-success" onClick={this.jspdGenerator}> Generate Projects Report</button>
               <br/><br/>
             </div>
         </div>
-        
-
-        
-       
-      </div> 
       
          
       </div>

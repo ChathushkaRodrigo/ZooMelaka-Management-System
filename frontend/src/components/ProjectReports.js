@@ -108,7 +108,7 @@ jspdGenerator=()=>{
                     <dt className="col-sm-3">Working Team:</dt>
                     <dd className="col-sm-9">{workingTeam}</dd>
                 </d1> */}
-                <table>
+                <table style={{color:'black'}}>
                     <tr>
                         <th>Project ID:</th>
                         <td>{projectID}</td>
@@ -136,7 +136,18 @@ jspdGenerator=()=>{
                 </table>
 
                <br/>
-                    <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
+               
+               <div style={{width:'80%',borderStyle:'solid',marginTop:'-30px'}}>
+                
+                <button className="btn btn-success" style={{marginLeft:'-50px'}}>
+                        <a href="/project/find" style={{ textDecoration: "none", color: "white" }}>
+                        Back
+                        </a>
+                    </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+                        <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Report</button>
+              </div>
+
              </div></center>
              </div>
 

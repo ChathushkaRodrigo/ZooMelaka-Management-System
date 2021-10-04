@@ -91,31 +91,36 @@ export default class Edit extends Component{
                 </div>
              <div className="createF" style={{background:'rgba(255,255,255,0.7)'}}>
                 <form className="cform">
-                    <h3 style={{marginBottom:'15px', textAlign:'center'}}><b><u>Edit Project Form</u></b></h3>
+                    <h3 style={{marginBottom:'15px', textAlign:'center',fontSize:'30px',marginBottom:'20px'}}><b><u>Edit Project Form</u></b></h3>
                     <div className="form-group">
-                        <label className="formLabels">Project Name</label>
+                        <label className="formLabels" style={{color:'black'}}>Project Name</label>
                         <input type="text" style={{marginTop:'0px'}} className="form-control" name="name" placeholder="Enter Project Name" value={this.state.name} onChange={this.handleInputChange}/>
                     </div>
                     <div className="form-group">
-                        <label className="formLabels">Project Title</label>
+                        <label className="formLabels" style={{color:'black'}}>Project Title</label>
                         <input type="text" style={{marginTop:'0px'}} className="form-control" name="title" placeholder="Enter Project Title" value={this.state.title} onChange={this.handleInputChange}/>
                     </div>
                     <div className="form-group">
-                        <label className="formLabels">Project Description</label>
+                        <label className="formLabels" style={{color:'black'}}>Project Description</label>
                         <textarea className="form-control" name="description" rows="5" placeholder="Enter Project Description" value={this.state.description} onChange={this.handleInputChange}/>
                     </div>
                     <div className="form-group" style={{paddingTop:'15px'}}> 
-                        <label className="formLabels">Supervisor</label>
+                        <label className="formLabels"  style={{color:'black'}}>Supervisor</label>
                         <input type="text" style={{marginTop:'0px'}} className="form-control" name="supervisor" placeholder="Enter Supervisor" value={this.state.supervisor} onChange={this.handleInputChange}/>
                     </div>
                     <div className="form-group">
-                        <label className="formLabels">Working Team</label>
+                        <label className="formLabels" style={{color:'black'}}>Working Team</label>
                         <input type="text" style={{marginTop:'0px'}} className="form-control" name="workingTeam" placeholder="Enter Working Team" value={this.state.workingTeam} onChange={this.handleInputChange}/>
                     </div>
                     
-                    <button className="btn btn-success" id="eupdate" type="submit" onClick={this.onSubmit}>
+                    <button className="btn btn-success" id="eupdate" type="submit" onClick={this.onSubmit} style={{marginBottom:'30px'}}>
                         <i className="far fa-check-square"></i>
                         &nbsp; Update
+                    </button>
+                    <button className="btn btn-success" style={{marginLeft:'730px',marginTop:'10px'}}>
+                        <a href="/project/find" style={{ textDecoration: "none", color: "white" }}>
+                        Back
+                        </a>
                     </button>
                 </form>
                 </div>

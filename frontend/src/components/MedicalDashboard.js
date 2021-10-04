@@ -119,6 +119,11 @@ jspdGenerator=()=>{
        <br/>
         <button className="btn btn-success" onClick={this.jspdGenerator}>Generate Medicals Report</button>
        <br/><br/><br/><br/><br/><br/><br/>
+       <button className="btn btn-success" style={{marginLeft:"0", marginTop:"0px",width:"150px"}} >
+                        <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
+                            AdminDashboard
+                        </a>
+        </button>
       </div>
     );
   }

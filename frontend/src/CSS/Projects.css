@@ -206,10 +206,11 @@ a {
 /* Project Ediit */
 
 .editback {
-  background-image: url(../images/PojectEdit.jpg);
+  /* background-image: url(../images/PojectEdit.jpg); */
+  background: linear-gradient(132deg, #0d2409 0%, #005020 80%);
   background-size: cover;
   border-style: hidden;
-  height: 900px;
+  height: 930px;
 }
 
 #eupdate {
@@ -226,20 +227,20 @@ a {
 
 .reportback {
   background-image: url('../images/zoologo.jpg');
-  height: auto;
+  height: 850px;
 }
 
 .report {
   background-color: #f1f1f1;
   margin: 50px auto 100px;
-  padding-top: 5px;
+  padding-top: 600px;
   padding-left: 30px;
   padding-bottom: 40px;
   width: 60%;
   min-height: 70%;
   opacity: 95%;
   overflow: visible;
-  height: auto;
+  height: 700px;
   border-style: solid;
   border-width: 3px;
 }
@@ -249,11 +250,11 @@ a {
   margin-right: 50px;
   text-decoration-line: underline;
   font-size: 28px;
+  margin-top: -500px;
 }
 
 .content {
-  border-style: solid;
-  margin-top: 400px;
+  margin-top: 660px;
   padding-left: 60px;
   padding-right: 60px;
   height: auto;
