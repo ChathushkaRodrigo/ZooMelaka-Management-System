@@ -44,7 +44,7 @@ jspdGenerator=()=>{
     doc.autoTable({ html: '#my-table' })
     //add texts
   
-    doc.text(200,20,'Employee Report')
+    doc.text(200,20,'Project Report')
   
     doc.autoTable({
        

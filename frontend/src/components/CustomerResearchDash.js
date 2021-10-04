@@ -58,7 +58,7 @@ filterData(researches, searchkey){
      
       <div classsName ="container">
          <h1 className ="heading"> All researches </h1>
-         <div className = "imagedivm">
+         <div className = "imagedivm2">
            <div className="image6"> </div>
           </div>
          <br/>
@@ -106,7 +106,10 @@ filterData(researches, searchkey){
                 <td>{researches.date_research_ended}</td>
                 <td>{researches.catergory}</td>
                 <td>{researches.research_name} </td>
-                <td>{researches.research_information}</td>
+                <td><a className="btn btn-warning" href ={`/research/researchdata/${researches._id}`}>
+                     Research Data &nbsp;
+                  </a>
+                  </td>
              
               </tr>
             ))}

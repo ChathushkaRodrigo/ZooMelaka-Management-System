@@ -94,12 +94,12 @@ class ResearchInfo extends Component {
             <div className="topic1">
             <div className="col-md-8 mt-4 mx-auto">
             <h1 className="h3 mb-3 font-weight-normal">Edit Research Information</h1>
-            <div className="  image5"> </div>
+            
               <form className=" formbody1 needs-validation" noValidate>
-                  <div className="form-group" style={{marginBottom:'15px'}}>
-                  <br/>
+                    <div className="form-group" style={{marginBottom:'15px'}}>
+                    <br/>
                         <label style={{marginBottom:'5px',color:"black"}}>research_information</label>
-                        <textarea name="research_information" rows="20" cols="100" value={this.state.research_information}
+                        <textarea name="research_information" rows="30" cols="150" value={this.state.research_information}
                             onChange={this.handleInputChange} ></textarea>
                       
                     </div>

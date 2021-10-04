@@ -23,13 +23,15 @@ import { register } from "../actions/authActions";
 
 class Register extends Component {
   state = {
-    fName:"",
-    lName:"",
+     fName:"",
+     lName:"",
     name: "",
     email: "",
     password: "",
     msg: ""
   };
+
+  
 
   static propTypes = {
     buttonClicked: PropTypes.func.isRequired,
@@ -123,7 +125,7 @@ class Register extends Component {
                   type="text"
                   name="fName"
                   id="fName"
-                  placeholder="Enter your fname"
+                  placeholder="Enter your First name"
                   className="mb-3"
                   size="lg"
                   onChange={this.onChange}
@@ -134,18 +136,18 @@ class Register extends Component {
                   type="text"
                   name="lName"
                   id="lName"
-                  placeholder="Enter your name"
+                  placeholder="Enter your Last name"
                   className="mb-3"
                   size="lg"
                   onChange={this.onChange}
                 />
 
-                <Label for="name">Name</Label>
+                <Label for="name">UserName</Label>
                 <Input
                   type="text"
                   name="name"
                   id="name"
-                  placeholder="Enter your name"
+                  placeholder="Enter your username"
                   className="mb-3"
                   size="lg"
                   onChange={this.onChange}

@@ -28,11 +28,17 @@ class CreateResearch extends Component {
                 animal:[]
 
             }
+            this.retrievescientist();
+            this.ref1 = React.createRef();
+            this.ref2 = React.createRef();
+            this.ref3 = React.createRef();
+            this.ref4 = React.createRef();
+            this.ref5 = React.createRef();
         }
         componentDidMount(){
             this.retrieveAnimal();
             this.retrievePosts();
-            this.retrievescientist();
+            
           }
        
         handleInputChange=(e)=>{
@@ -178,6 +184,21 @@ class CreateResearch extends Component {
           }
         })
       }
+
+      Demo = () => {
+        this.ref1.current.value = "Test1"
+        this.ref2.current.value = "Test2"
+        this.ref3.current.value = "Test3"
+        this.ref4.current.value = "Test4"
+        this.ref5.current.value = "Test5@"
+
+        this.state.catergory = "Test1"
+        this.state.research_name = "Test2"
+        this.state.research_information = "Test3"
+        
+
+        
+    }
       
 
 
@@ -297,6 +318,11 @@ class CreateResearch extends Component {
                             <a href="/ResearchDashboard" style={{ textDecoration: "none", color: "white" }}>
                             AdminDashboard
                             </a>
+                            </button>
+
+                            <button className="btn btn-success" style={{marginTop:'-16px', marginLeft:'400px'}} onClick={this.Demo} type="button">
+                                <i className="far fa-check-square"></i>
+                                &nbsp; Demo
                             </button>
                             </div>
 

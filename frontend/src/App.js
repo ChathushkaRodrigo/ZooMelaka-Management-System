@@ -39,6 +39,7 @@ import CustomerResearchDash from './components/CustomerResearchDash';
 import ResearchCollaboration from './components/ResearchCollaboration';
 import CreateCollaboration from './components/CreateCollaboration';
 import ResearchInfo from './components/ResearchInfo';
+import ResearchData from './components/ResearchData';
 
 
 //Project Management
@@ -137,7 +138,7 @@ render() {
         <Route path = "/research/collaboration/" component = {ResearchCollaboration}/> 
         <Route path = "/research/researchinfo/:id" component = {ResearchInfo}/> 
         <Route path = "/research/createCollaboration/" component = {CreateCollaboration}/> 
-
+        <Route path = "/research/researchdata/:id" component = {ResearchData}/> 
 
         <Route path = "/ProjectsHome" component = {ProjectsHome}/>
         <Route path = "/project/add" component = {AddProject}/>

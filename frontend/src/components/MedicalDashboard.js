@@ -46,7 +46,7 @@ jspdGenerator=()=>{
 
         
   //Create document obj
-  var doc =new jsPDF("p","pt","c2") 
+  var doc =new jsPDF("p","pt","c3") 
 
 
   doc.html(document.querySelector("#Print"), {

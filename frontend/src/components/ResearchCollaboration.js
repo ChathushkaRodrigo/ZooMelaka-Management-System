@@ -26,7 +26,6 @@ retrieveResearchCollaboration(){
       console.log(this.state.ResearchCollaboration)
     }
   })
-
   
 }
 
@@ -37,9 +36,11 @@ retrieveResearchCollaboration(){
     return (
     
      
-      <div classsName ="researchcolman">
+      <div classsName ="researchcolman backgimagem">
          <h1 className ="heading"> Research Collaborations</h1>
-         
+         <div className = "imagedivm3">
+           <div className="image6"> </div>
+          </div>
          <br/>
         
         <div id="researchcol">

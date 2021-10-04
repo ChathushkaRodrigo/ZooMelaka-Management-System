@@ -39,7 +39,7 @@ jspdGenerator=()=>{
 
         
   //doc obj
-  var doc =new jsPDF('p','pt');
+  var doc =new jsPDF('p','pt','c0');
 
     
   var imageData =ImageData.IMAGE_DATA;
@@ -72,7 +72,7 @@ jspdGenerator=()=>{
     })
     
   //Save pdf 
-  doc.save("Generated.pdf");
+  doc.save("ResearchDetails.pdf");
 
 
 }

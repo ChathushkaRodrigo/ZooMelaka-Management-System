@@ -21,7 +21,7 @@ jspdGenerator=()=>{
 
 
   //Create document obj
-  var doc =new jsPDF("p","pt","b2") 
+  var doc =new jsPDF("p","pt","b2")
   doc.html(document.querySelector("#researches"), {
     callback:function(pdf){
       pdf.save("Report Details.pdf");
@@ -60,12 +60,12 @@ onDelete =(id)=>{
 
 
 
-// filterData(Research, searchkey){
-//   const result = Research.filter((Research) => 
-//   Research.animal_name.toLowerCase().includes(searchkey)
-//   );
-//   this.setState({Research:result});
-//   }
+filterData(Research, searchkey){
+  const result = Research.filter((Research) => 
+  Research.catergory.toLowerCase().includes(searchkey)
+  );
+  this.setState({Research:result});
+  }
 
 
 
@@ -93,6 +93,11 @@ handleSearchArea = (e) => {
            <div className="image6"> </div>
           </div>
          <br/>
+
+         <div className ="searchbar">
+              <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange = {this.handleSearchArea}></input>
+            </div>
+            <br/>
        <div style={{backgroundColor:'white', width:'95%',margin:'0 auto'}}>
          <table className="table table-bordered table-hover" id ="researches">
           <thead className="thead-bg-dark">

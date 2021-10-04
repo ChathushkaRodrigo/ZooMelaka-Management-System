@@ -6,6 +6,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import '../CSS/AnimalDashboard.css';
 
+
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
 
@@ -17,7 +18,13 @@ export default class Home extends Component{
 // Initialize An Array To Put The Posted Content
 this.state={
   zooAnimal:[]
+
+
+  
+
 };
+
+
 
 
   }
@@ -86,6 +93,7 @@ jspdGenerator=()=>{
  
 }
 //End of function report 
+
 
 
 

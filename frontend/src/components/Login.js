@@ -84,7 +84,8 @@ onSubmit = (e) => {
       className = 'formStyle';
     }
     return (
-      <div className={className}>
+
+      <div className={className} id="loginPage">
             <Card>
                 <CardBody >
                   <CardTitle> <h2><strong>Login</strong></h2></CardTitle>
@@ -126,7 +127,7 @@ onSubmit = (e) => {
                 </Form>
                 </CardBody>
             </Card>
-
+<br/>
       </div>
     )
   }

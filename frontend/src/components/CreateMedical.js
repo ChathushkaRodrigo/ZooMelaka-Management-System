@@ -12,7 +12,7 @@ import Select from 'react-select'
 export default class CreateMedical extends Component {
     constructor(props) {
         super(props);
-
+        this.validateform = this.validateform.bind(this);
         this.state = {
                 vname:"",
                 zname:"",
@@ -119,6 +119,16 @@ export default class CreateMedical extends Component {
         
     }
 
+    validateform(e){
+        if(this.state.vname === '' || this.state.zname === '' || this.state.injID === '' || this.state.sinfo === ''){
+            alert("All the inputs must be filled!");
+        }
+        else{
+            this.onSubmit(e);
+        }
+    }
+
+
     render() {
         const handleSelect=(e)=>{
             console.log(e);
@@ -150,7 +160,7 @@ export default class CreateMedical extends Component {
 
 
         return (
-           <div className = "CreateMedicalBody">
+            <div className = "CreateMedicalBody">
             <div classsName="col-md-8-mt-4-mx-auto">
             <br/>
                 <h1 className="titlepage" id="RandiCreaTit">Create Medical Record</h1>
@@ -303,7 +313,7 @@ export default class CreateMedical extends Component {
                         <br/><br/>
 
                     <div>
-                    <button className="btn btn-success" type="submit" style={{marginBottom:'15px',marginLeft:'50px'}} onClick={this.onsubmit}>
+                    <button className="btn btn-success" type="submit" style={{marginBottom:'15px',marginLeft:'50px'}} onClick={this.validateform}>
                         <i className="far fa-check-square"></i>
                         &nbsp; Submit Medical Report
                     </button>

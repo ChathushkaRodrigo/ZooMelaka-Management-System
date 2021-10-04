@@ -5,23 +5,7 @@
     justify-content: center;
     height: 100vh;
   }
-  
-  .image5 {
-    position: relative;
-    background-size: cover !important;
-    background-position: center top !important;
-    background-repeat: no-repeat !important;
-    margin-top: 10px;
-    height: auto;
-    min-height: 250px;
-    background-color: white;
-
-
-   
-    /* background-image: url(https://www.australiazoo.com.au/wp-content/uploads/2019/10/Visit-Us-Events-Calendar2240x700.jpg); */
-   
-  
-  }
+ 
   .formbody1{
       width:500px;
       padding-left: 10px;

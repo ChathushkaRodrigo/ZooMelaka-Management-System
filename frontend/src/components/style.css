@@ -10,6 +10,9 @@
   width: 85%;
   margin: 0 auto;
 }
+#loginPage{
+  background-image: url(../images/cheetah.jpg);
+}
 
 /* Chrome iPad present/Portrait 48em = 768px */
 @media (min-width: 48em) {
