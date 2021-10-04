@@ -165,14 +165,15 @@ export default class AnimalDetails extends Component{
                    
 
                     <div class="form-group">
-                    <label for="cName" id="chamFormzaaa">Animal Adoptability</label>
+                    <label for="cName" id="chamFormzaaa">Adoptability</label>
                         <input type="text" class="form-control" id="chamathRetzzz" placeholder={Adoptability} readOnly/>
                         
                     </div>
                     </form></div>
 
-                    <button className="dashButton btn btn-light btn-small justify-content-center btn-outline-warning" onClick={this.jspdGenerator}>
-                    <i className="fas fa-file"><bold> Generate Report</bold></i></button>
+                    <center>
+                    <button className="dashButton btn btn-light btn-small justify-content-center btn-outline-warning" onClick={this.jspdGenerator}><i className="fas fa-file"><bold> Generate Report</bold></i></button></center>
+                    
 
 
 
@@ -188,16 +189,16 @@ export default class AnimalDetails extends Component{
                 ))}</div> */}
 
             <div className="btn btn-light btn-small justify-content-center btn-outline-info" style={{marginTop:'5px',marginBottom:'5px'}} id="ChamathUpzzz">
-            <i className="fa fa-heartbeat"></i>
+           
                 {this.state.Medical.map(Medical =>(
                 <div>
                 {Medical.animalID === Animal_ID && 
 
                 <div>
-
-                <Link to = {`/medical/details/${Medical._id}`} style = {{textDecoration:"none"}}>
-                            Check Medical Records!
-                      </Link>
+                <i className="fa fa-heartbeat ">  
+                <Link to = {`/medical/details/${Medical._id}`} style = {{textDecoration:"none",paddingLeft:'3px'}}>
+                    Medical Records
+                      </Link></i>
 
                 </div>
 
@@ -211,9 +212,9 @@ export default class AnimalDetails extends Component{
 
            
 <center>
-<a className="btn btn-light btn-small justify-content-center btn-outline-success" href={`/animaldashboard`} style={{marginTop:'5px',marginBottom:'5px'}} id="ChamathUpss">
-                            <i className="fa fa-paw"></i>&nbsp;<b>Retreival Completed!</b>
-</a></center>
+<a className="btn btn-light btn-small justify-content-center btn-outline-success" href={`/animaldashboard`} style={{marginTop:'0px',marginBottom:'5px'}} id="ChamathUpss"> <i className="fa fa-paw"></i>&nbsp;<b>Retreival Completed!</b></a></center>
+                           
+
 
 {/* <center>
 <a className="btn btn-light btn-small justify-content-center btn-outline-primary" href={`/medicalDashboard`} style={{marginTop:'5px',marginBottom:'10px'}} id="ChamathUpsss">

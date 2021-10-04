@@ -187,7 +187,7 @@ export default class EditAnimal extends Component{
            
 
             
-            <div className="mb-2">
+            <div className="form-group">
                 <DropdownButton align="left" title="Assigned Zookeeper" id="dropdown-menu-align-end" onSelect={handleSelect}>
                 <div>
                 {this.state.posts.map(posts =>(

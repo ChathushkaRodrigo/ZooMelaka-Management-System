@@ -60,7 +60,8 @@ const {
 //Establish Connection with Mongoose Server --> ZooMelaka Cluster 
 mongoose.connect(DB_URL,{
     useUnifiedTopology: true,
-    useNewUrlParser:true
+    useNewUrlParser:true,
+    useFindAndModify: false 
 }).then(()=>{
     console.log("==================Mongoose Connection Successful===========================");
 }).catch((err)=>{

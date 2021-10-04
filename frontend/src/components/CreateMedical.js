@@ -150,14 +150,14 @@ export default class CreateMedical extends Component {
 
 
         return (
-           
+           <div className = "CreateMedicalBody">
             <div classsName="col-md-8-mt-4-mx-auto">
             <br/>
-                <h1 className="titlepage">Create Medical Record</h1>
+                <h1 className="titlepage" id="RandiCreaTit">Create Medical Record</h1>
                 
                 <div className= "imagemed"> </div>
         
-                <form className=" needs-validation " noValidate>
+                <form className=" needs-validation " noValidate id="RandiForm1">
                     {/* <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom:'5px'}}>Vetenarian Name</label>
                         <input type="text"
@@ -184,9 +184,9 @@ export default class CreateMedical extends Component {
                 ))}</div>
                 
                 </DropdownButton>
-                <label style={{marginBottom:'5px'}} id="chamForm">Veterinarian</label>
+                <label style={{marginBottom:'5px'}} id="RandiForm1">Veterinarian</label>
                 <input type="text"
-                id="chamathRet"
+                id="randimal"
                 className="form-control"
                 name="Attended_Zookeeper"
                 placeholder="Enter The Veterinarian:"
@@ -210,9 +210,9 @@ export default class CreateMedical extends Component {
                 ))}</div>
                 
                 </DropdownButton>
-                <label style={{marginBottom:'5px'}} id="chamForm">Attended Zookeeper</label>
+                <label style={{marginBottom:'5px'}} id="RandiForm1">Attended Zookeeper</label>
                 <input type="text"
-                id="chamathRet"
+               id="randimal"
                 className="form-control"
                 name="Attended_Zookeeper"
                 placeholder="Enter The Last Attended Zookeeper:"
@@ -247,9 +247,9 @@ export default class CreateMedical extends Component {
                 ))}</div>
                 
                 </DropdownButton>
-                <label style={{marginBottom:'5px'}} id="chamForm">Animal ID</label>
+                <label style={{marginBottom:'5px'}} id="RandiForm1">Animal ID</label>
                 <input type="text"
-                id="chamathRet"
+                id="randimal"
                 className="form-control"
                 name="Attended_Zookeeper"
                 placeholder="Enter The Animal ID:"
@@ -277,8 +277,9 @@ export default class CreateMedical extends Component {
 
                             
                             <div className="form-group" style={{marginBottom:'15px'}}>
-                            <label style ={{marginBottom:'5px'}}>Injection ID</label>
+                            <label style ={{marginBottom:'5px'}} id="RandiForm1">Injection ID</label>
                             <input type="text"
+                            id="randimal"
                             className="form-control"
                             ref={this.ref4}
                             name="injID"
@@ -289,8 +290,9 @@ export default class CreateMedical extends Component {
 
                              
                             <div className="form-group" style={{marginBottom:'15px'}}>
-                            <label style ={{marginBottom:'5px'}}>Surjery Info </label>
+                            <label style ={{marginBottom:'5px'}} id="RandiForm1">Surjery Info </label>
                             <input type="text"
+                            id="randimal"
                             className="form-control"
                             ref={this.ref5}
                             name="sinfo "
@@ -319,7 +321,7 @@ export default class CreateMedical extends Component {
                   
      
 
-                </div>
+                </div></div>
 
            
         )

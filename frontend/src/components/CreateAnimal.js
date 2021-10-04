@@ -211,7 +211,7 @@ export default class CreateAnimal extends Component{
         return(
             <div className="CreateAnimal-body">
             <div container="container-fluid" className="col-md-8 mx-auto" id="chamathCreaForm">
-            <center><h1 className="h1-CreateAnimal">Create A New Animal For The Zoo</h1></center>
+            <center><h1 className="h1-CreateAnimal">Create Zoo Animal!</h1></center>
             <form className="CreateAniHead" noValidate>
                 <div className="form-group" style={{marginBottom:'15px'}}>
                 <label style={{marginBottom:'5px'}} id="chamForm">Animal ID</label>
@@ -220,33 +220,33 @@ export default class CreateAnimal extends Component{
                 ref={this.ref1}
                 id="chamathRet"
                 name="Animal_ID"
-                placeholder="Enter The Animal ID:"
+                placeholder="Animal ID:"
                 value={this.state.Animal_ID}
                 onChange={this.handleInputChange}
                 />
             </div><div id="ChamathValidation"><FormErrors formErrors={this.state.formErrors} className="FormError"/></div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Name</label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Animal Name</label>
                 <input type="text"
                 id="chamathRet"
                 ref={this.ref2}
                 className="form-control"
                 name="Animal_Name"
-                placeholder="Enter The Animal Name:"
+                placeholder="Animal Name:"
                 value={this.state.Animal_Name}
                 onChange={this.handleInputChange}
                 />
             </div>
 
             <div className="form-group" style={{marginBottom:'15px'}}>
-                <label style={{marginBottom:'5px'}} id="chamForm">Species</label>
+                <label style={{marginBottom:'5px'}} id="chamForm">Animal Species</label>
                 <input type="text"
                 id="chamathRet"
                 ref={this.ref3}
                 className="form-control"
                 name="Animal_Species"
-                placeholder="Enter The Animal Species:"
+                placeholder="Animal Species:"
                 value={this.state.Animal_Species}
                 onChange={this.handleInputChange}
                 />
@@ -259,7 +259,7 @@ export default class CreateAnimal extends Component{
                 ref={this.ref4}
                 className="form-control"
                 name="Animal_Date_Of_Birth"
-                placeholder="Enter The Animal Date Of Birth:"
+                placeholder="Date Of Birth:"
                 value={this.state.Animal_Date_Of_Birth}
                 onChange={this.handleInputChange}
                 />
@@ -272,7 +272,7 @@ export default class CreateAnimal extends Component{
                 ref={this.ref5}
                 className="form-control"
                 name="Animal_Gender"
-                placeholder="Enter The Animal Gender:"
+                placeholder="Gender:"
                 value={this.state.Animal_Gender}
                 onChange={this.handleInputChange}
                 />
@@ -285,7 +285,7 @@ export default class CreateAnimal extends Component{
                 ref={this.ref6}
                 className="form-control"
                 name="Feeding_And_Watering_Date"
-                placeholder="Enter The Feeding And Watering Date:"
+                placeholder="Feeding Date:"
                 value={this.state.Feeding_And_Watering_Date}
                 onChange={this.handleInputChange}
                 />
@@ -298,7 +298,7 @@ export default class CreateAnimal extends Component{
                 className="form-control"
                 ref={this.ref7}
                 name="Feeding_And_Watering_Time"
-                placeholder="Enter The Feeding And Watering Time:"
+                placeholder="Feeding Time:"
                 value={this.state.Feeding_And_Watering_Time}
                 onChange={this.handleInputChange}
                 />
@@ -333,7 +333,7 @@ export default class CreateAnimal extends Component{
             
            
                 
-        <div className="mb-2">
+        <div className="form-group">
                 <DropdownButton align="left" title="Assigned Zookeeper" id="dropdown-menu-align-end" onSelect={handleSelect}>
                 <div>
                 {this.state.posts.map(posts =>(
@@ -348,11 +348,11 @@ export default class CreateAnimal extends Component{
                 
                 </DropdownButton>
                 <label style={{marginBottom:'5px'}} id="chamForm"></label>
-                <input type="text"
+                <input style={{width:'300px'}} type="text"
                 id="chamathRet"
                 className="form-control"
                 name="Attended_Zookeeper"
-                placeholder="Enter The Last Attended Zookeeper:"
+                placeholder="Assigned Zookeeper:"
                 value={this.state.Attended_Zookeeper}
                 onChange={this.handleInputChange}
                 ref={this.ref}
@@ -402,7 +402,7 @@ export default class CreateAnimal extends Component{
                 ref={this.ref10}
                 className="form-control"
                 name="Current_Enclosure_ID"
-                placeholder="Enter The Current Enclosure ID:"
+                placeholder="Enclosure ID:"
                 value={this.state.Current_Enclosure_ID}
                 onChange={this.handleInputChange}
                 />
@@ -413,7 +413,7 @@ export default class CreateAnimal extends Component{
                 <input type="checkbox"
                 id="Adoptability"
                 name="Adoptability"
-                placeholder="Enter The Adoptability Status:"
+                placeholder="Adoptability Status:"
                 value="true"
                 onChange={this.handleInputChange}
                 />

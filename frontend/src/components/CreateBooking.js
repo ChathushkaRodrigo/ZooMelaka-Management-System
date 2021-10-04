@@ -163,6 +163,8 @@ import Dropdown from 'react-bootstrap/Dropdown';
 
                 });
             }
+        }).catch(error => {
+            alert (error.message);
         });
 
         
@@ -175,17 +177,17 @@ import Dropdown from 'react-bootstrap/Dropdown';
     
       }
     Demo = () => {
-        this.ref1.current.value = "Test1@gmail.com"
-        this.ref2.current.value = "Test2"
-        this.ref3.current.value = "0745645789"
-        this.ref4.current.value = "Test4"
-        this.ref5.current.value = "Test5"
+        this.ref1.current.value = "Chandimaljay@gmail.com"
+        this.ref2.current.value = "Chandimal Jayaweera "
+        this.ref3.current.value = "0745645456"
+        this.ref4.current.value = "Basic"
+        this.ref5.current.value = "Mr.Lankesh Suraweera"
 
-        this.state.CustomerEmail = "Test1@gmail.com"
-        this.state.CustomerName = "Test2"
-        this.state.MobileNumber = "0745645789"
-        this.state.TourOption = "Test4"
-        this.state.TourGuideName = "Test5"
+        this.state.CustomerEmail = "Chandimaljay@gmail.com"
+        this.state.CustomerName = "Chandimal Jayaweera"
+        this.state.MobileNumber = "0745645456"
+        this.state.TourOption = "Basic"
+        this.state.TourGuideName = "Mr.Lankesh Suraweera"
 
     }
 
@@ -302,7 +304,8 @@ import Dropdown from 'react-bootstrap/Dropdown';
                 <div>
                 {this.state.posts.map(posts =>(
                 <div>
-                {posts.employeeType==="Tour Guide" && 
+                {posts.employeeType===+
+                "Tour Guide" && 
 
                 <Dropdown.Item eventKey={posts.userName}>
                 {posts.userName}

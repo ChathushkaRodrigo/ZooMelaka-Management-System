@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 import "../CSS/UpdateAdoption.css"
 
 class UpdateAdoption extends Component {
@@ -192,6 +193,9 @@ class UpdateAdoption extends Component {
                     <div className = 'bckgrnd'>
                 <div className = "add-hero">
                     <div class="add-bg_image update-bgimage"></div>
+                    <Link to = {`/profile/adoptedanimals/${this.state.member_id}`} style = {{textDecoration:"none"}}>
+                    <p className = "add-topic leftnavigation">🡰 Member Adopted Animals</p><br/>
+                    </Link>
                     <div className = "addcontent">
                         <p className = "update-topic">Update Adoption Details</p><br/>
                   </div>

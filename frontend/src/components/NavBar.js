@@ -35,6 +35,11 @@ class NavBar extends PureComponent {
         }
         
     }
+    componentDidMount() {
+      // Check if session cookie is present
+      store.dispatch(isAuth());
+    }
+  
 
     onLogout = (e) => {
       e.preventDefault();

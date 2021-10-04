@@ -39,6 +39,7 @@ export default class ProjectsHome extends Component{
                     </button></a>
 
                     <p></p>
+                    <br/>
 
                     <a href="project/find"><button className="HomeB1">
 

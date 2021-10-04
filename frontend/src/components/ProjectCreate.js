@@ -198,22 +198,10 @@ export default class Create extends Component{
                         <input type="text" style={{marginTop:'0px'}} className="form-control"  name="supervisor" placeholder="Enter Supervisor" value={this.state.supervisor} onChange={this.handleInputChange}/>
                     </div> */}
                     {/* integraion */}
-                    <div className="mb-2">
-                <DropdownButton align="center" title="Supervisor" id="dropdown-menu-align-end1" onSelect={handleSelect} >
+                    <div className="form-group">
+                <label style={{marginBottom:'5px',marginTop:'20px'}} id="chamForm">Supervisor</label>
                 <div>
-                {this.state.posts.map(posts =>(
-                <div>
-                {posts.employeeType=== "Supervisor" && 
-
-                <Dropdown.Item eventKey={posts.userName}>
-                {posts.userName}
-                </Dropdown.Item>
-                }</div>
-                ))}</div>
-                
-                </DropdownButton>
-                <label style={{marginBottom:'5px'}} id="chamForm">Supervisor</label>
-                <input type="text"
+                <input type="text" style={{width:'530px'}}
                 id="vinodRet"
                 className="form-control"
                 name="Supervisor"
@@ -223,37 +211,63 @@ export default class Create extends Component{
                 onChange={this.handleInputChange}
                 ref={this.ref}
                 />
+                <DropdownButton align="center" title="Supervisor" id="dropdown-menu-align-end1" onSelect={handleSelect} style={{marginTop:'-51px'}}>
+                <div>
+                {this.state.posts.map(posts =>(
+                <div>
+                {posts.employeeType=== "Supervisor" && 
+
+                <Dropdown.Item eventKey={posts.userName}> 
+                {posts.userName}
+                </Dropdown.Item>
+                }</div>
+                ))}</div>
+                
+                </DropdownButton>
+                </div>
+
+                
+                
             </div>
                     <div className="form-group">
                         <label className="formLabels">Working Team</label>
                         <input type="text" style={{marginTop:'0px'}} className="form-control"  name="workingTeam" placeholder="Enter Working Team" value={this.state.workingTeam} onChange={this.handleInputChange}/>
                     </div>
                     
-                        <button className="btn btn-danger" id="btnreset" type="reset" style={{marginTop:'30px', marginLeft:'10%'}}>
-                        <i class="fa fa-refresh" aria-hidden="true"></i>
-                            &nbsp; Reset
-                        </button>
+                    <div style={{width:'80%',margin:'0 auto'}}>
+                        <div >
+                        <a href="/ProjectsHome">
+                        <button className="btn btn-success" style={{marginTop:'0', marginLeft:'0%'}}>
+                        <a href="/ProjectsHome"><i class="fas fa-arrow-alt-circle-left" aria-hidden="true"></i>Projects Home</a>
+                        </button> 
+                        </a>
+                        </div>
+                        {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <button className="btn btn-success" id="btnsubmit" type="submit" onClick={this.onSubmit}>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
+                        <div style={{paddingTop:'-10px',marginTop:'0%', marginLeft:'42%'}}> 
+                        <button className="btn btn-success" id="btnsubmit" type="submit" onClick={this.onSubmit} style={{marginTop:'-13%'}}>
                             <i className="far fa-check-square"></i>
                             &nbsp; Submit
                         </button>
-                        <button className="btn btn-success" style={{marginTop:'15px'}} onClick={this.Demo} type="button">
+                        </div>
+                        <div style={{marginTop:'0%', marginLeft:'89%'}}>
+                        <button className="btn btn-success" style={{marginTop:'-120%'}} onClick={this.Demo} type="button">
                         <i className="far fa-check-square"></i>
                         &nbsp; Demo
-                    </button>
+                        </button>
+                        </div>
+                    </div>
                    
                 </form>
                </div>
 
             {/* <div>
 
-                <div style={{height:'70px',textAlign:'center',backgroundColor:'#009900'}}>
+                <div style={{height:'70px',textAlign:'center',backgroundColor:'#009900'}}></div>
                 <h3 className="pageCaption" style={{marginTop:'10px',color:'#FFFFFF',padding:'19px 0'}}>Create New Project</h3>
             </div> */}
                 {/* <form>

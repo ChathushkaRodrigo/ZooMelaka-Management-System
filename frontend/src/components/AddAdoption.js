@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import store from '../store';
-import { isAuth } from '../actions/authActions'
-
+import { isAuth } from '../actions/authActions';
+import {Link} from 'react-router-dom';
 import { logout } from '../actions/authActions';
 import { buttonReset} from '../actions/uiActions';
 
@@ -278,7 +278,11 @@ class AddAdoption extends Component {
             <div className = 'bckgrnd'>
                 <div className = "add-hero">
                     <div class="add-bg_image add-bgimage"></div>
+                    <Link to = {"/AnimalsforAdoption"} style = {{textDecoration:"none"}}>
+                    <p className = "add-topic leftnavigation">🡰 Animals for Adoption</p><br/>
+                    </Link>
                     <div id = "addcontent" className = "add-content">
+                        
                         <p className = "add-topic">Adopt an Animal</p><br/>
                         <p className = 'add-sub-content'>Become a proud conservationist of a Zoo Melaka animal today! By adopting an <br/> animal, you not only help the care and feeding of that animal, but also <br/>support education and conservation programs at the Zoo Melaka.</p>
                   </div>

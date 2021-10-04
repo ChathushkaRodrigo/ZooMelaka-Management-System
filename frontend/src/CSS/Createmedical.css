@@ -1,9 +1,13 @@
- .medicalbody {
+ .CreateMedicalBody {
     align-items: center;
-    background-color: rgb(253, 253, 253);
-    display: flex;
+    /* background-color: rgb(253, 253, 253); */
+    /* display: flex;
     justify-content: center;
-    height: 100vh;
+    height: 100vh; */
+    background: linear-gradient(132deg, #0d2409 0%, #005020 80%);
+  background-size: 500% 400%;
+  animation: gradient 5s ease infinite;
+  
   }  
   
   /* .image4 {
@@ -28,7 +32,9 @@
     margin-top: 10px;
     height: 300px;
     min-height: 250px;
-    width: 1380px;
+    margin-left:150px;
+    width: 1200px;
+    margin-bottom:10px;
     
   }
 
@@ -47,4 +53,17 @@
     justify-content: center;
   align-items: center;
   margin: auto;
+   }
+
+   #RandiCreaTit{
+     color:white;
+   }
+
+   #RandiForm1{
+    color:white;
+    margin-left: 150px;
+   }
+
+   #randimal{
+    margin-left: 150px;
    }

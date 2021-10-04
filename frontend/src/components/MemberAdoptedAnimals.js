@@ -1,11 +1,24 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { Component } from 'react'
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import store from '../store';
+import { isAuth } from '../actions/authActions';
 import {Link} from 'react-router-dom';
+import { logout } from '../actions/authActions';
+import React, { Component } from 'react'
+
 import axios from 'axios';
 import '../CSS/MemberAdoptedAnimals.css'
 
-export default class MemberAdoptedAnimals extends Component {
+class MemberAdoptedAnimals extends Component {
+
+    static propTypes = {
+      button: PropTypes.bool,
+      authState: PropTypes.object.isRequired,
+      buttonReset: PropTypes.func.isRequired,
+      logout: PropTypes.func.isRequired,
+    };
 
     constructor(props){
         super(props);
@@ -21,6 +34,9 @@ export default class MemberAdoptedAnimals extends Component {
         const id = this.props.match.params.id;
         this.setState({memberid: id});
         this.retrieveAdoptions();
+
+         // Check if session cookie is present
+         store.dispatch(isAuth());
       }
     
       retrieveAdoptions(){
@@ -61,6 +77,9 @@ export default class MemberAdoptedAnimals extends Component {
 <div className = 'bckgrnd'>
 <div className = "add-hero">
     <div class="add-bg_image mem-adpt-bgimage"></div>
+    <Link to = {`/uprofile/${this.state.memberid}`} style = {{textDecoration:"none"}}>
+                    <p className = "add-topic leftnavigation">🡰 Member Profile Page</p><br/>
+                    </Link>
     <div className = "add-content">
         <p className = "mem-adopt-topic">My Adoptions</p><br/>
   </div>
@@ -116,3 +135,11 @@ export default class MemberAdoptedAnimals extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => ({ //Maps state to redux store as props
+  button: state.ui.button,
+  authState: state.auth
+});
+
+
+export default connect(mapStateToProps, { logout })(MemberAdoptedAnimals);

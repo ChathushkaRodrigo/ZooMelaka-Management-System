@@ -95,8 +95,8 @@ jspdGenerator=()=>{
     return(
     <div className="AnimalDashboard-body">
       <div className="container-fluid">
-        <div className="col-lg-9 mt-2 mb-2">
-          <center><h1 id="animalHeading">Animal Portfolio</h1></center>
+        <div className="col-lg-9 mt-2 mb-2" style={{borderStyle:'solid', width:'100%',backgroundColor:'#011a01'}}>
+          <h1 id="animalHeading" style={{paddingTop:'-5px',paddingTop:'50px',color:'white',marginLeft:'44%'}}>Animal Portfolio</h1>
         </div>
 
 
@@ -116,7 +116,7 @@ jspdGenerator=()=>{
           </input>
         </div>
       </div>
-        <div>
+        <div id="OuterTableDiv">
           <table id="AnimalTableChamath">
 
           
@@ -163,7 +163,7 @@ jspdGenerator=()=>{
                   </tr>
                 ))}
             </tbody>
-          </table>
+          </table></div>
 
           {/* <a className="dashButton btn btn-light btn-small justify-content-center btn-outline-success" href={`animal/add`}  id="chamCreaButton">
                             <i className="fas fa-dragon"></i>&nbsp;<b>Create Animal Portfolio!</b>
@@ -178,19 +178,28 @@ jspdGenerator=()=>{
           
 
 
-        <div id="ChamathReportGenDash"> 
-        <center>  
+        <div id="ChamathReportGenDash" style={{width:'250px', margin:'0 auto',marginTop:'5px',height:'200px'}}> 
+        <center>
         <button className="dashButton btn btn-light btn-small justify-content-center btn-outline-warning" onClick={this.jspdGenerator}>
-        <i className="fa fa-archive"><bold> Generate Report!</bold></i>
-        </button></center>
+        <i className="fa fa-archive"><bold> Generate Report!!!</bold></i>
+        </button>
+        </center>
         
         
         {/* <a className="dashButton btn btn-light btn-small justify-content-center btn-outline-success" href={`animal/add`}  id="chamCreaButton">
                             <i className="fas fa-dragon"></i>&nbsp;<b>Create Animal Portfolio!</b>
                       </a> */}
+        <center>
+        <a className="dashButton btn btn-light btn-small justify-content-center btn-outline-success" href={`animal/add`}  id="chamCreaButton" style={{marginTop:'5px',paddingTop:'10px',marginLeft:'0'}}>
+                            <i className="fas fa-dragon"></i>&nbsp;<b>Create Portfolio!!!</b>
+                      </a>
+                      
+                        
         
-        
-        
+        <a className="dashButton btn btn-light btn-small justify-content-center btn-outline-primary" href={`adminpanelhome`}  id="chamAdminNav" style={{marginTop:'-90px',marginLeft:'0',height:'2px'}}>
+                          <i className="fa fa-hand-o-left"></i>&nbsp;<b>Back To Admin!!!</b>
+                      </a>
+        </center>
         
         </div>
         
@@ -214,16 +223,9 @@ jspdGenerator=()=>{
         
                    
                   
-        <a className="dashButton btn btn-light btn-small justify-content-center btn-outline-success" href={`animal/add`}  id="chamCreaButton">
-                            <i className="fas fa-dragon"></i>&nbsp;<b>Create Animal Portfolio!</b>
-                      </a>
-                        
-
-                      <a className="dashButton btn btn-light btn-small justify-content-center btn-outline-primary" href={`adminpanelhome`}  id="chamAdminNav">
-                          <i className="fa fa-hand-o-left"></i>&nbsp;<b>Navigate To Admin Panel!</b>
-                      </a>
-
-    </div>
+                    
+    
+    
   
 
     
