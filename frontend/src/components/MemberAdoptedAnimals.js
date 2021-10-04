@@ -141,5 +141,4 @@ const mapStateToProps = (state) => ({ //Maps state to redux store as props
   authState: state.auth
 });
 
-
 export default connect(mapStateToProps, { logout })(MemberAdoptedAnimals);

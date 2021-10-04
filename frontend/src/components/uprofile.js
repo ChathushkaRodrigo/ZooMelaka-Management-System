@@ -112,7 +112,9 @@ jspdGenerator=()=>{
                         <ul class="list-group list-group-flush">
                           <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                             
-                            <span class="text-secondary" style={{fontSize:'20px'}}><b>My Bookings</b></span>
+                          <Link to = {`/profile/membersbooking/${this.state.userid}`} style = {{textDecoration:"none"}}>
+                            <span class="text-secondary" style={{fontSize:'20px'}}><b>My Booking</b></span>
+                            </Link>
                           </li>
                           <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                           <Link to = {`/profile/adoptedanimals/${this.state.userid}`} style = {{textDecoration:"none"}}>

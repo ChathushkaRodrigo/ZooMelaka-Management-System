@@ -66,3 +66,8 @@ li.mem-gridder-list img {
   width: 100%;
   height: auto;
 }
+
+.bggimage{
+    //background-image: url('https://scontent.fcmb2-2.fna.fbcdn.net/v/t31.18172-8/cp0/e15/q65/s206x206/1052607_512324042173183_809067323_o.jpg');
+    backface-visibility:initial;
+}

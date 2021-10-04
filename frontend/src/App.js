@@ -21,6 +21,7 @@ import Profile from './components/profile'
 import Signup from './components/signup';
 import AdminUProfileEdit from './components/AdminUProfileEdit';
 import uProfile from './components/uprofile'
+import membersbooking from './components/MemberBooking'
 
 //Employee Management
 import AdminPanelHome from './components/AdminPanelHome';
@@ -95,6 +96,7 @@ render() {
           <Route path = "/booking/add" component = {CreateBooking}/>
           <Route path = "/AnimalsforAdoption" component = {AnimalsforAdoption}/>
           <Route path = "/profile/adoptedanimals/:id" component = {MemberAdoptedAnimals}/>
+          <Route path = "/profile/membersbooking/:id" component = {membersbooking}/>
           
 
 

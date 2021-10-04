@@ -226,7 +226,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
             <div class="d-flex flex-column justify-content-center w-100 h-100">
             <div className="col-md-8 mt-4 mx-auto" id="content">
                 <div id="header">
-             <h1 className="h8 mb-8 font-weight-fw-bold align-content-center" id="crtH">  Create a Booking   </h1>
+             <h1 className="h8 mb-8 font-weight-fw-bold align-content-center" id="crtH">  Create A Booking   </h1>
              </div>
              <br/>
            
@@ -241,7 +241,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
                         name="CustomerEmail" 
                         ref={this.ref1}
                         id="cEmail"
-                        placeholder="Enter your email " 
+                        placeholder={ user ? `${user.email}`: ''}
                         defaultValue={this.state.CustomerEmail}
                         onChange={this.handleInputChange}  
                        

@@ -65,6 +65,7 @@ class AdminUProfileEdit extends Component {
                         team:""
                     }
                 )
+                this.props.history.push('/adminprofiledash'); 
             }          
             
         })   

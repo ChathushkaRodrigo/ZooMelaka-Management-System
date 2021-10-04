@@ -78,6 +78,8 @@ class EditProfile extends Component {
                         team:""
                     }
                 )
+
+                this.props.history.push(`/uprofile/${id}`); 
             }          
             
         })   
