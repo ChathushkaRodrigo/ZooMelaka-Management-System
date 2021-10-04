@@ -68,7 +68,9 @@ import Dropdown from 'react-bootstrap/Dropdown';
             TourGuideName:"",
             formErrors: {email: '', password:''},
             emailValid: false,
-           
+            MemberID: '',
+
+
             formvalid: false,
             posts:[]
 
@@ -135,7 +137,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
     onsubmit =(e)=>{
         e.preventDefault();
    
-        const { CustomerEmail,CustomerName,MobileNumber,TourOption,Date,Time,TourGuideName} =this.state; 
+        const { CustomerEmail,CustomerName,MobileNumber,TourOption,Date,Time,TourGuideName,MemberID} =this.state; 
         const data ={
             CustomerEmail:CustomerEmail,
             CustomerName:CustomerName,
@@ -143,9 +145,12 @@ import Dropdown from 'react-bootstrap/Dropdown';
             TourOption:TourOption,
             Date:Date,
             Time:Time,
-            TourGuideName:TourGuideName
+            TourGuideName:TourGuideName,
+            MemberID:MemberID
+            
         }
         console.log(data);
+        //console.log(this.state.MemberID);
 
         axios.post("http://localhost:8015/booking/save", data).then((res)=>{
             if(res.data.success){
@@ -159,7 +164,8 @@ import Dropdown from 'react-bootstrap/Dropdown';
                     TourOption:"",
                     Date:"",
                     Time:"",
-                    TourGuideName:""
+                    TourGuideName:"",
+                    MemberID:""
 
                 });
             }
@@ -188,6 +194,13 @@ import Dropdown from 'react-bootstrap/Dropdown';
         this.state.MobileNumber = "0745645456"
         this.state.TourOption = "Basic"
         this.state.TourGuideName = "Mr.Lankesh Suraweera"
+
+    }
+    setMemberId(id){
+
+        this.setState({MemberID : id});
+
+        console.log(this.state.MemberID);
 
     }
 
@@ -347,7 +360,11 @@ import Dropdown from 'react-bootstrap/Dropdown';
                     
 
 
-                        <br/><br/>
+                        <br/>
+                        <label hidden>{this.state.MemberID = (user ? `${user.id}`: '' )}</label>
+                        
+                        
+                        <br/>
                        
                     <button className="btn btn-success" type="submit" style={{marginBottom:'15px'}} onClick={this.onsubmit}>
                         <i className="far fa-check-square"></i>

@@ -28,6 +28,10 @@ const bookingSchema =new mongoose.Schema({
     TourGuideName:{
         type :String,
         required :true
+    },
+    MemberID:{
+        type:String,
+        required:true
     }
 
 
