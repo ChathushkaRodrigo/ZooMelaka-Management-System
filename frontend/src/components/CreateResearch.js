@@ -29,6 +29,8 @@ class CreateResearch extends Component {
 
             }
            
+            this.retrievescientist();
+
             this.ref1 = React.createRef();
             this.ref2 = React.createRef();
             this.ref3 = React.createRef();
@@ -38,7 +40,7 @@ class CreateResearch extends Component {
         componentDidMount(){
             this.retrieveAnimal();
             this.retrievePosts();
-            this.retrievescientist();
+            
             
           }
        
@@ -119,6 +121,17 @@ class CreateResearch extends Component {
 
         onSubmit=(e)=>{
             e.preventDefault();
+
+            axios.get(`/post/${this.state.employee_id}`).then((res) =>{
+                if(res.data.success){
+                    this.setState({
+                        post:res.data.post
+                    })
+                    console.log(this.state.post)
+                }
+            });
+            this.setState({name_of_scientist:this.state.post.userName});
+
             const { name_of_scientist,
             employee_id,
             date_research_started,
@@ -127,41 +140,44 @@ class CreateResearch extends Component {
             research_name,
             animal_id,
             research_information
-        }=this.state;
+            }=this.state;
 
 
             const data={name_of_scientist:name_of_scientist, employee_id: employee_id, date_research_started: date_research_started,date_research_ended:date_research_ended,
                 catergory:catergory,research_name:research_name,  animal_id:  animal_id,research_information:research_information
                }
         
-        console.log(data);
-        axios.post("http://localhost:8015/research/add",data).then((res)=>{
-            if(res.data.success){
-                alert(`New Research created successfully   `);
-                this.setState(
-                    {
-                        name_of_scientist:"",
-                        employee_id:"",
-                        date_research_started:"",
-                        date_research_ended:"",
-                        catergory:"",
-                        research_name:"",
-                        animal_id:"",
-                        research_information :""
-                    }
+                console.log(data);
+                axios.post("http://localhost:8015/research/add",data).then((res)=>{
+                    if(res.data.success){
+                        alert(`New Research created successfully   `);
+                        this.setState(
+                            {
+                                name_of_scientist:"",
+                                employee_id:"",
+                                date_research_started:"",
+                                date_research_ended:"",
+                                catergory:"",
+                                research_name:"",
+                                animal_id:"",
+                                research_information :""
+                            }
 
-                )
+                        )
+                    }
+                })
+                //alert("success !");
             }
-        })
-    }
 
     validateform(e){
-        if(this.state.animal_id === '' || this.state.name_of_scientist === '' || this.state.date_research_started === '' || this.state.date_research_ended === '' || this.state.catergory === ''){
+        if(this.state.animal_id === ''  || this.state.date_research_started === '' || this.state.date_research_ended === '' || this.state.catergory === ''){
             alert("All the inputs must be filled!");
         }
         else{
             this.onSubmit(e);
         }
+
+
     }
     
     retrieveAnimal(){

@@ -139,8 +139,8 @@ export default class Create extends Component{
     
         switch(fieldName) {
           case 'name':
-            projectIDValid = value.length > 0;
-            fieldValidationErrors.name = projectIDValid ? '' : ' is not filled';
+            projectIDValid = value.length > 1;
+            fieldValidationErrors.name = projectIDValid ? '' : ' is too short';
             break;
           default:
             break;
@@ -231,7 +231,7 @@ export default class Create extends Component{
                         <input type="text" style={{marginTop:'0px'}} ref={this.ref2} className="form-control" name="name" value={this.state.name} onChange={this.handleInputChange}/>
                     </div>
                     <div className="form-group">
-                    <div id="Error"><label className="formLabels">Project Title</label><FormErrors formErrors={this.state.formErrors} className="FormError" style={{marginLeft:'80%'}}/></div>
+                    <label className="formLabels">Project Title</label>
                         <input type="text" style={{marginTop:'0px'}} ref={this.ref3} className="form-control" name="title" value={this.state.title} onChange={this.handleInputChange}/>
                     </div>
                     <div className="form-group">
@@ -273,7 +273,7 @@ export default class Create extends Component{
 
                 {/* //working team */}
                 <div className="form-group">
-                <label style={{marginBottom:'5px',marginTop:'20px'}} id="chamForm">Teams</label>
+                <label style={{marginBottom:'5px',marginTop:'20px',marginLeft:'-200px'}} id="chamForm">Teams</label>
                 <div>
                 <input type="text" style={{width:'530px'}}
                 id="vinodRet"
