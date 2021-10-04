@@ -139,9 +139,11 @@ a {
   /* overflow: scroll; */
 }
 
-.container {
+.containerPV {
+  width: 85%;
+  margin: 0 auto;
   margin-top: 50px;
-  background: rgb(255, 255, 255, 0.5);
+  background: rgb(255, 255, 255, 80%);
   margin-bottom: 60px;
   height: 600px;
   overflow-y: scroll;
@@ -160,6 +162,11 @@ a {
   margin-right: 0;
   margin-bottom: 1px;
   padding-bottom: 1px;
+}
+
+#ProjectsAll {
+  margin: 0 auto;
+  width: 90%;
 }
 
 #tr {

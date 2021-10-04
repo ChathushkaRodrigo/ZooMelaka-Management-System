@@ -24,6 +24,7 @@ class CreateResearch extends Component {
                 zooAnimal:[],
                 posts:[],
                 post:[],
+                scientists:[],
                 animal:[]
 
             }
@@ -31,6 +32,7 @@ class CreateResearch extends Component {
         componentDidMount(){
             this.retrieveAnimal();
             this.retrievePosts();
+            this.retrievescientist();
           }
        
         handleInputChange=(e)=>{
@@ -86,6 +88,26 @@ class CreateResearch extends Component {
             this.setState({aid:this.state.animal.Animal_ID});
             console.log(this.state.aid);
         }
+        retrievescientist(){
+            axios.get("http://localhost:8015/posts").then(res =>{
+              if(res.data.success){
+                this.setState({
+                  posts:res.data.existingPosts
+                });
+        
+                console.log(this.state.posts)
+    
+                this.state.posts.map((posts) => {
+                    if(posts.employeeType === "Researcher"){
+                        this.setState({scientists:[...this.state.scientists,posts]});
+                       
+                    }
+                });
+                console.log(this.state.scientists);
+    
+              }
+            })
+         }
 
 
 
@@ -184,7 +206,7 @@ class CreateResearch extends Component {
                             <select name="employee_id" id="scientits"
                               onChange={this.handleEmployee}
                             >
-                            {this.state.posts.map((employees,index) =>(
+                            {this.state.scientists.map((employees,index) =>(
                              
                               
                                 <option value={employees._id}>{employees.userName}</option>

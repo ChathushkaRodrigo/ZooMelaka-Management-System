@@ -104,24 +104,24 @@ jspdGenerator=()=>{
 
       </div>
      
-      <div className="containerpr">
+      <div className="containerPV">
         <p/><p/>
         <table id="ProjectsAll">
           <thead>
-              <tr style={{fontSize:'18px',borderBottom:'2px solid black ',borderLeft:'none',borderRight:'none'}}>
+              <tr style={{fontSize:'18px',borderBottom:'2px solid black ',borderLeft:'none',borderRight:'none',textAlign:'center'}}>
                 <th scope="col" style={{width:'2%'}}>#</th>
-                <th scope="col" style={{width:'14%'}}>ID</th>
-                <th scope="col" style={{width:'14%'}}>Name</th>
-                <th scope="col" style={{width:'14%'}}>Title</th>
-                <th scope="col" style={{width:'14%'}}>Descrip.</th>
-                <th scope="col" style={{width:'14%'}}>Supervisor</th>
-                <th scope="col" style={{width:'14%'}}>Working Team</th>
-                <th scope="col" style={{width:'14%'}}>Edit/Delete</th>
+                <th scope="col" style={{width:'6%'}}>ID</th>
+                <th scope="col" style={{width:'10%'}}>Name</th>
+                <th scope="col" style={{width:'16%'}}>Title</th>
+                <th scope="col" style={{width:'34%'}}>Descrip.</th>
+                <th scope="col" style={{width:'8%'}}>Supervisor</th>
+                <th scope="col" style={{width:'12%'}}>Working Team</th>
+                <th scope="col" style={{width:'10%'}}>Edit/Delete</th>
               </tr>
            </thead>
            <tbody>
             {this.state.projects.map((projects,index) =>(
-              <tr id="tr" key={index} style={{borderLeft:'none',borderRight:'none',borderBottom:'0.5px solid black'}}>
+              <tr id="tr" key={index} style={{borderLeft:'none',borderRight:'none',borderBottom:'0.5px solid black',textAlign:'center',fontSize:'17px'}}>
                 <th scope="row">{index+1}</th>
                 <td>{projects.projectID}
                 </td>
@@ -149,22 +149,26 @@ jspdGenerator=()=>{
 
           {/* Copy generate from here */}
 
-        <div>
-        <button className="btn btn-success" onClick={this.jspdGenerator}> Generate Projects Report</button>
-        <br/><br/>
-        <button className="btn btn-success" >
-        <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
-           Admin Home
-          </a>
-          
-
-         </button>
+        <div style={{marginTop:'30px',display:'inline',borderStyle:'solid'}}>
+            <div style={{float:'left'}}>
+                <button className="btn btn-success" >
+              <a href="/adminpanelhome" style={{ textDecoration: "none", color: "white" }}>
+                Admin Home
+                </a>
+              </button>
+            </div>
+            <div style={{float:'left'}}>
+              <button className="btn btn-success" onClick={this.jspdGenerator}> Generate Projects Report</button>
+              <br/><br/>
+            </div>
+        </div>
+        
 
         
-        </div><br/><br/>
+       
       </div> 
-      {/* Iwara wena thana */}
-          
+      
+         
       </div>
       
       

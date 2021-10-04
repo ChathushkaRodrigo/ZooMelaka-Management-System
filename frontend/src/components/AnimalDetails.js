@@ -172,7 +172,7 @@ export default class AnimalDetails extends Component{
                     </form></div>
 
                     <center>
-                    <button className="dashButton btn btn-light btn-small justify-content-center btn-outline-warning" onClick={this.jspdGenerator}><i className="fas fa-file"><bold> Generate Report</bold></i></button></center>
+                    <button className="dashButton btn btn-light btn-small justify-content-center btn-outline-warning" onClick={this.jspdGenerator} style={{width:'228px'}}><i className="fas fa-file"><bold> Generate Report!</bold></i></button></center>
                     
 
 
@@ -188,7 +188,7 @@ export default class AnimalDetails extends Component{
                 }</div>
                 ))}</div> */}
 
-            <div className="btn btn-light btn-small justify-content-center btn-outline-info" style={{marginTop:'5px',marginBottom:'5px'}} id="ChamathUpzzz">
+            <div className="btn btn-light btn-small justify-content-center btn-outline-info" style={{marginTop:'5px',marginBottom:'5px',width:'227px'}} id="ChamathUpzzz">
            
                 {this.state.Medical.map(Medical =>(
                 <div>
@@ -197,7 +197,7 @@ export default class AnimalDetails extends Component{
                 <div>
                 <i className="fa fa-heartbeat ">  
                 <Link to = {`/medical/details/${Medical._id}`} style = {{textDecoration:"none",paddingLeft:'3px'}}>
-                    Medical Records
+                    Medical Records!
                       </Link></i>
 
                 </div>

@@ -196,7 +196,7 @@ jspdGenerator=()=>{
                       
                         
         
-        <a className="dashButton btn btn-light btn-small justify-content-center btn-outline-primary" href={`adminpanelhome`}  id="chamAdminNav" style={{marginTop:'-90px',marginLeft:'0',height:'2px'}}>
+        <a className="dashButton btn btn-light btn-small justify-content-center btn-outline-primary" href={`adminpanelhome`}  id="chamAdminNav" style={{marginTop:'-95px',marginLeft:'0',height:'40px',width:'200px'}}>
                           <i className="fa fa-hand-o-left"></i>&nbsp;<b>Back To Admin!!!</b>
                       </a>
         </center>

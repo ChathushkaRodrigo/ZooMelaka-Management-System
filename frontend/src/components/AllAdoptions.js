@@ -153,11 +153,11 @@ jspdGenerator=()=>{
                     <td>
                     {/* {this.getAnimalId(adoptions.animal_id)} */}
                     <Link to = {`/animal/details/${adoptions.animal_id}`} style = {{textDecoration:"none"}}>
-                      {adoptions.animal_id}
+                      {adoptions.aid}
                       </Link>
                     </td>
                     <td>
-                    <Link to = {`/profile/${adoptions.member_id}`} style = {{textDecoration:"none"}}>
+                    <Link to = {`/uprofile/${adoptions.member_id}`} style = {{textDecoration:"none"}}>
                       {adoptions.member_id}
                       </Link>
                       </td>
