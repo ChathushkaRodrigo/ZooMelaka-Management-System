@@ -148,4 +148,4 @@ Zoo Management System for Zoo Melaka Organization
 
 
 
-`DB_URL =mongodb+srv://ZooDatabaseAdmin:melaka123@zoo-managment-system-cl.lbmt4.mongodb.net/ZooManagementSystem?retryWrites=true&w=majority `
+`DB_URL=mongodb+srv://<DB_USERNAME>:<DB_PASSWORD>@<DB_CLUSTER>.lbmt4.mongodb.net/ZooManagementSystem?retryWrites=true&w=majority`
