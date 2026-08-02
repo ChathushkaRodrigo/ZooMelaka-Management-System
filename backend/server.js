@@ -42,7 +42,7 @@ app.use(collaboration);
 //Import me later to dotEnv file
 
 //MongoDB Connect URL
-const DB_URL ='mongodb+srv://ZooDatabaseAdmin:melaka123@zoo-managment-system-cl.lbmt4.mongodb.net/ZooManagementSystem?retryWrites=true&w=majority';
+const DB_URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER}.lbmt4.mongodb.net/ZooManagementSystem?retryWrites=true&w=majority`;
 
 const {
     HOST,
